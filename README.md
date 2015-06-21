@@ -27,8 +27,6 @@ TODO:
 * Alloy Controller
 * Alloy Data Binding 数据绑定, database
 * Alloy 的debug
-* Alloy 的命令行?
-* Alloy 使用经验谈
 
 ### 第二部分 Titanium 进阶
 * Ti Module
@@ -49,6 +47,13 @@ TODO:
 * 使用自定义字体
 * 使用i18n
 * 发布（安卓，ios)
+* 集成web 页面
+* 动画
+* debug, profiling
+* 找到内存泄漏的地方
+* 命令行?
+* 使用经验谈
+
 
 ### 第三部分 rails 入门
 * ruby 入门
@@ -103,7 +108,7 @@ TODO:
 
 #### 技术建议
 * 使用chrome 加快调试速度
-* 敏捷方法论: 测试驱动，
+* 敏捷方法论: 测试驱动，(难于测试的软件，就难于开发）
 * 敏捷方法论: 极限编程
 * 世界上只有三种编辑器：Vim , Emacs, 其他。
 * 忘掉你的鼠标, 用好快捷键。
