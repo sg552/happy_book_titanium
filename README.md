@@ -60,6 +60,7 @@ TODO:
 * rails 入门
 * 接口入门
 * 操作数据库
+* Model 的可见性: 任意一个Model, 可以在整个Rails项目中,的任何一个文件中调用.
 * 数据库迁移， model验证，callbacks, 关联，查询
 * 操作视图层
 * controller: 路由，action
