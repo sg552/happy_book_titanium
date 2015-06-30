@@ -57,10 +57,14 @@ TODO:
 
 ### 第三部分 rails 入门
 * ruby 入门（高跃华）
+<<<<<<< HEAD
 * rails 入门(李戈)
+=======
+* rails 入门(江浩浩)
+>>>>>>> f38809d01292e382191bc899322cad7fa84b1719
 * 接口入门
 * 操作数据库
-* Model 的可见性: 任意一个Model, 可以在整个Rails项目中,的任何一个文件中调用.
+* Model 的可见性: 任意一个Model, 可以在整个Rails项目中的任何一个文件中调用.
 * 数据库迁移， model验证，callbacks, 关联，查询
 * 操作视图层(张瑜)
 * controller: 路由，action
