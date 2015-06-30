@@ -66,7 +66,7 @@ TODO:
 * controller: 路由，action
 * rails单元测试
 * debug rails
-* rails 命令行
+* rails 命令行(张瑜)
 * 部署rails (rails + thin, asset pipeline)
 
 ### 第四部分 rails 进阶
