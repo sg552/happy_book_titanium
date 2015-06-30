@@ -57,13 +57,13 @@ TODO:
 
 ### 第三部分 rails 入门
 * ruby 入门（高跃华）
-* rails 入门(yuxuan)
+* rails 入门(浩浩，yuxuan)
 * 接口入门
 * 操作数据库
-* Model 的可见性: 任意一个Model, 可以在整个Rails项目中,的任何一个文件中调用.
+* Model 的可见性: 任意一个Model, 可以在整个Rails项目中的任何一个文件中调用.
 * 数据库迁移， model验证，callbacks, 关联，查询
-* 操作视图层
-* controller: 路由，action(yuxuan)
+* 操作视图层(张瑜)
+* controller: 路由，action(yuxuan,张瑜)
 * rails单元测试
 * debug rails
 * rails 命令行(张瑜)
@@ -111,7 +111,7 @@ TODO:
 * 使用chrome 加快调试速度
 * 敏捷方法论: 测试驱动，(难于测试的软件，就难于开发）
 * 敏捷方法论: 极限编程
-* 世界上只有三种编辑器：Vim , Emacs, 其他。
+* 世界上只有三种编辑器：Vim , Emacs, 其他。(孙双蕾)
 * 忘掉你的鼠标, 用好快捷键。
 * 使用编辑器时，最重要的一些快捷键
 * SCM: 只用Git,  忘掉其他。
