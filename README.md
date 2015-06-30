@@ -33,7 +33,7 @@ TODO:
 * Alloy widget
 * 支付
 * 分享（微信）(张瑜 安卓版)
-* 聊天 (文字，视频，语音）
+* 聊天 (文字，视频，语音）  (王涛)
 * 第三方登录
 * 地图
 * push
@@ -42,7 +42,7 @@ TODO:
 * tishadow快速开发框架,
 * jade/coffee/stss/grunt
 * tishadow unit test
-* genymotion
+* genymotion (王涛)
 * 适配不同的机型
 * 使用自定义字体
 * 使用i18n
@@ -62,7 +62,7 @@ TODO:
 * 操作数据库
 * Model 的可见性: 任意一个Model, 可以在整个Rails项目中的任何一个文件中调用.
 * 数据库迁移， model验证，callbacks, 关联，查询
-* 操作视图层
+* 操作视图层(张瑜)
 * controller: 路由，action
 * rails单元测试
 * debug rails
@@ -111,7 +111,7 @@ TODO:
 * 使用chrome 加快调试速度
 * 敏捷方法论: 测试驱动，(难于测试的软件，就难于开发）
 * 敏捷方法论: 极限编程
-* 世界上只有三种编辑器：Vim , Emacs, 其他。
+* 世界上只有三种编辑器：Vim , Emacs, 其他。(孙双蕾)
 * 忘掉你的鼠标, 用好快捷键。
 * 使用编辑器时，最重要的一些快捷键
 * SCM: 只用Git,  忘掉其他。
