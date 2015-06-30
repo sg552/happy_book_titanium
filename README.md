@@ -16,7 +16,7 @@ TODO:
 * 前言
 
 ### 第一部分 titanium 入门
-* javascript 入门
+* javascript 入门(高跃华)
 * node 入门
 * titanium 入门( titanium 的实质)
 * Alloy 框架
@@ -56,7 +56,7 @@ TODO:
 
 
 ### 第三部分 rails 入门
-* ruby 入门
+* ruby 入门（高跃华）
 * rails 入门
 * 接口入门
 * 操作数据库
@@ -73,7 +73,7 @@ TODO:
 * 再谈rails单元测试, 如何把握好测试的度
 * 使用selenium 进行自动化测试
 * 使用chrome快速调试 web css 样式
-* 元编程
+* 元编程（高跃华）
 * 如何查看ruby/rails api
 * 非常方便的方法（active support)
 * 经验谈
