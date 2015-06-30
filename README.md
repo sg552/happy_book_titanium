@@ -33,7 +33,7 @@ TODO:
 * Alloy widget
 * 支付
 * 分享（微信）(张瑜 安卓版)
-* 聊天 (文字，视频，语音）
+* 聊天 (文字，视频，语音）  (王涛)
 * 第三方登录
 * 地图
 * push
@@ -42,7 +42,7 @@ TODO:
 * tishadow快速开发框架,
 * jade/coffee/stss/grunt
 * tishadow unit test
-* genymotion
+* genymotion (王涛)
 * 适配不同的机型
 * 使用自定义字体
 * 使用i18n
