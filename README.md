@@ -30,7 +30,7 @@ TODO:
 
 ### 第二部分 Titanium 进阶
 * Ti Module
-* Alloy widget
+* Alloy widget    (黄敏)
 * 支付              （郭卫东）
 * 分享（微信）(张瑜 安卓版)（郭卫东）
 * 聊天 (文字，视频，语音）  (王涛)
@@ -40,14 +40,14 @@ TODO:
 * 短信验证码
 * 调试UI
 * tishadow快速开发框架,
-* jade/coffee/stss/grunt
+* jade/coffee/stss/grunt （黄敏）
 * tishadow unit test
 * genymotion (王涛)
-* 适配不同的机型
-* 使用自定义字体
+* 适配不同的机型  （黄敏）
+* 使用自定义字体  （黄敏）
 * 使用i18n         （郭卫东）
 * 发布（安卓，ios) （郭卫东）
-* 集成web 页面
+* 集成web 页面    （黄敏）
 * 动画
 * debug, profiling
 * 找到内存泄漏的地方
@@ -67,7 +67,7 @@ TODO:
 * rails单元测试(李戈)
 * debug rails
 * rails 命令行(张瑜)
-* 部署rails (rails + thin, asset pipeline)
+* 部署rails (rails + thin, asset pipeline) （黄敏）
 * 表单对象, rails view helper (大师)
 
 ### 第四部分 rails 进阶
@@ -95,7 +95,7 @@ TODO:
 * 收起你的个性，要谦虚，不要任性(控制好你的脾气)。
 * 不要内向。内向的人是失败者。
 * 不要踢皮球
-* 要有个人的技术博客。
+* 要有个人的技术博客。 (黄敏)
 * 有机会就要带领团队
 * 架构，测试和运维不是正路。
 * 每天都要学习，不要沦于平庸（买菜接孩子，算计各种羊毛）
