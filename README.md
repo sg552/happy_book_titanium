@@ -23,19 +23,19 @@ TODO:
 * Alloy 概述
 * Alloy Model
 * Alloy View （各种插件，各种样式(tss)）
-* Alloy 中的各种事件
-* Alloy Controller
-* Alloy Data Binding 数据绑定, database
+* Alloy 中的各种事件（胡海洋）
+* Alloy Controller（胡海洋）
+* Alloy Data Binding 数据绑定, database（胡海洋）
 * Alloy 的debug
 
 ### 第二部分 Titanium 进阶
 * Ti Module
-* Alloy widget
+* Alloy widget（胡海洋）
 * 支付              （郭卫东）
 * 分享（微信）(张瑜 安卓版)（郭卫东）
 * 聊天 (文字，视频，语音）  (王涛)
 * 第三方登录
-* 地图
+* 地图(胡海洋)
 * push
 * 短信验证码
 * 调试UI
