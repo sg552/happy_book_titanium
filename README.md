@@ -18,7 +18,7 @@ TODO:
 ### 第一部分 titanium 入门
 * javascript 入门(高跃华)
 * node 入门
-* titanium 入门( titanium 的实质)
+* titanium 入门( titanium 的实质)（郭卫东）
 * Alloy 框架
 * Alloy 概述
 * Alloy Model
@@ -31,8 +31,8 @@ TODO:
 ### 第二部分 Titanium 进阶
 * Ti Module
 * Alloy widget
-* 支付
-* 分享（微信）(张瑜 安卓版)
+* 支付              （郭卫东）
+* 分享（微信）(张瑜 安卓版)（郭卫东）
 * 聊天 (文字，视频，语音）  (王涛)
 * 第三方登录
 * 地图
@@ -45,8 +45,8 @@ TODO:
 * genymotion (王涛)
 * 适配不同的机型
 * 使用自定义字体
-* 使用i18n
-* 发布（安卓，ios)
+* 使用i18n         （郭卫东）
+* 发布（安卓，ios) （郭卫东）
 * 集成web 页面
 * 动画
 * debug, profiling
