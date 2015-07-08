@@ -67,7 +67,7 @@ TODO:
 * rails单元测试(李戈)
 * debug rails
 * rails 命令行(张瑜)
-* 部署rails (rails + thin, asset pipeline) （黄敏）
+* 部署rails (rails + thin, asset pipeline) 
 * 表单对象, rails view helper (大师)
 
 ### 第四部分 rails 进阶
