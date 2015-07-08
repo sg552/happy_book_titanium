@@ -19,8 +19,8 @@ TODO:
 * javascript 入门(高跃华)
 * node 入门
 * titanium 入门( titanium 的实质)（郭卫东）
-* Alloy 框架
-* Alloy 概述
+* Alloy 框架(胡飞鹏)
+* Alloy 概述(胡飞鹏)
 * Alloy Model
 * Alloy View （各种插件，各种样式(tss)）
 * Alloy 中的各种事件（胡海洋）
@@ -31,15 +31,15 @@ TODO:
 ### 第二部分 Titanium 进阶
 * Ti Module
 * Alloy widget    (黄敏)
-* 支付              （郭卫东）
+* 支付              （胡飞鹏）
 * 分享（微信）(张瑜 安卓版)（郭卫东）
 * 聊天 (文字，视频，语音）  (王涛)
 * 第三方登录
 * 地图(胡海洋)
 * push
 * 短信验证码
-* 调试UI
-* tishadow快速开发框架,
+* 调试UI (胡飞鹏)
+* tishadow快速开发框架
 * jade/coffee/stss/grunt （黄敏）
 * tishadow unit test
 * genymotion (王涛)
@@ -67,13 +67,13 @@ TODO:
 * rails单元测试(李戈)
 * debug rails
 * rails 命令行(张瑜)
-* 部署rails (rails + thin, asset pipeline) 
+* 部署rails (rails + thin, asset pipeline)
 * 表单对象, rails view helper (大师)
 
 ### 第四部分 rails 进阶
 * 再谈rails单元测试, 如何把握好测试的度 (高跃华)
 * 使用selenium 进行自动化测试
-* 使用chrome快速调试 web css 样式
+* 使用chrome快速调试 web css 样式(胡飞鹏)
 * 元编程（高跃华）
 * 如何查看ruby/rails api
 * 非常方便的方法（active support)
@@ -113,11 +113,11 @@ TODO:
 * 敏捷方法论: 测试驱动，(难于测试的软件，就难于开发）
 * 敏捷方法论: 极限编程
 * 世界上只有三种编辑器：Vim , Emacs, 其他。(高跃华)
-* 忘掉你的鼠标, 用好快捷键。
+* 忘掉你的鼠标, 用好快捷键
 * 使用编辑器时，最重要的一些快捷键
 * SCM: 只用Git,  忘掉其他。
-* 英语是提高个人能力的关键。 多读英文文档，多参与翻译，多贡献github, 多参加stackoverflow.
-* 频繁沟通才能保证项目失败，兼职的项目都会死掉。
+* 英语是提高个人能力的关键。 多读英文文档，多参与翻译，多贡献github, 多参加stackoverflow.(胡飞鹏)
+* 频繁沟通才能保证项目失败，兼职的项目都会死掉。(胡飞鹏)
 * 人跟人的能力不一样。
 * 永远不要人肉重复。
 * 命令行
