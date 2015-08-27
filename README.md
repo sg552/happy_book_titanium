@@ -57,7 +57,7 @@ TODO:
 
 ### 第三部分 rails 入门
 * ruby 入门（高跃华）
-* rails 入门(浩浩，yuxuan)
+* rails 入门(浩浩)
 * 接口入门（胡海洋）
 * 操作数据库(户晨飞)
 * Model 的可见性: 任意一个Model, 可以在整个Rails项目中的任何一个文件中调用.
