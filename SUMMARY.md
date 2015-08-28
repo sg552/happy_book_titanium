@@ -3,6 +3,7 @@
 * [Titanium 入门](part1_ti_premier.md)
   * [Javascript 入门](part1_ti_premier/javascript_premier.md)
     * [Object](part1_ti_premier/javascript_premier/js_object.md)
+    * [Type, Value, Variable](part1_ti_premier/javascript_premier/type_value_variable.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework.md)
 * [Titanium 进阶](part2_ti_advanced.md)
