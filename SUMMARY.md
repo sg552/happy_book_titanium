@@ -10,6 +10,7 @@
   * [Ti Module](part2_ti_advanced/ti_module.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
+  * [rails 单元测试](part3_rails_premier/rails_unit_test.md)
 * [Rails 进阶](part4_rails_advanced.md)
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [元编程](part4_rails_advanced/metaprogramming.md)
