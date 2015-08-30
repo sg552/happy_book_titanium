@@ -257,3 +257,22 @@ Apple.all.each do {  |apple|      apple.name  }
 Apple.all.map(&:name)
 ```
 
+## 条件语句
+
+```ruby
+a = 1
+if a == 1
+  puts "a is 1"
+else
+  puts "in else"
+end
+```
+
+## 循环
+
+```ruby
+[1,2,3].each { |e|
+  puts e
+}
+```
+
