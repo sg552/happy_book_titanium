@@ -3,6 +3,7 @@
 * [Titanium 入门](part1_ti_premier.md)
   * [Javascript 入门](part1_ti_premier/javascript_premier.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
+  * [Alloy 中的各种事件](part1_ti_premier/events_in_Alloy.md)
 * [Titanium 进阶](part2_ti_advanced.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
