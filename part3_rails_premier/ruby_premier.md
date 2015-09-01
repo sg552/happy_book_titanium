@@ -104,12 +104,17 @@ puts "a is: #{a}"
 
 ## class
 
-我们从一个例子来看，ruby中的实例变量，getter, setter 方法．
+我们从一个例子来看,　注意代码中的注释：
 
 ```ruby
 class Apple
-  # instance variable, 实例变量
-  @color
+
+  # 这个方法就是在　Apple.new　时自动调用的方法
+  def initialize
+    # instance variable, 实例变量
+    @color
+  end
+
 
   # getter 方法
   def color
@@ -299,16 +304,47 @@ Apple.all.map(&:name)
 
 ## 条件语句
 
+### if else end 是最常见的
+
 ```ruby
 a = 1
 if a == 1
   puts "a is 1"
+elsif a == 2
+  puts "a is 2"
 else
-  puts "in else"
+  puts "a is not in [1,2]"
 end
 ```
 
+### case when end 分支语句
+
+例如：
+
+```ruby
+a = 1
+case a
+  when 1 then puts "a is 1"
+  when 2 then puts "a is 2"
+  when 3,4,5 then puts "a is in [3,4,5]"
+  else puts "a is not in [1,2,3,4,5]"
+end
+```
+
+### 三元表达式
+
+```ruby
+a = 1
+puts a == 1 ? 'one' : 'not one'
+# => one
+```
+
+也可以写成：
+
+
 ## for, each, loop, while 循环
+
+for 与each　几乎一样．例如：
 
 ```ruby
 [1,2,3].each { |e|
@@ -320,6 +356,47 @@ for e in [1,2,3]
   puts e
 end
 ```
+
+for 与 each 都可以做循环，但是高手都用each. 区别在于：for 是关键字，　each是方法.
+for 后面的变量，是全局变量，不仅仅存在于for .. end 这个作用域之内．(具体见这个stackoverflow
+上的问题: for vs each.)[http://stackoverflow.com/questions/3294509/for-vs-each-in-ruby])
+
+举个例子：
+
+```ruby
+for i in [1,2,3]
+  puts i
+end
+puts i  # => 3
+```
+
+loop与while是几乎一样的.
+
+```ruby
+loop do
+  # your code
+  break if <condition>
+end
+
+begin
+  # your code
+end while <condition>
+```
+但是ruby的作者推荐使用loop. 因为可读性更强． 下面是一个例子：
+
+```ruby
+a = [2,1,0,-1,-2]
+loop do
+  current_element = a.pop
+  puts current_element
+  break if current_element < 0
+end
+
+# => 2
+# => 1
+# => 0
+```
+
 
 ## 命名规则
 
@@ -333,6 +410,11 @@ class, module: 首字母大写，骆驼表达法： Apple, Human
 
 <<Metaprogramming Ruby>>:
 > Ruby高手都用 each 循环．我们跟着照做就好．
+
+## 循环
+
+### for 循环
+
 
 ## 查看API
 
