@@ -1,1 +1,278 @@
-Welcome to Ruby World!
+#　Ruby入门
+
+## Ruby简介
+
+Ruby 是脚本语言．由日本人松本行弘创建．．．等等．　这个语言最大的特点就是＂对程序员友好＂．
+用Martin Fowler等人的话说，就是＂我在任何时候手头都要带着它（Ruby锄头书）＂
+
+如果你接触过C/C++, java, object C等语言，回过头再看Ruby，就会发现它特别简洁，代码极度好懂．
+
+Ruby支持Linux, Mac, 以及Windows. 但是我们只在Linux 和Mac下工作，Windows我们就不考虑了．
+
+下面都假设你在Linux下(大部分情况适用于Mac)
+
+## 安装Ruby
+
+虽然系统默认自带了Ruby，但是不如我们自定义的灵活．我们使用[rbenv](https://github.com/sstephenson/rbenv) 来安装Ruby,　最大的好处是
+可以允许你同时安装多个Ruby版本．
+
+### 安装rbenv
+TODO
+
+### 安装rbenv install
+TODO
+
+## 调试方法: irb
+
+irb = interactive ruby
+
+在命令行下，输入 `$ irb` 即可．　这是一个ruby的即时调试界面．
+
+
+
+## Hello World
+
+新建一个文件
+```ruby
+# hello.rb:
+puts 'Hello world!'
+```
+
+运行，就会看到效果：
+
+```bash
+$ ruby hello.rb
+```
+
+## 赋值
+
+```ruby
+name = "jim"
+# => jim
+```
+
+## 字符串插值
+
+在Ruby中，我们最好所有的地方都用字符串插值(interpolition) ,避免使用 +　方式．
+原因是：对于不同的数据类型，用＋号时，系统会报错．
+
+使用字符串插值时，记得用双引号．
+
+```ruby
+puts "hi, #{name}!"
+# => hi, jim
+```
+
+你也可以把它写成：
+
+```ruby
+puts "hi, "+ name
+# => hi, jim
+```
+
+如果用加号，一些时候就会报错：
+
+```ruby
+a = 1
+puts "a is: " + a
+# => 报错
+
+puts "a is: #{a}"
+# => a is: 1
+```
+
+## 双引号与单引号
+
+## class
+
+我们从一个例子来看，ruby中的实例变量，getter, setter 方法．
+
+```ruby
+class Apple
+  # instance variable, 实例变量
+  @color
+
+  # getter 方法
+  def color
+    return @color
+  end
+
+  # setter 方法
+  def color= color
+    @color = color
+  end
+
+  # private 下面的方法都是私有方法
+  private
+  def i_am_private
+  end
+end
+
+red_apple = Apple.new
+red_apple.color = 'red'
+puts "red_apple.color: #{red_apple.color}"
+```
+
+我们来运行这个文件：
+```bash
+$ ruby apple.rb
+# => "red_apple.color: red"
+```
+
+上面的例子是java/c风格的. ruby的熟手一般这么写：
+
+```ruby
+class Apple
+  # 这一句，自动声明了 @color, getter,setter
+  attr_accessor 'color'
+end
+```
+
+## 变量
+
+类变量：　class variable, 例如： `@@name`, 作用域：所有的多个instance 会共享这个变量. 用的很少．
+
+实例变量　instance variable, 例如： `@color`, 作用域仅在instance之内
+
+普通变量： local variable, 例如：　`age = 20`, 作用域仅在　某个方法内．
+
+全局变量： global variable，　例如：`$name = "Jim"`, 作用域在全局． 用的更少．
+
+下面是一个例子：
+
+```ruby
+class Apple
+
+  @@from = 'China'
+
+  def color = color
+    @color = color
+  end
+
+  def color
+    return @color
+  end
+
+  def get_from
+    @@from
+  end
+
+  def set_from from
+    @@from = from
+  end
+end
+
+red_one = Apple.new
+red_one.color = 'red'
+puts red_one.color
+# => 'red'
+red_one.set_from 'Japan'
+puts red_one.get_from
+# => 'Japan'
+
+green_one = Apple.new
+green_one.color = 'green'
+puts green_one.color
+# => 'green'
+puts green_one.get_from
+# => 'Japan'
+```
+
+## Symbol
+
+前面的apple.rb例子中，　正常的应该写成：
+
+```ruby
+class Apple
+  attr_accessor :color
+end
+```
+
+这个　:color 是什么呢？　就是Symbol. 它是不会变化的字符串．
+TODO　具体的学术概念
+
+:name 等同于：　"name".to_symbol
+
+## hash
+
+```Ruby
+# 任何情况下都生效的语法： =>
+jim = {
+    :name => 'Jim',
+    :age => 20
+}
+
+# Ruby 1.9之后产生的语法：更加简洁．
+jim = {
+    name: 'Jim',
+    age: 20
+}
+
+# 也可以写成：
+jim = {}
+jim[:name] = 'Jim'
+jim[:age] = 20
+```
+
+但是，　symbol 与 string , 是不同的key,　例如：
+```bash
+a = {:name => 'jim', 'name'=> 'hi'}
+a[:name]  #=>  'jim'
+a['name'] #=>  'hi'
+```
+
+## ruby中的简写
+
+### 每个函数的最后一行默认是返回值，是不需要写return的，例如：
+
+```ruby
+def color
+  'red'
+end
+```
+
+### 方法调用的最外面的大括号可以省略。例如：
+
+```ruby
+puts "hihihi"   # 等同于   puts("hihihi")
+```
+
+### hash最外面的{} 在大多数情况下可以省略，例如：
+
+```ruby
+Apple.create :name => 'apple', :color => 'red'
+
+#等同于：
+Apple.create({:name => 'apple', :color => 'red'})
+
+#等同于： Apple.create name: 'apple', color: 'red'
+```
+
+### 调用某个block中的某个方法：
+
+```ruby
+Apple.all.each do {  |apple|      apple.name  }
+
+# 等同于：
+Apple.all.map(&:name)
+```
+
+## 条件语句
+
+```ruby
+a = 1
+if a == 1
+  puts "a is 1"
+else
+  puts "in else"
+end
+```
+
+## 循环
+
+```ruby
+[1,2,3].each { |e|
+  puts e
+}
+```
+
