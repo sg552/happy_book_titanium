@@ -6,6 +6,7 @@
     * [Type, Value, Variable](part1_ti_premier/javascript_premier/type_value_variable.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework.md)
+  * [Alloy Controller](part1_ti_premier/alloy_controller.md)
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
