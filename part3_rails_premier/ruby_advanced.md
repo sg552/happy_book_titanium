@@ -112,7 +112,126 @@ end
 # 等同于
 [1,2,3].each { |e| puts e }
 ```
-可以认为 { |e| puts e } 与 do |e| puts e end 是一模一样的．
+可以认为 `{ |e| puts e }` 与 `do |e| puts e end` 是一模一样的．
+
+在block 中，不要用 return 关键字．　如果要返回一个值，直接把它放在最后就可以了．例如：
+
+```ruby
+result = [1,2,3].map { |e|
+  puts "e is: #{e}"
+  e * 3
+}
+
+# 结果是：
+e is: 1
+e is: 2
+e is: 3
+=> [3, 6, 9]
+```
 
 ## Module
+
+Module 用来抽取公共的代码． 达到代码重用的目的．
+
+例如给定一个module：
+
+```ruby
+module Fruit
+  def taste
+    'good'
+  end
+end
+```
+
+`include`用来把Module中的方法变成"instance method":
+```ruby
+class Apple
+  include Fruit
+end
+puts Apple.new.taste
+# => good
+
+```
+
+`extend`把Module中的方法变成 "class method"
+
+```ruby
+class Orange
+  extend Fruit
+end
+
+puts Orange.taste
+# => good
+```
+
+## Class的继承
+
+```ruby
+class Parent
+  def family_name
+    'Green'
+  end
+end
+
+class Child < Parent
+end
+
+puts Child.new.family_name
+
+# => Green
+```
+
+## self
+在ruby中，self表示当前作用域的　method caller. 可以认为是调用方法的对象．例如, ：
+
+```ruby
+temp_string = '1,2,3'
+
+# 下面的`temp_string`就是一个caller
+temp_string.split ','
+```
+
+为了方便记忆，只要见到　`a.b()` 这个形式，就可以说 `a` 就是 "method caller", 在方法`b`中，
+self就指代"a", 例如，下面的例子，我们可以把self打印出来：
+
+```ruby
+class Apple
+  def print_self
+    puts self.inspect
+  end
+end
+
+Apple.new.print_self
+# => #<Apple:0x00000001f0dad8>
+```
+上面的　` #<Apple:0x00000001f0dad8>`就是 Apple.new　出来的实例．　
+
+
+## 常用技巧
+
+```ruby
+# 假设User有个属性，叫name
+class User
+  attr_accessor :name
+end
+
+jim = User.new
+jim.name = 'Jim'
+
+li_lei = User.name
+li_lei.name = 'Li Lei'
+```
+
+那么， 下面的代码
+```ruby
+[jim, li_lei].map { |user|
+  user.name
+}
+```
+
+等同于这种格式．(该格式常见于所有的开源项目中）
+```ruby
+[jim, li_lei].map(&:name)
+```
+
 

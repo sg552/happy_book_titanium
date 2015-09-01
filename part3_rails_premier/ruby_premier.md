@@ -16,6 +16,7 @@ Ruby支持Linux, Mac, 以及Windows. 但是我们只在Linux 和Mac下工作，W
 虽然系统默认自带了Ruby，但是不如我们自定义的灵活．我们使用[rbenv](https://github.com/sstephenson/rbenv) 来安装Ruby,　最大的好处是
 可以允许你同时安装多个Ruby版本．
 
+
 ### 安装rbenv
 TODO
 
@@ -28,6 +29,24 @@ irb = interactive ruby
 
 在命令行下，输入 `$ irb` 即可．　这是一个ruby的即时调试界面．
 
+### 几点说明
+
+用 `# => `表示输出结果 , 例如：
+
+```ruby
+puts "goodbye java"
+# => "goodbye java"
+```
+
+用$, 或者# 表示bash命令行程序，例如：
+
+```bash
+$ ruby test_my_module.rb
+```
+或者：
+```ruby
+# ps -ef | grep nginx
+```
 
 
 ## Hello World
@@ -178,6 +197,27 @@ puts green_one.get_from
 # => 'Japan'
 ```
 
+## 方法：类方法(class method)与实例方法(instance method)
+
+用法上,　看这个例子:
+
+```ruby
+class Apple
+  def Apple.name
+    'apple'
+  end
+  def color
+    'red'
+  end
+end
+
+Apple.new.color
+# => red
+
+Apple.name
+# => apple
+```
+
 ## Symbol
 
 前面的apple.rb例子中，　正常的应该写成：
@@ -268,11 +308,50 @@ else
 end
 ```
 
-## 循环
+## for, each, loop, while 循环
 
 ```ruby
 [1,2,3].each { |e|
   puts e
 }
+
+# 等同于下方：　
+for e in [1,2,3]
+  puts e
+end
 ```
+
+## 命名规则
+
+常量: 全都是大写字母．`ANDROID_SYSTEM = 'android'`
+
+变量：如果不算@, @@, $的话，是小写字母开头．下划线拼接．例如: `color`, `age`, `is_created`
+
+class, module: 首字母大写，骆驼表达法： Apple, Human
+
+方法名：　小写字母开头．　可以以问号？ 或者等号结尾，例如： `name`, `created?`, `color=`
+
+<<Metaprogramming Ruby>>:
+> Ruby高手都用 each 循环．我们跟着照做就好．
+
+## 查看API
+
+查看ruby API　很其他的语言差不多．官方文档是：api.ruby-lang.org?
+TODO 详细图文
+
+## ruby DEBUG　之调试信息
+
+- ruby的出错信息, 距离顺序是从上到下，时间顺序是从下到上，出现的．例如：
+
+```ruby
+test_class.rb:8:in `extend': wrong argument type Class (expected Module) (TypeError)
+  from test_class.rb:8:in `<class:Child>'
+  from test_class.rb:7:in `<main>'
+```
+上面信息中，时间的运行顺序是，先运行　test_class.rb的第７行，再运行到第8行，才出错．
+出错信息是  `wrong argument type Class (expected Module) (TypeError)`
+
+- 在调试中，class instance 的最外层是#<> 的固定格式，前面的Apple表示class名字，0x00000001f0dad8　是内存的地址．
+例如：#<Apple:0x00000001f0dad8>
+
 
