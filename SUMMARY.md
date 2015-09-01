@@ -8,6 +8,7 @@
   * [Alloy Framework](part1_ti_premier/alloy_framework.md)
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
+  * [适配不同机型](part2_ti_advanced/device_adapter.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
   * [Ruby 进阶 ](part3_rails_premier/ruby_advanced.md)
