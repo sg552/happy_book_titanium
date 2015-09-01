@@ -16,6 +16,7 @@ Ruby支持Linux, Mac, 以及Windows. 但是我们只在Linux 和Mac下工作，W
 虽然系统默认自带了Ruby，但是不如我们自定义的灵活．我们使用[rbenv](https://github.com/sstephenson/rbenv) 来安装Ruby,　最大的好处是
 可以允许你同时安装多个Ruby版本．
 
+
 ### 安装rbenv
 TODO
 
@@ -28,6 +29,24 @@ irb = interactive ruby
 
 在命令行下，输入 `$ irb` 即可．　这是一个ruby的即时调试界面．
 
+### 几点说明
+
+用 `# => `表示输出结果 , 例如：
+
+```ruby
+puts "goodbye java"
+# => "goodbye java"
+```
+
+用$, 或者# 表示bash命令行程序，例如：
+
+```bash
+$ ruby test_my_module.rb
+```
+或者：
+```ruby
+# ps -ef | grep nginx
+```
 
 
 ## Hello World
@@ -85,12 +104,17 @@ puts "a is: #{a}"
 
 ## class
 
-我们从一个例子来看，ruby中的实例变量，getter, setter 方法．
+我们从一个例子来看,　注意代码中的注释：
 
 ```ruby
 class Apple
-  # instance variable, 实例变量
-  @color
+
+  # 这个方法就是在　Apple.new　时自动调用的方法
+  def initialize
+    # instance variable, 实例变量
+    @color
+  end
+
 
   # getter 方法
   def color
@@ -178,6 +202,27 @@ puts green_one.get_from
 # => 'Japan'
 ```
 
+## 方法：类方法(class method)与实例方法(instance method)
+
+用法上,　看这个例子:
+
+```ruby
+class Apple
+  def Apple.name
+    'apple'
+  end
+  def color
+    'red'
+  end
+end
+
+Apple.new.color
+# => red
+
+Apple.name
+# => apple
+```
+
 ## Symbol
 
 前面的apple.rb例子中，　正常的应该写成：
@@ -259,20 +304,136 @@ Apple.all.map(&:name)
 
 ## 条件语句
 
+### if else end 是最常见的
+
 ```ruby
 a = 1
 if a == 1
   puts "a is 1"
+elsif a == 2
+  puts "a is 2"
 else
-  puts "in else"
+  puts "a is not in [1,2]"
 end
 ```
 
-## 循环
+### case when end 分支语句
+
+例如：
+
+```ruby
+a = 1
+case a
+  when 1 then puts "a is 1"
+  when 2 then puts "a is 2"
+  when 3,4,5 then puts "a is in [3,4,5]"
+  else puts "a is not in [1,2,3,4,5]"
+end
+```
+
+### 三元表达式
+
+```ruby
+a = 1
+puts a == 1 ? 'one' : 'not one'
+# => one
+```
+
+也可以写成：
+
+
+## for, each, loop, while 循环
+
+for 与each　几乎一样．例如：
 
 ```ruby
 [1,2,3].each { |e|
   puts e
 }
+
+# 等同于下方：　
+for e in [1,2,3]
+  puts e
+end
 ```
+
+for 与 each 都可以做循环，但是高手都用each. 区别在于：for 是关键字，　each是方法.
+for 后面的变量，是全局变量，不仅仅存在于for .. end 这个作用域之内．(具体见这个stackoverflow
+上的问题: for vs each.)[http://stackoverflow.com/questions/3294509/for-vs-each-in-ruby])
+
+举个例子：
+
+```ruby
+for i in [1,2,3]
+  puts i
+end
+puts i  # => 3
+```
+
+loop与while是几乎一样的.
+
+```ruby
+loop do
+  # your code
+  break if <condition>
+end
+
+begin
+  # your code
+end while <condition>
+```
+但是ruby的作者推荐使用loop. 因为可读性更强． 下面是一个例子：
+
+```ruby
+a = [2,1,0,-1,-2]
+loop do
+  current_element = a.pop
+  puts current_element
+  break if current_element < 0
+end
+
+# => 2
+# => 1
+# => 0
+```
+
+
+## 命名规则
+
+常量: 全都是大写字母．`ANDROID_SYSTEM = 'android'`
+
+变量：如果不算@, @@, $的话，是小写字母开头．下划线拼接．例如: `color`, `age`, `is_created`
+
+class, module: 首字母大写，骆驼表达法： Apple, Human
+
+方法名：　小写字母开头．　可以以问号？ 或者等号结尾，例如： `name`, `created?`, `color=`
+
+<<Metaprogramming Ruby>>:
+> Ruby高手都用 each 循环．我们跟着照做就好．
+
+## 循环
+
+### for 循环
+
+
+## 查看API
+
+查看ruby API　很其他的语言差不多．官方文档是：api.ruby-lang.org?
+TODO 详细图文
+
+## ruby DEBUG　之调试信息
+
+- ruby的出错信息, 距离顺序是从上到下，时间顺序是从下到上，出现的．例如：
+
+```ruby
+test_class.rb:8:in `extend': wrong argument type Class (expected Module) (TypeError)
+  from test_class.rb:8:in `<class:Child>'
+  from test_class.rb:7:in `<main>'
+```
+上面信息中，时间的运行顺序是，先运行　test_class.rb的第７行，再运行到第8行，才出错．
+出错信息是  `wrong argument type Class (expected Module) (TypeError)`
+
+- 在调试中，class instance 的最外层是#<> 的固定格式，前面的Apple表示class名字，0x00000001f0dad8　是内存的地址．
+例如：#<Apple:0x00000001f0dad8>
+
 
