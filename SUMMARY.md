@@ -6,7 +6,7 @@
     * [Type, Value, Variable](part1_ti_premier/javascript_premier/type_value_variable.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
-  * [Alloy Framework](part1_ti_premier/alloy_framework.md)
+  * [Alloy Framework](part1_ti_premier/alloy_framework_premier/alloy_framework.md)
   * [Alloy Views](part1_ti_premier/alloy_view_overview.md)
     * [View的结构组成](part1_ti_premier/alloy_views/Views_construction.md)
     * [View中的标签](part1_ti_premier/alloy_views/xml_elements.md)
