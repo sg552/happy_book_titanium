@@ -9,6 +9,7 @@
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework.md)
     * [Alloy Framework](part1_ti_premier/alloy_framework_premier/Alloy Framework.md)
+  * [Alloy Controller](part1_ti_premier/alloy_controller.md)
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
