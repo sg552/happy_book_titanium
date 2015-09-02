@@ -101,18 +101,169 @@ test_rescue.rb:10:in `<main>'
 ```
 
 ## block, Proc, lambda
+block, proc, lambda都源自于函数式语言的概念，是函数式(functional progarmming)编程的体现。在函数式编程语言的世界中，这三种结构叫做闭包(closure)。
+proc, lambda是可以单独调用的闭包，而block不可以。
 
-可以基本认为它们都是一个东西． 一个最简单的例子：
+换句话说，proc和lambda可以转化成为block，当做参数传递给方法，但是block只能接在方法调用后面，不可以单独调用。
+
+函数式编程的核心是：函数即数据!
+
+在ruby当中，`block`是接在方法调用(method call)后面的do...end或者使用花括号({})包起来的代码块(code block)会，可以认为成方法的参数(parameter)。如果使用的是花括号的方式，一定不要产生，认为它是C语言中的过程语句的幻觉。这是错误的认知，是新手经常会犯错的地方。
+
+以下两种写法是等价的:
+```ruby
+[1, 2, 3].each do |x|
+  puts x
+end
+```
+```ruby
+[1, 2, 3].each {|x| puts x}
+```
+proc对象：
+```ruby
+proc = Proc.new {|x| puts x*2}
+proc.call(2) # 4
+```
+lambda对象：
+```ruby
+lam = lambda {|x| puts x*2}
+lam.call(2) # 4
+```
+在使用block的地方使用proc和lambda：
+```ruby
+[1, 2, 3].each {|x| puts x*2 } # 2, 4, 6
+[1, 2, 3].each(&proc) # 2, 4, 6
+[1, 2, 3].each(&lam)  # 2, 4, 6
+```
+
+lambda和proc的两个重要区别是:
+- Proc对象对参数数量检查不严格, lambda对象则要求参数的数量精确匹配
+- Proc对象和lambda对象对return关键字的处理不一样
+
+在block 中，不要用 return 关键字．　如果要返回一个值，直接把它放在最后就可以了．例如：
 
 ```ruby
-[1,2,3].each do  |e|
-   puts e
-end
+result = [1,2,3].map { |e|
+  puts "e is: #{e}"
+  e * 3
+}
 
-# 等同于
-[1,2,3].each { |e| puts e }
+# 结果是：
+e is: 1
+e is: 2
+e is: 3
+=> [3, 6, 9]
 ```
-可以认为 { |e| puts e } 与 do |e| puts e end 是一模一样的．
 
 ## Module
+module有两个典型的作用:
+- 提供namespace(开源代码中大量使用，比如Rails项目中使用的各种gem)
+- 取消多重继承代码的结构混乱(在ruby中，class可以认为是一个加强的module)
+
+简单的使用方式为:
+
+一个典型的module为：
+
+```ruby
+module Fruit
+  def self.test_method
+    "this is a test method in module"
+  end
+
+  def taste
+    'good'
+  end
+end
+```
+
+`include`用来包含一个module到class里面，module里面的普通方法会变成class里面的instance method:
+```ruby
+class Apple
+  include Fruit
+end
+puts Apple.new.taste
+# => good
+
+```
+
+`extend`把Module中的普通方法方法变成 "class method"
+
+```ruby
+class Orange
+  extend Fruit
+end
+
+puts Orange.taste
+# => good
+```
+
+## Class的继承
+
+```ruby
+class Parent
+  def family_name
+    'Green'
+  end
+end
+
+class Child < Parent
+end
+
+puts Child.new.family_name
+
+# => Green
+```
+
+## self
+在ruby中，self表示当前作用域的　method caller. 可以认为是调用方法的对象．例如, ：
+
+```ruby
+temp_string = '1,2,3'
+
+# 下面的`temp_string`就是一个caller
+temp_string.split ','
+```
+
+为了方便记忆，只要见到　`a.b()` 这个形式，就可以说 `a` 就是 "method caller", 在方法`b`中，
+self就指代"a", 例如，下面的例子，我们可以把self打印出来：
+
+```ruby
+class Apple
+  def print_self
+    puts self.inspect
+  end
+end
+
+Apple.new.print_self
+# => #<Apple:0x00000001f0dad8>
+```
+上面的　` #<Apple:0x00000001f0dad8>`就是 Apple.new　出来的实例．　
+
+## 常用技巧
+
+```ruby
+# 假设User有个属性，叫name
+class User
+  attr_accessor :name
+end
+
+jim = User.new
+jim.name = 'Jim'
+
+li_lei = User.name
+li_lei.name = 'Li Lei'
+```
+
+那么， 下面的代码
+```ruby
+[jim, li_lei].map { |user|
+  user.name
+}
+```
+
+等同于这种格式．(该格式常见于所有的开源项目中）
+```ruby
+[jim, li_lei].map(&:name)
+```
+
 
