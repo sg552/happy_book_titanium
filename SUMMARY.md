@@ -10,6 +10,8 @@
   * [Ti Module](part2_ti_advanced/ti_module.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
+  * [rails+thin 部署](part3_rails_premier/rails_thin_deploy.md)
+
   * [Ruby 进阶 ](part3_rails_premier/ruby_advanced.md)
   * [rails 单元测试](part3_rails_premier/rails_unit_test.md)
 * [Rails 进阶](part4_rails_advanced.md)
