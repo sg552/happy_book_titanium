@@ -1,0 +1,4 @@
+#Titanium Animation
+为了在UI交互时，画面效果更好看，更漂亮，我们经常需要使用到Titanium 动画。我们现在就来了解一下Titanium Animation。
+##Titanium中Animation的概念
+查看官方文档我们总结它的定义：定义一个Animation对象实施在一个view上，大多数情况下，一个Animation对象描述了一个动画的开始状态，最终状态以及所需的时间段。
