@@ -101,18 +101,44 @@ test_rescue.rb:10:in `<main>'
 ```
 
 ## block, Proc, lambda
+block, proc, lambda都源自于函数式语言的概念，是函数式(functional progarmming)编程的体现。在函数式编程语言的世界中，这三种结构叫做闭包(closure)。
+proc, lambda是可以单独调用的闭包，而block不可以。
 
-可以基本认为它们都是一个东西． 一个最简单的例子：
+换句话说，proc和lambda可以转化成为block，当做参数传递给方法，但是block只能接在方法调用后面，不可以单独调用。
 
+函数式编程的核心是：函数即数据!
+
+在ruby当中，`block`是接在方法调用(method call)后面的do...end或者使用花括号({})包起来的代码块(code block)会，可以认为成方法的参数(parameter)。如果使用的是花括号的方式，一定不要产生，认为它是C语言中的过程语句的幻觉。这是错误的认知，是新手经常会犯错的地方。
+
+以下两种写法是等价的:
 ```ruby
-[1,2,3].each do  |e|
-   puts e
+[1, 2, 3].each do |x|
+  puts x
 end
-
-# 等同于
-[1,2,3].each { |e| puts e }
 ```
-可以认为 `{ |e| puts e }` 与 `do |e| puts e end` 是一模一样的．
+```ruby
+[1, 2, 3].each {|x| puts x}
+```
+proc对象：
+```ruby
+proc = Proc.new {|x| puts x*2}
+proc.call(2) # 4
+```
+lambda对象：
+```ruby
+lam = lambda {|x| puts x*2}
+lam.call(2) # 4
+```
+在使用block的地方使用proc和lambda：
+```ruby
+[1, 2, 3].each {|x| puts x*2 } # 2, 4, 6
+[1, 2, 3].each(&proc) # 2, 4, 6
+[1, 2, 3].each(&lam)  # 2, 4, 6
+```
+
+lambda和proc的两个重要区别是:
+- Proc对象对参数数量检查不严格, lambda对象则要求参数的数量精确匹配
+- Proc对象和lambda对象对return关键字的处理不一样
 
 在block 中，不要用 return 关键字．　如果要返回一个值，直接把它放在最后就可以了．例如：
 
@@ -130,20 +156,27 @@ e is: 3
 ```
 
 ## Module
+module有两个典型的作用:
+- 提供namespace(开源代码中大量使用，比如Rails项目中使用的各种gem)
+- 取消多重继承代码的结构混乱(在ruby中，class可以认为是一个加强的module)
 
-Module 用来抽取公共的代码． 达到代码重用的目的．
+简单的使用方式为:
 
-例如给定一个module：
+一个典型的module为：
 
 ```ruby
 module Fruit
+  def self.test_method
+    "this is a test method in module"
+  end
+
   def taste
     'good'
   end
 end
 ```
 
-`include`用来把Module中的方法变成"instance method":
+`include`用来包含一个module到class里面，module里面的普通方法会变成class里面的instance method:
 ```ruby
 class Apple
   include Fruit
@@ -153,7 +186,7 @@ puts Apple.new.taste
 
 ```
 
-`extend`把Module中的方法变成 "class method"
+`extend`把Module中的普通方法方法变成 "class method"
 
 ```ruby
 class Orange
