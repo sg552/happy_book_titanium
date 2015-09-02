@@ -1,1 +1,3 @@
-_book
+_book/
+*.swp
+*.swo

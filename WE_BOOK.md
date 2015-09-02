@@ -7,6 +7,11 @@ TODO:
 4. 找到编辑。出版。
 
 
+目的：
+1. 给新人培训用。 （几大本： RUBY/RAILS, TITANIUM, LINUX/git/vim)
+2. 我们最好的名片， 要出书
+
+
 参与人员： happy team 全体。
 
 基于 Ti 4.0 SDK.  ( http://docs.appcelerator.com/platform/latest/#!/guide/Quick_Start)
@@ -16,38 +21,34 @@ TODO:
 * 前言
 
 ### 第一部分 titanium 入门
-* javascript 入门(高跃华)
-* node 入门
+* javascript 入门(高跃华) node 入门
 * titanium 入门( titanium 的实质)（郭卫东）
-* Alloy 框架(胡飞鹏)
-* Alloy 概述(胡飞鹏)
-* Alloy Model
-* Alloy View （各种插件，各种样式(tss)）
+* Alloy 框架(胡飞鹏) 概述(胡飞鹏)
+* Alloy View （各种插件，各种样式(tss)） (王涛)
 * Alloy 中的各种事件（胡海洋）
-* Alloy Controller（胡海洋）
-* Alloy Data Binding 数据绑定, database（胡海洋）
-* Alloy 的debug
+* Alloy Controller (譞)
+*（先不用,用得时候黄敏） Alloy Model, Alloy Data Binding 数据绑定, database
+* Alloy 的debug (谁想起来就谁加）
 
 ### 第二部分 Titanium 进阶
-* Ti Module
+*（先不用） Ti Module
 * Alloy widget    (黄敏)
-* 支付              （胡飞鹏）
-* 分享（微信）(张瑜 安卓版)（郭卫东）
-* 聊天 (文字，视频，语音）  (王涛)
-* 第三方登录
-* 地图(胡海洋)
-* push
-* 短信验证码
-* 调试UI (胡飞鹏)
-* tishadow快速开发框架
-* jade/coffee/stss/grunt （黄敏）
-* tishadow unit test
-* genymotion (王涛)
-* 适配不同的机型  （黄敏）
-* 使用自定义字体  （黄敏）
+* 适配不同的机型  （张瑜）
 * 使用i18n         （郭卫东）
 * 发布（安卓，ios) （郭卫东）
 * 集成web 页面    （黄敏）
+* （先不用） 支付              （胡飞鹏）
+* （先不用）分享（微信）(张瑜 安卓版)（郭卫东）
+* （先不用）聊天 (文字，视频，语音）  (王涛)
+* （先不用）第三方登录
+* （先不用）地图
+* （先不用）push
+* 短信验证码(等等跃华）
+* 调试UI (胡飞鹏) 使用自定义字体
+* tishadow快速开发框架 （等等）
+* jade/coffee/stss/grunt
+* （先不用）tishadow unit test
+* genymotion
 * 动画
 * debug, profiling
 * 找到内存泄漏的地方

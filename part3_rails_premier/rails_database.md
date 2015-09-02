@@ -33,9 +33,7 @@ rails数据库迁移和model验证
   class AddPriceToProducts < ActiveRecord::Migration
 
     def change
-
     end
-
   end
 
 
