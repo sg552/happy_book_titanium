@@ -4,6 +4,7 @@
   * [Javascript 入门](part1_ti_premier/javascript_premier.md)
     * [Object](part1_ti_premier/javascript_premier/js_object.md)
     * [Type, Value, Variable](part1_ti_premier/javascript_premier/type_value_variable.md)
+    * [Data Structure](part1_ti_premier/javascript_premier/js_data_structs.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [2DMatrix](part1_ti_premier/titanium_ui/2DMatrix.md)
