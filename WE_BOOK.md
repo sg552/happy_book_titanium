@@ -23,12 +23,28 @@ TODO:
 ### 第一部分 titanium 入门
 * javascript 入门(高跃华) node 入门
 * titanium 入门( titanium 的实质)（郭卫东）
+* titanium & Alloy 中的各种UI的组件 (每人认领2个，加上图片示例）
+  * ListView, Section, Item
+  * Button
+  * Label
+  * ScrollView
+  * TableView,
+  * TextField
+  * TextArea
+  * TableGroup
+  * TabGroup
+  * 以及其他好多
+（分配： 海洋： 0～A， 黄敏：B～iPad,  飞鹏： l ~ r , st： 张瑜， vw： 跃华。
+Deprecated 的不用写。 例如：Ti.UI.TabbedBar , 转而写： Ti.UI.iOS.TabbedBar )
+
+
 * Alloy 框架(胡飞鹏) 概述(胡飞鹏)
 * Alloy View （各种插件，各种样式(tss)） (王涛)
 * Alloy 中的各种事件（胡海洋）
 * Alloy Controller (譞)
 *（先不用,用得时候黄敏） Alloy Model, Alloy Data Binding 数据绑定, database
 * Alloy 的debug (谁想起来就谁加）
+
 
 ### 第二部分 Titanium 进阶
 *（先不用） Ti Module
