@@ -29,6 +29,10 @@
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [优化Rails](part4_rails_advanced/optimzation.md)
   * [元编程](part4_rails_advanced/metaprogramming.md)
+* [Web前端: html, css, javascript framework]
+  * [HTML](web_front_end/html.md)
+  * [CSS](web_front_end/css.md)
+  * [jQuery](web_front_end/jquery.md)
 * [Linux, 有用的工具，方法论](part5_tools_and_theory.md)
   * [Linux命令](part5_tools_and_theory/linux_commands.md)
   * [Linux快捷键](part5_tools_and_theory/linux_short_cuts.md)
@@ -36,3 +40,4 @@
   * [Vim](part5_tools_and_theory/vim.md)
   * [TODO 半年前的目录](part5_tools_and_theory/outline.md)
   * [如何提问](part5_tools_and_theory/how_to_ask_questions.md)
+
