@@ -1,1 +1,4 @@
 _book/
+*.swp
+*.swo
+.DS_Store
