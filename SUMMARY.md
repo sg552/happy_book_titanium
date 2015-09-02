@@ -21,9 +21,13 @@
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
+  * [rails+thin 部署](part3_rails_premier/rails_thin_deploy.md)
+
   * [接口入门](part3_rails_premier/rails_interface.md)
   * [Ruby 进阶 ](part3_rails_premier/ruby_advanced.md)
   * [rails 单元测试](part3_rails_premier/rails_unit_test.md)
+  * [rails 命令行](part3_rails_premier/rails_command_line.md)
+  * [rails 视图](part3_rails_premier/rails_view.md)
   * [rails 接口](part3_rails_premier/interface_document.md)
 * [Rails 进阶](part4_rails_advanced.md)
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
