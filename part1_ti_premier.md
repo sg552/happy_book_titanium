@@ -16,7 +16,7 @@ Titanium SDK tools 是一个基于Node.js的工具包,它会把我们的Javascri
 
 ### Titanium APIs
 
-Titanium API 是一套提供给我们访问原生API的 Javascript-based API
+Titanium API 是一套提供给我们访问原生API的 Javascript-based API. 比如当我们创建一个 Titanium button 的时候，Titanium SDK 实际上是创建了一个 native button 的 proxy(代理), 当我们改变它的样式或者事件的时候, 这个代理会改变相应的(native equivalent)原生当量, 当事件被触发后, 这个代理会bubble them up 到我们的Javascript code.
 
 ### Appcelerator Studio
 
@@ -26,7 +26,7 @@ Titanium API 是一套提供给我们访问原生API的 Javascript-based API
 
 ## Titanium 的运行机制(Titanium 的实质)
 
-该框架提供了一套基于Aptana3.0的开发工具，而对应的SDK是单独升级的。
+TODO
 
 ## 创建你的第一个Titanium App
 
