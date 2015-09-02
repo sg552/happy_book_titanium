@@ -49,7 +49,7 @@ TODO:
 * jade/coffee/stss/grunt
 * （先不用）tishadow unit test
 * genymotion
-* 动画
+* 动画 (胡海洋)
 * debug, profiling
 * 找到内存泄漏的地方
 * 命令行?
