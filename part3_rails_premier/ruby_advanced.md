@@ -239,7 +239,6 @@ Apple.new.print_self
 ```
 上面的　` #<Apple:0x00000001f0dad8>`就是 Apple.new　出来的实例．　
 
-
 ## 常用技巧
 
 ```ruby
