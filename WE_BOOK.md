@@ -24,6 +24,7 @@ TODO:
 * javascript 入门(高跃华) node 入门
 * titanium 入门( titanium 的实质)（郭卫东）
 * titanium & Alloy 中的各种UI的组件 (每人认领2个，加上图片示例）
+  * 2DMatrix(胡海洋）
   * ListView, Section, Item
   * Button
   * Label
