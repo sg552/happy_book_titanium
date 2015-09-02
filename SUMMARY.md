@@ -14,6 +14,7 @@
 
   * [Ruby 进阶 ](part3_rails_premier/ruby_advanced.md)
   * [rails 单元测试](part3_rails_premier/rails_unit_test.md)
+  * [rails 接口](part3_rails_premier/interface_document.md)
 * [Rails 进阶](part4_rails_advanced.md)
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [元编程](part4_rails_advanced/metaprogramming.md)
