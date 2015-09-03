@@ -98,11 +98,11 @@ https://css-tricks.com/specifics-on-css-specificity/
 如果我让p 的颜色是红色,有下面若干声明方式:
 
 ```css
-p             { color: red}
-.red          { color: red}
-div p         { color: red}
-div p.red     { color: red}
-#first_id     { color: red}
+p             { color: red }
+.red          { color: red }
+div p         { color: red }
+div p.red     { color: red }
+#first_id     { color: red }
 ```
 以及直接使用inline的方式:
 ```html
@@ -138,7 +138,8 @@ p             { color: silver !important} /* 权重无限大 */
 </div>
 ```
 
-下面结果来自 chrome developer tool: inspector
+下面结果来自 chrome developer tool: inspector, 可以看出, 排在第一位的是 !important属性,
+后面的以selector的权重(weight)排序,从高到低.
 
 ![CSS选择器权重](http://image.happysoft.cc/image/13/css_selector_weight.jpg)
 
@@ -160,6 +161,7 @@ p             { color: silver !important} /* 权重无限大 */
 ---         |---   | ---
 color       | 字体颜色      | red, #ececec
 font        | 字体全部属性  | italic bold 12px/30px arial,sans-serif;
+line-height | 字体的行高    | 30px
 background  | 背景          | #00FF00 url(bgimage.gif) no-repeat fixed top;
 border      | 边框          | 1px solid red
 margin      | 外边距        | 1px 3px 1px 3px
@@ -170,7 +172,7 @@ display     | 显示方式      | none, block, inline
 width       | 宽            | 100px
 height      | 高度          | 200px
 position    | 布局          | absolute, relative
-z-index     | 显示在上方的层次 | 0,1,100
+z-index     | 所属的显示层级| 10
 list-style  | list 属性     | square inside url('/i/arrow.gif');
 
 ## 有用的pseudo class (伪类)
@@ -210,8 +212,47 @@ pseudo class 有7个,其中两个很常用,可以大大简化CSS:
 ### static(默认布局)
 
 一个div就占一行. 各种元素以出现在HTML中的顺序为准.
+例如:
+
+```html
+<div style='border: 1px solid red; width: 50px; height: 60px'> </div>
+<div style='border: 1px solid blue; width: 50px; height: 60px'> </div>
+<div style='border: 1px solid green; width: 50px; height: 60px'> </div>
+```
+看起来就是:
+
+<div style='border: 1px solid red; width: 50px; height: 60px'> </div>
+<div style='border: 1px solid blue; width: 50px; height: 60px'> </div>
+<div style='border: 1px solid green; width: 50px; height: 60px'> </div>
 
 ### float(浮动定位)
+
+可以让某个块元素向左对齐排序,或者向右对齐排序
+
+```html
+<style>
+.float_demo_wrapper div{
+    border: 5px solid black;
+    width: 50px;
+    height: 60px;
+}
+</style>
+
+<div style='width: 500px' class='float_demo_wrapper'>
+
+  <div style='border-color:red; float:left'> </div>
+  <div style='border-color:blue; float:left'> </div>
+  <div style='border-color:green; float:left'> </div>
+
+  <div style='border-color:red; float:right'> </div>
+  <div style='border-color:blue; float:right'> </div>
+  <div style='border-color:green; float:right'> </div>
+</div>
+```
+结果如图:
+
+![同时有float:left,right的布局](http://image.happysoft.cc/image/15/float_demo_left_right.jpg)
+
 
 
 ### relative(相对定位)
@@ -263,6 +304,55 @@ pseudo class 有7个,其中两个很常用,可以大大简化CSS:
   </div>
 </div>
 
+### static 与float的混合
+
+absolute  不会影响到其他块元素
+
+relative 会占用static布局的位置
+
+static 与 float 默认不在一个定位中,不会互相影响.  但是clear:left/right/both下面的static布局, 就
+会在高度上收到影响,认为clear前面的float是占用了高度的.(具体看例子)
+
+如果 我们加上一个 static position(默认的DIV)之后, 看起来就是:
+```html
+<style>
+.float_demo_wrapper div{
+    border: 5px solid black;
+    width: 50px;
+    height: 60px;
+}
+
+</style>
+<div style='width: 500px' class='float_demo_wrapper'>
+
+<div style='border-color:red; float:left'> </div>
+<div style='border-color:blue; float:left'> </div>
+<div style='border-color:green; float:left'> </div>
+
+<div style='border-color:red; float:right'> </div>
+<div style='border-color:blue; float:right'> </div>
+<div style='border-color:green; float:right'> </div>
+
+<div style='background-color:orange; width: 80px'>我是静态的DIV</div>
+
+</div>
+```
+
+看起来就是, 该 static position div被浏览器放在了最开始的位置(top: 0, left: 0):
+
+![没有加上clear的static定位的 div](http://image.happysoft.cc/image/16/demo_float_left_right_with_static.jpg)
+
+加上了clear: left后,
+```html
+<div style='clear: both; background-color:orange; width: 80px'>我是静态的DIV</div>
+```
+这个静态的div 被放置在了float 定位的div的 下面.
+
+![加上了clear的static定位的 div](http://image.happysoft.cc/image/17/demo_float_left_right_with_cleared_static.jpg)
+
+之所以看起来比较复杂,是因为 在浏览器处理时,把static放在了一个页面空间中,
+把float的部分, 放在了另外的空间中. 使用clear之后, 接下来的static内容就会识别前面的float空间.
+具体的内容说起来比较学究, 所以有兴趣的同学请自行查看 文档.
 
 ## 数值属性的简写
 
