@@ -142,6 +142,145 @@ p             { color: silver !important} /* 权重无限大 */
 
 ![CSS选择器权重](http://image.happysoft.cc/image/13/css_selector_weight.jpg)
 
+## 调试CSS的方法:
+
+### 普通的方法
+在编辑器中修改代码, 保存, 切换到浏览器窗口,刷新.
+
+### 推荐的方法
+
+使用 developer tools. 在所有浏览器中都是这个名字. 用法几乎一样.
+用小放大镜图标,找到你希望修改的元素, 点击之, 会看到对应的所有属性.
+点击任意一个属性, 输入数字,或者按键盘的 上下箭头, 即可用 "所见即所得"的方式来调试页面.
+对于调整: 字体大小, div的 margin/padding/border的 top, left 值.特别有效.
 
 ## 常见的样式
-TODO
+
+名称        | 说明 | 例子
+---         |---   | ---
+color       | 字体颜色      | red, #ececec
+font        | 字体全部属性  | italic bold 12px/30px arial,sans-serif;
+background  | 背景          | #00FF00 url(bgimage.gif) no-repeat fixed top;
+border      | 边框          | 1px solid red
+margin      | 外边距        | 1px 3px 1px 3px
+padding     | 内边距        | 5px 10px 5px 10px
+float       | 浮动方式      | left, right
+clear       | 清除前面的浮动| left, right, both
+display     | 显示方式      | none, block, inline
+width       | 宽            | 100px
+height      | 高度          | 200px
+position    | 布局          | absolute, relative
+z-index     | 显示在上方的层次 | 0,1,100
+list-style  | list 属性     | square inside url('/i/arrow.gif');
+
+## 有用的pseudo class (伪类)
+
+pseudo class 有7个,其中两个很常用,可以大大简化CSS:
+
+伪类名称  | 说明
+---       |---
+:focus    | 表单项在输入状态的样式
+:hover    | 某个元素被鼠标悬停时的样式
+
+所以,我们这样声明:
+
+```html
+<style>
+.my_div{ background-color: red }
+.my_div:hover{ background-color: green }
+</style>
+
+<div class='my_div' style='width: 100px; height: 100px'></div>
+```
+
+就可以看到, 鼠标一移动到这个div上,这个区域就从 红色 变成了绿色
+
+## Box-Modeling 盒子模型(margin, border, padding的关系)
+
+如下图.  最外层的红色是外边距(margin), 最内层的绿色是内边距(padding), 中间的黑色粗线是border.
+
+我们为某个div设置width/height时,指的都是border的宽和高.
+
+![div盒子模型](http://image.happysoft.cc/image/14/box-modeling.jpg)
+
+## 定位(Positions)
+
+分成: static(默认), float, relative, absolute 等.
+
+### static(默认布局)
+
+一个div就占一行. 各种元素以出现在HTML中的顺序为准.
+
+### float(浮动定位)
+
+
+### relative(相对定位)
+
+出现在与它 父类元素的 相对位置. 例如:
+
+```html
+<div style='width: 200px; height: 200px; border: 1px solid blue' >
+  <div style='position:relative; left: 50px; top: 80px;
+    width: 50px; height: 50px;
+    background-color: red; '>
+  </div>
+</div>
+```
+看起来就是:
+<div style='width: 200px; height: 200px; border: 1px solid blue' >
+  <div style='position:relative; left: 50px; top: 80px;
+    width: 50px; height: 50px;
+    background-color: red; '>
+  </div>
+</div>
+
+### absolute 绝对定位
+
+它的参照父类元素是最上一个 "absolute, 或者 relative" 的元素,
+而不是最近父类的元素.
+
+出现的位置是标注的top,left位置上. 例如, 下面有三个 div,  最内侧的 div是absolute ,
+第二个div是普通的static 定位, 所以, 第三个div就会以最外层的div做参照.
+
+```html
+<div style='width: 300px; height: 300px; border: 2px solid red; position: relative'>
+  <div style='width: 200px; height: 200px; border: 1px solid blue; margin: 100px;' >
+    <div style='position:relative; left: 50px; top: 80px;
+      width: 50px; height: 50px;
+      background-color: red; '>
+    </div>
+  </div>
+</div>
+```
+看起来就是(注意: 第三个 div出现在了第二个div之外)
+
+<div style='width: 300px; height: 300px; border: 2px solid red; position: relative'>
+  <div style='width: 200px; height: 200px; border: 1px solid blue; margin: 100px;' >
+    <div style='position:absolute; left: 50px; top: 80px;
+      width: 50px; height: 50px;
+      background-color: red; '>
+    </div>
+  </div>
+</div>
+
+
+## 数值属性的简写
+
+对于 margin/padding 等描述"上,右,下,左"的数值属性,我们发现它可以这样写:
+
+```css
+margin-top: 5px;
+margin-right: 10px;
+margin-bottom: 5px;
+margin-left: 10px;
+```
+
+等同于下面三种形式:
+
+```css
+margin: 5px 10px 5px 10px;
+margin: 5px 10 5 10;
+margin: 5px 10px;
+```
+
+
