@@ -23,7 +23,7 @@
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
   * [rails+thin 部署](part3_rails_premier/rails_thin_deploy.md)
-
+  * [form](part3_rails_premier/form_object.md)
   * [接口入门](part3_rails_premier/rails_interface.md)
   * [Ruby 进阶 ](part3_rails_premier/ruby_advanced.md)
   * [rails 单元测试](part3_rails_premier/rails_unit_test.md)
