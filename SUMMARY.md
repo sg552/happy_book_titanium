@@ -47,4 +47,4 @@
   * [TODO 半年前的目录](part5_tools_and_theory/outline.md)
   * [如何提问](part5_tools_and_theory/how_to_ask_questions.md)
 * [读书清单](part5_tools_and_theory/book_list.md)
-
+  * [几点经验](part5_tools_and_theory/experience.md)

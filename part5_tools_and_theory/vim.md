@@ -23,14 +23,14 @@
 
 （所以个人认为 ios 的xcode 开发效率不会太高）
 
-# 好键盘很重要, 它是我们的武器.
+## 好键盘很重要, 它是我们的武器.
 
 市面上几十块的键盘就算了吧。起码要买入门的机械键盘。 这个不到200块的狼蛛键盘就不错：
 http://item.jd.com/1118133.html
 
 基本上我们公司人手一个。
 
-# 合适的键盘的布局
+## 合适的键盘的布局
 
 `\` 这个键 很诡异。它的位置一般在 Enter的左侧（ 单引号 `'` 的右侧），
 或者在 `backspace`  的左侧，`+`的右侧，跟 `[`和 `]` 一样，是最难以摸正确的按键。
@@ -65,7 +65,7 @@ F1，F2，...F12， 也都最好是可以一键按到的。
 
 如何按alt? 我一般是用大拇指。
 
-# 如何使用快捷键。
+## 如何使用快捷键。
 
 用好快捷键可以让你的开发速度再次提高一个台阶。
 
@@ -84,7 +84,7 @@ F1，F2，...F12， 也都最好是可以一键按到的。
 
 所以不建议使用 苹果键盘
 
-# 选择什么编辑器?
+## 选择什么编辑器?
 
 <<Pragmatic Programmer>>:
 > 世界上只有三种编辑器：　Vim, Emacs　和其他.
@@ -99,31 +99,31 @@ JBuilder, Visual Studio, Sublime 等.
 
 ## Vim的基本操作
 
-上下左右：  jkhl
-下一个单词：  w
-前一个单词：  b
-下一屏： ctrl + f
-上一屏 :  ctrl + b
-搜索some_string：    /some_string
-把全局的some_string 替换成 new_string :   %s/some_string/new_string/g
-继续搜索下一个：  n
-继续搜索前一个 :   N (shift + n)
-补全：    ctrl + n ,  ctrl + p  (next, previous的缩写)
-删掉一个字母：  x
-删掉一个单词：  dw
-删掉一行：   dd
-删掉3行：    3d
-复制一个单词：  yw
-复制当前行： yy
-粘贴： p
-选中N行：   shift + v , 再 jk
-快速打开一个文件：  ctrl + t
-快速打开前一个文件：  ctrl + e
-跳到文件头： gg
-跳到文件末尾： shift + g
-在光标前新增内容： i  (insert的缩写)
-在光标后新增内容： a (add的缩写）
-快速的跳到该行最后：  shift + 4
-快速的跳到该行最前：  0
-上一次编辑的地方：  g;
-下一次编辑的地方：  g,
+- 上下左右：  jkhl
+- 下一个单词：  w
+- 前一个单词：  b
+- 下一屏： ctrl + f
+- 上一屏 :  ctrl + b
+- 搜索some_string：    /some_string
+- 把全局的some_string 替换成 new_string :   %s/some_string/new_string/g
+- 继续搜索下一个：  n
+- 继续搜索前一个 :   N (shift + n)
+- 补全：    ctrl + n ,  ctrl + p  (next, previous的缩写)
+- 删掉一个字母：  x
+- 删掉一个单词：  dw
+- 删掉一行：   dd
+- 删掉3行：    3d
+- 复制一个单词：  yw
+- 复制当前行： yy
+- 粘贴： p
+- 选中N行：   shift + v , 再 jk
+- 快速打开一个文件：  ctrl + t
+- 快速打开前一个文件：  ctrl + e
+- 跳到文件头： gg
+- 跳到文件末尾： shift + g
+- 在光标前新增内容： i  (insert的缩写)
+- 在光标后新增内容： a (add的缩写）
+- 快速的跳到该行最后：  shift + 4
+- 快速的跳到该行最前：  0
+- 上一次编辑的地方：  g;
+- 下一次编辑的地方：  g,

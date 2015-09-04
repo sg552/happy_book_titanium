@@ -1,1 +1,3 @@
-Welcome to Tools and Theory World!
+方法论, 工具, LINUX 以及 命令行. 数据库
+
+职业规划,管理实践等等

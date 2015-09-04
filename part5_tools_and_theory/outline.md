@@ -121,3 +121,48 @@ Object C 迟早会退休，跟当年的 汇编一样。
 3. 不要用过低的显示器。小心你的颈椎！
 
 4. 每用1小时左右的电脑，就站起来活动会儿。 手头放个秒表很有效果。（可惜自己创业后就很难这样了）
+
+## 关于程序的一点儿思考
+
+1. 为什么行末尾要加分号？  为什么每个方法结束要放(), {} ?
+
+2. 为什么 声明变量，常量，数组的方法不一样？
+
+```php
+var $apple = 'apple';
+
+define('APPLE', 'an apple');
+
+$apples = array('apple1', 'apple2', 'apple3');
+```
+
+像ruby, js 那样一个写法多好:
+
+```ruby
+$apple = 'apple'
+
+APPLE= 'apple'
+
+$apples = ['apple1', 'apple2']
+```
+
+3. 难道是我 MVC框架用多了？ 感觉不用MVC 就 没法干活。特别看不了这样的代码：
+
+```php
+<?php
+
+  echo " ... "
+
+?>
+```
+
+##  软件项目中的看起来的美好 ( some useless technologies)
+
+显示适配： 一套代码， 多种设备都可以适配。
+如果用纯 CSS 写的话， 就会特别麻烦。
+移动屏幕： 一套代码
+PC 屏幕： 一套代码。 （优酷的移动下载页面）
+
+I8N： internationalization : 一套代码， 显示多种不同的语言。
+
+数据库的适配： hibernate , rails Active Record: 都支持数据库的平滑迁 移。 支持多种数据库。
