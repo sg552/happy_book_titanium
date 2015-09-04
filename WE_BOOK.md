@@ -23,12 +23,29 @@ TODO:
 ### 第一部分 titanium 入门
 * javascript 入门(高跃华) node 入门
 * titanium 入门( titanium 的实质)（郭卫东）
+* titanium & Alloy 中的各种UI的组件 (每人认领2个，加上图片示例）
+  * 2DMatrix(胡海洋）
+  * ListView, Section, Item
+  * Button
+  * Label
+  * ScrollView
+  * TableView,
+  * TextField
+  * TextArea
+  * TableGroup
+  * TabGroup
+  * 以及其他好多
+（分配： 海洋： 0～A， 黄敏：B～iPad,  飞鹏： l ~ r , st： 张瑜， vw： 跃华。
+Deprecated 的不用写。 例如：Ti.UI.TabbedBar , 转而写： Ti.UI.iOS.TabbedBar )
+
+
 * Alloy 框架(胡飞鹏) 概述(胡飞鹏)
 * Alloy View （各种插件，各种样式(tss)） (王涛)
 * Alloy 中的各种事件（胡海洋）
 * Alloy Controller (譞)
 *（先不用,用得时候黄敏） Alloy Model, Alloy Data Binding 数据绑定, database
 * Alloy 的debug (谁想起来就谁加）
+
 
 ### 第二部分 Titanium 进阶
 *（先不用） Ti Module
@@ -49,7 +66,7 @@ TODO:
 * jade/coffee/stss/grunt
 * （先不用）tishadow unit test
 * genymotion
-* 动画
+* 动画 (胡海洋)
 * debug, profiling
 * 找到内存泄漏的地方
 * 命令行?
@@ -57,20 +74,19 @@ TODO:
 
 
 ### 第三部分 rails 入门
-* ruby 入门（高跃华）
-* rails 入门(浩浩)
-* 接口入门（胡海洋）
-* 操作数据库(户晨飞)
-* Model 的可见性: 任意一个Model, 可以在整个Rails项目中的任何一个文件中调用.
-* 数据库迁移， model验证，callbacks, 关联，查询(李戈)
-* 操作视图层(张瑜)
-* controller: 路由，action(yuxuan,张瑜)
-* rails单元测试(李戈)
-* debug rails
-* rails 命令行(张瑜)
-* 部署rails (rails + thin, asset pipeline)
+* ruby 入门（大师）
+* rails 入门(大师)
+* 接口入门（双姐）
+* Model 的可见性: 任意一个Model, 可以在整个Rails项目中的任何一个文件中调用. (浩浩)
+* 数据库迁移， model验证，(李戈)
+* 操作数据库, callbacks, 关联，查询(浩浩)
+* 操作视图层, html.erb 文件(view) (明常)
+* controller: 路由，action(浩浩)
+* rails单元测试(大师)
+* debug rails(全体,都可以把内容加进去)
+* rails 命令行(彦民) http://guides.rubyonrails.org/command_line.html
+* 部署rails (rails + thin, asset pipeline) (志文)
 * 表单对象, rails view helper (大师)
-
 ### 第四部分 rails 进阶
 * 再谈rails单元测试, 如何把握好测试的度 (高跃华)
 * 使用selenium 进行自动化测试
