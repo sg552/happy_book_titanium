@@ -1,5 +1,6 @@
 # Summary
 
+* [前言](preface.md)
 * [Titanium 入门](part1_ti_premier.md)
   * [Javascript 入门](part1_ti_premier/javascript_premier.md)
     * [Object](part1_ti_premier/javascript_premier/js_object.md)
@@ -37,6 +38,7 @@
   * [HTML](web_front_end/html.md)
   * [CSS](web_front_end/css.md)
   * [jQuery](web_front_end/jquery.md)
+  * [各种组件](web_front_end/js_components.md)
 * [Linux, 有用的工具，方法论](part5_tools_and_theory.md)
   * [Linux命令](part5_tools_and_theory/linux_commands.md)
   * [Linux快捷键](part5_tools_and_theory/linux_short_cuts.md)
@@ -44,4 +46,5 @@
   * [Vim](part5_tools_and_theory/vim.md)
   * [TODO 半年前的目录](part5_tools_and_theory/outline.md)
   * [如何提问](part5_tools_and_theory/how_to_ask_questions.md)
+* [读书清单](part5_tools_and_theory/book_list.md)
 

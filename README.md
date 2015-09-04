@@ -1,4 +1,4 @@
-<center>This is our team's book about Ruby, Titanium and Rails.</center>
+<center>使用 Titanium Ruby on Rails 进行敏捷开发.</center>
 
 贡献Titanium文档的朋友，请修改相关的章节.
 
