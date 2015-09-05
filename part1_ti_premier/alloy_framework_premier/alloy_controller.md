@@ -3,10 +3,10 @@
 
 ##什么是Controllers
 
-* 在 `app/controller`目录下面
-* 用 `javascript` `js` 文件
-*  *View* 视图对 *UI* 的控制
-* 与 `model` 进行沟通
+* 在 *app/controller*目录下面
+* 用 **javascript** 文件
+*  **View** 视图对 **UI** 的控制
+* 与 **model**进行沟通
 
 ##Controllers与Views的关联
 
@@ -14,7 +14,7 @@
 
 *app/controllers/index.js* :
 
-```
+```javascript
 function doClick(e){	
 	alert($.myLabel.text);	
 }	
@@ -23,7 +23,7 @@ $.index.open()
 
 *app/views/index.xml* :
 
-```
+```xml
 <Alloy>	
 	<Window class=“myWin”>	
 		<Label id=“myLabel” onClick=“doClick”>Hello</Label>
@@ -35,15 +35,21 @@ $.index.open()
 
 `$.myLabel` : **controller**通过`$`+`id`这种特殊的方式`$.<id>`，能够获取到**view**视图定义好的实例对象，并且能够通过它拿到并设置它的属性。
 
-例如`$.myLabel.text = "newText"` `$.myLabel.hide()`等等。
+例如:
 
-需要特别提及的是**View**中的**top-leve UI**(最顶级的容器)有默认的id,如*3-1*中的`window`有默认的`id`,通过*index.js*中的`$.index.open()`能够直接获取它的对象调用打开的方法。默认值为当前`controller`文件名。
+```javascript
+$.myLabel.text = "newText" 
+$.myLabel.hide() 
+```
+
+需要特别提及的是**View**中的**top-leve UI**(最顶级的容器)有默认的**id**,如*3-1*中的`window`有默认的`id`,通过*index.js*中的`$.index.open()`能够直接获取它的对象调用打开的方法。默认值为当前`controller`文件名。
 
 
 ##controller与其他controller和view的关联
 
 可以通过下面的方式获取其他controller的对象，获取它的视图并打开。
-```
+
+```javascript
 Alloy.createController(“myController”).getView().open();
 ```
 
@@ -64,7 +70,7 @@ controller ＝ Alloy.createController(“myController”)
 
 *app/views/index.xml* :
 
-```
+```xml
 <Alloy>	
 	<Window>	
 		<Require id=“myLabel” src=“myLabelFile” onNotify=“dosth”/>
@@ -74,7 +80,7 @@ controller ＝ Alloy.createController(“myController”)
 
 *app/views/myLabelFile.xml* :
 
-```
+```xml
 <Alloy>	
 	<Label id=“myLabel” onClick=“pressClick”>Hello</Label>
 </Alloy>	
@@ -82,7 +88,7 @@ controller ＝ Alloy.createController(“myController”)
 
 *app/controllers/myLabelFile.js* :
 
-```
+```javascript
 function pressClick(e)	{	
 	$.trigger(‘notify’);	
 }	
@@ -90,7 +96,7 @@ function pressClick(e)	{
 
 当`index`里的`label`被`click`的时候,会触发*myLabelFile controller*里面的`pressClick()`事件。
 
-## 继承，现在很少用，不写
+## Inheritance(继承)，现在很少用，不写
 
 ## 特殊常量
 
@@ -104,7 +110,7 @@ function pressClick(e)	{
 
 *app/controllers/index.js*
 
-```
+```javascript
 var argSet = {
 	title: “myHtle”,		
 	url: “www.baidu.com”	
@@ -114,31 +120,33 @@ var myView=Alloy.createController(“myTableView”,argSet).open();
 
 *app/controllers/myTabelView.js*
 
-```
+```javascript
 var args = arguments[0] || {};	
 var title = args.title || ‘’;	
 var url = args.url || ‘’;	
 ```
 在`controller`创建的时候在第二个参数加上自己想要传递的内容,在下一个页面用`var args = arguments[0] || {};`来接受传参。
 
-## 全局的命名空间
+## Global namespace(全局的命名空间)
 
 能够在不同的controller引用全局的命名空间里面的对象或变量。
 
 *app/controllers/index.js*
-```
+
+```	javascript
 $.index.open();
 Alloy.Globals.parent = $.index;
 ```
 
 可以在别的`controller`文件里面对`index`进行操作:
 *app/controllers/other.js*
-```
+
+```javascript
 var parent = Alloy.Globals.parent;
 parent.close();
 ```
 
-## 初始化文件
+## Initializer File(初始化文件)
 
 `app/alloy.js`在软件运行的生命周期中存在,并且是优先于`index.js`就在程序的初始化的时候执行。
 
@@ -148,7 +156,7 @@ parent.close();
 
 *app/libs/help.js*
 
-```
+```javascript
 function say_hello(name){
     alert('hello'+name);
 }
@@ -156,14 +164,14 @@ exports.say_hello = say_hello ;
 ```
 *app/controller/index.js*
 
-```
+```javascript
 var help = require("help") ;
 help.say_hello("xuan");
 $.index.open();
 ```
-*输出:*
+`>`为输出结果:
 
-```
+```javascript
 > hello xuan
 ```
 
@@ -179,4 +187,4 @@ app/
 ├──styles
 └──views
    └── index.xml
-```
+```			

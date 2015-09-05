@@ -74,20 +74,19 @@ Deprecated 的不用写。 例如：Ti.UI.TabbedBar , 转而写： Ti.UI.iOS.Tab
 
 
 ### 第三部分 rails 入门
-* ruby 入门（高跃华）
-* rails 入门(浩浩)
-* 接口入门（胡海洋）
-* 操作数据库(户晨飞)
-* Model 的可见性: 任意一个Model, 可以在整个Rails项目中的任何一个文件中调用.
-* 数据库迁移， model验证，callbacks, 关联，查询(李戈)
-* 操作视图层(张瑜)
-* controller: 路由，action(yuxuan,张瑜)
-* rails单元测试(李戈)
-* debug rails
-* rails 命令行(张瑜)
-* 部署rails (rails + thin, asset pipeline)
+* ruby 入门（大师）
+* rails 入门(大师)
+* 接口入门（双姐）
+* Model 的可见性: 任意一个Model, 可以在整个Rails项目中的任何一个文件中调用. (浩浩)
+* 数据库迁移， model验证，(李戈)
+* 操作数据库, callbacks, 关联，查询(浩浩)
+* 操作视图层, html.erb 文件(view) (明常)
+* controller: 路由，action(浩浩)
+* rails单元测试(大师)
+* debug rails(全体,都可以把内容加进去)
+* rails 命令行(彦民) http://guides.rubyonrails.org/command_line.html
+* 部署rails (rails + thin, asset pipeline) (志文)
 * 表单对象, rails view helper (大师)
-
 ### 第四部分 rails 进阶
 * 再谈rails单元测试, 如何把握好测试的度 (高跃华)
 * 使用selenium 进行自动化测试
