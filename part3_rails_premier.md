@@ -1,1 +1,1 @@
-Welcome to Rails World!
+Rails入门
