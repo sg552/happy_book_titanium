@@ -10,6 +10,7 @@
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [2DMatrix](part1_ti_premier/titanium_ui/2DMatrix.md)
+    * [Ti.UI.Label](part1_ti_premier/titanium_ui/Label.md)
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework_premier/alloy_framework.md)
     * [Alloy Controller](part1_ti_premier/alloy_framework_premier/alloy_controller.md)
