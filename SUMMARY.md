@@ -2,6 +2,7 @@
 
 * [前言](preface.md)
 * [Titanium 入门](part1_ti_premier.md)
+  * [搭建环境](part1_ti_premier/setup_titanium.md)
   * [Javascript 入门](part1_ti_premier/javascript_premier.md)
     * [Object](part1_ti_premier/javascript_premier/js_object.md)
     * [Type, Value, Variable](part1_ti_premier/javascript_premier/type_value_variable.md)
