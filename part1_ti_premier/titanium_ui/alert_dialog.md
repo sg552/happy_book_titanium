@@ -31,3 +31,132 @@ alert('hello world ！');
 `title`和`ok`属性值不能在对话框已经显示之后再来改变。只有在Andorid上，你才能在对话框已经被显示之后修改`message`的值。
 
 ##各种类型的alert dialog
+
+###单按钮对话框（使用`alert()`）
+使用`alert()`创建一个单按钮对话框
+
+```javascript
+Ti.UI.setBackgroundColor('white');
+var win = Ti.UI.createWindow({
+  title: 'Click window to test',
+  backgroundColor: 'white',
+  exitOnClose: true,
+  fullscreen: false
+});
+
+win.addEventListener('click', function(e){
+    alert('Testing alert !');
+});
+win.open();
+```
+
+###单按钮对话框（标准版）
+创建一个没有预先定义赋值给`buttonNames`的对话框，点击window时，显示该对话框。
+
+```javascript
+Ti.UI.setBackgroundColor('white');
+var win = Ti.UI.createWindow({
+  title: 'Click window to test',
+  backgroundColor: 'white',
+  exitOnClose: true,
+  fullscreen: false
+});
+
+win.addEventListener('click', function(e){
+    var dialog = Ti.UI.createAlertDialog({
+      message: 'I am a Single-button Alert (standard)',
+      ok: 'Okay',
+      title: 'Write you wanna '
+    });
+    dialog.show();
+});
+win.open();
+```
+
+###三个按钮的对话框
+创建一个有三个按钮的对话框，当点击window时被显示，并且在取消按钮被点击时，在日志中输出一条信息。
+
+```javascript
+Ti.UI.setBackgroundColor('white');
+var win = Ti.UI.createWindow({
+  title: 'Click window to test',
+  backgroundColor: 'white',
+  exitOnClose: true,
+  fullscreen: false
+});
+win.addEventListener('click', function(e){
+    var dialog = Ti.UI.createAlertDialog({
+      cancel: 1,
+      buttonNames: ['Confirm', 'Cancel', 'Help'],
+      message: 'Would you like to delete the file?',
+      title: 'Delete'
+});
+    dialog.addEventListener('click', function(e){
+      if (e.index === e.source.cancel){
+      Ti.API.info('The cancel button was clicked');
+      }
+      Ti.API.info('e.cancel: ' + e.cancel);
+      Ti.API.info('e.source.cancel: ' + e.source.cancel);
+      Ti.API.info('e.index: ' + e.index);
+      });
+    dialog.show();
+    });
+win.open();
+```
+
+###允许输入简短文本的对话框(只支持iOS 5以及更高的版本)
+创建一个允许用户输入简单文本的对话框，点击window时显示，并且在点击ok按钮时，在日志中输入用户输入的值。
+
+```javascript
+Ti.UI.setBackgroundColor('white');
+var win = Ti.UI.createWindow({
+  title: 'Click window to test'
+});
+win.addEventListener('click', function(e){
+    var dialog = Ti.UI.createAlertDialog({
+      title: 'Enter text',
+      style: Ti.UI.iPhone.AlertDialogStyle.PLAIN_TEXT_INPUT,
+      buttonNames: ['OK']
+});
+    dialog.addEventListener('click', function(e){
+      Ti.API.info('e.text: ' + e.text);
+      });
+    dialog.show();
+});
+win.open();
+```
+
+##在Alloy中实现上面三个按钮的对话框效果
+
+###alertdialog.xml:
+
+```xml
+<Alloy>
+    <Window id="win" onClick="showDialog" title="Click window to test" backgroundColor="white"
+    exitOnClose="true" fullscreen="false" >
+
+        <AlertDialog id="dialog" onClick="doClick" title="Delete"
+        message="Would you like to delete the file?" cancel="1">
+
+            <!-- The ButtonNames tag sets the buttonNames property. -->
+            <ButtonNames>
+                <ButtonName>Confirm</ButtonName>
+                <ButtonName>Cancel</ButtonName>
+                <ButtonName>Help</ButtonName>
+            </ButtonNames>
+        </AlertDialog>
+    </Window>
+</Alloy>
+```
+
+###alertdialog.js
+
+```javascript
+function showDialog(){
+    $.dialog.show();
+};
+
+function doClick(e){
+    Ti.API.info('e.text: ' + e.text);
+};
+```
