@@ -13,6 +13,7 @@
     * [3DMatrix](part1_ti_premier/titanium_ui/3DMatrix.md)
     * [ActivityIndicator](part1_ti_premier/titanium_ui/activity_indicator.md)
     * [ActivityIndicatorStyle](part1_ti_premier/titanium_ui/activity_indicator_style.md)
+    * [AlertDialog](part1_ti_premier/titanium_ui/alert_dialog.md)
     * [Ti.UI.Label](part1_ti_premier/titanium_ui/Label.md)
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework_premier/alloy_framework.md)
