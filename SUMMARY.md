@@ -35,6 +35,7 @@
     * [Ti.UI.ScrollView](part1_ti_premier/Titanium/UI/ScrollView.md)
     * [Ti.UI.SearchBar](part1_ti_premier/Titanium/UI/SearchBar.md)
     * [Ti.UI.TabGroup](part1_ti_premier/Titanium/UI/TabGroup.md)
+    * [Ti.UI.TableView](part1_ti_premier/Titanium/UI/TableView.md)
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
