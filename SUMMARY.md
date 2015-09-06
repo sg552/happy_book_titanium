@@ -22,6 +22,8 @@
     * [Ti.UI.Clipboard](part1_ti_premier/Titanium/UI/Clipboard.md)
     * [Ti.UI.Dashboard](part1_ti_premier/Titanium/UI/Dashboard.md)
     * [Ti.UI.EmailDialog](part1_ti_premier/Titanium/UI/EmailDialog.md)
+    * [Ti.UI.ScrollView](part1_ti_premier/Titanium/UI/ScrollView.md)
+    * [Ti.UI.SearchBar](part1_ti_premier/Titanium/UI/SearchBar.md)
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
