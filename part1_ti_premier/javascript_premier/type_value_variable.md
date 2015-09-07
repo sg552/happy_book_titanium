@@ -29,3 +29,6 @@ var i;
 var message = "Hello, world";
 var i = 0, j = 0 , k = 0;
 ```
+
+TODO
+### 加上一些使用这些类型的最佳实现的指导
