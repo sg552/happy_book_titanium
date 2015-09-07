@@ -7,6 +7,8 @@
     * [Object](part1_ti_premier/javascript_premier/js_object.md)
     * [Type, Value, Variable](part1_ti_premier/javascript_premier/type_value_variable.md)
     * [Data Structure](part1_ti_premier/javascript_premier/js_data_structs.md)
+    * [Function](part1_ti_premier/javascript_premier/function.md)
+    * [Function Programming](part1_ti_premier/javascript_premier/functional_programming.md)
     * [ES 5新的方法](part1_ti_premier/javascript_premier/es5_array_methods.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
