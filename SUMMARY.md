@@ -25,7 +25,7 @@
     * [SearchBar](part1_ti_premier/titanium_ui/search_bar.md)
     * [TabGroup](part1_ti_premier/titanium_ui/tab_group.md)
     * [TableView](part1_ti_premier/titanium_ui/table_view.md)
-    * [Ti.UI.Label](part1_ti_premier/titanium_ui/Label.md)
+    * [Label](part1_ti_premier/titanium_ui/label.md)
     * [View](part1_ti_premier/titanium_ui/view.md)
     * [Web View](part1_ti_premier/titanium_ui/web_view.md)
     * [Window](part1_ti_premier/titanium_ui/window.md)
