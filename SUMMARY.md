@@ -78,6 +78,7 @@
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [优化Rails](part4_rails_advanced/optimzation.md)
   * [元编程](part4_rails_advanced/metaprogramming.md)
+* [Docker 入门](part5_docker_premier.md)
 * [Web前端: html, css, javascript framework]
   * [HTML](web_front_end/html.md)
   * [CSS](web_front_end/css.md)
