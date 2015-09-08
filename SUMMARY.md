@@ -10,6 +10,7 @@
     * [Function](part1_ti_premier/javascript_premier/function.md)
     * [Function Programming](part1_ti_premier/javascript_premier/functional_programming.md)
     * [Functions As Namespaces](part1_ti_premier/javascript_premier/functions_as_namespaces.md)
+    * [Object As Namespaces](part1_ti_premier/javascript_premier/object_as_namespace.md)
     * [ES 5新的方法](part1_ti_premier/javascript_premier/es5_array_methods.md)
     * [Best Practices In Titanium](part1_ti_premier/javascript_premier/best_practices_in_titanium.md)
   * [Javascript 进阶]
