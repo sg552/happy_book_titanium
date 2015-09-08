@@ -132,3 +132,31 @@ c.counter # => 1
 d.counter # => 2
 ```
 希望读者可以通过以上简单的小例子，对closure概念有一个了解。
+
+因为我们知道很多语言的编译器都是使用Ｃ语言编写，比如说Ruby等。
+
+Ruby的语法本身，只是封装了一套Ｃ API。所以，从这个角度讲，了解C是如何处理变量scope，就很有必要了。
+
+C通过三个维度对变量进行描述，分别是：
+- 存储时期(storage duration)
+- 作用域(scope)
+- 链接(linkage)
+
+存储时期有两种：
+- 静态存储时期(static storage duratoin)
+- 自动存储时期(automatic storage duration)
+链接类型分为三种：
+- 外部链接(external linkage)
+- 内部链接(internal linkage)
+- 空链接(no linkage)
+
+根据这三个维度的组合，C为变量定义了五种存储类型(其实，还有一种基于指针的类型)。
+
+这五种存储类型分别为：
+- 自动(auto)
+- 寄存器(register)
+- 具有代码块作用域的静态
+- 具有外部链接的静态
+- 具有内部链接的静态
+
+以下将通过简单的C代码，来说明在C中是如何表达这五中存储模型的。
