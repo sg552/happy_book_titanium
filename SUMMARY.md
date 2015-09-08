@@ -53,6 +53,7 @@
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
+  * [Titanium  本地存储的几种策略](part2_ti_advanced/Local_Storage.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
   * [rails+thin 部署](part3_rails_premier/rails_thin_deploy.md)
