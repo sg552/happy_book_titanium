@@ -12,6 +12,9 @@
     * [Functions As Namespaces](part1_ti_premier/javascript_premier/functions_as_namespaces.md)
     * [ES 5新的方法](part1_ti_premier/javascript_premier/es5_array_methods.md)
     * [Best Practices In Titanium](part1_ti_premier/javascript_premier/best_practices_in_titanium.md)
+  * [Javascript 进阶]
+    * [underscore](part1_ti_premier/js_framework_underscore.md)
+    * [export](part1_ti_premier/js_framework_requirejs.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [通用的UI 组件]
@@ -56,11 +59,25 @@
     * [View中的标签](part1_ti_premier/alloy_views/xml_elements.md)
     * [titanium 样式](part1_ti_premier/alloy_views/titanium_style_sheets.md)
   * [Alloy Controller](part1_ti_premier/alloy_controller.md)
+  * [使用jade, stss, coffee开发Alloy]
+    * [jade]
+    * [stss]
+    * [coffee]
+
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
+
+* [自动化工具]
+  * [Appium （海洋）]
+  * [Capistrano（?）]
+  * [Grunt（?）]
+  * [Rake]
+  * [rubygem]
+  * [npm]
+
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
   * [rails+thin 部署](part3_rails_premier/rails_thin_deploy.md)
