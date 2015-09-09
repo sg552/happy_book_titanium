@@ -57,7 +57,7 @@ function factorial(x){
 var square = function(x) { return x * x ;}
 ```
 
-### 正确调用方法的几种正确姿势
+### 调用function的几种正确姿势
 - as functions(当做函数),
 - as methods(当做方法),
 - as constructors, and
@@ -83,7 +83,7 @@ var calculator = {   // an object literal
 };
 
 calculator.add(); // 方法调用
-calculator.result; // => 2
+calculator.result; // => 3
 ```
 As Constructor
 

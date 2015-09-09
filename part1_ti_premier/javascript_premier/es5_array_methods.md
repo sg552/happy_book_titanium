@@ -1,3 +1,5 @@
+TODO:结合Ruby代码，说明这些方法的用法
+
 ES 5中对Array新增加了5个新的支持函数式编程的方法。
 
 ### forEach()
@@ -22,7 +24,7 @@ b =  a.map(function(x){ return x * x; }) // b is [1,4,9]
 //用于筛选数组中的元素
 a = [5,4,3,2,1]
 small_values = a.filter(function(x){ return x < 3; }) // [2,1]
-odd_values = a.filter(function(x){ return x % 2 == 0; }) // [5,3,1]
+odd_values = a.filter(function(x){ return x % 2 == 0; }) // [4, 2]
 
 //去掉数组中的空元素
 var data = [1,,3,4]
