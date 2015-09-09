@@ -97,3 +97,12 @@ TODO: apply(), call()
 var a ;
 
 ```
+
+TODO: function parameter的使用，比如，对比代码，讲解如何定义参数可以省略的方法，还有，
+比如讲解如何使用hash或者Ruby 2.0定义的keyword argument，避免参数顺序带来的困扰。
+
+因为js对参数的数量没有要求，多了少了，都无所谓。所以，应该重点讲解如何处理，参数多了和少的情况。
+- 参数少了的情况下，默认值是undefined
+- 参数多的情况下，使用arguments(reference of Arguments)处理，Arguments是一个Array-like对象，只能使用数字去索引它的数据
+
+TODO:使用具体的代码，说明参数可以省略的function是如何定义和使用的，非别用C，js，Ruby代码说明。有时间的话，也可以写一下elixir。
