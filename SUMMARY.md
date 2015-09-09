@@ -67,10 +67,12 @@
 
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
+  * [Gestures 手势](part2_ti_advanced/gestures.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
   * [Titanium  本地存储的几种策略](part2_ti_advanced/Local_Storage.md)
+  * [Titanium WebView的使用](part2_ti_advanced/Local_Storage.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
