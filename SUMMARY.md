@@ -54,6 +54,7 @@
   * [Alloy Controller](part1_ti_premier/alloy_controller.md)
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
+  * [Gestures 手势](part2_ti_advanced/gestures.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
