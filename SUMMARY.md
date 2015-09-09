@@ -13,8 +13,12 @@
     * [prototype](part1_ti_premier/javascript_premier/prototype.md)
     * [Function Programming](part1_ti_premier/javascript_premier/functional_programming.md)
     * [Functions As Namespaces](part1_ti_premier/javascript_premier/functions_as_namespaces.md)
+    * [Object As Namespaces](part1_ti_premier/javascript_premier/object_as_namespace.md)
     * [ES 5新的方法](part1_ti_premier/javascript_premier/es5_array_methods.md)
     * [Best Practices In Titanium](part1_ti_premier/javascript_premier/best_practices_in_titanium.md)
+  * [Javascript 进阶]
+    * [underscore](part1_ti_premier/js_framework_underscore.md)
+    * [export](part1_ti_premier/js_framework_requirejs.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [2DMatrix](part1_ti_premier/titanium_ui/2DMatrix.md)
@@ -30,11 +34,11 @@
     * [Dashboard](part1_ti_premier/titanium_ui/dashboard.md)
     * [EmailDialog](part1_ti_premier/titanium_ui/email_dialog.md)
     * [ImageView](part1_ti_premier/titanium_ui/image_view.md)
+    * [Label](part1_ti_premier/titanium_ui/label.md)
     * [ScrollView](part1_ti_premier/titanium_ui/scroll_view.md)
     * [SearchBar](part1_ti_premier/titanium_ui/search_bar.md)
     * [TabGroup](part1_ti_premier/titanium_ui/tab_group.md)
     * [TableView](part1_ti_premier/titanium_ui/table_view.md)
-    * [Label](part1_ti_premier/titanium_ui/label.md)
     * [View](part1_ti_premier/titanium_ui/view.md)
     * [Web View](part1_ti_premier/titanium_ui/web_view.md)
     * [Window](part1_ti_premier/titanium_ui/window.md)
@@ -55,11 +59,28 @@
     * [View中的标签](part1_ti_premier/alloy_views/xml_elements.md)
     * [titanium 样式](part1_ti_premier/alloy_views/titanium_style_sheets.md)
   * [Alloy Controller](part1_ti_premier/alloy_controller.md)
+  * [使用jade, stss, coffee开发Alloy]
+    * [jade]
+    * [stss]
+    * [coffee]
+
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
+  * [Titanium  本地存储的几种策略](part2_ti_advanced/Local_Storage.md)
+  * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
+  * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
+
+* [自动化工具]
+  * [Appium （海洋）]
+  * [Capistrano（?）]
+  * [Grunt（?）]
+  * [Rake]
+  * [rubygem]
+  * [npm]
+
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
   * [写一个DSL](part3_rails_premier/dsl.md)
