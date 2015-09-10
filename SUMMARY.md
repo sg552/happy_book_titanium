@@ -36,6 +36,7 @@
     * [EmailDialog](part1_ti_premier/titanium_ui/email_dialog.md)
     * [ImageView](part1_ti_premier/titanium_ui/image_view.md)
     * [Label](part1_ti_premier/titanium_ui/label.md)
+    * [ListView](part1_ti_premier/titanium_ui/listview.md)
     * [ScrollView](part1_ti_premier/titanium_ui/scroll_view.md)
     * [SearchBar](part1_ti_premier/titanium_ui/search_bar.md)
     * [TabGroup](part1_ti_premier/titanium_ui/tab_group.md)
