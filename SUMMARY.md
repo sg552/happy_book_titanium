@@ -66,6 +66,7 @@
     * [coffee]
 
 * [Titanium 进阶](part2_ti_advanced.md)
+  * [HTTP Client](part2_ti_advanced/http_client.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
   * [Gestures 手势](part2_ti_advanced/gestures.md)
   * [Icons and Splash Screens](part2_ti_advanced/icons_and_splash_screens.md)
