@@ -4,7 +4,7 @@
 必要情况下我们不建议使用Label来处理长文本和超长型的文本显示，非必要的情况下对于长文本我们建议你使
 用**文本域**(Ti.UI.TextArea)UI组件(详见**2.4.x**)。下面是一个Label的例子，你在Hello World项目中就已经接触过了：
 
-```
+```xml
     <Alloy>
         <Window class="container" id="my_window">
             <Label id="label" onClick="doClick">Hello,World</Label>
@@ -14,7 +14,7 @@
 
 我们也可以在**.js**文件中动态创建Label：
 
-```
+```javascript
     var my_label = Ti.UI.createLabel({
         id:'label',
         width:'100%',
