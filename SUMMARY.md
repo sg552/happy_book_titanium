@@ -19,6 +19,7 @@
   * [Javascript 进阶]
     * [underscore](part1_ti_premier/js_framework_underscore.md)
     * [export](part1_ti_premier/js_framework_requirejs.md)
+    * [CommonJS](part1_ti_premier/js_framework_commonjs.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [2DMatrix](part1_ti_premier/titanium_ui/2DMatrix.md)
@@ -66,10 +67,14 @@
 
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
+  * [Gestures 手势](part2_ti_advanced/gestures.md)
+  * [Icons and Splash Screens](part2_ti_advanced/icons_and_splash_screens.md)
+  * [Orientation](part2_ti_advanced/orientation.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
   * [Titanium  本地存储的几种策略](part2_ti_advanced/Local_Storage.md)
+  * [Titanium web_view的使用](part2_ti_advanced/web_view.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
