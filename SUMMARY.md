@@ -36,6 +36,7 @@
     * [EmailDialog](part1_ti_premier/titanium_ui/email_dialog.md)
     * [ImageView](part1_ti_premier/titanium_ui/image_view.md)
     * [Label](part1_ti_premier/titanium_ui/label.md)
+    * [ListView](part1_ti_premier/titanium_ui/listview.md)
     * [ScrollView](part1_ti_premier/titanium_ui/scroll_view.md)
     * [SearchBar](part1_ti_premier/titanium_ui/search_bar.md)
     * [TabGroup](part1_ti_premier/titanium_ui/tab_group.md)
@@ -66,6 +67,9 @@
     * [coffee]
 
 * [Titanium 进阶](part2_ti_advanced.md)
+  * [HTTP Client](part2_ti_advanced/http_client.md)
+  * [Working with JSON](part2_ti_advanced/working_with_json.md)
+  * [相册和相机的使用](part2_ti_advanced/photogaller_and_camera.md)
   * [Ti Module](part2_ti_advanced/ti_module.md)
   * [Gestures 手势](part2_ti_advanced/gestures.md)
   * [Icons and Splash Screens](part2_ti_advanced/icons_and_splash_screens.md)
