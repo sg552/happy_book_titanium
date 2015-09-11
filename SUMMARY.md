@@ -80,6 +80,7 @@
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
   * [Titanium  本地存储的几种策略](part2_ti_advanced/Local_Storage.md)
   * [Titanium web_view的使用](part2_ti_advanced/web_view.md)
+  * [Titanium attributed string的使用](part2_ti_advanced/attributed_string.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
