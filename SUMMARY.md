@@ -67,6 +67,7 @@
     * [coffee]
 
 * [Titanium 进阶](part2_ti_advanced.md)
+  * [Application Structure](part2_ti_advanced/application_structure.md)
   * [HTTP Client](part2_ti_advanced/http_client.md)
   * [Working with JSON](part2_ti_advanced/working_with_json.md)
   * [相册和相机的使用](part2_ti_advanced/photogaller_and_camera.md)
