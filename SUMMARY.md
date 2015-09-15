@@ -85,6 +85,7 @@
   * [Titanium web_view的使用](part2_ti_advanced/web_view.md)
   * [Titanium attributed string的使用](part2_ti_advanced/attributed_string.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
+  * [Debuging and Profiling](part2_ti_advanced/debuging_and_profiling.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [自动化工具]
