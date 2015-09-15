@@ -89,12 +89,13 @@
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [自动化工具]
-  * [Appium （海洋）]
-  * [Capistrano（?）]
-  * [Grunt（?）]
-  * [Rake]
-  * [rubygem]
-  * [npm]
+  * [Appium （海洋）](automation_tools/appium.md)
+  * [selenium](automation_tools/selenium.md)
+  * [Capistrano](automation_tools/capistrano.md)
+  * [Grunt](automation_tools/grunt.md)
+  * [Rake](automation_tools/rake.md)
+  * [rubygem 和 bundler](automation_tools/gem_and_bundler.md)
+  * [npm](automation_tools/npm.md)
 
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
