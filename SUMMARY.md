@@ -87,15 +87,18 @@
   * [Titanium 安卓版本的发布](part2_ti_advanced/android_release.md)
   * [Titanium 事件处理](part2_ti_advanced/event_handling.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
+  * [特定于iOS的UI](part2_ti_advanced/ios_specific_ui.md)
+  * [Debuging and Profiling](part2_ti_advanced/debuging_and_profiling.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [自动化工具]
-  * [Appium （海洋）]
-  * [Capistrano（?）]
-  * [Grunt（?）]
-  * [Rake]
-  * [rubygem]
-  * [npm]
+  * [Appium （海洋）](automation_tools/appium.md)
+  * [selenium](automation_tools/selenium.md)
+  * [Capistrano](automation_tools/capistrano.md)
+  * [Grunt](automation_tools/grunt.md)
+  * [Rake](automation_tools/rake.md)
+  * [rubygem 和 bundler](automation_tools/gem_and_bundler.md)
+  * [npm](automation_tools/npm.md)
 
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
