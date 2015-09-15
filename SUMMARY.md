@@ -79,6 +79,7 @@
   * [Gestures 手势](part2_ti_advanced/gestures.md)
   * [Icons and Splash Screens](part2_ti_advanced/icons_and_splash_screens.md)
   * [Orientation](part2_ti_advanced/orientation.md)
+  * [Scrolling View](part2_ti_advanced/scrolling_view.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
