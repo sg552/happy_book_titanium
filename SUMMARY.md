@@ -20,6 +20,8 @@
     * [underscore](part1_ti_premier/js_framework_underscore.md)
     * [export](part1_ti_premier/js_framework_requirejs.md)
     * [CommonJS](part1_ti_premier/js_framework_commonjs.md)
+    * [Bower](part1_ti_premier/js_framework_bower.md)
+    * [Jasmine](part1_ti_premier/js_framework_jasmine.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [2DMatrix](part1_ti_premier/titanium_ui/2DMatrix.md)
