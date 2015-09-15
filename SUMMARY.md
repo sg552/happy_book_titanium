@@ -68,6 +68,7 @@
 
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Anination](part2_ti_advanced/animation.md)
+  * [布局，位置和视图层级](part2_ti_advanced/layouts_positioning_and_the_view_hierarchy.md)
   * [自定义字体](part2_ti_advanced/custom_font.md)
   * [Application Structure](part2_ti_advanced/application_structure.md)
   * [扩平台开发之iOS](part2_ti_advanced/cross_platform_dev_ios.md)
