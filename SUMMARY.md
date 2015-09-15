@@ -70,6 +70,7 @@
 
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Anination](part2_ti_advanced/animation.md)
+  * [布局，位置和视图层级](part2_ti_advanced/layouts_positioning_and_the_view_hierarchy.md)
   * [自定义字体](part2_ti_advanced/custom_font.md)
   * [Application Structure](part2_ti_advanced/application_structure.md)
   * [扩平台开发之iOS](part2_ti_advanced/cross_platform_dev_ios.md)
@@ -87,6 +88,7 @@
   * [Titanium web_view的使用](part2_ti_advanced/web_view.md)
   * [Titanium attributed string的使用](part2_ti_advanced/attributed_string.md)
   * [Titanium 安卓版本的发布](part2_ti_advanced/android_release.md)
+  * [Titanium 事件处理](part2_ti_advanced/event_handling.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
   * [特定于iOS的UI](part2_ti_advanced/ios_specific_ui.md)
   * [Debuging and Profiling](part2_ti_advanced/debuging_and_profiling.md)
