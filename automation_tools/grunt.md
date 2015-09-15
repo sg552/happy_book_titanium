@@ -162,3 +162,220 @@ module.exports = (grunt) ->
 ```
 
 如果遇到 `Object true has no method 'indexOf'` , 就一定是 files 后面跟的不是 array. 
+
+## 使用 grunt 来编译 jade, stss, coffee
+
+
+## grunt 管理仅发生变化的文件: grunt-watch + grunt-newer
+
+refer to: https://github.com/tschaub/grunt-newer
+
+grunt-newer: 管理仅发生变化的文件
+
+grunt-watch 能监控文件的变动. 它俩要配合使用。
+
+### 安装：
+
+1. 编辑 package.json ,
+
+```json
+// package.json; 
+'devDependencies': {
+    "grunt-newer": "1.1.0"
+    "grunt-contrib-watch": "~0.5.1",
+}
+```
+
+```bash
+$ npm install 
+```
+
+2. 然后，Gruntfile.coffee中，加上 watch 任务：
+
+```coffeescript
+module.exports = (grunt) ->
+  grunt.initConfig
+
+    # 这个最重要。
+    watch:
+      options:
+        nospawn: true
+      views:
+        files: ['src/**/*.jade']
+        tasks: ['newer:jade']
+      styles:
+        files: ['src/**/*.stss']
+        tasks: ['newer:stss']
+      javascripts:
+        files: ['src/**/*.coffee']
+        tasks: ['newer:coffee']
+
+    coffee:
+      compile_multiple_files:
+        options:
+          bare: true
+        files:
+          # 1:1 的编译文件
+          #'app/controllers/simulate_stocks.js': 'app/controllers/simulate_stocks.coffee'
+          # 编译多个文件
+
+          [
+            expand: true
+            flatten: true
+            cwd: 'src/controllers/'
+            src: ['*.coffee']
+            dest: 'app/controllers/'
+            ext: '.js'
+          ]
+
+      compile_flat_details:
+        options:
+          bare: true
+        files:
+          # 把多个文件合并
+          'app/controllers/flatDetails.js': [
+            'src/controllers/flat_details/1*.coffee'
+            'src/controllers/flat_details/2*.coffee'
+            'src/controllers/flat_details/3*.coffee'
+          ]
+
+      compile_diy_project:
+        options:
+          bare: true
+        files:
+          # 把多个文件合并
+          'app/controllers/diyProject.js': [
+            'src/controllers/diy_project/1*.coffee'
+            'src/controllers/diy_project/2*.coffee'
+            'src/controllers/diy_project/3*.coffee'
+            'src/controllers/diy_project/4*.coffee'
+            'src/controllers/diy_project/5*.coffee'
+          ]
+
+    jade:
+      compile:
+        options:
+          pretty: true
+        files: [
+          expand: true
+          src: ['views/*.jade']
+          dest: 'app' # 写成  'app/views' 也行,
+          cwd: 'src'  # 如果 dest是'app/views', 这里就要是 'src/views'
+          ext: '.xml'
+        ]
+
+    stss:
+      compile:
+        files:[
+          expand: true
+          src: ['**/*.stss']
+          dest: 'app/styles'
+          cwd: 'src/styles'
+          ext: '.tss'
+        ]
+
+  grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-newer'
+  grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-jade'
+  grunt.loadNpmTasks 'grunt-stss'
+
+  grunt.registerTask 'default', [ 'coffee', 'jade','stss' ]
+```
+
+3. 运行： 
+
+```
+$ grunt watch 
+```
+
+这样，你的每次改动，都会瞬间被监控到，然后调用对应的命令。例如，每改一个jade 文件，watch就会调用 jade 这个任务。
+
+## 在grunt中使用jade 的例子
+
+```coffeescript
+# Gruntfile.coffee
+module.exports = (grunt) ->
+  grunt.initConfig
+    jade:
+      compile:
+        options:
+          pretty: true
+        files: [
+          expand: true
+          src: ['**/*.jade']
+          dest: 'app' # 写成  'app/views' 也行,
+          cwd: 'src'  # 如果 dest是'app/views', 这里就要是 'src/views'
+          ext: '.xml'
+        ]
+
+  grunt.loadNpmTasks 'grunt-contrib-jade'
+  grunt.registerTask 'default', [ 'jade' ]
+```
+
+3. 编译: $ grunt 
+
+### grunt 编译 coffeescript
+
+npm install:  grunt  , grunt-cli, grunt-contrib-coffee
+
+```bash
+$ npm install grunt-contrib-coffee --save-dev 
+```
+
+编辑:  Gruntfile.coffee: 
+
+```coffeescript
+module.exports = (grunt) ->
+  grunt.initConfig
+    coffee:
+      compile_multiple_files:
+        options:
+          bare: true
+        files:
+          # 1:1 的编译文件
+          #'app/controllers/simulate_stocks.js': 'app/controllers/simulate_stocks.coffee'
+          # 编译多个文件
+          [
+            expand: true
+            flatten: true
+            cwd: 'app/controllers/'
+            src: ['*.coffee']
+            dest: 'app/controllers/'
+            ext: '.js'
+          ]
+      compile_home_js:
+        options:
+          bare: true
+        files:
+          # 把多个文件合并
+          'app/controllers/home.js': [
+            'app/controllers/home/home_market.coffee'
+            'app/controllers/home/home_master.coffee'
+            'app/controllers/home/home_me.coffee'
+            'app/controllers/home/home_competition.coffee'
+            'app/controllers/home/home_community.coffee'
+            'app/controllers/home/home_version.coffee'
+            'app/controllers/home/home_frame.coffee'
+          ]
+  #grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-coffee'
+
+  grunt.registerTask 'default', [ 'coffee' ]
+```
+
+然后运行: `$ grunt`
+
+就会把 coffee的所有 子任务 (sub- tasks) 都依次运行了. 结果如下; 
+
+```bash
+$ grunt
+Running "coffee:compile_multiple_files" (coffee) task
+>> 53 files created.
+
+Running "coffee:compile_home_js" (coffee) task
+>> 1 files created.
+
+Done, without errors.
+```
+
