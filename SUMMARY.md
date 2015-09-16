@@ -122,6 +122,7 @@
   * [接口入门](part3_rails_premier/rails_interface.md)
   * [Ruby 进阶 ](part3_rails_premier/ruby_advanced.md)
   * [数据库迁移，model验证](part3_rails_premier/rails_database.md)
+  * [Controller](part3_rails_premier/rails_controller.md)
   * [rails 单元测试](part3_rails_premier/rails_unit_test.md)
   * [rails 命令行](part3_rails_premier/rails_command_line.md)
   * [rails 视图](part3_rails_premier/rails_view.md)
