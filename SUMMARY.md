@@ -20,6 +20,8 @@
     * [underscore](part1_ti_premier/js_framework_underscore.md)
     * [export](part1_ti_premier/js_framework_requirejs.md)
     * [CommonJS](part1_ti_premier/js_framework_commonjs.md)
+    * [Bower](part1_ti_premier/js_framework_bower.md)
+    * [Jasmine](part1_ti_premier/js_framework_jasmine.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [2DMatrix](part1_ti_premier/titanium_ui/2DMatrix.md)
@@ -68,6 +70,7 @@
 
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Anination](part2_ti_advanced/animation.md)
+  * [布局，位置和视图层级](part2_ti_advanced/layouts_positioning_and_the_view_hierarchy.md)
   * [自定义字体](part2_ti_advanced/custom_font.md)
   * [Application Structure](part2_ti_advanced/application_structure.md)
   * [扩平台开发之iOS](part2_ti_advanced/cross_platform_dev_ios.md)
@@ -79,6 +82,7 @@
   * [Gestures 手势](part2_ti_advanced/gestures.md)
   * [Icons and Splash Screens](part2_ti_advanced/icons_and_splash_screens.md)
   * [Orientation](part2_ti_advanced/orientation.md)
+  * [Scrolling View](part2_ti_advanced/scrolling_view.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
@@ -86,18 +90,22 @@
   * [Titanium web_view的使用](part2_ti_advanced/web_view.md)
   * [Titanium attributed string的使用](part2_ti_advanced/attributed_string.md)
   * [Titanium 安卓版本的发布](part2_ti_advanced/android_release.md)
+  * [Titanium iOS版本的发布](part2_ti_advanced/iOS_release.md)
+  * [Titanium 事件处理](part2_ti_advanced/event_handling.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
+  * [Titanium accessibility](part2_ti_advanced/accessibility.md)
   * [特定于iOS的UI](part2_ti_advanced/ios_specific_ui.md)
   * [Debuging and Profiling](part2_ti_advanced/debuging_and_profiling.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [自动化工具]
-  * [Appium （海洋）]
-  * [Capistrano（?）]
-  * [Grunt（?）]
-  * [Rake]
-  * [rubygem]
-  * [npm]
+  * [Appium （海洋）](automation_tools/appium.md)
+  * [selenium](automation_tools/selenium.md)
+  * [Capistrano](automation_tools/capistrano.md)
+  * [Grunt](automation_tools/grunt.md)
+  * [Rake](automation_tools/rake.md)
+  * [rubygem 和 bundler](automation_tools/gem_and_bundler.md)
+  * [npm](automation_tools/npm.md)
 
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
