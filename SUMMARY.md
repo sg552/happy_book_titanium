@@ -71,6 +71,7 @@
   * [自定义字体](part2_ti_advanced/custom_font.md)
   * [Application Structure](part2_ti_advanced/application_structure.md)
   * [扩平台开发之iOS](part2_ti_advanced/cross_platform_dev_ios.md)
+  * [扩平台开发之Android](part2_ti_advanced/cross_platform_dev_android.md)
   * [HTTP Client](part2_ti_advanced/http_client.md)
   * [Working with JSON](part2_ti_advanced/working_with_json.md)
   * [相册和相机的使用](part2_ti_advanced/photogaller_and_camera.md)
