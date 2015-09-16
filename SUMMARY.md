@@ -87,6 +87,7 @@
   * [Titanium 安卓版本的发布](part2_ti_advanced/android_release.md)
   * [Titanium 事件处理](part2_ti_advanced/event_handling.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
+  * [Titanium accessibility](part2_ti_advanced/accessibility.md)
   * [特定于iOS的UI](part2_ti_advanced/ios_specific_ui.md)
   * [Debuging and Profiling](part2_ti_advanced/debuging_and_profiling.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
