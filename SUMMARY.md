@@ -102,7 +102,10 @@
   * [Rake](automation_tools/rake.md)
   * [rubygem 和 bundler](automation_tools/gem_and_bundler.md)
   * [npm](automation_tools/npm.md)
-
+* [设计相关]
+  * [thoughtworks inception]
+  * [UML图]
+  * [ER图]
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
   * [写一个DSL](part3_rails_premier/dsl.md)
@@ -115,6 +118,31 @@
   * [rails 命令行](part3_rails_premier/rails_command_line.md)
   * [rails 视图](part3_rails_premier/rails_view.md)
   * [rails 接口](part3_rails_premier/interface_document.md)
+
+* [Rails 常用的第三方组件]
+  * [分页: kaminari]()
+  * [授权: cancan]()
+  * [认证：devise]()
+  * [上传图片 carrierwave]()
+  * [即时上传 jquery-upload]()
+  * [上传图片到云 upyun]
+  * [发送短信 ]
+  * [wysiwyg 所见即所得编辑器]
+  * [发送restful请求  HTTParty]
+  * [日志工具log4r]()
+  * [配置 rails-config]
+  * [分析HTML: nokogiri]()
+  * [服务器thin]
+  * [增加注释 migrtion comments]
+  * [单点登陆 ruby cas]
+  * [rspec]
+  * [factory girl]
+  * [bootstrap rails]
+  * [执行定时任务：rufu-scheduler]
+  * [执行后台任务：god ]
+  * [执行延时任务：delayed-job]
+  * [工作流 event machine]
+  * [缓存 redis, memcache]
 * [Rails 进阶](part4_rails_advanced.md)
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [优化Rails](part4_rails_advanced/optimzation.md)
