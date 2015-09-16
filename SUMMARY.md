@@ -54,6 +54,7 @@
       * [Animator](part1_ti_premier/titanium_ui/ios/animator.md)
       * [AnchorAttachmentBehavior](part1_ti_premier/titanium_ui/ios/anchor_attachment_behavior.md)
       * [CollisionBehavior](part1_ti_premier/titanium_ui/ios/collision_behavior.md)
+      * [CoverFlowView](part1_ti_premier/titanium_ui/ios/cover_flow_view.md)
       * [DynamicItemBehavior](part1_ti_premier/titanium_ui/ios/dynamic_item_behavior.md)
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework_premier/alloy_framework.md)
