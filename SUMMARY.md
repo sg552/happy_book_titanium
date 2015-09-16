@@ -20,6 +20,8 @@
     * [underscore](part1_ti_premier/js_framework_underscore.md)
     * [export](part1_ti_premier/js_framework_requirejs.md)
     * [CommonJS](part1_ti_premier/js_framework_commonjs.md)
+    * [Bower](part1_ti_premier/js_framework_bower.md)
+    * [Jasmine](part1_ti_premier/js_framework_jasmine.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [2DMatrix](part1_ti_premier/titanium_ui/2DMatrix.md)
@@ -52,7 +54,11 @@
       * [Animator](part1_ti_premier/titanium_ui/ios/animator.md)
       * [AnchorAttachmentBehavior](part1_ti_premier/titanium_ui/ios/anchor_attachment_behavior.md)
       * [CollisionBehavior](part1_ti_premier/titanium_ui/ios/collision_behavior.md)
+      * [CoverFlowView](part1_ti_premier/titanium_ui/ios/cover_flow_view.md)
+      * [DocumentViewer](part1_ti_premier/titanium_ui/ios/document_viewer.md)
       * [DynamicItemBehavior](part1_ti_premier/titanium_ui/ios/dynamic_item_behavior.md)
+      * [GravityBehavior](part1_ti_premier/titanium_ui/ios/gravity_behavior.md)
+      * [NavigationWindow](part1_ti_premier/titanium_ui/ios/navigation_window.md)
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework_premier/alloy_framework.md)
     * [Alloy Controller](part1_ti_premier/alloy_framework_premier/alloy_controller.md)
@@ -68,9 +74,11 @@
 
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Anination](part2_ti_advanced/animation.md)
+  * [布局，位置和视图层级](part2_ti_advanced/layouts_positioning_and_the_view_hierarchy.md)
   * [自定义字体](part2_ti_advanced/custom_font.md)
   * [Application Structure](part2_ti_advanced/application_structure.md)
   * [扩平台开发之iOS](part2_ti_advanced/cross_platform_dev_ios.md)
+  * [扩平台开发之Android](part2_ti_advanced/cross_platform_dev_android.md)
   * [HTTP Client](part2_ti_advanced/http_client.md)
   * [Working with JSON](part2_ti_advanced/working_with_json.md)
   * [相册和相机的使用](part2_ti_advanced/photogaller_and_camera.md)
@@ -78,23 +86,35 @@
   * [Gestures 手势](part2_ti_advanced/gestures.md)
   * [Icons and Splash Screens](part2_ti_advanced/icons_and_splash_screens.md)
   * [Orientation](part2_ti_advanced/orientation.md)
+  * [Scrolling View](part2_ti_advanced/scrolling_view.md)
   * [适配不同机型](part2_ti_advanced/device_adapter.md)
   * [Ti Widgets](part2_ti_advanced/alloy_widgets.md)
   * [Titanium Animation](part2_ti_advanced/Titanium_Animation.md)
   * [Titanium  本地存储的几种策略](part2_ti_advanced/Local_Storage.md)
   * [Titanium web_view的使用](part2_ti_advanced/web_view.md)
   * [Titanium attributed string的使用](part2_ti_advanced/attributed_string.md)
+  * [Titanium 安卓版本的发布](part2_ti_advanced/android_release.md)
+  * [Titanium iOS版本的发布](part2_ti_advanced/iOS_release.md)
+  * [Titanium 事件处理](part2_ti_advanced/event_handling.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
+  * [Titanium accessibility](part2_ti_advanced/accessibility.md)
+  * [特定于iOS的UI](part2_ti_advanced/ios_specific_ui.md)
+  * [特定于Android的UI](part2_ti_advanced/android_specific_ui.md)
+  * [Debuging and Profiling](part2_ti_advanced/debuging_and_profiling.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [自动化工具]
-  * [Appium （海洋）]
-  * [Capistrano（?）]
-  * [Grunt（?）]
-  * [Rake]
-  * [rubygem]
-  * [npm]
-
+  * [Appium （海洋）](automation_tools/appium.md)
+  * [selenium](automation_tools/selenium.md)
+  * [Capistrano](automation_tools/capistrano.md)
+  * [Grunt](automation_tools/grunt.md)
+  * [Rake](automation_tools/rake.md)
+  * [rubygem 和 bundler](automation_tools/gem_and_bundler.md)
+  * [npm](automation_tools/npm.md)
+* [设计相关]
+  * [thoughtworks inception]
+  * [UML图]
+  * [ER图]
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
   * [写一个DSL](part3_rails_premier/dsl.md)
@@ -103,10 +123,36 @@
   * [接口入门](part3_rails_premier/rails_interface.md)
   * [Ruby 进阶 ](part3_rails_premier/ruby_advanced.md)
   * [数据库迁移，model验证](part3_rails_premier/rails_database.md)
+  * [Controller](part3_rails_premier/rails_controller.md)
   * [rails 单元测试](part3_rails_premier/rails_unit_test.md)
   * [rails 命令行](part3_rails_premier/rails_command_line.md)
   * [rails 视图](part3_rails_premier/rails_view.md)
   * [rails 接口](part3_rails_premier/interface_document.md)
+
+* [Rails 常用的第三方组件]
+  * [分页: kaminari]()
+  * [授权: cancan]()
+  * [认证：devise]()
+  * [上传图片 carrierwave]()
+  * [即时上传 jquery-upload]()
+  * [上传图片到云 upyun]
+  * [发送短信 ]
+  * [wysiwyg 所见即所得编辑器]
+  * [发送restful请求  HTTParty]
+  * [日志工具log4r]()
+  * [配置 rails-config]
+  * [分析HTML: nokogiri]()
+  * [服务器thin]
+  * [增加注释 migrtion comments]
+  * [单点登陆 ruby cas]
+  * [rspec]
+  * [factory girl]
+  * [bootstrap rails]
+  * [执行定时任务：rufu-scheduler]
+  * [执行后台任务：god ]
+  * [执行延时任务：delayed-job]
+  * [工作流 event machine]
+  * [缓存 redis, memcache]
 * [Rails 进阶](part4_rails_advanced.md)
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [优化Rails](part4_rails_advanced/optimzation.md)
