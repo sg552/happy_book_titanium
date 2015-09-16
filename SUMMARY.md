@@ -89,6 +89,7 @@
   * [Titanium web_view的使用](part2_ti_advanced/web_view.md)
   * [Titanium attributed string的使用](part2_ti_advanced/attributed_string.md)
   * [Titanium 安卓版本的发布](part2_ti_advanced/android_release.md)
+  * [Titanium iOS版本的发布](part2_ti_advanced/iOS_release.md)
   * [Titanium 事件处理](part2_ti_advanced/event_handling.md)
   * [Titanium View的尺寸单位](part2_ti_advanced/view_unit.md)
   * [Titanium accessibility](part2_ti_advanced/accessibility.md)
