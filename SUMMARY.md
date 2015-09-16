@@ -58,6 +58,7 @@
       * [DocumentViewer](part1_ti_premier/titanium_ui/ios/document_viewer.md)
       * [DynamicItemBehavior](part1_ti_premier/titanium_ui/ios/dynamic_item_behavior.md)
       * [GravityBehavior](part1_ti_premier/titanium_ui/ios/gravity_behavior.md)
+      * [NavigationWindow](part1_ti_premier/titanium_ui/ios/navigation_window.md)
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework_premier/alloy_framework.md)
     * [Alloy Controller](part1_ti_premier/alloy_framework_premier/alloy_controller.md)
