@@ -113,7 +113,7 @@ LisiView的**body**身体部分，数据都展示在这里；FooterView是ListVi
      明**ns='Ti.UI.Android'**、**platform='android'**；如果属于动态定义[_**.js**_文件]则需要使用**Titanium.UI.Android.createSearchView**方法)
 
 
-    PS：如果你观察的够仔细的话，在浏览效果图时你应该会发现ListView中最后一条数据data 10是展示不完全的，ListView滑到底部
+    PS：如果你观察仔细的话，在浏览效果图时你应该会发现ListView中最后一条数据data 10是展示不完全的，ListView滑到底部
         松开后data 10会被屏幕遮挡一部分。这是ListView的一个小瑕疵，正是因为这个小瑕疵，所以当我们的数据size很大，超过屏
         幕长度时我们建议为ListView定义一个FooterView来解决这个问题。此时你可以只需要给这个FooterView定义一个空的任何UI
         组件就行了，它的作用只是为了占据一定的空间来保证我们数据展示的完整性，并没有实际意义。
@@ -130,5 +130,25 @@ LisiView的**body**身体部分，数据都展示在这里；FooterView是ListVi
 (**section**本身就有**区域**的意思)，定义了多少个ListSection就有多少个数据块；需要往哪个数据块渲染数据，
 则指定该ListSection的**id**进行渲染即可。
 
-####1.1 sectionIndex
-**sectionIndex**描述ListView中所有ListSection的
+####1.1 Sections
+**Sections**
+
+####1.2 sectionIndex
+**sectionIndex**描述ListView中所有ListSection的序号**index**，从0开始
+
+###2. ListItem
+
+**ListItem**是ListView的**数据单元**，在ListView中一行即是一个ListItem；但这并不意味着ListItem中所包含的就是最小的数据单元，因为一个ListItem中可能包含多条数据(这需要通过**数据模板Template**来实现，不同的数据模板数据单元的划分也不同)
+
+####2.1 Items
+**items**
+
+####2.2 itemIndex
+**itemIndex**
+
+###3. 数据模板Template
+**Template**
+
+####3.1 自定义数据模板
+
+####3.2 ListView提供的模板
