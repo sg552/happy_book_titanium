@@ -119,9 +119,16 @@ LisiView的**body**身体部分，数据都展示在这里；FooterView是ListVi
         组件就行了，它的作用只是为了占据一定的空间来保证我们数据展示的完整性，并没有实际意义。
 
 我们上面介绍的是ListView的静态定义方法，其实更多的时候ListView都是动态定义出来的。因为数据更新的
-需要我们无法明确数据的量度，因为需要在**.js**中根据远程获取的参数来动态定义，而这就需要绑定数据了。下
+需要我们无法明确数据的量度，因此需要在**.js**中根据远程获取的参数来动态定义，而这就需要绑定数据了。下
 面我们将重点详细介绍ListView数据绑定时几个重要的属性及方法。
 
 ##ListView数据绑定
 
-###1.1 ListSection
+###1. ListSection
+
+**ListSection**是ListView的核心部分，处理数据的绑定和渲染等。在ListView中，ListSection区分不同的**数据块**
+(**section**本身就有**区域**的意思)，定义了多少个ListSection就有多少个数据块；需要往哪个数据块渲染数据，
+则指定该ListSection的**id**进行渲染即可。
+
+####1.1 sectionIndex
+**sectionIndex**描述ListView中所有ListSection的
