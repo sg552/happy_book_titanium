@@ -52,6 +52,56 @@ xhr.onload = function(e) {
 xhr.open("GET", url);
 xhr.send();
 ```
+###httpClient的封装
+参数说明:
+
+```
+    url: 需要请求的参数
+    load_callback: 响应成功的回调函数
+    error_callback: 响应失败的回调函数
+    method: 请求方式GET,POST等等
+    args: http请求的参数,GET请求不需要参数
+```
+
+```javascript
+function http_call(url, load_callback, error_callback, method, args){
+	var xhr = Ti.Network.createHTTPClient();
+	xhr.timeout = Ti.App.timeout;
+	xhr.onerror = function() {
+		if (error_callback)
+			error_callback(this);
+		else
+			show_timeout_dlg(xhr, url);
+	};
+	xhr.onload = function() {
+		if (load_callback)
+			load_callback(this);
+	};
+
+	if (url.indexOf(Ti.App.helloworld) == 0){
+		var append = "osname="+Ti.App.osname+"&osversion="+Ti.App.osversion+"&appversion="+Ti.App.version+"&manufacturer="+Ti.App.manufacturer+"&model="+Ti.App.model+"&memory="+Ti.Platform.availableMemory;
+		url += url.indexOf("?") > 0 ? "&" + append : "?" + append;
+	}
+
+	xhr.open(method || 'GET', url);
+	if ((method == "POST" || method == "PUT" || method == "DELETE") && args){
+		xhr.send(args);
+	}
+	else{
+		xhr.send();
+	}
+}
+```
+
+需要提及的是`Ti.App`是一个命名空间,存储了很多需要调用系统资源的属性，这样就不需要每次都调用系统资源来读取属性了。
+
+```javascript
+if (url.indexOf(Ti.App.helloworld) == 0){
+		var append = "osname="+Ti.App.osname+"&osversion="+Ti.App.osversion+"&appversion="+Ti.App.version+"&manufacturer="+Ti.App.manufacturer+"&model="+Ti.App.model+"&memory="+Ti.Platform.availableMemory;
+		url += url.indexOf("?") > 0 ? "&" + append : "?" + append;
+	}
+```
+这段代码是指当访问某种特定形式的url时，将App自身的信息也传递到这个接口中去,不考虑信息采集的话这段代码可以去掉。
 
 ### 有的时候，设置HTTP请求的的header是非常必要的。
 
