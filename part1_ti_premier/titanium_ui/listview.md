@@ -203,7 +203,12 @@ LisiView的**body**身体部分，数据都展示在这里；FooterView是ListVi
 ListItem中数据的处理；即我们是否能设计一个比较好的数据模板Template来处理比较复杂的数据需求；接下来我们重点介绍数据模板Template。
 
 ###3. 数据模板Template
-**Template**数据模板介绍什么是数据模板，bindId
+**Template**数据模板描述的是ListView在渲染数据时，数据渲染所要遵循的“**渲染样式**”，即数据在LisView中的结构样式，说白了就是设定好
+所要的UI样式，然后将数据绑定到相关的UI组件上。数据渲染主要通过**bindId**来实现，即绑定**id**的UI组件；该组件即用来渲染其对应的数据。
+在ListView中，我们可以通过定义**Template**标签来实现；我们所定义的数据样式，其实就是对ListItem中所要填充的数据进行样式定义；所以真正
+起作用的是Template标签下的**ItemTemplate**标签。
+
+数据模板介绍什么是数据模板，bindId
 
 ####3.1 自定义数据模板
 
