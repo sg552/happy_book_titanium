@@ -268,29 +268,17 @@ _example.xml：_
     <ItemTemplate name="other_products_template" height="175" backgroundColor="#efedef">
       <!--左边的商品-->
       <View class="other_product_view_block" left="0" bindId="other_product_view_block_left">
-        <!--图片-->
         <ImageView class="other_product_image" bindId="other_product_image_left"/>
-        <!--名称-->
         <Label class="other_product_name" bindId="other_product_name_left"/>
-        <!--原价-->
         <Label class="other_product_original_price" bindId="other_product_original_price_left"/>
-        <!--仅剩text-->
         <Label class="other_product_jinsheng_text" bindId="other_product_jinsheng_text_left" text="仅剩"/>
-        <!--剩余天数-->
         <Label class="other_product_left_time_day" bindId="other_product_left_time_day_left"/>
-        <!--天text-->
         <Label class="other_product_left_time_day_text" bindId="other_product_left_time_day_text_left" text="天"/>
-        <!--剩余小时-->
         <Label class="other_product_left_time_hour" bindId="other_product_left_time_hour_left"/>
-        <!--小时text-->
         <Label class="other_product_left_time_hour_text" bindId="other_product_left_time_hour_text_left" text="小时"/>
-        <!--促销价-->
         <Label class="other_product_hot_selling_price" bindId="other_product_hot_selling_price_left"/>
-        <!--本店价(商品不促销时显示的价格，与促销价引用相同的样式，bindId不同)-->
         <Label class="other_product_hot_selling_price" bindId="other_product_store_price_left"/>
-        <!--售出件数-->
         <Label class="other_product_sold_num" bindId="other_product_sold_num_left"/>
-        <!--售出件数text-->
         <Label class="other_product_sold_num_text" text="已售出"/>
       </View>
 
@@ -372,6 +360,32 @@ request_for_mall_materials_page_data = function() {
   mall_materials_page_client.open('GET', request_for_mall_materials_page_data_url);
 
   return mall_materials_page_client.send();
+};
+
+//特价商品数据渲染
+tejia_products_initial = function() {
+  var count;
+  tejia_products_bind_data = [];
+
+  count = 0;
+  while (count < tejia_products_data.length) {
+    tejia_products_data_bind(count);
+    count++;
+  }
+  return $.tejia_products_section.setItems(tejia_products_bind_data);
+};
+
+//其他商品数据渲染
+other_products_initial = function(length) {
+  var count;
+  other_products_bind_data = [];
+
+  count = 0;
+  while (count < length / 2) {
+    other_products_data_bind(count);
+    count++;
+  }
+  return $.other_products_section.setItems(other_products_bind_data);
 };
 
 //特价商品绑定数据
@@ -503,8 +517,17 @@ other_products_data_bind = function(count) {
     });
 };
 ```
-从_example.js_给出的代码我们可以看出，整个页面数据绑定可以分为三大块：获取远程数据块、特价商品数据绑定块以及其他商品数据绑定块。
+从_example.js_给出的代码我们可以看出，整个页面数据绑定可以分为三大块：获取远程数据、特价商品数据
+绑定/渲染以及其他商品数据绑定/渲染。
 
+**① 获取远程数据**
+
+页面向后台发起url请求获取该页面的所有商品数据**mall_materials_page_data**，如果获取成功我们将“特价
+商品数据**tejia_products_data**”和“其他商品数据**others_products_data**”从数据中分离出来。
+
+**② 数据绑定**
+
+**③ 数据渲染**
 
 跳转到淘宝
 ```js
