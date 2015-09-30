@@ -176,7 +176,7 @@ LisiView的**body**身体部分，数据都展示在这里；FooterView是ListVi
 也是加在ListItem上，当然你也可以为ListItem中的某个特定的数据设置特有的点击事件，两者并不冲突。
 
 ####2.1 Items
-**items**是ListSection中所有ListItem的集合，类似sections。获取方法以及设置方法也于sections类似，**getItems()**获取某ListSection中所有ListItem的集合，
+**items**是ListSection中所有ListItem的集合，类似sections。获取方法以及设置方法也与sections类似，**getItems()**获取某ListSection中所有ListItem的集合，
 返回数组型数据；**setItems()**则为某个ListSection绑定一个数组型的ListItem数据。
 
 ```js
@@ -237,7 +237,83 @@ UI组件的定位，具体使用方法我们会在下面的例子中见到。
 _example.xml：_
 
 ```xml
-   code
+<ListView id="mall_materials_page">
+  <Templates>
+    <!--特价商品ItemTemplate-->
+    <ItemTemplate name="tejia_products_template" height="185" backgroundColor="#efedef">
+      <View zIndex="0" bindId="tejia_product_view_block">
+        <View id="tejia_product_info_view_block">
+          <!--促销价-->
+          <Label id="tejia_product_hot_selling_price_style" bindId="tejia_product_hot_selling_price"/>
+          <!--市场价-->
+          <Label id="tejia_product_original_price_style" bindId="tejia_product_original_price"/>
+          <!--卖出件数-->
+          <Label id="tejia_product_sold_num_style" bindId="tejia_product_sold_num"/>
+          <!--卖出件数text-->
+          <Label id="tejia_product_sold_num_text" text="人已买"/>
+          <!--剩余时间title-->
+          <Label id="tejia_product_left_time_title" text="距结束仅剩"/>
+          <!--剩余天数-->
+          <Label class="tejia_product_left_time_style" left="67%" bindId="tejia_product_left_time_day"/>
+          <!--剩余天数text-->
+          <Label class="tejia_product_left_time_text" left="74.8%" text="天"/>
+          <!--剩余小时-->
+          <Label class="tejia_product_left_time_style" left="81%" bindId="tejia_product_left_time_hour"/>
+          <!--剩余小时text-->
+          <Label class="tejia_product_left_time_text" left="89.5%" text="小时"/>
+        </View>
+    </ItemTemplate>
+
+    <!--其他商品ItemTemplate-->
+    <ItemTemplate name="other_products_template" height="175" backgroundColor="#efedef">
+      <!--左边的商品-->
+      <View class="other_product_view_block" left="0" bindId="other_product_view_block_left">
+        <!--图片-->
+        <ImageView class="other_product_image" bindId="other_product_image_left"/>
+        <!--名称-->
+        <Label class="other_product_name" bindId="other_product_name_left"/>
+        <!--原价-->
+        <Label class="other_product_original_price" bindId="other_product_original_price_left"/>
+        <!--仅剩text-->
+        <Label class="other_product_jinsheng_text" bindId="other_product_jinsheng_text_left" text="仅剩"/>
+        <!--剩余天数-->
+        <Label class="other_product_left_time_day" bindId="other_product_left_time_day_left"/>
+        <!--天text-->
+        <Label class="other_product_left_time_day_text" bindId="other_product_left_time_day_text_left" text="天"/>
+        <!--剩余小时-->
+        <Label class="other_product_left_time_hour" bindId="other_product_left_time_hour_left"/>
+        <!--小时text-->
+        <Label class="other_product_left_time_hour_text" bindId="other_product_left_time_hour_text_left" text="小时"/>
+        <!--促销价-->
+        <Label class="other_product_hot_selling_price" bindId="other_product_hot_selling_price_left"/>
+        <!--本店价(商品不促销时显示的价格，与促销价引用相同的样式，bindId不同)-->
+        <Label class="other_product_hot_selling_price" bindId="other_product_store_price_left"/>
+        <!--售出件数-->
+        <Label class="other_product_sold_num" bindId="other_product_sold_num_left"/>
+        <!--售出件数text-->
+        <Label class="other_product_sold_num_text" text="已售出"/>
+      </View>
+
+      <!--右边的商品-->
+      <View class="other_product_view_block" right="0" bindId="other_product_view_block_right">
+        <ImageView class="other_product_image" bindId="other_product_image_right"/>
+        <Label class="other_product_name" bindId="other_product_name_right"/>
+        <Label class="other_product_original_price" bindId="other_product_original_price_right"/>
+        <Label class="other_product_jinsheng_text" bindId="other_product_jinsheng_text_right" text="仅剩"/>
+        <Label class="other_product_left_time_day" bindId="other_product_left_time_day_right"/>
+        <Label class="other_product_left_time_day_text" bindId="other_product_left_time_day_text_right" text="天"/>
+        <Label class="other_product_left_time_hour" bindId="other_product_left_time_hour_right"/>
+        <Label class="other_product_left_time_hour_text" bindId="other_product_left_time_hour_text_right" text="小时"/>
+        <Label class="other_product_hot_selling_price" bindId="other_product_hot_selling_price_right"/>
+        <Label class="other_product_hot_selling_price" bindId="other_product_store_price_right"/>
+        <Label class="other_product_sold_num" bindId="other_product_sold_num_right"/>
+        <Label class="other_product_sold_num_text" text="已售出"/>
+      </View>
+    </ItemTemplate>
+
+    <ListSection id="tejia_products_section"/>
+    <ListSection id="other_products_section"/>
+</ListView>
 ```
 
 首先我们看到，为了区别两种不同的商品，我们在ListView中声明了两个不同的ListSection，将顶部大图的
@@ -257,7 +333,217 @@ _example.xml：_
 _example.js：_
 
 ```js
-   code
-```
+//以下代码为简化后的核心代码
 
+//获取远程商品数据
+request_for_mall_materials_page_data = function() {
+  var mall_materials_page_client, request_for_mall_materials_page_data_url;
+  mall_materials_page_client = Ti.Network.createHTTPClient({
+    onreadystatechange: function() {
+      if (is_data_exist === false) {
+        return load();
+      }
+    },
+    onload: function() {
+      mall_materials_page_data = JSON.parse(this.responseText);
+      if (mall_materials_page_data.length === 0) {
+        toast('抱歉，没有找到相关的商品！', $.mall_materials_page_data);
+      }
+      else {
+        is_data_exist = true;
+
+        //特价商品数据
+        tejia_products_data = mall_materials_page_data.tejia_products;
+        //其他商品数据
+        other_products_data = mall_materials_page_data.other_products;
+
+        products_initial();
+      }
+      return load_cancel();
+    },
+    onerror: function() {
+      load_cancel();
+      toast('获取数据失败，请检查当前的网络设置！', $.mall_materials_page);
+      return is_data_exist = false;
+    }
+  });
+
+  request_for_mall_materials_page_data_url = Settings_mall.server + '/interface/mall_products/jia_ju_guang_products';
+  mall_materials_page_client.open('GET', request_for_mall_materials_page_data_url);
+
+  return mall_materials_page_client.send();
+};
+
+//特价商品绑定数据
+tejia_products_data_bind = function(count) {
+    return tejia_products_bind_data.push({
+      template: 'tejia_products_template',
+      properties: {
+        selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE
+      },
+
+      //特价商品图片
+      tejia_product_view_block: {
+        index: tejia_products_data[count].url,
+        backgroundImage: tejia_products_data[count].cover
+      },
+      //特价商品促销价
+      tejia_product_hot_selling_price: {
+        text: '￥' + tejia_products_data[count].sale_price
+      },
+      //特价商品原价
+      tejia_product_original_price: {
+        text: '￥' + tejia_products_data[count].market_price,
+        backgroundImage: '/images/delete_line_white.png'
+      },
+      //特价商品售出件数
+      tejia_product_sold_num: {
+        text: tejia_products_data[count].sales_volume
+      },
+      //特价商品促销剩余时间--天
+      tejia_product_left_time_day: {
+        text: tejia_products_data[count].finish_day
+      },
+      //特价商品促销剩余时间--小时
+      tejia_product_left_time_hour: {
+        text: tejia_products_data[count].finish_hour
+      }
+    });
+};
+
+//其他商品绑定数据
+other_products_data_bind = function(count) {
+    return other_products_bind_data.push({
+      template: 'other_products_template',
+      properties: {
+        selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE
+      },
+
+      //左边的商品
+      other_product_image_left: {
+        index: other_products_data[count * 2].url,
+        image: other_products_data[count * 2].cover
+      },
+      other_product_name_left: {
+        text: other_products_data[count * 2].name
+      },
+      other_product_original_price_left: {
+        text: '￥' + other_products_data[count * 2].market_price,
+        backgroundImage: '/images/delete_line.png'
+      },
+      other_product_jinsheng_text_left: {
+        visible: other_products_data[count * 2].sale_or_not
+      },
+      other_product_left_time_day_left: {
+        visible: other_products_data[count * 2].sale_or_not,
+        text: other_products_data[count * 2].finish_day
+      },
+      other_product_left_time_day_text_left: {
+        visible: other_products_data[count * 2].sale_or_not
+      },
+      other_product_left_time_hour_left: {
+        visible: other_products_data[count * 2].sale_or_not,
+        text: other_products_data[count * 2].finish_hour
+      },
+      other_product_left_time_hour_text_left: {
+        visible: other_products_data[count * 2].sale_or_not
+      },
+      other_product_hot_selling_price_left: {
+        visible: other_products_data[count * 2].sale_or_not,
+        text: '￥' + other_products_data[count * 2].sale_price
+      },
+      other_product_store_price_left: {
+        visible: !other_products_data[count * 2].sale_or_not,
+        text: '￥' + other_products_data[count * 2].price
+      },
+      other_product_sold_num_left: {
+        text: other_products_data[count * 2].sales_volume
+      },
+
+      //右边的商品
+      other_product_image_right: {
+        index: other_products_data[(count * 2) + 1].url,
+        image: other_products_data[(count * 2) + 1].cover
+      },
+      other_product_name_right: {
+        text: other_products_data[count * 2 + 1].name
+      },
+      other_product_original_price_right: {
+        text: '￥' + other_products_data[count * 2 + 1].market_price,
+        backgroundImage: '/images/delete_line.png'
+      },
+      other_product_jinsheng_text_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not
+      },
+      other_product_left_time_day_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not,
+        text: other_products_data[count * 2 + 1].finish_day
+      },
+      other_product_left_time_day_text_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not
+      },
+      other_product_left_time_hour_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not,
+        text: other_products_data[count * 2 + 1].finish_hour
+      },
+      other_product_left_time_hour_text_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not
+      },
+      other_product_hot_selling_price_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not,
+        text: '￥' + other_products_data[count * 2 + 1].sale_price
+      },
+      other_product_store_price_right: {
+        visible: !other_products_data[count * 2 + 1].sale_or_not,
+        text: '￥' + other_products_data[count * 2 + 1].price
+      },
+      other_product_sold_num_right: {
+        text: other_products_data[count * 2 + 1].sales_volume
+      }
+    });
+};
+```
+从_example.js_给出的代码我们可以看出，整个页面数据绑定可以分为三大块：获取远程数据块、特价商品数据绑定块以及其他商品数据绑定块。
+
+
+跳转到淘宝
+```js
+$.mall_materials_page.addEventListener('itemclick', function(e) {
+  var go_tao_bao, url;
+
+  //特价商品跳转到淘宝
+  if (e.bindId === 'tejia_product_view_block') {
+    url = $.tejia_products_section.items[e.itemIndex].tejia_product_view_block.index;
+
+    go_tao_bao = Alloy.createController("taobao_webview", {
+      url: url
+    }).getView();
+
+    go_tao_bao.setLeft('100%');
+    return go_tao_bao.open(slide_to_left);
+  }
+
+  //其他商品跳转到淘宝
+  else if (e.bindId === 'other_product_image_left') { //左边的商品跳转到淘宝
+    url = $.other_products_section.items[e.itemIndex].other_product_image_left.index;
+
+    go_tao_bao = Alloy.createController("taobao_webview", {
+      url: url
+    }).getView();
+
+    go_tao_bao.setLeft('100%');
+    return go_tao_bao.open(slide_to_left);
+  }
+  else if (e.bindId === 'other_product_image_right') { //右边的商品跳转到淘宝
+    url = $.other_products_section.items[e.itemIndex].other_product_image_right.index;
+
+    go_tao_bao = Alloy.createController("taobao_webview", {
+      url: url
+    }).getView();
+
+    go_tao_bao.setLeft('100%');
+    return go_tao_bao.open(slide_to_left);
+  }
+});
+```
 ####3.3 ListView提供的模板
