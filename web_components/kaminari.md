@@ -14,11 +14,13 @@
 在Rails2，3的时代，我们使用 will pagination, 在Rails3 之后，我们都使用Kaminari
 ( https://github.com/amatsuda/kaminari )
 
+![一个例子](images/pagination.png)
+
 ## 使用
 
 假设我们在一个Rails3 的项目中：
 
-修改 `Gemfile`: 
+修改 `Gemfile`:
 ```
 gem 'kaminari'
 ```
@@ -100,3 +102,20 @@ zh-CN:
 
 Karminari还有更多的作用，例如在Sinatra等框架中使用，为普通的Array做分页，针对Mongoid做分页等等。 具体请看官方文档。
 
+## config/routes.rb中，root路径要放在下面，否则会引起分页链接错误
+
+今天很奇怪，遇到一个问题： kaminari 在分页时 ，如果 被分页内容是 root_path, 那么在分页helper中的路径， 就不是完整的。形式（例如 /client/pids?page=2 ) ，而是以 '/？page=2' 这样的形式显示。 ( today I met a problem caused by a root_path declaration in the top of my routes.rb file .  the problem is : the links in pagination helper is not displayed as standard path, but a root path)
+
+解决办法： 把 config/routes.rb中的 root声明放在 下面
+
+```
+# in config/routes.rb
+   match '/logout' => "users#logout", :as => :logout
+   namespace "client" do
+     resources "vendors", "pids", "os", "pid_logs",
+     ......
+     end
+   end
+
+  root :to => 'users#index'
+```

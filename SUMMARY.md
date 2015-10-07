@@ -140,7 +140,7 @@
 
 * [Rails 常用的第三方组件]
   * [分页: kaminari](web_components/kaminari.md)
-  * [上传图片 carrierwave]()
+  * [上传图片 carrierwave](web_components/carrierwave.md)
   * [即时上传 jquery-upload]()
   * [上传图片到云 upyun]
   * [发送短信 ]
