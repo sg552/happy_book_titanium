@@ -15,3 +15,6 @@ what you see is what you get. 所见即所得编辑器. 例如：word.
 
 # upyun
 又拍云， 一个图片服务提供商。http://upyun.com
+
+# HTTParty
+用来发起或者处理 http 请求的rubygem。https://github.com/jnunemaker/httparty
