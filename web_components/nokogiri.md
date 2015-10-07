@@ -111,6 +111,7 @@ puts @doc.to_html
   <book>I am the third book</book>
 </books>
 ```
+
 还有更多的功能，例如为多个node增加wrapper, 为整个文档增加<?xml.. ?> 这样的字符串等等。
 请大家查看API。
 

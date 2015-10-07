@@ -20,7 +20,7 @@ gem 'carrierwave', '0.9.0'
 $ rails generate uploader Logo
 ```
 会新建一个这样的model:
-```
+```ruby
 # this will create file: app/uploaders/logo_uploader.rb
 class AvatarUploader < Logo::Uploader::Base
   storage :file
@@ -29,7 +29,7 @@ end
 
 同时, 务必记得 为对应的model 增加 列:  Avatar
 
-```
+```ruby
 # -*- encoding : utf-8 -*-
 class AddSnapshotToMarketModules < ActiveRecord::Migration
   def change
@@ -38,21 +38,21 @@ class AddSnapshotToMarketModules < ActiveRecord::Migration
 end
 ```
 
-3. in your model:
-
-```
- class Item < ActiveRecord::Base
-+  mount_uploader :logo, LogoUploader
- end
-```
-
-4. in your view:
+in your model:
 
 ```ruby
-    <%= f.file_field :logo %>
+class Item < ActiveRecord::Base
+  mount_uploader :logo, LogoUploader
+end
 ```
 
-5. in controller :
+in your view:
+
+```ruby
+<%= f.file_field :logo %>
+```
+
+in controller :
 
 ```ruby
 # do nothing....
@@ -64,14 +64,13 @@ item.save
 
 # 对于 rails4, 只需要把 avatar 这个属性加入到 参数白名单列表中:
 
-```
+```ruby
 def item_params
     params.require(:item).permit(:market_id, :name, :level, :avatar)
 end
 ```
 
-6. usage:
-
+用法：
 ```erb
 <%= image_tag @item.logo.url, :style => 'height: 200px' %>
 ```
