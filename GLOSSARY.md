@@ -13,3 +13,5 @@ what you see is what you get. 所见即所得编辑器. 例如：word.
 # Ckeditor
 目前非常流行的WYSIWYG 编辑器。https://github.com/galetahub/ckeditor
 
+# upyun
+又拍云， 一个图片服务提供商。http://upyun.com

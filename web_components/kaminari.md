@@ -14,7 +14,7 @@
 在Rails2，3的时代，我们使用 will pagination, 在Rails3 之后，我们都使用Kaminari
 ( https://github.com/amatsuda/kaminari )
 
-![一个例子](images/pagination.png)
+![一个例子](/images/pagination.png)
 
 ## 使用
 

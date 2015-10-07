@@ -142,9 +142,9 @@
   * [分页: kaminari](web_components/kaminari.md)
   * [上传图片 carrierwave](web_components/carrierwave.md)
   * [即时上传 jquery-upload]()
-  * [上传图片到云 upyun]
+  * [上传图片到云 upyun](web_components/upyun.md)
   * [发送短信 ]
-  * [wysiwyg 所见即所得编辑器]
+  * [wysiwyg 所见即所得编辑器](web_components/wysiwyg_ckeditor.md)
   * [发送restful请求  HTTParty]
   * [日志工具log4r]()
   * [配置 rails-config]
