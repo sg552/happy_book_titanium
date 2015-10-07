@@ -25,6 +25,7 @@
 有了上面三个信息，就可以上传图片了。
 
 ## 绑定域名
+
 ![例子](/images/upyun_bind_domain.png)
 
 ## 最简单的例子
@@ -132,10 +133,13 @@ end
 2. 选择目标图片空间
 
 3. 选择 自定义版本
+
 ![例子](/images/upyun_menu.png)
 
 4. 创建 缩略图版本即可。
+
 ![例子](/images/upyun_create_thumbneil.png)
+
 一个比较好的实践，如图所示，直接把缩略图的名字以 aaxbb命名，例如图中的'50x50',
 访问的时候，
 ```
