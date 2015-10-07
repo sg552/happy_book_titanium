@@ -150,7 +150,7 @@
   * [配置 rails-config]
   * [分析HTML: nokogiri](web_components/nokogiri.md)
   * [服务器thin](web_components/thin.md)
-  * [增加注释 migrtion comments]
+  * [增加注释 migrtion comments](web_components/migration_comments.md)
   * [单点登陆 ruby cas]
   * [rspec]
   * [factory girl]

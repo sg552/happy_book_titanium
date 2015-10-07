@@ -27,3 +27,6 @@ what you see is what you get. 所见即所得编辑器. 例如：word.
 
 # Thin
 一个非常好用又容易上手的Rails服务器。 http://code.macournoyer.com/thin/
+
+# migration comment
+简单但是绝对好用的gem, 专门为MYSQL 增加注释. https://github.com/pinnymz/migration_comments
