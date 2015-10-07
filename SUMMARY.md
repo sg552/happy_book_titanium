@@ -139,9 +139,7 @@
   * [rails 接口](part3_rails_premier/interface_document.md)
 
 * [Rails 常用的第三方组件]
-  * [分页: kaminari]()
-  * [授权: cancan]()
-  * [认证：devise]()
+  * [分页: kaminari](web_components/kaminari.md)
   * [上传图片 carrierwave]()
   * [即时上传 jquery-upload]()
   * [上传图片到云 upyun]
