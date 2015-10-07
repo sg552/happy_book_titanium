@@ -148,7 +148,7 @@
   * [发送restful请求  HTTParty](web_components/httparty.md)
   * [日志工具log4r]()
   * [配置 rails-config]
-  * [分析HTML: nokogiri]()
+  * [分析HTML: nokogiri](web_components/nokogiri.md)
   * [服务器thin]
   * [增加注释 migrtion comments]
   * [单点登陆 ruby cas]

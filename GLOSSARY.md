@@ -18,3 +18,6 @@ what you see is what you get. 所见即所得编辑器. 例如：word.
 
 # HTTParty
 用来发起或者处理 http 请求的rubygem。https://github.com/jnunemaker/httparty
+
+# Nokogiri
+非常强大的解析HTML/XML的rubygem. http://www.nokogiri.org/

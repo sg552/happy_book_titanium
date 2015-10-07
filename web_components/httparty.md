@@ -80,6 +80,21 @@ class Foo
   http_proxy 'http://foo.com', 80, 'user', 'pass'
 end
 ```
+## 使用timeout
+
+timeout（超时）特别重要。默认一般是30秒，你可以把它缩短成5秒甚至更少。 
+
+```ruby
+# -*- encoding : utf-8 -*-
+class StaticFilesController < ApplicationController
+  include HTTParty
+  default_timeout 3
+
+  def get_generator_plans
+    self.class.get 'some/url'
+  end
+end
+```
 
 ## 一个例子： 抓取并且分析远程的接口的数据
 
@@ -122,3 +137,4 @@ QQ浏览器, index: 50
 1.  对于某些接口,需要用汉字转换到 unicode , 见:  http://pages.ucsd.edu/~dkjordan/resources/unicodemaker.html
 
 2. 对于 url, 有时候转到的是原始URL, 有的是 编码后的URL, 在这里也可以转换: http://meyerweb.com/eric/tools/dencoder/
+
