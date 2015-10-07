@@ -24,3 +24,6 @@ what you see is what you get. 所见即所得编辑器. 例如：word.
 
 # Log4r
 非常有效的日志gem.支持按天分卷，自定义各种格式。 https://github.com/colbygk/log4r
+
+# Thin
+一个非常好用又容易上手的Rails服务器。 http://code.macournoyer.com/thin/

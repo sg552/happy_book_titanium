@@ -143,13 +143,13 @@
   * [上传图片 carrierwave](web_components/carrierwave.md)
   * [即时上传 jquery-upload]()
   * [上传图片到云 upyun](web_components/upyun.md)
-  * [发送短信 ]
+  * [发送短信]
   * [wysiwyg 所见即所得编辑器](web_components/wysiwyg_ckeditor.md)
   * [发送restful请求  HTTParty](web_components/httparty.md)
   * [日志工具log4r](web_components/log4r.md)
   * [配置 rails-config]
   * [分析HTML: nokogiri](web_components/nokogiri.md)
-  * [服务器thin]
+  * [服务器thin](web_components/thin.md)
   * [增加注释 migrtion comments]
   * [单点登陆 ruby cas]
   * [rspec]
