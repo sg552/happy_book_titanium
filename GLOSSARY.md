@@ -21,3 +21,6 @@ what you see is what you get. 所见即所得编辑器. 例如：word.
 
 # Nokogiri
 非常强大的解析HTML/XML的rubygem. http://www.nokogiri.org/
+
+# Log4r
+非常有效的日志gem.支持按天分卷，自定义各种格式。 https://github.com/colbygk/log4r
