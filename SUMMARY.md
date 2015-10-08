@@ -76,9 +76,9 @@
     * [View中的标签](part1_ti_premier/alloy_views/xml_elements.md)
     * [titanium 样式](part1_ti_premier/alloy_views/titanium_style_sheets.md)
   * [Alloy Controller](part1_ti_premier/alloy_controller.md)
-  * [使用jade, stss, coffee开发Alloy]
-    * [jade]
-    * [stss]
+  * [使用jade, stss, coffee开发Alloy](part1_ti_premier/jade_stss_coffee_in_alloy.md)
+    * [jade](part1_ti_premier/jade_stss_coffee_in_alloy/jade.md)
+    * [stss](part1_ti_premier/jade_stss_coffee_in_alloy/stss.md)
     * [coffee]
 
 * [Titanium 进阶](part2_ti_advanced.md)
