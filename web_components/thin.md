@@ -29,7 +29,7 @@ $ bundle exec thin start -p 4000
 
 假设配置文件放在 config/thin.yml ：
 
-```yaml
+```yml
 ---
 chdir: '/opt/app/current'  #  这里需要修改。
 environment: production
