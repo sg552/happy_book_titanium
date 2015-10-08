@@ -176,7 +176,7 @@ LisiView的**body**身体部分，数据都展示在这里；FooterView是ListVi
 也是加在ListItem上，当然你也可以为ListItem中的某个特定的数据设置特有的点击事件，两者并不冲突。
 
 ####2.1 Items
-**items**是ListSection中所有ListItem的集合，类似sections。获取方法以及设置方法也于sections类似，**getItems()**获取某ListSection中所有ListItem的集合，
+**items**是ListSection中所有ListItem的集合，类似sections。获取方法以及设置方法也与sections类似，**getItems()**获取某ListSection中所有ListItem的集合，
 返回数组型数据；**setItems()**则为某个ListSection绑定一个数组型的ListItem数据。
 
 ```js
@@ -205,11 +205,368 @@ ListItem中数据的处理；即我们是否能设计一个比较好的数据模
 ###3. 数据模板Template
 **Template**数据模板描述的是ListView在渲染数据时，数据渲染所要遵循的“**渲染样式**”，即数据在LisView中的结构样式，说白了就是设定好
 所要的UI样式，然后将数据绑定到相关的UI组件上。数据渲染主要通过**bindId**来实现，即绑定**id**的UI组件；该组件即用来渲染其对应的数据。
-在ListView中，我们可以通过定义**Template**标签来实现；我们所定义的数据样式，其实就是对ListItem中所要填充的数据进行样式定义；所以真正
-起作用的是Template标签下的**ItemTemplate**标签。
+在ListView中，我们可以通过定义**Template**标签来实现；我们所定义的数据样式，其实就是对ListItem中所要填充的数据进行样式定义，即item的template；所以
+在Template标签下有一个**ItemTemplate**标签来定义数据模板的样式。
 
-数据模板介绍什么是数据模板，bindId
+####3.1 bindId
+**bindId**实际上就是绑定数据的UI组件的id，我们通过bindId来识别具体的某一个绑定数据的UI组件，和组件id的功能类同但并不完全相同。前面我们已经描述过
+数据模板针对ListView中的每个listitem定义其数据样式，即所有的item遵循一个模板，所以我们不能为每个UI组件设置属于其自己的id；即使在定义时为其设置了id，但是也不能
+在.js文件中进行引用。UI组件的id主要功能是用来识别每个UI，但是在这种情况下我们已经不再需要通过id来识别每个UI，因为我们现在可以通过事件参数e和bindId来共同完成每个
+UI组件的定位，具体使用方法我们会在下面的例子中见到。
 
-####3.1 自定义数据模板
+####3.2 自定义数据模板
+**自定义数据模板**根据不同的数据样式处理要求定义我们自己需要的数据模板，使用方法十分灵活。下面我们通过一个项目例子的中需求和代码来看看自定义数据模板需要如何定义：
 
-####3.2 ListView提供的模板
+![imageview](http://image.happysoft.cc)
+
+上面这张动态演示图是我们需要通过ListView实现的UI效果图。对照着效果图，我们大致可以看出该页面的数据样式需求：
+
+* 商品列表中含有两种不同的商品，一种为顶部大图模式，另一种为小图模式
+* 每个ListItem中至有两个商品数据
+* 每个商品数据包含图片、商品名称、价格、促销信息等数据
+* 每个商品都能跳转到自己的淘宝店铺页面
+
+这些需求基本上将我们上面描述过的数据模板问题都包含进来了：
+
+* ① ListView中至少有两种数据块，即含有多个ListSection
+* ② ListItem最小数据单元问题，这里的一个ListItem包含了两条数据元信息
+* ③ ListItem中每个商品都有属于自己的定位(能被找到)，即能根据自身不同的属性点击跳转到自己的淘宝购买页
+
+我们带着这些问题先从_.xml_文件看起，看看这种数据模板是如何定义的：
+
+_example.xml：_
+
+```xml
+<ListView id="mall_materials_page">
+  <Templates>
+    <!--特价商品ItemTemplate-->
+    <ItemTemplate name="tejia_products_template" height="185" backgroundColor="#efedef">
+      <View zIndex="0" bindId="tejia_product_view_block">
+        <View id="tejia_product_info_view_block">
+          <!--促销价-->
+          <Label id="tejia_product_hot_selling_price_style" bindId="tejia_product_hot_selling_price"/>
+          <!--市场价-->
+          <Label id="tejia_product_original_price_style" bindId="tejia_product_original_price"/>
+          <!--卖出件数-->
+          <Label id="tejia_product_sold_num_style" bindId="tejia_product_sold_num"/>
+          <!--卖出件数text-->
+          <Label id="tejia_product_sold_num_text" text="人已买"/>
+          <!--剩余时间title-->
+          <Label id="tejia_product_left_time_title" text="距结束仅剩"/>
+          <!--剩余天数-->
+          <Label class="tejia_product_left_time_style" left="67%" bindId="tejia_product_left_time_day"/>
+          <!--剩余天数text-->
+          <Label class="tejia_product_left_time_text" left="74.8%" text="天"/>
+          <!--剩余小时-->
+          <Label class="tejia_product_left_time_style" left="81%" bindId="tejia_product_left_time_hour"/>
+          <!--剩余小时text-->
+          <Label class="tejia_product_left_time_text" left="89.5%" text="小时"/>
+        </View>
+    </ItemTemplate>
+
+    <!--其他商品ItemTemplate-->
+    <ItemTemplate name="other_products_template" height="175" backgroundColor="#efedef">
+      <!--左边的商品-->
+      <View class="other_product_view_block" left="0" bindId="other_product_view_block_left">
+        <ImageView class="other_product_image" bindId="other_product_image_left"/>
+        <Label class="other_product_name" bindId="other_product_name_left"/>
+        <Label class="other_product_original_price" bindId="other_product_original_price_left"/>
+        <Label class="other_product_jinsheng_text" bindId="other_product_jinsheng_text_left" text="仅剩"/>
+        <Label class="other_product_left_time_day" bindId="other_product_left_time_day_left"/>
+        <Label class="other_product_left_time_day_text" bindId="other_product_left_time_day_text_left" text="天"/>
+        <Label class="other_product_left_time_hour" bindId="other_product_left_time_hour_left"/>
+        <Label class="other_product_left_time_hour_text" bindId="other_product_left_time_hour_text_left" text="小时"/>
+        <Label class="other_product_hot_selling_price" bindId="other_product_hot_selling_price_left"/>
+        <Label class="other_product_hot_selling_price" bindId="other_product_store_price_left"/>
+        <Label class="other_product_sold_num" bindId="other_product_sold_num_left"/>
+        <Label class="other_product_sold_num_text" text="已售出"/>
+      </View>
+
+      <!--右边的商品-->
+      <View class="other_product_view_block" right="0" bindId="other_product_view_block_right">
+        <ImageView class="other_product_image" bindId="other_product_image_right"/>
+        <Label class="other_product_name" bindId="other_product_name_right"/>
+        <Label class="other_product_original_price" bindId="other_product_original_price_right"/>
+        <Label class="other_product_jinsheng_text" bindId="other_product_jinsheng_text_right" text="仅剩"/>
+        <Label class="other_product_left_time_day" bindId="other_product_left_time_day_right"/>
+        <Label class="other_product_left_time_day_text" bindId="other_product_left_time_day_text_right" text="天"/>
+        <Label class="other_product_left_time_hour" bindId="other_product_left_time_hour_right"/>
+        <Label class="other_product_left_time_hour_text" bindId="other_product_left_time_hour_text_right" text="小时"/>
+        <Label class="other_product_hot_selling_price" bindId="other_product_hot_selling_price_right"/>
+        <Label class="other_product_hot_selling_price" bindId="other_product_store_price_right"/>
+        <Label class="other_product_sold_num" bindId="other_product_sold_num_right"/>
+        <Label class="other_product_sold_num_text" text="已售出"/>
+      </View>
+    </ItemTemplate>
+
+    <ListSection id="tejia_products_section"/>
+    <ListSection id="other_products_section"/>
+</ListView>
+```
+
+首先我们看到，为了区别两种不同的商品，我们在ListView中声明了两个不同的ListSection，将顶部大图的
+商品数据块和下面小图的商品数据块分开来(**tejia_products_section**/**other_products_section**)；并且定义了两种
+不同的ItemTemplate(**tejia_products_template**/**other_products_template**)来分别处理两种不同的
+商品数据样式，这样就解决了ListView中**_多个数据块以及数据块中多个不同的数据样式_**问题。
+
+其次，在other_products_template中我们看到为了在ListItem中设置两个商品数据，我们在数据处理上定义了“**左边的商品/右边的商品**”两个
+**view_block**。这样的处理方式在UI层面上至少区分了左/右两个商品的不同数据块，但实际上要在同一个ListItem中渲染多个数据块还是需要通过bindId
+来解决；所以对于左/右两边不同的商品数据我们都定义了属于它们自己的bindId(**_left**/**_right**)。因此我们在处理复杂的逻辑数据结构的时候，可以
+考虑这种在一个ListIem中插入多条数据的情况。
+
+从上面我们可以知道，如果ListView中存在多个不同的数据块需求，我们可以通过定义不同的ListSection来解决；如果，某个数据块中存在多种不同的数据样式，那么我们
+可以通过定义多个不同的ItemTemplate来解决这个问题。以上是在.xml文件中关于Template在UI层面上的处理，下面我们将要详细的介绍我们要如何将从远程获取的数据按照
+已经我们定义好的数据模板来渲染数据。
+
+_example.js：_
+
+```js
+//以下代码为简化后的核心代码
+
+//获取远程商品数据
+request_for_mall_materials_page_data = function() {
+  var mall_materials_page_client, request_for_mall_materials_page_data_url;
+  mall_materials_page_client = Ti.Network.createHTTPClient({
+    onreadystatechange: function() {
+      if (is_data_exist === false) {
+        return load();
+      }
+    },
+    onload: function() {
+      mall_materials_page_data = JSON.parse(this.responseText);
+      if (mall_materials_page_data.length === 0) {
+        toast('抱歉，没有找到相关的商品！', $.mall_materials_page_data);
+      }
+      else {
+        is_data_exist = true;
+
+        //特价商品数据
+        tejia_products_data = mall_materials_page_data.tejia_products;
+        //其他商品数据
+        other_products_data = mall_materials_page_data.other_products;
+
+        products_initial();
+      }
+      return load_cancel();
+    },
+    onerror: function() {
+      load_cancel();
+      toast('获取数据失败，请检查当前的网络设置！', $.mall_materials_page);
+      return is_data_exist = false;
+    }
+  });
+
+  request_for_mall_materials_page_data_url = Settings_mall.server + '/interface/mall_products/jia_ju_guang_products';
+  mall_materials_page_client.open('GET', request_for_mall_materials_page_data_url);
+
+  return mall_materials_page_client.send();
+};
+
+//特价商品数据渲染
+tejia_products_initial = function() {
+  var count;
+  tejia_products_bind_data = [];
+
+  count = 0;
+  while (count < tejia_products_data.length) {
+    tejia_products_data_bind(count);
+    count++;
+  }
+  return $.tejia_products_section.setItems(tejia_products_bind_data);
+};
+
+//其他商品数据渲染
+other_products_initial = function(length) {
+  var count;
+  other_products_bind_data = [];
+
+  count = 0;
+  while (count < length / 2) {
+    other_products_data_bind(count);
+    count++;
+  }
+  return $.other_products_section.setItems(other_products_bind_data);
+};
+
+//特价商品绑定数据
+tejia_products_data_bind = function(count) {
+    return tejia_products_bind_data.push({
+      template: 'tejia_products_template',
+      properties: {
+        selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE
+      },
+
+      //特价商品图片
+      tejia_product_view_block: {
+        index: tejia_products_data[count].url,
+        backgroundImage: tejia_products_data[count].cover
+      },
+      //特价商品促销价
+      tejia_product_hot_selling_price: {
+        text: '￥' + tejia_products_data[count].sale_price
+      },
+      //特价商品原价
+      tejia_product_original_price: {
+        text: '￥' + tejia_products_data[count].market_price,
+        backgroundImage: '/images/delete_line_white.png'
+      },
+      //特价商品售出件数
+      tejia_product_sold_num: {
+        text: tejia_products_data[count].sales_volume
+      },
+      //特价商品促销剩余时间--天
+      tejia_product_left_time_day: {
+        text: tejia_products_data[count].finish_day
+      },
+      //特价商品促销剩余时间--小时
+      tejia_product_left_time_hour: {
+        text: tejia_products_data[count].finish_hour
+      }
+    });
+};
+
+//其他商品绑定数据
+other_products_data_bind = function(count) {
+    return other_products_bind_data.push({
+      template: 'other_products_template',
+      properties: {
+        selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE
+      },
+
+      //左边的商品
+      other_product_image_left: {
+        index: other_products_data[count * 2].url,
+        image: other_products_data[count * 2].cover
+      },
+      other_product_name_left: {
+        text: other_products_data[count * 2].name
+      },
+      other_product_original_price_left: {
+        text: '￥' + other_products_data[count * 2].market_price,
+        backgroundImage: '/images/delete_line.png'
+      },
+      other_product_jinsheng_text_left: {
+        visible: other_products_data[count * 2].sale_or_not
+      },
+      other_product_left_time_day_left: {
+        visible: other_products_data[count * 2].sale_or_not,
+        text: other_products_data[count * 2].finish_day
+      },
+      other_product_left_time_day_text_left: {
+        visible: other_products_data[count * 2].sale_or_not
+      },
+      other_product_left_time_hour_left: {
+        visible: other_products_data[count * 2].sale_or_not,
+        text: other_products_data[count * 2].finish_hour
+      },
+      other_product_left_time_hour_text_left: {
+        visible: other_products_data[count * 2].sale_or_not
+      },
+      other_product_hot_selling_price_left: {
+        visible: other_products_data[count * 2].sale_or_not,
+        text: '￥' + other_products_data[count * 2].sale_price
+      },
+      other_product_store_price_left: {
+        visible: !other_products_data[count * 2].sale_or_not,
+        text: '￥' + other_products_data[count * 2].price
+      },
+      other_product_sold_num_left: {
+        text: other_products_data[count * 2].sales_volume
+      },
+
+      //右边的商品
+      other_product_image_right: {
+        index: other_products_data[(count * 2) + 1].url,
+        image: other_products_data[(count * 2) + 1].cover
+      },
+      other_product_name_right: {
+        text: other_products_data[count * 2 + 1].name
+      },
+      other_product_original_price_right: {
+        text: '￥' + other_products_data[count * 2 + 1].market_price,
+        backgroundImage: '/images/delete_line.png'
+      },
+      other_product_jinsheng_text_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not
+      },
+      other_product_left_time_day_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not,
+        text: other_products_data[count * 2 + 1].finish_day
+      },
+      other_product_left_time_day_text_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not
+      },
+      other_product_left_time_hour_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not,
+        text: other_products_data[count * 2 + 1].finish_hour
+      },
+      other_product_left_time_hour_text_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not
+      },
+      other_product_hot_selling_price_right: {
+        visible: other_products_data[count * 2 + 1].sale_or_not,
+        text: '￥' + other_products_data[count * 2 + 1].sale_price
+      },
+      other_product_store_price_right: {
+        visible: !other_products_data[count * 2 + 1].sale_or_not,
+        text: '￥' + other_products_data[count * 2 + 1].price
+      },
+      other_product_sold_num_right: {
+        text: other_products_data[count * 2 + 1].sales_volume
+      }
+    });
+};
+```
+从_example.js_给出的代码我们可以看出，整个页面数据绑定可以分为三大块：获取远程数据、特价商品数据
+绑定/渲染以及其他商品数据绑定/渲染。
+
+**① 获取远程数据**
+
+页面向后台发起url请求获取该页面的所有商品数据**mall_materials_page_data**，如果获取成功我们将“特价
+商品数据**tejia_products_data**”和“其他商品数据**others_products_data**”从数据中分离出来。
+
+**② 数据绑定**
+
+**③ 数据渲染**
+
+跳转到淘宝
+```js
+$.mall_materials_page.addEventListener('itemclick', function(e) {
+  var go_tao_bao, url;
+
+  //特价商品跳转到淘宝
+  if (e.bindId === 'tejia_product_view_block') {
+    url = $.tejia_products_section.items[e.itemIndex].tejia_product_view_block.index;
+
+    go_tao_bao = Alloy.createController("taobao_webview", {
+      url: url
+    }).getView();
+
+    go_tao_bao.setLeft('100%');
+    return go_tao_bao.open(slide_to_left);
+  }
+
+  //其他商品跳转到淘宝
+  else if (e.bindId === 'other_product_image_left') { //左边的商品跳转到淘宝
+    url = $.other_products_section.items[e.itemIndex].other_product_image_left.index;
+
+    go_tao_bao = Alloy.createController("taobao_webview", {
+      url: url
+    }).getView();
+
+    go_tao_bao.setLeft('100%');
+    return go_tao_bao.open(slide_to_left);
+  }
+  else if (e.bindId === 'other_product_image_right') { //右边的商品跳转到淘宝
+    url = $.other_products_section.items[e.itemIndex].other_product_image_right.index;
+
+    go_tao_bao = Alloy.createController("taobao_webview", {
+      url: url
+    }).getView();
+
+    go_tao_bao.setLeft('100%');
+    return go_tao_bao.open(slide_to_left);
+  }
+});
+```
+####3.3 ListView提供的模板

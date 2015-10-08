@@ -113,7 +113,7 @@
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [自动化工具]
-  * [Appium （海洋）](automation_tools/appium.md)
+  * [Appium](automation_tools/appium.md)
   * [selenium](automation_tools/selenium.md)
   * [Capistrano](automation_tools/capistrano.md)
   * [Grunt](automation_tools/grunt.md)
@@ -139,20 +139,18 @@
   * [rails 接口](part3_rails_premier/interface_document.md)
 
 * [Rails 常用的第三方组件]
-  * [分页: kaminari]()
-  * [授权: cancan]()
-  * [认证：devise]()
-  * [上传图片 carrierwave]()
+  * [分页: kaminari](web_components/kaminari.md)
+  * [上传图片 carrierwave](web_components/carrierwave.md)
   * [即时上传 jquery-upload]()
-  * [上传图片到云 upyun]
-  * [发送短信 ]
-  * [wysiwyg 所见即所得编辑器]
-  * [发送restful请求  HTTParty]
-  * [日志工具log4r]()
+  * [上传图片到云 upyun](web_components/upyun.md)
+  * [发送短信]
+  * [wysiwyg 所见即所得编辑器](web_components/wysiwyg_ckeditor.md)
+  * [发送restful请求  HTTParty](web_components/httparty.md)
+  * [日志工具log4r](web_components/log4r.md)
   * [配置 rails-config]
-  * [分析HTML: nokogiri]()
-  * [服务器thin]
-  * [增加注释 migrtion comments]
+  * [分析HTML: nokogiri](web_components/nokogiri.md)
+  * [服务器thin](web_components/thin.md)
+  * [增加注释 migrtion comments](web_components/migration_comments.md)
   * [单点登陆 ruby cas]
   * [rspec]
   * [factory girl]
