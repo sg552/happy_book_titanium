@@ -113,7 +113,7 @@
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [自动化工具]
-  * [Appium （海洋）](automation_tools/appium.md)
+  * [Appium](automation_tools/appium.md)
   * [selenium](automation_tools/selenium.md)
   * [Capistrano](automation_tools/capistrano.md)
   * [Grunt](automation_tools/grunt.md)
