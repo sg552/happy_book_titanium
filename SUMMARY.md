@@ -2,7 +2,10 @@
 
 * [前言](preface.md)
 * [Titanium 入门](part1_ti_premier.md)
-  * [搭建环境](part1_ti_premier/setup_titanium.md)
+  * [什么是Titanium](part1_ti_premier/what_is_titanium.md)
+  * [搭建Titanium开发环境](part1_ti_premier/setup_titanium.md)
+  * [创建你的第一个App](part1_ti_premier/create_first_app.md)
+  * [Titanium社区及学习资源](part1_ti_premier/study_resources.md)
   * [Javascript 入门](part1_ti_premier/javascript_premier.md)
     * [Object](part1_ti_premier/javascript_premier/js_object.md)
     * [Type, Value, Variable](part1_ti_premier/javascript_premier/type_value_variable.md)
@@ -113,7 +116,7 @@
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [自动化工具]
-  * [Appium （海洋）](automation_tools/appium.md)
+  * [Appium](automation_tools/appium.md)
   * [selenium](automation_tools/selenium.md)
   * [Capistrano](automation_tools/capistrano.md)
   * [Grunt](automation_tools/grunt.md)
