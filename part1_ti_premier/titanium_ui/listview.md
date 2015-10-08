@@ -523,9 +523,35 @@ other_products_data_bind = function(count) {
 **① 获取远程数据**
 
 页面向后台发起url请求获取该页面的所有商品数据**mall_materials_page_data**，如果获取成功我们将“特价
-商品数据**tejia_products_data**”和“其他商品数据**others_products_data**”从数据中分离出来。
+商品数据**tejia_products_data**”和“其他商品数据**others_products_data**”从数据中分离出来；这个过程通过函数request_for_mall_materials_page_data()
+来处理。
 
 **② 数据绑定**
+
+获取了远程数据之后，我们开始绑定数据。首先我们需要将绑定的数据临时存储在一个数组中，为了以后的数据渲染做准备；我们分别创建了两个临时存储的绑定数据的数组
+tejia_products_bind_data[]和other_products_bind_data[]，然后就可以开始绑定数据了。绑定数据的过程发生在tejia_products_data_bind()和other_products_data_bind()两个函数中，
+我们详细的来看看这两个函数是如何完成“数据绑定”的：(由于该两个函数的绑定数据方式类同，我们other_products_data_bind()为例)
+
+[1]**other_products_bind_data.push({})：**这个方法是数据绑定的主体，即我们将需要绑定的数据存入**push()**我们创建的两个临时数组中
+
+[2]**template: 'other_products_template'**：这个属性选择我们绑定数据所要使用的“数据模板”，即我们在_.xml_文件中定义好的数据模板；这里我们需要对除顶部特价商品外的其他商品进行数据绑定，因此我们选择其他商品的数据模板**other_products_template**
+
+[3]**properties：**这个属性用来定义一些关于listItem所需要的样式，具体情况具体声明(代码中的properties定义了listItem点击选中效果的样式为空，即不使用listItem默认的点击选中效果)
+
+[4]**other_product_image_left**：如果你细心观察的话，接下来的所有的这些以**_left/_right**结尾的属性其实都是我们在_.xml_文件中已经定义好的**bindId**，即那些需要绑定数据的UI组件；这也就是真正的数据绑定的核心内容，为这些UI组件渲染从远程获取到的数据。我们以第一条数据绑定为例，来看看数据绑定的具体过程：
+
+   <1>首先，我们可以看到所有的数据绑定都是以**key:value**的形式进行数据绑定的
+
+   <2>index：这个属性其实并不属于imageView的定义属性(所谓的**定义属性**是指在API中UI定义的
+   properties，如：imageView有image属性，label有text属性[下一条的数据绑定就是label绑定text数据])，事
+   实上它是动态数据绑定时可以添加的一个序号属性，并没有太大的实际意义；但是我们可以利用它来解决一
+   些很麻烦的问题。(如：在这个我们所要实现的UI效果中需要点击商品图片跳转到其淘宝购买页面，这需要一
+   个url参数来解决问题；可是这个url参数该怎么存储，存储到哪里去呢？因为imageView本身并没有一个这样
+   的属性来存储它所关联的url，所以我们必须的通过其他方式来达到这个目的，而为其设置index来存储这个
+   url信息则很好的解决了这个问题。)
+
+   <3>image：这个属性即是该商品的图片数据key，它所绑定的数据**other_products_data[count * 2].cover**
+   则是从远程获取的该商品图片的url数据。()
 
 **③ 数据渲染**
 
