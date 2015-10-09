@@ -1,4 +1,4 @@
-#Ti.UI.ListView
+#ListView
 
 ##ListView简介
 
@@ -523,13 +523,49 @@ other_products_data_bind = function(count) {
 **① 获取远程数据**
 
 页面向后台发起url请求获取该页面的所有商品数据**mall_materials_page_data**，如果获取成功我们将“特价
-商品数据**tejia_products_data**”和“其他商品数据**others_products_data**”从数据中分离出来。
+商品数据**tejia_products_data**”和“其他商品数据**others_products_data**”从数据中分离出来；这个过程通过函数request_for_mall_materials_page_data()
+来处理。
 
 **② 数据绑定**
 
+获取了远程数据之后，我们开始绑定数据。首先我们需要将绑定的数据临时存储在一个数组中，为了以后的数据渲染做准备；我们分别创建了两个临时存储的绑定数据的数组
+tejia_products_bind_data[]和other_products_bind_data[]，然后就可以开始绑定数据了。绑定数据的过程发生在tejia_products_data_bind()和other_products_data_bind()两个函数中，
+我们详细的来看看这两个函数是如何完成“数据绑定”的：(由于该两个函数的绑定数据方式类同，我们other_products_data_bind()为例)
+
+[1]**other_products_bind_data.push({})：**这个方法是数据绑定的主体，即我们将需要绑定的数据存入**push()**我们创建的两个临时数组中
+
+[2]**template: 'other_products_template'**：这个属性选择我们绑定数据所要使用的“数据模板”，即我们在_.xml_文件中定义好的数据模板；这里我们需要对除顶部特价商品外的其他商品进行数据绑定，因此我们选择其他商品的数据模板**other_products_template**
+
+[3]**properties：**这个属性用来定义一些关于listItem所需要的样式，具体情况具体声明(代码中的properties定义了listItem点击选中效果的样式为空，即不使用listItem默认的点击选中效果)
+
+[4]**other_product_image_left**：如果你细心观察的话，接下来的所有的这些以**_left/_right**结尾的属性其实都是我们在_.xml_文件中已经定义好的**bindId**，即那些需要绑定数据的UI组件；这也就是真正的数据绑定的核心内容，为这些UI组件渲染从远程获取到的数据。我们以第一条数据绑定为例，来看看数据绑定的具体过程：
+
+   <1>首先，我们可以看到所有的数据绑定都是以**key:value**的形式进行数据绑定的
+
+   <2>index：这个属性其实并不属于imageView的定义属性(所谓的**定义属性**是指在API中UI定义的
+   properties，如：imageView有image属性，label有text属性[下一条的数据绑定就是label绑定text数据])，事
+   实上它是动态数据绑定时可以添加的一个序号属性，并没有太大的实际意义；但是我们可以利用它来解决一
+   些很麻烦的问题。(如：在这个我们所要实现的UI效果中需要点击商品图片跳转到其淘宝购买页面，这需要一
+   个url参数来解决问题；可是这个url参数该怎么存储，存储到哪里去呢？因为imageView本身并没有一个这样
+   的属性来存储它所关联的url，所以我们必须的通过其他方式来达到这个目的，而为其设置index来存储这个
+   url信息则很好的解决了这个问题。)
+
+   <3>image：这个属性即是该商品的图片数据**key**，它所绑定的**value**为**other_products_data[count * 2].cover**
+   则是从远程获取的该商品图片的url数据。(数组中的序号参数**count*2**以及下面的数组序号参
+   数**count*2+1**分别对应listItem中“**左边/右边**”的商品数据，即左边的商品则绑定数据中**偶数序**的商品数据，右
+   边的商品则绑定商品数据中**奇数序**的商品数据；这样处理之后才使得商品数据按照“左/右”的“偶/奇”顺序绑定在listItem中，这也是实现
+   一个listItem中插入多条数据的方式之一。)
+
 **③ 数据渲染**
 
-跳转到淘宝
+数据绑定完毕之后，即通过函数tejia_products_data_bind()/other_products_data_bind()向临时数组tejia_products_bind_data[]/other_products_bind_data[]中存入相关的
+商品数据之后，我们需要将这些数据渲染到与之对应的listSection的listItem中。如果你没忘记的话，应该还记得我们在介绍ListSection和ListItem时其实就已经提到了使用方法。
+要往对应的listItem中渲染对应的数据，我们需要先找到该listItem所在的listSection，而listSection则可以直接通过**$.**的形式来获取；接下来就是使用listSection的方法setItems()就行了，
+所以最终的结果是：tejia_products_section渲染tejia_products_bind_data数据的方法为“**$.tejia_products_section.setItems(tejia_products_bind_data);**”，other_products_section渲染other_products_bind_data数据
+的方法为“**$.other_products_section.setItems(other_products_bind_data);**”。
+
+通过的上面的介绍，我们对listView的数据绑定和渲染过程已经有了一个较详细的了解过程了，接下来还剩下“商品的点击跳转到其淘宝购买页面”这个功能块没有介绍。下面我通过该项目中的代码开始详细介绍这个功能块：
+
 ```js
 $.mall_materials_page.addEventListener('itemclick', function(e) {
   var go_tao_bao, url;
@@ -569,4 +605,79 @@ $.mall_materials_page.addEventListener('itemclick', function(e) {
   }
 });
 ```
-####3.3 ListView提供的模板
+
+这个功能其实就是我们上面提到过的如何通过事件参数e以及bindId来在listView中定位到某个listItem中的数
+据的方法实现。
+
+**① itemclick事件**
+
+这个效果是建立在listView的点击监听事件**itemclick**下的，因为我们要获取事件参数e；只有获取到了e我们
+才能通过e获取得到e中的相关信息(这里我们获取bindId信息)。
+
+**② bindId定位绑定数据的UI**
+
+获取了事件参数e之后，我们从e中得到我们需要的bindId信息，通过bindId我们就已经准确知道了我们需要定位的
+UI组件了。如果仅仅如此，我们还不能完全获取到某一个具体位置的UI数据信息，因为每一个listItem中UI的bindId
+都相同；因此我们还需要知道该绑定数据的UI所在的listItem的位置信息。
+
+**③ itemIndex最终定位listItem的绝对位置**
+
+通过itemIndex得到listItem的定位信息，我们在介绍listItem时就已经提到过相关内容了；这里我们要介绍的是通过bindId
+来获取该绑定数据UI组件的属性key，从而获取到这个key的value信息。还记得我们在**数据绑定**中提到的index属性吗？我们
+就以这个为例子来看看是如何实现的：
+
+    url = $.other_products_section.items[e.itemIndex].other_product_image_left.index;
+
+前面已经提到过，要跳转到某“商品的其淘宝购买页面”，我们需要该页面的url信息；我们已经通过index属性存储了该url，那么
+我们现在只要获取到该url再打开url所链接到的页面就行了。要获取到该index(key)中的url(value)，我们必须要知道我们是否点
+击到了该商品图片，所以我们需要通过**if**条件语句来判断：**else if(e.bindId === 'other_product_image_left')**，即如果
+点击的图片位于该listItem中的左边，即需要跳转到
+listItem中左边的商品的淘宝购买页面(右边的商品则判断bindId是否为**other_product_image_right**)。这样我就完成了这个点击跳转
+的效果。
+
+以上所述是ListView自定义数据模板在项目中的一个实例。ListView自定义数据模板的灵活性体现在UI效果的需求不同上，不同的UI效果需求
+对应的数据模板可能完全不同，但是他们都有着一样的逻辑处理过程；并且其数据绑定和渲染方式以及UI的定位方法大同小异。掌握这些方法，
+那么ListView自定义数据模板就不困难！不过，自定义数据模板是在ListView本身提供的默认的数据模板不能满足自己的UI效果需求时需要考虑的
+方法，如果ListView本身提供的默认的数据模板能满足需求，我们就没必要如此麻烦自己定义数据模板。下面我们来简单介绍一下ListView的默认
+数据模板。
+
+####3.3 ListView的默认模板
+
+我们先看看ListView默认数据模板的样式(这里引用API例子)：
+
+![imageview](http://docs.appcelerator.com/platform/latest/images/download/attachments/40928632/01_iphone_image.png)
+
+下面是样式的**_.xml_**/**_.tss_**参考代码：
+
+```xml
+<Alloy>
+    <Window class="container">
+        <ListView id="elementsList">
+            <ListSection name="elements">
+                <ListItem title="Hydrogen" image="icons/Hydrogen.png"/>
+                <ListItem title="Helium" image="icons/Helium.png"/>
+                <ListItem title="Lithium" image="icons/Lithium.png"/>
+                <ListItem title="Beryllium" image="icons/Beryllium.png"/>
+                <ListItem title="Boron" image="icons/Boron.png"/>
+                <!--以下省略-->
+            </ListSection>
+        </ListView>
+    </Window>
+</Alloy>
+```
+
+```tss
+//这里的样式文件没有通过class/id来定义，而是直接使用UI组件的名称来定义；这是允许的，不过这种方法等同于class效果
+
+"ListItem": {
+  accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
+}
+```
+
+通过上面的代码，我们知道在默认的情况下，不定义template标签，只要在listLitem中声明相关的属性；那么，listView最终展现的效果
+就会以默认模板的样式展现。这里的默认模板样式包括(listItem中需要声明的属性，如果不声明或缺失，那么相关的组件将不会显示；并且
+可能得不到默认的模板效果)：listItem的标题
+**title**，图片**image**以及一个由listItem样式(.tss文件定义)定义的“右箭头”(即右边的可点击拓展图标)标识。
+
+如果默认模板的样式能满足你的UI需求，那么就使用这种样式吧！如果，需要动态绑定数据，那么我们同样可以为这些listItem定义bindId来实现
+动态绑定数据。以上是本章对listView的介绍，重点介绍了listView动态绑定数据的方法，如果需要更加详细的介绍可以参考官方文档：http://docs.appcelerator.com/platform/latest/#!/guide/Alloy_ListView_Guide
