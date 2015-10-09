@@ -162,7 +162,7 @@
   * [执行后台任务：god ]
   * [执行延时任务：delayed-job]
   * [工作流 event machine]
-  * [缓存 redis, memcache]
+  * [缓存 redis, memcache](web_components/redis.md)
 * [Rails 进阶](part4_rails_advanced.md)
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [优化Rails](part4_rails_advanced/optimzation.md)
