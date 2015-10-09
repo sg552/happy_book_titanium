@@ -158,7 +158,7 @@
   * [单点登陆 ruby cas]
   * [rspec]
   * [factory girl]
-  * [bootstrap rails]
+  * [bootstrap rails](web_components/bootstrap.md)
   * [执行定时任务：rufu-scheduler]
   * [执行后台任务：god ]
   * [执行延时任务：delayed-job]
