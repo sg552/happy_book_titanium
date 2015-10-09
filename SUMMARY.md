@@ -127,7 +127,7 @@
 * [设计相关]
   * [thoughtworks inception]
   * [UML图]
-  * [ER图]
+  * [ER图](part5_tools_and_theory/e-r_diagram.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
   * [写一个DSL](part3_rails_premier/dsl.md)
