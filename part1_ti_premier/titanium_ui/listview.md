@@ -1,4 +1,4 @@
-#Ti.UI.ListView
+#ListView
 
 ##ListView简介
 
@@ -643,8 +643,41 @@ listItem中左边的商品的淘宝购买页面(右边的商品则判断bindId�
 
 ####3.3 ListView的默认模板
 
-我们先看看ListView默认数据模板的样式：
+我们先看看ListView默认数据模板的样式(这里引用API例子)：
 
-![imageview](http://image.happysoft.cc)
+![imageview](http://docs.appcelerator.com/platform/latest/images/download/attachments/40928632/01_iphone_image.png)
 
+下面是样式的**_.xml_**/**_.tss_**参考代码：
 
+```xml
+<Alloy>
+    <Window class="container">
+        <ListView id="elementsList">
+            <ListSection name="elements">
+                <ListItem title="Hydrogen" image="icons/Hydrogen.png"/>
+                <ListItem title="Helium" image="icons/Helium.png"/>
+                <ListItem title="Lithium" image="icons/Lithium.png"/>
+                <ListItem title="Beryllium" image="icons/Beryllium.png"/>
+                <ListItem title="Boron" image="icons/Boron.png"/>
+                <!--以下省略-->
+            </ListSection>
+        </ListView>
+    </Window>
+</Alloy>
+```
+
+```tss
+//这里的样式文件没有通过class/id来定义，而是直接使用UI组件的名称来定义；这是允许的，不过这种方法等同于class效果
+
+"ListItem": {
+  accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
+}
+```
+
+通过上面的代码，我们知道在默认的情况下，不定义template标签，只要在listLitem中声明相关的属性；那么，listView最终展现的效果
+就会以默认模板的样式展现。这里的默认模板样式包括(listItem中需要声明的属性，如果不声明或缺失，那么相关的组件将不会显示；并且
+可能得不到默认的模板效果)：listItem的标题
+**title**，图片**image**以及一个由listItem样式(.tss文件定义)定义的“右箭头”(即右边的可点击拓展图标)标识。
+
+如果默认模板的样式能满足你的UI需求，那么就使用这种样式吧！如果，需要动态绑定数据，那么我们同样可以为这些listItem定义bindId来实现
+动态绑定数据。以上是本章对listView的介绍，重点介绍了listView动态绑定数据的方法，如果需要更加详细的介绍可以参考官方文档：http://docs.appcelerator.com/platform/latest/#!/guide/Alloy_ListView_Guide
