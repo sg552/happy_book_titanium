@@ -1,4 +1,4 @@
-# rubygem和bundler
+#rubygem
 
 ##简介
 
