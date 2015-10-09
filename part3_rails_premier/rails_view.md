@@ -18,7 +18,7 @@ Rails视图
 
 ###render方法
 
-```rails
+```ruby
 def update
   #渲染同个控制器中的其他动作模板
   render "edit"
@@ -38,7 +38,7 @@ end
 ```
 
 render方法的可选选项
-```rails
+```ruby
 def update
   #layout
   render layout: "application"
@@ -48,7 +48,7 @@ def update
 end
 ```
 ###redirect_to方法
-```rails
+```ruby
 def update
   #重定向到product控制器的index动作
   redirect_to product_url
@@ -125,7 +125,7 @@ Q&A
 Q:如何多个视图共用一个模板,他们可能只需要模板的一部分?
 
 A:用```html<% if @is_show_top %> <% end %>``` 方法对该部分进行判断,默认该部分是显示的,需要在controller中对该变量赋值来确定是否需要,
-```rails
+```ruby
 def show
   #该部分显示
   is_show_top = true
