@@ -121,7 +121,8 @@
   * [Capistrano](automation_tools/capistrano.md)
   * [Grunt](automation_tools/grunt.md)
   * [Rake](automation_tools/rake.md)
-  * [rubygem 和 bundler](automation_tools/gem_and_bundler.md)
+  * [rubygem](automation_tools/ruby_gem.md)
+  * [bundler](automation_tools/bundler.md)
   * [npm](automation_tools/npm.md)
 * [设计相关]
   * [thoughtworks inception]
