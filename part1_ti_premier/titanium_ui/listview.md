@@ -550,12 +550,22 @@ tejia_products_bind_data[]和other_products_bind_data[]，然后就可以开始�
    的属性来存储它所关联的url，所以我们必须的通过其他方式来达到这个目的，而为其设置index来存储这个
    url信息则很好的解决了这个问题。)
 
-   <3>image：这个属性即是该商品的图片数据key，它所绑定的数据**other_products_data[count * 2].cover**
-   则是从远程获取的该商品图片的url数据。()
+   <3>image：这个属性即是该商品的图片数据**key**，它所绑定的**value**为**other_products_data[count * 2].cover**
+   则是从远程获取的该商品图片的url数据。(数组中的序号参数**count*2**以及下面的数组序号参
+   数**count*2+1**分别对应listItem中“**左边/右边**”的商品数据，即左边的商品则绑定数据中**偶数序**的商品数据，右
+   边的商品则绑定商品数据中**奇数序**的商品数据；这样处理之后才使得商品数据按照“左/右”的“偶/奇”顺序绑定在listItem中，这也是实现
+   一个listItem中插入多条数据的方式之一。)
 
 **③ 数据渲染**
 
-跳转到淘宝
+数据绑定完毕之后，即通过函数tejia_products_data_bind()/other_products_data_bind()向临时数组tejia_products_bind_data[]/other_products_bind_data[]中存入相关的
+商品数据之后，我们需要将这些数据渲染到与之对应的listSection的listItem中。如果你没忘记的话，应该还记得我们在介绍ListSection和ListItem时其实就已经提到了使用方法。
+要往对应的listItem中渲染对应的数据，我们需要先找到该listItem所在的listSection，而listSection则可以直接通过**$.**的形式来获取；接下来就是使用listSection的方法setItems()就行了，
+所以最终的结果是：tejia_products_section渲染tejia_products_bind_data数据的方法为“**$.tejia_products_section.setItems(tejia_products_bind_data);**”，other_products_section渲染other_products_bind_data数据
+的方法为“**$.other_products_section.setItems(other_products_bind_data);**”。
+
+通过的上面的介绍，我们对listView的数据绑定和渲染过程已经有了一个较详细的了解过程了，接下来还剩下“商品的点击跳转到其淘宝购买页面”这个功能块没有介绍。下面我通过该项目中的代码开始详细介绍这个功能块：
+
 ```js
 $.mall_materials_page.addEventListener('itemclick', function(e) {
   var go_tao_bao, url;
@@ -595,4 +605,46 @@ $.mall_materials_page.addEventListener('itemclick', function(e) {
   }
 });
 ```
-####3.3 ListView提供的模板
+
+这个功能其实就是我们上面提到过的如何通过事件参数e以及bindId来在listView中定位到某个listItem中的数
+据的方法实现。
+
+**① itemclick事件**
+
+这个效果是建立在listView的点击监听事件**itemclick**下的，因为我们要获取事件参数e；只有获取到了e我们
+才能通过e获取得到e中的相关信息(这里我们获取bindId信息)。
+
+**② bindId定位绑定数据的UI**
+
+获取了事件参数e之后，我们从e中得到我们需要的bindId信息，通过bindId我们就已经准确知道了我们需要定位的
+UI组件了。如果仅仅如此，我们还不能完全获取到某一个具体位置的UI数据信息，因为每一个listItem中UI的bindId
+都相同；因此我们还需要知道该绑定数据的UI所在的listItem的位置信息。
+
+**③ itemIndex最终定位listItem的绝对位置**
+
+通过itemIndex得到listItem的定位信息，我们在介绍listItem时就已经提到过相关内容了；这里我们要介绍的是通过bindId
+来获取该绑定数据UI组件的属性key，从而获取到这个key的value信息。还记得我们在**数据绑定**中提到的index属性吗？我们
+就以这个为例子来看看是如何实现的：
+
+    url = $.other_products_section.items[e.itemIndex].other_product_image_left.index;
+
+前面已经提到过，要跳转到某“商品的其淘宝购买页面”，我们需要该页面的url信息；我们已经通过index属性存储了该url，那么
+我们现在只要获取到该url再打开url所链接到的页面就行了。要获取到该index(key)中的url(value)，我们必须要知道我们是否点
+击到了该商品图片，所以我们需要通过**if**条件语句来判断：**else if(e.bindId === 'other_product_image_left')**，即如果
+点击的图片位于该listItem中的左边，即需要跳转到
+listItem中左边的商品的淘宝购买页面(右边的商品则判断bindId是否为**other_product_image_right**)。这样我就完成了这个点击跳转
+的效果。
+
+以上所述是ListView自定义数据模板在项目中的一个实例。ListView自定义数据模板的灵活性体现在UI效果的需求不同上，不同的UI效果需求
+对应的数据模板可能完全不同，但是他们都有着一样的逻辑处理过程；并且其数据绑定和渲染方式以及UI的定位方法大同小异。掌握这些方法，
+那么ListView自定义数据模板就不困难！不过，自定义数据模板是在ListView本身提供的默认的数据模板不能满足自己的UI效果需求时需要考虑的
+方法，如果ListView本身提供的默认的数据模板能满足需求，我们就没必要如此麻烦自己定义数据模板。下面我们来简单介绍一下ListView的默认
+数据模板。
+
+####3.3 ListView的默认模板
+
+我们先看看ListView默认数据模板的样式：
+
+![imageview](http://image.happysoft.cc)
+
+
