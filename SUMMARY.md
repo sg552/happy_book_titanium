@@ -82,7 +82,7 @@
   * [使用jade, stss, coffee开发Alloy](part1_ti_premier/jade_stss_coffee_in_alloy.md)
     * [jade](part1_ti_premier/jade_stss_coffee_in_alloy/jade.md)
     * [stss](part1_ti_premier/jade_stss_coffee_in_alloy/stss.md)
-    * [coffee]
+    * [coffee](part1_ti_premier/jade_stss_coffee_in_alloy/coffee.md)
 
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Anination](part2_ti_advanced/animation.md)
