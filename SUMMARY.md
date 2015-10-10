@@ -169,7 +169,7 @@
   * [rspec]
   * [factory girl]
   * [bootstrap rails](web_components/bootstrap.md)
-  * [执行定时任务：rufu-scheduler]
+  * [执行定时任务：rufu-scheduler](part3_rails_premier/rufus_scheduler.md)
   * [执行后台任务：god ]
   * [执行延时任务：delayed-job]
   * [工作流 event machine]
@@ -186,5 +186,6 @@
   * [各种组件](web_front_end/js_components.md)
     * [轮播图](web_front_end/js_components/slider.md)
     * [表单验证](web_front_end/js_components/validation.md)
-
+    * [树状图](web_front_end/js_components/tree.md)
+    * [快捷编辑](web_front_end/js_components/inplace_edit.md)
 
