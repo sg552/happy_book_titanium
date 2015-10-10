@@ -74,11 +74,10 @@
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework_premier/alloy_framework.md)
     * [Alloy Controller](part1_ti_premier/alloy_framework_premier/alloy_controller.md)
-  * [Alloy Views](part1_ti_premier/alloy_view_overview.md)
-    * [View的结构组成](part1_ti_premier/alloy_views/views_construction.md)
-    * [View中的标签](part1_ti_premier/alloy_views/xml_elements.md)
-    * [titanium 样式](part1_ti_premier/alloy_views/titanium_style_sheets.md)
-  * [Alloy Controller](part1_ti_premier/alloy_controller.md)
+    * [Alloy Views](part1_ti_premier/alloy_view_overview.md)
+      * [View的结构组成](part1_ti_premier/alloy_views/views_construction.md)
+      * [View中的标签](part1_ti_premier/alloy_views/xml_elements.md)
+      * [titanium 样式](part1_ti_premier/alloy_views/titanium_style_sheets.md)
   * [使用jade, stss, coffee开发Alloy](part1_ti_premier/jade_stss_coffee_in_alloy.md)
     * [jade](part1_ti_premier/jade_stss_coffee_in_alloy/jade.md)
     * [stss](part1_ti_premier/jade_stss_coffee_in_alloy/stss.md)
@@ -114,7 +113,6 @@
   * [特定于Android的UI](part2_ti_advanced/android_specific_ui.md)
   * [Debuging and Profiling](part2_ti_advanced/debuging_and_profiling.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
-
 * [自动化工具]
   * [Appium](automation_tools/appium.md)
   * [selenium](automation_tools/selenium.md)
@@ -126,7 +124,7 @@
   * [npm](automation_tools/npm.md)
 * [设计相关]
   * [thoughtworks inception]
-  * [UML图]
+  * [UML图](part5_tools_and_theory/uml-diagram.md)
   * [ER图](part5_tools_and_theory/e-r_diagram.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
@@ -141,7 +139,6 @@
   * [rails 命令行](part3_rails_premier/rails_command_line.md)
   * [rails 视图](part3_rails_premier/rails_view.md)
   * [rails 接口](part3_rails_premier/interface_document.md)
-
 * [Rails 常用的第三方组件]
   * [分页: kaminari](web_components/kaminari.md)
   * [上传图片 carrierwave](web_components/carrierwave.md)
