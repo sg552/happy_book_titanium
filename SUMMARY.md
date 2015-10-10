@@ -174,3 +174,5 @@
   * [CSS](web_front_end/css.md)
   * [jQuery](web_front_end/jquery.md)
   * [各种组件](web_front_end/js_components.md)
+    * [轮播图](web_front_end/js_components/slider.md)
+
