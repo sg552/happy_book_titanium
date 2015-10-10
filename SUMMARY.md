@@ -2,7 +2,10 @@
 
 * [前言](preface.md)
 * [Titanium 入门](part1_ti_premier.md)
-  * [搭建环境](part1_ti_premier/setup_titanium.md)
+  * [什么是Titanium](part1_ti_premier/what_is_titanium.md)
+  * [搭建Titanium开发环境](part1_ti_premier/setup_titanium.md)
+  * [创建你的第一个App](part1_ti_premier/create_first_app.md)
+  * [Titanium社区及学习资源](part1_ti_premier/study_resources.md)
   * [Javascript 入门](part1_ti_premier/javascript_premier.md)
     * [Object](part1_ti_premier/javascript_premier/js_object.md)
     * [Type, Value, Variable](part1_ti_premier/javascript_premier/type_value_variable.md)
@@ -16,12 +19,12 @@
     * [Object As Namespaces](part1_ti_premier/javascript_premier/object_as_namespace.md)
     * [ES 5新的方法](part1_ti_premier/javascript_premier/es5_array_methods.md)
     * [Best Practices In Titanium](part1_ti_premier/javascript_premier/best_practices_in_titanium.md)
-  * [Javascript 进阶]
-    * [underscore](part1_ti_premier/js_framework_underscore.md)
-    * [export](part1_ti_premier/js_framework_requirejs.md)
-    * [CommonJS](part1_ti_premier/js_framework_commonjs.md)
-    * [Bower](part1_ti_premier/js_framework_bower.md)
-    * [Jasmine](part1_ti_premier/js_framework_jasmine.md)
+  * [Javascript 进阶](part1_ti_premier/javascript_advanced.md)
+    * [underscore](part1_ti_premier/javascript_advanced/js_framework_underscore.md)
+    * [export](part1_ti_premier/javascript_advanced/js_framework_requirejs.md)
+    * [CommonJS](part1_ti_premier/javascript_advanced/js_framework_commonjs.md)
+    * [Bower](part1_ti_premier/javascript_advanced/js_framework_bower.md)
+    * [Jasmine](part1_ti_premier/javascript_advanced/js_framework_jasmine.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [2DMatrix](part1_ti_premier/titanium_ui/2DMatrix.md)
@@ -86,10 +89,10 @@
     * [View中的标签](part1_ti_premier/alloy_views/xml_elements.md)
     * [titanium 样式](part1_ti_premier/alloy_views/titanium_style_sheets.md)
   * [Alloy Controller](part1_ti_premier/alloy_controller.md)
-  * [使用jade, stss, coffee开发Alloy]
-    * [jade]
-    * [stss]
-    * [coffee]
+  * [使用jade, stss, coffee开发Alloy](part1_ti_premier/jade_stss_coffee_in_alloy.md)
+    * [jade](part1_ti_premier/jade_stss_coffee_in_alloy/jade.md)
+    * [stss](part1_ti_premier/jade_stss_coffee_in_alloy/stss.md)
+    * [coffee](part1_ti_premier/jade_stss_coffee_in_alloy/coffee.md)
 
 * [Titanium 进阶](part2_ti_advanced.md)
   * [Anination](part2_ti_advanced/animation.md)
@@ -123,17 +126,18 @@
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [自动化工具]
-  * [Appium （海洋）](automation_tools/appium.md)
+  * [Appium](automation_tools/appium.md)
   * [selenium](automation_tools/selenium.md)
   * [Capistrano](automation_tools/capistrano.md)
   * [Grunt](automation_tools/grunt.md)
   * [Rake](automation_tools/rake.md)
-  * [rubygem 和 bundler](automation_tools/gem_and_bundler.md)
+  * [rubygem](automation_tools/ruby_gem.md)
+  * [bundler](automation_tools/bundler.md)
   * [npm](automation_tools/npm.md)
 * [设计相关]
   * [thoughtworks inception]
   * [UML图]
-  * [ER图]
+  * [ER图](part5_tools_and_theory/e-r_diagram.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
   * [写一个DSL](part3_rails_premier/dsl.md)
@@ -164,12 +168,12 @@
   * [单点登陆 ruby cas]
   * [rspec]
   * [factory girl]
-  * [bootstrap rails]
+  * [bootstrap rails](web_components/bootstrap.md)
   * [执行定时任务：rufu-scheduler]
   * [执行后台任务：god ]
   * [执行延时任务：delayed-job]
   * [工作流 event machine]
-  * [缓存 redis, memcache]
+  * [缓存 redis, memcache](web_components/redis.md)
 * [Rails 进阶](part4_rails_advanced.md)
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [优化Rails](part4_rails_advanced/optimzation.md)
