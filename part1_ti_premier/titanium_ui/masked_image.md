@@ -4,7 +4,7 @@
 添加自定义的背景图，或者比较高级的将两张图片进行alpha融合等等。这个UI组件目前只适用于IOS平台。
 
 MaskedImage不能通过静态定义声明，即不能在.xml文件中进行定义，只能使
-用**Titanium.UI.createMaskedImage**的方法在.js文件中动态创建。以下是参考代码：
+用**Titanium.UI.createMaskedImage**的方法在.js文件中动态创建。以下是API给出的参考代码：
 
 ```js
 var imageMask = Titanium.UI.createMaskedImage({
