@@ -71,6 +71,16 @@
     * [iPhone](part1_ti_premier/titanium_ui/titanium_ui_iphone.md)
       * [ActivityIndicator](part1_ti_premier/titanium_ui/iphone/activity_indicator.md)
       * [AlertDialog](part1_ti_premier/titanium_ui/iphone/alert_dialog.md)
+      * [AnimationStyle](part1_ti_premier/titanium_ui/iphone/animation_style.md)
+      * [ListView](part1_ti_premier/titanium_ui/iphone/listview.md)
+      * [ProgressBarStyle](part1_ti_premier/titanium_ui/iphone/progress_bar_style.md)
+      * [RowAnimationStyle](part1_ti_premier/titanium_ui/iphone/row_animation_style.md)
+      * [ScrollIndicatorStyle](part1_ti_premier/titanium_ui/iphone/scroll_indicator_style.md)
+      * [StatusBar](part1_ti_premier/titanium_ui/iphone/status_bar.md)
+      * [SystemButton](part1_ti_premier/titanium_ui/iphone/system_button.md)
+      * [SystemButtonStyle](part1_ti_premier/titanium_ui/iphone/system_button_style.md)
+      * [SystemIcon](part1_ti_premier/titanium_ui/iphone/system_icon.md)
+      * [TableView](part1_ti_premier/titanium_ui/iphone/tableview.md)
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework_premier/alloy_framework.md)
     * [Alloy Controller](part1_ti_premier/alloy_framework_premier/alloy_controller.md)
@@ -142,7 +152,7 @@
 * [Rails 常用的第三方组件]
   * [分页: kaminari](web_components/kaminari.md)
   * [上传图片 carrierwave](web_components/carrierwave.md)
-  * [即时上传 jquery-upload]()
+  * [即时上传 jquery-upload]
   * [上传图片到云 upyun](web_components/upyun.md)
   * [发送短信]
   * [wysiwyg 所见即所得编辑器](web_components/wysiwyg_ckeditor.md)
@@ -156,7 +166,7 @@
   * [rspec]
   * [factory girl]
   * [bootstrap rails](web_components/bootstrap.md)
-  * [执行定时任务：rufu-scheduler]
+  * [执行定时任务：rufu-scheduler](part3_rails_premier/rufus_scheduler.md)
   * [执行后台任务：god ]
   * [执行延时任务：delayed-job]
   * [工作流 event machine]
@@ -171,3 +181,8 @@
   * [CSS](web_front_end/css.md)
   * [jQuery](web_front_end/jquery.md)
   * [各种组件](web_front_end/js_components.md)
+    * [轮播图](web_front_end/js_components/slider.md)
+    * [表单验证](web_front_end/js_components/validation.md)
+    * [树状图](web_front_end/js_components/tree.md)
+    * [快捷编辑](web_front_end/js_components/inplace_edit.md)
+
