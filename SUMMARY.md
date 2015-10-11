@@ -1,4 +1,4 @@
-# Summary
+j# Summary
 
 * [前言](preface.md)
 * [Titanium 入门](part1_ti_premier.md)
@@ -136,7 +136,6 @@
   * [Ruby 进阶 ](part3_rails_premier/ruby_advanced.md)
   * [数据库迁移，model验证](part3_rails_premier/rails_database.md)
   * [Controller](part3_rails_premier/rails_controller.md)
-  * [rails 单元测试](part3_rails_premier/rails_unit_test.md)
   * [rails 命令行](part3_rails_premier/rails_command_line.md)
   * [rails 视图](part3_rails_premier/rails_view.md)
   * [rails 接口](part3_rails_premier/interface_document.md)
@@ -155,8 +154,7 @@
   * [服务器thin](web_components/thin.md)
   * [增加注释 migrtion comments](web_components/migration_comments.md)
   * [单点登陆 ruby cas]
-  * [rspec]
-  * [factory girl]
+  * [rspec 和 factory girl](web_components/rspec_and_factory_girl.md)
   * [bootstrap rails]
   * [执行定时任务：rufu-scheduler]
   * [执行后台任务：god ]
