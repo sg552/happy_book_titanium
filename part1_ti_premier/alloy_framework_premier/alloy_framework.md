@@ -1,4 +1,5 @@
 #1.Alloy 概述
+
 **Alloy**是**Titanium**自带的一个Mobile App开发框架模型(template)，也是Titanium默认的一个开发框架模型。Alloy框架基于**[MVC(Model View Controller)](http://baike.baidu.com/link?url=VeL0t6kbMGxDJwLZtyUM0Z48SN29PR4-8WyYWso8jDfmsLcVBPufn1ldTGjxOmLTGKoa05FhIDB2tng4hiEMh6a6ISaoD_f5qGPcrtDHHizVQ4xFsrZJ4VFrYPCEzgmm)**开发模型，将App的“逻辑”、“数据”和“界面”三大模块分离开来各自编写、组织自己的代码，但同时三者又互相逻辑关联；这正是MVC开发框架最独特的特色和优势。MVC的
 开发框架很好的处理并划分了不同逻辑功能块处理各自的逻辑业务，使得开发任务的分配和管理更加明确，是一种很好的团队协作开发模式；Alloy开发框架则很好的继承了MVC这种优势。
 
@@ -8,6 +9,7 @@ Backbone.js为应用提供一套类同于“**MVC**”结构式的服务支持�
      M：类同于Model，提供key-value形式的数据绑定和自定义事件的服务支持。
      V：类同于View，通过使用JSON格式的接口调用API来处理被设置监听事件的控件的逻辑业务。
      C：类同于Controller，这里为Collections，是所有函数API的集合群。
+
 Underscore.js，Underscore是JavaScript一个库(library)，这意味着你能直接使用JS绝大多数的内置函数和功能支持，而不需要再去继承“基类”。
 
 在Alloy开发框架中：
