@@ -46,6 +46,7 @@
     * [Notification](part1_ti_premier/titanium_ui/notification.md)
     * [OptionDialog](part1_ti_premier/titanium_ui/option_dialog.md)
     * [Picker](part1_ti_premier/titanium_ui/picker.md)
+    * [Popover](part1_ti_premier/titanium_ui/popover.md)
     * [ProgressBar](part1_ti_premier/titanium_ui/progress_bar.md)
     * [ScrollView](part1_ti_premier/titanium_ui/scroll_view.md)
     * [SearchBar](part1_ti_premier/titanium_ui/search_bar.md)
