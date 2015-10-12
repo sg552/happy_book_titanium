@@ -188,4 +188,6 @@
     * [表单验证](web_front_end/js_components/validation.md)
     * [树状图](web_front_end/js_components/tree.md)
     * [时间选择器](web_front_end/js_components/datepicker.md)
+    * [标签页](web_front_end/js_components/tabs.md)
+    * [提示框](web_front_end/js_components/tooltips.md)
     * [快捷编辑](web_front_end/js_components/inplace_edit.md)
