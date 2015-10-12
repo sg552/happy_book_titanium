@@ -186,4 +186,5 @@
   * [各种组件](web_front_end/js_components.md)
     * [轮播图](web_front_end/js_components/slider.md)
     * [树状图](web_front_end/js_components/tree.md)
+    * [时间选择器](web_front_end/js_components/datepicker.md)
 
