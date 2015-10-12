@@ -46,6 +46,7 @@ j# Summary
     * [Notification](part1_ti_premier/titanium_ui/notification.md)
     * [OptionDialog](part1_ti_premier/titanium_ui/option_dialog.md)
     * [Picker](part1_ti_premier/titanium_ui/picker.md)
+    * [Popover](part1_ti_premier/titanium_ui/popover.md)
     * [ProgressBar](part1_ti_premier/titanium_ui/progress_bar.md)
     * [ScrollView](part1_ti_premier/titanium_ui/scroll_view.md)
     * [SearchBar](part1_ti_premier/titanium_ui/search_bar.md)
@@ -153,6 +154,7 @@ j# Summary
   * [上传图片 carrierwave](web_components/carrierwave.md)
   * [即时上传 jquery-upload]
   * [上传图片到云 upyun](web_components/upyun.md)
+  * [即时上传 jquery-upload]()
   * [发送短信]
   * [wysiwyg 所见即所得编辑器](web_components/wysiwyg_ckeditor.md)
   * [发送restful请求  HTTParty](web_components/httparty.md)
@@ -165,10 +167,10 @@ j# Summary
   * [rspec 和 factory girl](web_components/rspec_and_factory_girl.md)
   * [bootstrap rails](web_components/bootstrap.md)
   * [执行定时任务：rufu-scheduler](part3_rails_premier/rufus_scheduler.md)
-  * [执行后台任务：god ]
+  * [执行后台任务：god ](part3_rails_premier/rails_god.md)
   * [执行延时任务：delayed-job]
   * [工作流 event machine]
-  * [缓存 redis, memcache](web_components/redis.md)
+  * [缓存 redis, memcache](web_components/redis_memcache.md)
 * [Rails 进阶](part4_rails_advanced.md)
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [优化Rails](part4_rails_advanced/optimzation.md)
@@ -177,10 +179,14 @@ j# Summary
 * [Web前端: html, css, javascript framework]
   * [HTML](web_front_end/html.md)
   * [CSS](web_front_end/css.md)
-  * [jQuery](web_front_end/jquery.md)
   * [各种组件](web_front_end/js_components.md)
+    * [上传图片 file-upload](web_front_end/js_components/file_uploader.md)
+    * [弹出窗口 dialog](web_front_end/js_components/dialog.md)
     * [轮播图](web_front_end/js_components/slider.md)
     * [表单验证](web_front_end/js_components/validation.md)
     * [树状图](web_front_end/js_components/tree.md)
+    * [时间选择器](web_front_end/js_components/datepicker.md)
     * [快捷编辑](web_front_end/js_components/inplace_edit.md)
-
+    * [select2](web_front_end/js_components/select2.md)
+    * [bmap](web_front_end/js_components/bmap.md)
+    * [限制性输入框](web_front_end/js_components/maskedinput.md)
