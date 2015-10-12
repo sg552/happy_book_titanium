@@ -169,4 +169,5 @@
   * [HTML](web_front_end/html.md)
   * [CSS](web_front_end/css.md)
   * [jQuery](web_front_end/jquery.md)
+  * [bmap](web_front_end/bmap.md)
   * [各种组件](web_front_end/js_components.md)
