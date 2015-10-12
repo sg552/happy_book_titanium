@@ -1,4 +1,4 @@
-# Summary
+j# Summary
 
 * [前言](preface.md)
 * [Titanium 入门](part1_ti_premier.md)
@@ -46,6 +46,7 @@
     * [Notification](part1_ti_premier/titanium_ui/notification.md)
     * [OptionDialog](part1_ti_premier/titanium_ui/option_dialog.md)
     * [Picker](part1_ti_premier/titanium_ui/picker.md)
+    * [Popover](part1_ti_premier/titanium_ui/popover.md)
     * [ProgressBar](part1_ti_premier/titanium_ui/progress_bar.md)
     * [ScrollView](part1_ti_premier/titanium_ui/scroll_view.md)
     * [SearchBar](part1_ti_premier/titanium_ui/search_bar.md)
@@ -145,7 +146,6 @@
   * [Ruby 进阶 ](part3_rails_premier/ruby_advanced.md)
   * [数据库迁移，model验证](part3_rails_premier/rails_database.md)
   * [Controller](part3_rails_premier/rails_controller.md)
-  * [rails 单元测试](part3_rails_premier/rails_unit_test.md)
   * [rails 命令行](part3_rails_premier/rails_command_line.md)
   * [rails 视图](part3_rails_premier/rails_view.md)
   * [rails 接口](part3_rails_premier/interface_document.md)
@@ -164,14 +164,13 @@
   * [服务器thin](web_components/thin.md)
   * [增加注释 migrtion comments](web_components/migration_comments.md)
   * [单点登陆 ruby cas]
-  * [rspec]
-  * [factory girl]
+  * [rspec 和 factory girl](web_components/rspec_and_factory_girl.md)
   * [bootstrap rails](web_components/bootstrap.md)
   * [执行定时任务：rufu-scheduler](part3_rails_premier/rufus_scheduler.md)
   * [执行后台任务：god ](part3_rails_premier/rails_god.md)
   * [执行延时任务：delayed-job]
   * [工作流 event machine]
-  * [缓存 redis, memcache](web_components/redis.md)
+  * [缓存 redis, memcache](web_components/redis_memcache.md)
 * [Rails 进阶](part4_rails_advanced.md)
   * [Rails 单元测试](part4_rails_advanced/rails_unit_test.md)
   * [优化Rails](part4_rails_advanced/optimzation.md)
@@ -180,7 +179,6 @@
 * [Web前端: html, css, javascript framework]
   * [HTML](web_front_end/html.md)
   * [CSS](web_front_end/css.md)
-  * [jQuery](web_front_end/jquery.md)
   * [各种组件](web_front_end/js_components.md)
     * [上传图片 file-upload](web_front_end/js_components/file_uploader.md)
     * [弹出窗口 dialog](web_front_end/js_components/dialog.md)
@@ -191,3 +189,6 @@
     * [标签页](web_front_end/js_components/tabs.md)
     * [提示框](web_front_end/js_components/tooltips.md)
     * [快捷编辑](web_front_end/js_components/inplace_edit.md)
+    * [select2](web_front_end/js_components/select2.md)
+    * [bmap](web_front_end/js_components/bmap.md)
+    * [限制性输入框](web_front_end/js_components/maskedinput.md)
