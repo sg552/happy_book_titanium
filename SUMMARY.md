@@ -134,7 +134,7 @@
   * [npm](automation_tools/npm.md)
 * [设计相关]
   * [thoughtworks inception]
-  * [UML图](part5_tools_and_theory/uml-diagram.md)
+  * [UML图](part5_tools_and_theory/uml_diagram.md)
   * [ER图](part5_tools_and_theory/e-r_diagram.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
