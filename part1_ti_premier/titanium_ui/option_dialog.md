@@ -33,7 +33,7 @@ AlertDialog。事实上，这两者很像，它们的搭建原理基本相同，
 
 #####**Android/Mobile Web**
 OptionDialog在Android平台上，明显的和其他三个平台有着显著的区别。在Android系统上，OptionDialog出现在屏幕的中央；
-并且每个option选项类似以单选框的形式来进行选择，并存在**默认选择项**。Mobile Web平台上，OptionDilaog则像是一堆
+并且每个option选项类似以单选框的形式来进行选择，并存在**默认选择项selectedIndex**(只适用于Android)。Mobile Web平台上，OptionDilaog则像是一堆
 按钮button的组合，出现的位置也是在屏幕的中央。
 
 #####**iPhone/iPad**
@@ -122,7 +122,7 @@ var option_dialog = Ti.UI.createOptionDialog({
 
 我们明白了选项的处理问题，那么接下来我们看看OptionDilaog几个比较重要的属性：
 
-① **cancel**：这个属性的用来定义OptionDilaog的**取消选项**，它的值为其option的index。
+① **cancel**：这个属性的用来定义OptionDilaog的**取消选项**，它的值为其option的index；被定义之后取消选项Cancel会被突出而分离出来。
 
 ② **persistent**：这个属性用来定义当应用处于**暂停paused**或**挂起suspened**时，OptionDilaog是否继续显示；它的值为boolean值，在演示
 案例中我们将这个值设为了**false**，所以当我们通过**home**键跳转到Home页面再返回来是OptionDilaog被取消隐藏了就是这个原因。
