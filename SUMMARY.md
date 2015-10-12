@@ -180,8 +180,6 @@
 * [Web前端: html, css, javascript framework]
   * [HTML](web_front_end/html.md)
   * [CSS](web_front_end/css.md)
-  * [jQuery](web_front_end/jquery.md)
-  * [bmap](web_front_end/bmap.md)
   * [各种组件](web_front_end/js_components.md)
     * [上传图片 file-upload](web_front_end/js_components/file_uploader.md)
     * [弹出窗口 dialog](web_front_end/js_components/dialog.md)
@@ -190,3 +188,5 @@
     * [树状图](web_front_end/js_components/tree.md)
     * [时间选择器](web_front_end/js_components/datepicker.md)
     * [快捷编辑](web_front_end/js_components/inplace_edit.md)
+    * [select2](web_front_end/js_components/select2.md)
+    * [bmap](web_front_end/js_components/bmap.md)
