@@ -71,14 +71,23 @@
     * [iPhone](part1_ti_premier/titanium_ui/titanium_ui_iphone.md)
       * [ActivityIndicator](part1_ti_premier/titanium_ui/iphone/activity_indicator.md)
       * [AlertDialog](part1_ti_premier/titanium_ui/iphone/alert_dialog.md)
+      * [AnimationStyle](part1_ti_premier/titanium_ui/iphone/animation_style.md)
+      * [ListView](part1_ti_premier/titanium_ui/iphone/listview.md)
+      * [ProgressBarStyle](part1_ti_premier/titanium_ui/iphone/progress_bar_style.md)
+      * [RowAnimationStyle](part1_ti_premier/titanium_ui/iphone/row_animation_style.md)
+      * [ScrollIndicatorStyle](part1_ti_premier/titanium_ui/iphone/scroll_indicator_style.md)
+      * [StatusBar](part1_ti_premier/titanium_ui/iphone/status_bar.md)
+      * [SystemButton](part1_ti_premier/titanium_ui/iphone/system_button.md)
+      * [SystemButtonStyle](part1_ti_premier/titanium_ui/iphone/system_button_style.md)
+      * [SystemIcon](part1_ti_premier/titanium_ui/iphone/system_icon.md)
+      * [TableView](part1_ti_premier/titanium_ui/iphone/tableview.md)
   * [Titanium 中的各种事件](part1_ti_premier/events_in_Titanium.md)
   * [Alloy Framework](part1_ti_premier/alloy_framework_premier/alloy_framework.md)
     * [Alloy Controller](part1_ti_premier/alloy_framework_premier/alloy_controller.md)
-  * [Alloy Views](part1_ti_premier/alloy_view_overview.md)
-    * [View的结构组成](part1_ti_premier/alloy_views/views_construction.md)
-    * [View中的标签](part1_ti_premier/alloy_views/xml_elements.md)
-    * [titanium 样式](part1_ti_premier/alloy_views/titanium_style_sheets.md)
-  * [Alloy Controller](part1_ti_premier/alloy_controller.md)
+    * [Alloy Views](part1_ti_premier/alloy_view_overview.md)
+      * [View的结构组成](part1_ti_premier/alloy_views/views_construction.md)
+      * [View中的标签](part1_ti_premier/alloy_views/xml_elements.md)
+      * [titanium 样式](part1_ti_premier/alloy_views/titanium_style_sheets.md)
   * [使用jade, stss, coffee开发Alloy](part1_ti_premier/jade_stss_coffee_in_alloy.md)
     * [jade](part1_ti_premier/jade_stss_coffee_in_alloy/jade.md)
     * [stss](part1_ti_premier/jade_stss_coffee_in_alloy/stss.md)
@@ -114,7 +123,6 @@
   * [特定于Android的UI](part2_ti_advanced/android_specific_ui.md)
   * [Debuging and Profiling](part2_ti_advanced/debuging_and_profiling.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
-
 * [自动化工具]
   * [Appium](automation_tools/appium.md)
   * [selenium](automation_tools/selenium.md)
@@ -126,7 +134,7 @@
   * [npm](automation_tools/npm.md)
 * [设计相关]
   * [thoughtworks inception]
-  * [UML图]
+  * [UML图](part5_tools_and_theory/uml-diagram.md)
   * [ER图](part5_tools_and_theory/e-r_diagram.md)
 * [Rails 入门](part3_rails_premier.md)
   * [Ruby 入门](part3_rails_premier/ruby_premier.md)
@@ -141,10 +149,10 @@
   * [rails 命令行](part3_rails_premier/rails_command_line.md)
   * [rails 视图](part3_rails_premier/rails_view.md)
   * [rails 接口](part3_rails_premier/interface_document.md)
-
 * [Rails 常用的第三方组件]
   * [分页: kaminari](web_components/kaminari.md)
   * [上传图片 carrierwave](web_components/carrierwave.md)
+  * [即时上传 jquery-upload]
   * [上传图片到云 upyun](web_components/upyun.md)
   * [即时上传 jquery-upload]()
   * [发送短信]
@@ -159,7 +167,7 @@
   * [rspec]
   * [factory girl]
   * [bootstrap rails](web_components/bootstrap.md)
-  * [执行定时任务：rufu-scheduler]
+  * [执行定时任务：rufu-scheduler](part3_rails_premier/rufus_scheduler.md)
   * [执行后台任务：god ]
   * [执行延时任务：delayed-job]
   * [工作流 event machine]
@@ -176,3 +184,7 @@
   * [各种组件](web_front_end/js_components.md)
     * [上传图片 file-upload](web_front_end/js_components/file_uploader.md)
     * [弹出窗口 dialog](web_front_end/js_components/dialog.md)
+    * [轮播图](web_front_end/js_components/slider.md)
+    * [表单验证](web_front_end/js_components/validation.md)
+    * [树状图](web_front_end/js_components/tree.md)
+    * [快捷编辑](web_front_end/js_components/inplace_edit.md)
