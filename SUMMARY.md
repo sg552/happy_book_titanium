@@ -190,3 +190,5 @@
     * [快捷编辑](web_front_end/js_components/inplace_edit.md)
     * [select2](web_front_end/js_components/select2.md)
     * [bmap](web_front_end/js_components/bmap.md)
+    * [标签](web_front_end/js_components/tags.md)
+    * [动画](web_front_end/js_components/animation.md)
