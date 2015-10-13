@@ -7,7 +7,7 @@ Search View通常用于在tableview中筛选Row元素。类似于`SearchBar`，�
 
 ##使用方法
 + 在js文件中使用`Titanium.UI.Android.createSearchView`方法。
-+ 在Alloy中的xml文件中使用标签`<SearchView ns="Ti.UI.Android" platform="android"/>`，注意这里的命名空间，和平台。
++ 在Alloy中的xml文件中使用标签`<SearchView ns="Ti.UI.Android" platform="android"/>`，注意这里的命名空间和平台。
 
 ##使用例子
 ```javascript

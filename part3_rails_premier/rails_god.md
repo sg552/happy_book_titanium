@@ -37,3 +37,5 @@ god的使用方法也很简单，网上有许多资源可以参考，这里便�
 ② god的实际运用：http://www.synbioz.com/blog/monitoring_server_processes_with_god
 
 ③ god在github上的开源项目：https://github.com/mojombo/god/
+
+**TODO：请使用一个简单的rails例子来说明god的工作机制。**
