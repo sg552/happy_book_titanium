@@ -10,7 +10,9 @@
 我第一次看到最好的日志是在2006年，在java blog roller(https://roller.apache.org/)
 上。简直惊艳。
 
-在ruby中，虽然有自带的logger, 但是跟log4j还是有很大距离的。也很麻烦。
+在ruby中，虽然有自带的logger, 但是跟log4r还是有很大距离的。也很麻烦。
+
+**TODO：请在此处说明ruby自带的logger和log4r之间的优缺点比较，或直接列举出log4r的优势。**
 
 所以，就出现了log4r ( log for ruby ).
 
@@ -100,3 +102,7 @@ Started GET "/????_settings/19/edit" for 127.0.0.1 at ...
 13:42:12 DEBUG:   ????Setting Load (0.0ms)  SELECT "d ...
 13:42:12 INFO: Completed 200 OK in 750ms
 ```
+
+**TODO：请试着用一条日志举例，详细说明log4r的日志特色。让新同学明白该怎样学会看日志，更好的话可以谈谈自己看错误日志的经验，怎样快速有效的在众多日志中获取有用的信息。**
+
+**TODO：本章节需要改进的地方在于，章节内容只纯粹告诉了我怎样安装log4r，并没有告诉我为什么要使用log4r，它的优势在哪儿；安装完log4r后我该怎样使用好这个工具，把它的优势展现出来。否则，装了log4r却不会如何有效的去查看错误日志等于白装。**

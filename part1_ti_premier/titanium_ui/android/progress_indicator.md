@@ -1,7 +1,7 @@
 #ProgressIndicator
 
 这里讲的ProgressIndicator是Android独有的特征，只作用在Android上。所以它的命名空间就是`Titanium.UI.Android.ProgressIndicator`。
-它的作用是通过一个UI效果来显示一个正在运行的进程，以此来告诉用户当前这个进程正在运行，并且知道运行的进度。
+它的作用是通过一个UI效果来显示一个正在运行的进程，以此来告诉用户当前这个进程运行的进度。
 
 ##使用方法
 + 在js文件中，通过`Titanium.UI.Android.createProgressIndicator`方法

@@ -1,8 +1,8 @@
-Welcome to Web View World!
+#Titanium.UI.WebView
 
 Web View在Titanium中的作用，是加载基于HTML5的内容。
 
-HTML5的代码，可以来自本地--即手机里面内嵌的HTML代码，也可以来自远程。
+HTML5的代码，可以来自本地——即手机里面内嵌的HTML代码，也可以来自远程。
 
 值得注意的是，Web View的创建所消耗的资源要大于常规的View的创建。这是因为，Titanium需要将HTML5的内容完全加载到内存当中去。
 
