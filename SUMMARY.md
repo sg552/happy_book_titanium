@@ -155,7 +155,7 @@ j# Summary
   * [即时上传 jquery-upload]
   * [上传图片到云 upyun](web_components/upyun.md)
   * [即时上传 jquery-upload]()
-  * [发送短信]
+  * [发送短信](web_components/sms.md)
   * [wysiwyg 所见即所得编辑器](web_components/wysiwyg_ckeditor.md)
   * [发送restful请求  HTTParty](web_components/httparty.md)
   * [日志工具log4r](web_components/log4r.md)
