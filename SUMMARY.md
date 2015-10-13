@@ -191,9 +191,6 @@ j# Summary
     * [快捷编辑](web_front_end/js_components/inplace_edit.md)
     * [select2](web_front_end/js_components/select2.md)
     * [bmap](web_front_end/js_components/bmap.md)
-<<<<<<< HEAD
     * [标签](web_front_end/js_components/tags.md)
     * [动画](web_front_end/js_components/animation.md)
-=======
     * [限制性输入框](web_front_end/js_components/maskedinput.md)
->>>>>>> b5779d5db741fb42043140b46a72c4f56648f52e
