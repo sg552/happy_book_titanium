@@ -1,4 +1,4 @@
-j# Summary
+# Summary
 
 * [前言](preface.md)
 * [Titanium 入门](part1_ti_premier.md)
@@ -188,7 +188,10 @@ j# Summary
     * [时间选择器](web_front_end/js_components/datepicker.md)
     * [标签页](web_front_end/js_components/tabs.md)
     * [提示框](web_front_end/js_components/tooltips.md)
+    * [统计图表](web_front_end/js_components/chart.md)
     * [快捷编辑](web_front_end/js_components/inplace_edit.md)
     * [select2](web_front_end/js_components/select2.md)
     * [bmap](web_front_end/js_components/bmap.md)
+    * [标签](web_front_end/js_components/tags.md)
+    * [动画](web_front_end/js_components/animation.md)
     * [限制性输入框](web_front_end/js_components/maskedinput.md)
