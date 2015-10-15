@@ -1,20 +1,26 @@
 # Tooltips(提示框)
 
-##jquery Tooltips
+##Jquery Tooltips
 
 > 项目地址: https://jqueryui.com/tooltip/
 
-使用jquery给输入框组件增加提示方式非常简单
+使用jquery给输入框组件增加提示方式非常简单，只需要三个步骤即可:
 
-- 引用`jquery`相关的js和css文件
-- 在`script`中使用
+- 引用`jquery ui`和`jquery`相关的js和css文件:
+
+	```html
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></	script>
+```
+- 在`<script>`中添加jquery语法:
 
 	```
 	$(function() {
     	$( document ).tooltip();
    });
 	```
-- 给`input`加入`title`属性就可以了
+- 给输入框空间加入`title`属性就可以了
 
 下面是一个小的例子:
 
@@ -45,11 +51,13 @@
 
 > ref: http://getbootstrap.com/javascript/#tooltips
 
-效果图:
+有时候需要给提示框加上bootstrap的样式的时候，则需要改变一下引用方法和参数了。boostrap的效果图如下:
 
 ![tooltips_left](/images/tooltips_left.png)
 	
 ![tooltips_right](/images/tooltips_right.png)
+
+做法也非常简单，主要分为两个步骤：
 
 - 导入bootstrap,用[Tabs](tabs.html)(	标签页)中的导入方式
 
