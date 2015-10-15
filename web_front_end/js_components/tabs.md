@@ -1,5 +1,70 @@
 #web tabs(标签页)
 
+##jquery tabs
+
+> 参考文章: https://jqueryui.com/tabs/
+
+这里用的是jquery ui的一个组件，使用方式比较简单:
+
+- 引入对应的 jquery.js jquery-ui的文件:
+
+```html
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+```
+
+- 定义好`ui li`的菜单
+
+- 在`<script>`中调用`tabs()`的方法
+
+一个简单的实例代码如下:
+
+```html
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Tabs - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+</head>
+<body>
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">标签一</a></li>
+      <li><a href="#tabs-2">标签二</a></li>
+      <li><a href="#tabs-3">标签三</a></li>
+    </ul>
+    <div id="tabs-1">
+      <p>我是标签一的内容</p>
+      <p>欢迎您!!!</p>
+    </div>
+    <div id="tabs-2">
+      <p>我是标签二的内容</p>
+    </div>
+    <div id="tabs-3">
+      <p>我是标签三的内容</p>
+    </div>
+  </div>
+</body>
+</html>
+
+```
+
+实现的效果如下图所示:
+
+![tabs.gif](/images/tabs.gif)
+
+##bootstrap tabs
+
 > ref: http://getbootstrap.com/getting-started/
 
 下面以rails为例子
@@ -23,6 +88,7 @@
 	*= require bootstrap.min
 	*= require bootstrap-theme.min
 	```
+	
 - 增加一个简单的标签页
 	- 添加代码到*app/views/welcome/index.html.erb*中:
 	
