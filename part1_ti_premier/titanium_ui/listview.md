@@ -84,7 +84,7 @@ LisiView的**body**身体部分，数据都展示在这里；FooterView是ListVi
      明**ns='Ti.UI.Android'**、**platform='android'**；如果属于动态定义[_**.js**_文件]则需要使用**Titanium.UI.Android.createSearchView**方法)
 
 
-    PS：如果你观察仔细的话，在浏览效果图时你应该会发现ListView中最后一条数据data 10是展示不完全的，ListView滑到底部
+    PS：如果你观察仔细的话，在浏览效果图时你应该会发现ListView中最后一条数据data 20是展示不完全的，ListView滑到底部
         松开后data 20会被屏幕遮挡一部分。这是ListView的一个小瑕疵，正是因为这个小瑕疵，所以当我们的数据size很大，超过屏
         幕长度时我们建议为ListView定义一个FooterView来解决这个问题。此时你可以只需要给这个FooterView定义一个空的任何UI
         组件就行了，它的作用只是为了占据一定的空间来保证我们数据展示的完整性，并没有实际意义。
