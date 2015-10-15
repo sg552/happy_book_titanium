@@ -1,6 +1,6 @@
 #统计图表（Chart）
 
-&emsp;&emsp; Chartkick是一个图表绘制工具，特点是UI美观、使用简单，并且支持IE6在内的大多数浏览器。只需要一行Ruby代码即可绘制出漂亮的图表。
+&emsp;&emsp;统计图表的制作使用CanvasJS。
 
 ## 使用CanvasJS
 
