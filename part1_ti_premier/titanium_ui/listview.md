@@ -6,7 +6,7 @@
 成为UI组件中在处理大型的复杂的逻辑数据时最佳的UI组件选择项；但与此同时它也成为Titanium-UI组件中
 最为复杂的UI组件之一。如果你还从没接触过ListView，那么先看看下面的UI效果吧！
 
-![imageview](http://image.happysoft.cc)
+![](/images/listview_display1.gif)
 
 从上面的效果图中我们可以看出ListView其实就是一个数据的“**清单list**”UI组件，清单里的每条数据占据清单里
 的一行；并且当数据项超过屏幕长度时能自动滚动，每条数据都有其各自的特性(效果图中点击每条数据弹出
@@ -18,37 +18,21 @@ _my_list_view.xml:_
     <Alloy>
         <Window>
             <ListView id='my_list_view'>
-                <HeaderView>
-                    <View class='header_footer_view_style'>
-                        <Label class='header_footer_label_style'>Header View</Label>
-                    </View>
-                </HeaderView>
-
                 <ListSection>
-                    <ListItem>
-                        <Label class='list_item_label_style' text='data 1'/>
-                    </ListItem>
+                    <HeaderView class='header_footer_view_style'>
+                        <Label class='header_footer_label_style' text='HeaderView'/>
+                    </HeaderView>
 
-                    <ListItem>
-                        <Label class='list_item_label_style' text='data 2'/>
-                    </ListItem>
+                    <ListItem title='data 1'/>
+                    <ListItem title='data 2'/>
 
-                        <!--此处省略data 3~data 8-->
+                    <!--此处省略data 3~data 18-->
 
-                    <ListItem>
-                        <Label class='list_item_label_style' text='data 9'/>
-                    </ListItem>
+                    <ListItem title='data 19'/>
+                    <ListItem title='data 20'/>
 
-                    <ListItem>
-                        <Label class='list_item_label_style' text='data 10'/>
-                    </ListItem>
+                    <FooterView/>
                 </ListSection>
-
-                <FooterView>
-                    <View class='header_footer_view_style'>
-                        <Label class='header_footer_label_style'>Footer View</Label>
-                    </View>
-                </FooterView>
             </ListView>
         </Window>
     </Alloy>
@@ -59,20 +43,7 @@ _my_list_view.tss:_
    '#my_list_view':{
       top:'0',
       width:'100%',
-      height:'100%',
-      backgroundColor:'red'
-   }
-
-   '.list_item_label_style':{
-      font:{
-        fontSize:'12'
-      },
-
-      width:'100%',
-      height:'100%',
-      color:'black',
-      textAlign:'left',
-      verticalAlign:'center'
+      height:'100%'
    }
 
    '.header_footer_view_style':{
@@ -97,7 +68,7 @@ _my_list_view.js:_
 
 ```js
    $.my_list_view.addEventListener('itemclick',function(e){
-      alert('数据排列序号：'+e.itemIndex+'，'+'数据：'+e.source.text);
+      alert('数据排列序号：'+e.itemIndex);
    });
 ```
 
@@ -114,7 +85,7 @@ LisiView的**body**身体部分，数据都展示在这里；FooterView是ListVi
 
 
     PS：如果你观察仔细的话，在浏览效果图时你应该会发现ListView中最后一条数据data 10是展示不完全的，ListView滑到底部
-        松开后data 10会被屏幕遮挡一部分。这是ListView的一个小瑕疵，正是因为这个小瑕疵，所以当我们的数据size很大，超过屏
+        松开后data 20会被屏幕遮挡一部分。这是ListView的一个小瑕疵，正是因为这个小瑕疵，所以当我们的数据size很大，超过屏
         幕长度时我们建议为ListView定义一个FooterView来解决这个问题。此时你可以只需要给这个FooterView定义一个空的任何UI
         组件就行了，它的作用只是为了占据一定的空间来保证我们数据展示的完整性，并没有实际意义。
 
@@ -217,7 +188,7 @@ UI组件的定位，具体使用方法我们会在下面的例子中见到。
 ####3.2 自定义数据模板
 **自定义数据模板**根据不同的数据样式处理要求定义我们自己需要的数据模板，使用方法十分灵活。下面我们通过一个项目例子的中需求和代码来看看自定义数据模板需要如何定义：
 
-![imageview](http://image.happysoft.cc)
+![](/images/listview_display2.gif)
 
 上面这张动态演示图是我们需要通过ListView实现的UI效果图。对照着效果图，我们大致可以看出该页面的数据样式需求：
 
