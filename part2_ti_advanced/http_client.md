@@ -1,20 +1,23 @@
-Hello, HTTPClient!
-# HTTPClient
-Titanium实现了五个HTTP的方法，分别是GET、POST、PUT、DELETE、PATCH
+#HTTPClient
 
-常用的就两个GET和POST。
+##简介
+Titanium实现了五个HTTP的方法，分别是GET, POST, PUT, DELETE, PATCH。常用的就两个GET和POST。
 
 成功发送一个http请求总共分三步:
+
 - create an HTTP client
 - open an HTTP connection
 - send an HTTP request
 
 处理response的方式也有三种：
+
 - this.responseText, 把response当做纯文本(raw text)，最常用的是用来接收JSON字符串
 - this.responseXML, 把response当做xml对象处理
 - this.responseData, 把response当做Blob(Binary Large Object),二进制大对象
 
-### 下面演示如何在手机端发送一个HTTP请求：
+##实例
+
+下面是在手机端发送一个HTTP请求的具体实现代码：
 
 ```javascript
 var url = "https://www.baidu.com";
@@ -22,46 +25,45 @@ var url = "https://www.baidu.com";
 // 定义HTTP请求的回调函数
 var xhr = Ti.Network.createHTTPClient({
   onload: function(e) {
-// 这里是一个回调函数，当请求成功是调用
+	// 这里是一个回调函数，当请求成功是调用
   onerror: function(e){
-// 这里是一个回调函数， 当请求失败是调用
+	// 这里是一个回调函数， 当请求失败是调用
   }
  }
 })
-
 // 注明要使用的HTTP方法和请求的接口地址
 xhr.open("GET", url);
 // 发送请求
 xhr.send();
 ```
 
-### 我们项目中还普遍存在另一种写法，如下：
+也可以用另一种写法，如下：
+
 ```javascript
 
 var url = "https://www.baidu.com";
 
 var xhr = Ti.Network.createHTTPClient();
 xhr.onload = function(e) {
-// 这里是一个回调函数，当请求成功是调用
-  };
+	// 这里是一个回调函数，当请求成功是调用
+};
 
-  xhr.error = function(e) {
-// 这里是一个回调函数， 当请求失败是调用
+xhr.error = function(e) {
+	// 这里是一个回调函数， 当请求失败是调用
 }
 // 注明要使用的HTTP方法和请求的接口地址
 xhr.open("GET", url);
 xhr.send();
 ```
-###httpClient的封装
+##httpClient的封装
+
 参数说明:
 
-```
-    url: 需要请求的参数
-    load_callback: 响应成功的回调函数
-    error_callback: 响应失败的回调函数
-    method: 请求方式GET,POST等等
-    args: http请求的参数,GET请求不需要参数
-```
+- url: 需要请求的参数
+- load_callback: 响应成功的回调函数
+- error_callback: 响应失败的回调函数
+- method: 请求方式GET,POST等等
+- args: http请求的参数,GET请求不需要参数
 
 ```javascript
 function http_call(url, load_callback, error_callback, method, args){
@@ -93,15 +95,15 @@ function http_call(url, load_callback, error_callback, method, args){
 }
 ```
 
-需要提及的是`Ti.App`是一个命名空间,存储了很多需要调用系统资源的属性，这样就不需要每次都调用系统资源来读取属性了。
+上面的`Ti.App`是一个命名空间,存储了很多需要调用系统资源的属性，这样就不需要每次都调用系统资源来读取属性了。下面这段代码是指当访问某种特定形式的url时，将App自身的信息也传递到这个接口中去,不考虑信息采集的话这段代码可以加以注释。如下所示:
 
 ```javascript
 if (url.indexOf(Ti.App.helloworld) == 0){
-		var append = "osname="+Ti.App.osname+"&osversion="+Ti.App.osversion+"&appversion="+Ti.App.version+"&manufacturer="+Ti.App.manufacturer+"&model="+Ti.App.model+"&memory="+Ti.Platform.availableMemory;
-		url += url.indexOf("?") > 0 ? "&" + append : "?" + append;
-	}
+	var append = "osname="+Ti.App.osname+"&osversion="+Ti.App.osversion+"&appversion="+Ti.App.version+"&manufacturer="+Ti.App.manufacturer+"&model="+Ti.App.model+"&memory="+Ti.Platform.availableMemory;
+	url += url.indexOf("?") > 0 ? "&" + append : "?" + append;
+}
 ```
-这段代码是指当访问某种特定形式的url时，将App自身的信息也传递到这个接口中去,不考虑信息采集的话这段代码可以去掉。
+
 
 ### 有的时候，设置HTTP请求的的header是非常必要的。
 
@@ -114,8 +116,10 @@ client.setRequestHeader("Content-type", "text/csv");
 client.send();
 ```
 
-### 使用HTTP Client上传(upload)文件
-下面以调用本地相册为例，演示如何上传文件。
+## 使用HTTP Client上传(upload)文件
+
+下面以调用本地相册为例，演示如何上传文件:
+
 ```javascript
 var openPhotoGallery = function() {
   Ti.Media.openPhotoGallery({
@@ -140,10 +144,11 @@ var openPhotoGallery = function() {
 };
 ```
 
-### 下载文件并保存在本地
+## 下载文件并保存在本地
 下面以下载图片来演示，在Titanium中如何通过HTTP请求来下载文件
 
 其实原理很简单，就是向你的资源发送一个GET请求
+
 ```javascript
 var xhr = Ti.Network.HTTPClient();
 xhr.onload = function() {
@@ -158,13 +163,15 @@ xhr.open("GET", "http://myserver.com/path/to/your/resources");
 xhr.send();
 ```
 
-### 可以使用的文件目录
+## 可以使用的文件目录
+
 提到将文件保存到本地，就不得不提一下，对于一部手机的OS，都有哪些目录是我们开发者可以使用的。
 
 在Titanium中，主要由四个目录是我们可以使用的：
+
 - Ti.Filesystem.applicationDataDirectory: 可写可读，特定于app，完全卸载或者你手动删除之后，文件消失
 - Ti.Filesystem.resourecesDirectory: 只读，完全卸载或者你手动删除之后，文件消失
 - Ti.Filesystem.tempDirectory, 可读可写，app完全退出之后，由OS自动将文件内容删除
-- Ti.Filesystem.externalStorageDirectory: 可读可写，是外部SD或者类似设备的抽象, 在使用之前，可以使用Ti.Filesystem.isExternalStorageDirectoryPresent()(返回值是Boolean类型)检测设备是否存在
+- Ti.Filesystem.externalStorageDirectory: 可读可写，是外部SD或者类似设备的抽象, 在使用之前，可以使用Ti.Filesystem.isExternalStorageDirectoryPresent()(返回值是Boolean类型)检测设备是否存在。
 
 TODO:结合做的项目的实际代码进行说明。
