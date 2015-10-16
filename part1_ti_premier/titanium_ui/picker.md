@@ -43,3 +43,14 @@ _**.xml**_
   </PickerColumn>
 </Picker>
 ```
+演示案例代码：
+```xml
+<Picker id='picker' change='picker_check'>
+ <PickerColumn id='picker_column1'/>
+ <PickerColumn id='picker_column2'/>
+</Picker>
+```
+
+```js
+
+```
