@@ -1,5 +1,56 @@
 #datepicker
 
+##jquey date and time picker
+
+>项目地址:https://plugins.jquery.com/datetimepicker/
+ 
+ 这里以v2.3.7版本为例子,下载demo，能够看到里面index.js中有很多不同的案例
+
+- 引用的js文件是同级目录下面的`jquery.datetimepicker.css` `jquery.js`以及`build/jquery.datetimepicker.full.js`三个文件。如下所示:
+ 
+ ```html
+ <link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css"/ >
+<script src="jquery.js"></script>
+<script src="build/jquery.datetimepicker.full.min.js"></script>
+ ```
+- 在`<body>`中添加
+
+ ```html
+ <input id="datetimepicker" type="text" >
+ ```
+- 在`<script>`中添加:
+
+	```jquery
+	jQuery('#datetimepicker').datetimepicker();
+	```
+
+这时候刷新页面最基本的jquery就被使用成功了,更多的参数，请看jquery中给出来的[例子](https://plugins.jquery.com/datetimepicker/)。
+
+下面是一个完整的小例子:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="./jquery.datetimepicker.css"/>
+	<style type="text/css"></style>
+</head>
+<body>
+	<h3>DateTimePicker</h3>
+	<input type="text" value="" id="datetimepicker"/><br><br>
+</body>
+<script src="./jquery.js"></script>
+<script src="build/jquery.datetimepicker.full.js"></script>
+<script>
+	$('#datetimepicker').datetimepicker();
+</script>
+</html>
+```
+
+效果如图所示:
+
+![datepicker](/images/jquery_datepicker.png)
 
 
 ##bootstrap-datepicker

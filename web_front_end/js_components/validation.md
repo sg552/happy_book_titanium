@@ -44,7 +44,7 @@ $("#form").validate({
     "user[name]":"required",
     "user[password]":{
     "required":true,
-    "range":[6,10]
+    "rangelength":[6,10]
     },
     "user[mail]":"email"
   },
@@ -52,7 +52,7 @@ $("#form").validate({
     "user[name]":"请输入用户名",
     "user[password]":{
     "required":"请输入密码",
-    "range":"密码在6-10位"
+    "rangelength":"密码在6-10位"
     },
     "user[mail]":"请注意邮箱格式"
   }
