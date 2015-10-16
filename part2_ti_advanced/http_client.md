@@ -1,6 +1,6 @@
 Hello, HTTPClient!
-
-Titanium实现了五个HTTP的方法，分别是GET, POST, PUT, DELETE, PATCH
+# HTTPClient
+Titanium实现了五个HTTP的方法，分别是GET、POST、PUT、DELETE、PATCH
 
 常用的就两个GET和POST。
 

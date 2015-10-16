@@ -1,6 +1,7 @@
 Welcome to Cross Platform Dev iOS world!
 
-Titanium官方文档说，Titanium不仅仅可以让你开发扩平台应用，它真正的能力是是让你开发出跟本地应用媲美的的应用！
+# IOS开发
+Titanium官方文档说，Titanium不仅仅可以让你开发扩平台应用，它真正的能力是让你开发出跟本地应用媲美的的应用！
 
 以下我们会先讨论以下原生的iOS开发中的一些概念。
 
