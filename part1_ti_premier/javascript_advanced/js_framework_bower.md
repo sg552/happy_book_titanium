@@ -1,12 +1,14 @@
 # 使用bower 管理 javascript, css...
-
+TODO
+ 需要加上bower 的介绍（功能作用，解决的问题）
+步骤划分不明确
 1. 更新 npm
 
 ```bash
 $ npm update -g bower
 ```
 
-2. 
+2.
 
 ```bash
 cd <your project> && bower init
@@ -44,7 +46,7 @@ cd <your project> && bower init
 - bower search <package_name> 搜索某个package
 - bower info <package> 显示某个package的信息
 - bower uninstall <package> 删除某个package
-- bower install <package> 安装 
+- bower install <package> 安装
 
 运行  `bower install <package>`之后， 就会发现在app 目录下下载了若干JS文件和目录
 

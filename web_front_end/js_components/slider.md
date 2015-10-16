@@ -17,6 +17,7 @@ rails项目中：
 + 然后打开`app/assets/javascripts/application.js`
 
 + rails是通过`//=require jquery`这样的方式来引用同目录下的jquery.js文件。我们就可以如下添加：
+
 ```ruby
 //=require jquery
 //=require jquery.banner
@@ -80,7 +81,8 @@ body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
 
 
 ##添加方法
-在<body></body>标签内要添加方法来实现滑动。
+
+在body/body标签内要添加方法来实现滑动。
 
 ```html
 <script type="text/javascript">
@@ -88,8 +90,6 @@ $(function(){
   $(".banner").swBanner();
 });
 </script>
-
 ```
 
 这样，这个简单的轮播图就算完成了。
-

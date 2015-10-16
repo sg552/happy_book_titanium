@@ -1,12 +1,12 @@
 # Jasmine : js 测试框架
 
-跟Rspec一样，Jasmine 是 javascript中的BDD框架. 你可以就认为它是一个测试框架.
+跟Rspec一样，Jasmine是javascript中的BDD框架。你可以就认为它是一个测试框架。
 
-截止到 2015年9月15日， 最新的版本是 2.3.4
+截止到2015年9月15日，最新的版本是2.3.4。
 
-## 在 web浏览器上使用
+## 在web浏览器上使用
 
-这是最简单的方式。 首先下载 zip文件：
+这是最简单的方式。首先下载zip文件：
 
 ```bash
 $ wget https://github.com/jasmine/jasmine/releases/download/v2.3.4/jasmine-standalone-2.3.4.zip
@@ -18,10 +18,10 @@ $ wget https://github.com/jasmine/jasmine/releases/download/v2.3.4/jasmine-stand
 ▾ lib/                  #  jasmine的核心文件, 不要动。
   ▸ jasmine-2.3.4/
 ▾ spec/                 # 放置测试的目录
-    PlayerSpec.js       # 测试文件  
+    PlayerSpec.js       # 测试文件
     SpecHelper.js       # 辅助文件，可以增加spec方法等。
 ▾ src/                  # 源代码 文件夹
-    Player.js           
+    Player.js
     Song.js
   SpecRunner.html       # 看结果的页面
 ```

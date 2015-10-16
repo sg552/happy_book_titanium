@@ -1,4 +1,4 @@
-j# Summary
+# Summary
 
 * [前言](preface.md)
 * [Titanium 入门](part1_ti_premier.md)
@@ -99,8 +99,8 @@ j# Summary
   * [布局，位置和视图层级](part2_ti_advanced/layouts_positioning_and_the_view_hierarchy.md)
   * [自定义字体](part2_ti_advanced/custom_font.md)
   * [Application Structure](part2_ti_advanced/application_structure.md)
-  * [扩平台开发之iOS](part2_ti_advanced/cross_platform_dev_ios.md)
-  * [扩平台开发之Android](part2_ti_advanced/cross_platform_dev_android.md)
+  * [跨平台开发之iOS](part2_ti_advanced/cross_platform_dev_ios.md)
+  * [跨平台开发之Android](part2_ti_advanced/cross_platform_dev_android.md)
   * [HTTP Client](part2_ti_advanced/http_client.md)
   * [Working with JSON](part2_ti_advanced/working_with_json.md)
   * [相册和相机的使用](part2_ti_advanced/photogaller_and_camera.md)
@@ -155,11 +155,11 @@ j# Summary
   * [即时上传 jquery-upload]
   * [上传图片到云 upyun](web_components/upyun.md)
   * [即时上传 jquery-upload]()
-  * [发送短信]
+  * [发送短信](web_components/sms.md)
   * [wysiwyg 所见即所得编辑器](web_components/wysiwyg_ckeditor.md)
   * [发送restful请求  HTTParty](web_components/httparty.md)
   * [日志工具log4r](web_components/log4r.md)
-  * [配置 rails-config]
+  * [配置 rails-config](web_components/rails_config.md)
   * [分析HTML: nokogiri](web_components/nokogiri.md)
   * [服务器thin](web_components/thin.md)
   * [增加注释 migrtion comments](web_components/migration_comments.md)
@@ -168,7 +168,7 @@ j# Summary
   * [bootstrap rails](web_components/bootstrap.md)
   * [执行定时任务：rufu-scheduler](part3_rails_premier/rufus_scheduler.md)
   * [执行后台任务：god ](part3_rails_premier/rails_god.md)
-  * [执行延时任务：delayed-job]
+  * [执行延时任务：delayed-job](part3_rails_premier/delayed_job.md)
   * [工作流 event machine]
   * [缓存 redis, memcache](web_components/redis_memcache.md)
 * [Rails 进阶](part4_rails_advanced.md)
@@ -188,7 +188,10 @@ j# Summary
     * [时间选择器](web_front_end/js_components/datepicker.md)
     * [标签页](web_front_end/js_components/tabs.md)
     * [提示框](web_front_end/js_components/tooltips.md)
+    * [统计图表](web_front_end/js_components/chart.md)
     * [快捷编辑](web_front_end/js_components/inplace_edit.md)
     * [select2](web_front_end/js_components/select2.md)
     * [bmap](web_front_end/js_components/bmap.md)
+    * [标签](web_front_end/js_components/tags.md)
+    * [动画](web_front_end/js_components/animation.md)
     * [限制性输入框](web_front_end/js_components/maskedinput.md)

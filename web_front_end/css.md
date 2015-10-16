@@ -13,6 +13,7 @@ CSS : Cascade Style Sheet, 层次样式表. 国内的人都喜欢叫CSS. 它决�
 ```
 
 - 网页内部使用
+
 ```html
 <style>
 .red_box {
@@ -22,6 +23,7 @@ CSS : Cascade Style Sheet, 层次样式表. 国内的人都喜欢叫CSS. 它决�
 ```
 
 - 行内使用(inline style)
+
 ```html
 <div style='border: 1px solid red'></div>
 ```
