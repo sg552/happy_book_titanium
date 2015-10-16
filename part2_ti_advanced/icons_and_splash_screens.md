@@ -1,4 +1,6 @@
 #Icons and Splash Screens(图标和启动图)
+TODO 添加图片
+
 这一章节，我们要学习如何在Titanium中自定义设置图标和启动图。当你要提交你的APP给Google Play和Apple Store的时候，对于icon会有很多的要求。Splash Screen（启动图）为了在程序启动的时候，显示一个很重要，很鲜明的信息给用户。
 
 Titanium会给你提供一个默认的icon和一个默认的splash screen给开发出来的项目。但是当你觉得它提供的这个并不好看的话，而且也不符合你的App风格，平台，分发选择的时候，你可以自己创建很多种的图片来覆盖它之前的默认图片。

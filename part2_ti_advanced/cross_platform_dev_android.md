@@ -1,9 +1,10 @@
 Welcome to Android World!!!
 
+# Android开发
 使用Titanium开发mobile app，虽然Titanium尽量abstract不同移动OS(Android，iOS)之间的差异，
 但是不同平台还是有一些特定于自己平台的东西，需要在实际的开发中注意。
 
-## 到目前为止，在我们实际开发当中，对于Android来说，需要注意的，主要有以下几点：
+## Android应用开发注意事项
 - Android有实体按键，这在实际的开发当中需要考虑。
 - Android是一个开源的操作系统（open source），不同厂商厂商的Android设备差异巨大。Android的UI规范不具有强制性，仅仅是一个建议。
 - 还有一点非常重要，就是各家OEM厂商生产的的Android的设别的分辨率差异巨大。

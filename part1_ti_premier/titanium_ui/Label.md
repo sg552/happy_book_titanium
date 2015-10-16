@@ -40,7 +40,7 @@ UI组件(详见**2.4.x**)。下面是一个Label的例子，你在Hello World项
 除了上述5种指定类型的string，Titanium还提供了以上全部类型检测的一个属性**Titanium.UI.AUTOLINK_ALL**。
 该属性将自动检测string中所有可转化的类型，例如：
 
-![imageview](http://image.happysoft.cc)
+![](/images/label_autolink.gif)
 
 ```xml
     <Label id='test_label' text='电话：18888888888\n 邮箱：test_eamil@qq.com\n 博客地址：http://www.mybolg.com'/>
@@ -65,7 +65,7 @@ UI组件(详见**2.4.x**)。下面是一个Label的例子，你在Hello World项
 
 **shadowOffset**有两个值**x**(水平方向上的偏移距离)，**y**(垂直方向上的偏移距离)。效果图如下：
 
-![imageview](http://image.happysoft.cc)
+![](/images/label_shadow.png)
 
 ###1.4 textAlign
 **textAlign**描述Label字符串相对于Label边界的**水平对齐准线位**对齐。textAlign一共有3个预值，分别对应Label的“**左对齐准线位**”、
@@ -77,7 +77,7 @@ UI组件(详见**2.4.x**)。下面是一个Label的例子，你在Hello World项
 
 如下所示效果：
 
-![imageview](http://image.happysoft.cc)  ![imageview](http://image.happysoft.cc)  ![imageview](http://image.happysoft.cc)
+![imageview](/images/label_text_align.png)
 
 相对应的，和textAlign相对于Label边界水平对齐的对齐效果属性是**verticalAlign**，处理字符串在**垂直方向**上相对于Label边界的对齐位；
 它也有3个预值，如下：
@@ -86,7 +86,7 @@ UI组件(详见**2.4.x**)。下面是一个Label的例子，你在Hello World项
     ① Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM：底部对齐，字符串相对于Label边界向底部靠拢。
     ① Titanium.UI.TEXT_VERTICAL_ALIGNMENT_CENTER：垂直居中对齐，字符串相对于Label边界垂直居中靠拢。
 
-![imageview](http://image.happysoft.cc)  ![imageview](http://image.happysoft.cc)  ![imageview](http://image.happysoft.cc)
+![imageview](/images/label_text_vertical_align.png)
 
 Label默认情况下字符串水平、垂直居中。
 
