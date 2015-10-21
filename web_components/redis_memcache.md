@@ -193,7 +193,8 @@ $ ./memcached -d -m 2048 -l 10.0.0.40 -p 11211
 
 
 ### 六项存命令
->1. Set：添加一个新条目到memcached或是用新的数据替换替换掉已存在的条目。
+
+>- Set：添加一个新条目到memcached或是用新的数据替换替换掉已存在的条目。
 存入命令格式为:
 
 >```
@@ -206,15 +207,16 @@ $ ./memcached -d -m 2048 -l 10.0.0.40 -p 11211
 $ set yanmin 0 0 9
 $ yanmin.in
 ```
-2. Add：当KEY不存在的情况下，它向memcached存数据，否则，返回NOT_STORED响应
-3. Replace：当KEY存在的情况下，它才会向memcached存数据，否则返回NOT_STORED响应
-4. Cas:改变一个存在的KEY值 ，但它还带了检查的功能
-5. Append:在这个值后面插入新值
-6. Prepend:在这个值前面插入新值
+
+>- Add：当KEY不存在的情况下，它向memcached存数据，否则，返回NOT_STORED响应
+>- Replace：当KEY存在的情况下，它才会向memcached存数据，否则返回NOT_STORED响应
+>- Cas:改变一个存在的KEY值 ，但它还带了检查的功能
+>- Append:在这个值后面插入新值
+>- Prepend:在这个值前面插入新值
 
 
 ###两项取命令
->1. Get:取单个值 ，从缓存中返回数据时，将在第一行得到KEY的名字，flag的值和返回的value长度，真正的数据在第二行，最后返回END，如KEY不存在，第一行就直接返回END 。
+>- Get:取单个值 ，从缓存中返回数据时，将在第一行得到KEY的名字，flag的值和返回的value长度，真正的数据在第二行，最后返回END，如KEY不存在，第一行就直接返回END 。
 例如：
 
 >```
@@ -226,7 +228,7 @@ $ yanmin.in
 >VALUE yanmin 0 9
 yanmin.in
 ```
-2. Get_multi：一次性取多个值
+>- Get_multi：一次性取多个值
 
 ###一项删除命令
 >Delete

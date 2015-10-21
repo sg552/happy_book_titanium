@@ -1,20 +1,29 @@
 # Underscore
 
-refer to:  http://docs.appcelerator.com/backbone/0.9.2/#Collection-Underscore-Methods
+TODO:
+整篇文章冗长,代码也没标示出来,与http://www.css88.com/doc/underscore/这篇文章大部分类似。
 
-backbone中的underscore提供了28个操作集合的方法.  用好它们可以极大的提高我们的工作效率.
+> refer to:  http://docs.appcelerator.com/backbone/0.9.2/#Collection-Underscore-Methods
 
-###简介
+**backbone**中的**underscore**提供了28个操作集合的方法.  用好它们可以极大的提高我们的工作效率.
+
+##简介
    underscore是一个javascript的实用库，为我们提供了一系列的强大的函数式编程的工具，帮助我们更为快速便捷的开发web程序。
 
-###安装
-Node.js 下安装 npm install underscore
+##安装
+Node.js 下安装:
 
-###underscore下的（collections）
+```
+npm install underscore
+```
 
-这一小节主要介绍underscore下的一些常用的collections
+##underscore下的collections
 
-each  _.each(list, iteratee, [context])  alias:foreach
+> 本文中 `=>` 表示输出内容
+
+这小节主要介绍underscore下的一些常用的collections
+
+each: `_.each(list, iteratee, [context])  alias:foreach`
 
 each 函数用来遍历操作list中的每一个元素，当我们传递一个context参数时，list 中的每个元素会被迭代的绑定context操作，顺序执行。如果list是一个javascript对象，迭代的参数将会时（value，key，list），返回一个list对象
 以便于链式操作。
@@ -22,7 +31,7 @@ each 函数用来遍历操作list中的每一个元素，当我们传递一个co
 需要注意的是：collection functions可以正常应用在数组（arrays），对象（objects）以及一些类似的数组对象例如arguments，Nodelist等，但是其是基于鸭子模型（duck－typing）工作的，所以我们应该尽量避免传递不确定长度的
 参数给该类方法。同时我们应该注意到每个each循环不能够用break来打断，应该使用_.find来作为替代。
 
-map  _.map(list,iteratee, [context])   alias:collect
+map: `_.map(list,iteratee, [context])   alias:collect`
 
 map 函数使用转换函数（iteratee）通过遍历list中的每一个值产生一个新的数组。转换函数（iteratee）传递三个参数：值（value），迭代index（或者key），以及一个指向新生成的数组对象(list)的引用。
 
@@ -31,9 +40,10 @@ _.map([3,4,5],function(num){return num * 5; });
 => [15,20,25]
 ```
 
-reduce  _.reduce(list, iteratee, [memo], [context])  alias:inject, foldl
+reduce: `_.reduce(list, iteratee, [memo], [context])  alias:inject, foldl
+`
 
-reduce函数又被称为inject和foldl，该函数方法把list中的每一个值转换为一个单独的值（value）。Memo是reduction（reduce函数）的初始状态，后面的每一步操作都应该是通过迭代器（iteratee）返回。迭代器（iteratee）传递四个参数：
+reduce函数又被称为inject和foldl，该函数方法把list中的每一个值转换为一个单独的值（value）。memo是reduction（reduce函数）的初始状态，后面的每一步操作都应该是通过迭代器（iteratee）返回。迭代器（iteratee）传递四个参数：
 memo，迭代器的value（或者key）和index，指向整个list的引用。
 
 如果我们没有给reduce传递初始的memo，那么迭代器在初次调用时将会使用list的第一个元素作为初始的memo，然后从下一个元素开始迭代操作。
@@ -45,7 +55,7 @@ _.reduce([1,2,3], function(memo, num){return memo * num];})
 => 6
 ```
 
-reduceRight  _.reduceRight(list, iteratee, memo, [context])   alias:foldr
+reduceRight:`_.reduceRight(list, iteratee, memo, [context]) alias:foldr`
 
 和上一个reduce函数类似，reduceRight 是从最右侧开始操作list中的每个元素。
 
@@ -57,7 +67,7 @@ var flat2  = _.reduce(list, function(a, b) { return a.concat(b); }, []);
 =>[0,1,2,3,4,5]
 ```
 
-find  _.find(list, predicate, [context])   alias: detect
+find:  `_.find(list, predicate, [context])   alias: detect`
 
 find函数通过逐项查找list中的每一个元素，返回第一个通过迭代函数（predicate）检测正确的值，如果没有找到通过检测的数值则会返回undefined,find函数并不会每次都遍历list中的每个元素，当其匹配到通过检测的值时就会返回，而不是继续检测完整个
 list。
@@ -67,7 +77,7 @@ var event = _.find([1,2,3,4,5,6], function(num){return num%3==0;});
 => 3
 ```
 
-filter  _.filter(list,predicate,[context])  Alias:select
+filter:  `_.filter(list,predicate,[context])  Alias:select`
 
 fliter函数遍历list查找出符合检测函数（predicate）的元素。
 
@@ -76,11 +86,11 @@ var event = _.find([1,2,3,4,5,6], function(num){return num%3==0;});
 =>[3,6]
 ```
 
-where  _.where(list,properties)
+where:  `_.where(list,properties)`
 
 where函数遍历list，返回一个包含properties所列出属性的所有键值对的数值。
 
-findWhere  _findWhere(list,properties)
+findWhere:  `_findWhere(list,properties)`
 
 与where函数类似，只是findWhere函数返回的是第一个匹配到的包含properties所列出属性的键值对的数值。同时需要注意的是如果没有匹配到相应的属性，或者list为空时，会返回undefined。
 
@@ -93,19 +103,19 @@ var event = _.find([1,2,3,4,5,6], function(num){return num%3==0;});
 =>[1,2,4,5]
 ```
 
-every   _.every(list,[predicate], [context])  Alias:all
+every: `_.every(list,[predicate], [context])  Alias:all`
 
 如果list中的每一个元素都通过检测函数（predicate）的检测，就返回true，否则返回false。
 
-some  _.some(list,[predicate],[context])   Alias:any
+some:  `_.some(list,[predicate],[context])   Alias:any`
 
 如果list中有某一个元素通过了检测函数（predicate）的检测，就返回true，否则返回false。
 
-contains   _.contains(list, value, [fromIndex])  Alias:include
+contains: `_.contains(list, value, [fromIndex])  Alias:include`
 
 如果list包含指定的value就返回true。如果是list数组（arrays），那么内部使用indexOf判断，使用fromIndex来确定开始的起始位置。
 
-invoke   _invoke(list, methodName, *arguments）
+invoke: `_invoke(list, methodName, *arguments）`
 
 在每一个list元素上执行methodName的函数方法，任何传递给invoke的额外参数，invoke都会在调用methodName方法的时候传递给它。
 
@@ -114,14 +124,21 @@ _.invoke([[5,1,7],[3,1,2]],  'sort')
 =>[[1,5,7],[1,2,3]]
 ```
 
-还有pluck，max， min等等。有兴趣的同学可以查阅相关的文档<http://underscorejs.org/>
-参考文档<http://javascript.ruanyifeng.com/library/underscore.html>
+还有pluck，max， min等等。有兴趣的同学可以查阅相关的文档
 
-###underscore下的ArrayFunctions
+> 官方文档<http://underscorejs.org/>
 
-注意：所有的array functions都可以在arguments object上正常使用，但是undersocore functions并不是只针对稀疏数组（sparse arrays）设计的。
+> 参考文档<http://javascript.ruanyifeng.com/library/underscore.html>
 
-first   _.first(array, [n])   Alias:head,take  initial  _.initial(array,[n])   last    _.last(array, [n])    rest   _.rest(array,[n])   Alias:tail,drop
+##underscore下的ArrayFunctions
+
+> 注意：所有的array functions都可以在arguments object上正常使用，但是undersocore functions并不是只针对稀疏数组（sparse arrays）设计的。
+
+first: `_.first(array, [n])   Alias:head,take`
+
+initial:  _.initial(array,[n])   
+
+last    _.last(array, [n])    rest   _.rest(array,[n])   Alias:tail,drop
 
 上面几个函数的功能比较相似，所以统一介绍一下，first函数返回数组（array）的第一个元素，传递的参数n代表返回前n个元素。initial函数返回除最后一个元素之外的所有元素的数组，该函数在
 arguments object的使用上特别有用，传递的参数n表示排除后面的n个元素。 last函数返回最后一个元素，传递的参数n代表返回最后面的n个元素。 rest函数返回除第一个元素之外的其他元素，传递

@@ -1,10 +1,10 @@
 Welcome to Application Structure World!
 
-## Titanium应用的整体结构
+## Titanium应用的结构
 下面通过mobile phone跟web的对比，进行说明。
 
 ### Window vs Web Page
-### View vs Div
+#### View vs Div
 
 大致包括以下几个方面:
 - 手机端的Window等同于web中的一个页面(web page)

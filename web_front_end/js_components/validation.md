@@ -2,51 +2,80 @@
 >表单验证又分为前台验证和后台验证，在前台我们使用的jQuery 的validate插件,这个插件的好处就是绑定了一
 系列的验证，同时还能自己去编写，非常容易使用。
 
+![](/images/jqueryvalidate.gif)
 ##安装
 1)可以把jQuery validate文件下载到本地，然后再HTML中引用
 ```html
+<script src='../jquery.js' type="text/javascript"/>
 <script src='../jquery.validate.js' type="text/javascript"/>
 ```
 2)直接在HTML中引用CDN
 ```html
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js' type="text/javascript"/>
 ```
 ##使用
 我们先来看一段代码
 ```html
-$().ready(function() {
-  $("#signupForm").validate({
-    rules: {
-      firstname: "required",
-      email: {
-      required: true,
-      email: true
-      }
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js' type="text/javascript" ></script>
+<%= form_for :user,url:users_path,:html=>{:id=>"form"} do |f| %>
+<div>用户名<%= f.text_field:name %></div>
+<div>密码  <%= f.password_field:password  %></div>
+<div>邮箱  <%= f.text_field:mail  %></div>
+<%=f.submit "signup"%>
+<% end %>
+<style>
+input.error { border: 1px solid red; }
+label.error {
+background:url("./demo/images/unchecked.gif") no-repeat 0px 0px;
+           padding-left: 16px;
+           padding-bottom: 2px;
+           font-weight: bold;
+color: #EA5200;
+}
+label.checked {
+  background:url("./demo/images/checked.gif") no-repeat 0px 0px;
+}
+</style>
+<script>
+$("#form").validate({
+  rules:{
+    "user[name]":"required",
+    "user[password]":{
+    "required":true,
+    "rangelength":[6,10]
     },
-    messages: {
-      firstname: "请输入姓名",
-      email: {
-      required: "请输入Email地址",
-      email: "请输入正确的email地址"
-      }
-    }
-  });
+    "user[mail]":"email"
+  },
+  messages:{
+    "user[name]":"请输入用户名",
+    "user[password]":{
+    "required":"请输入密码",
+    "rangelength":"密码在6-10位"
+    },
+    "user[mail]":"请注意邮箱格式"
+  }
 });
+</script>
+
 ```
 由于插件的默认错误信息是英语，所以在这里我们选择自己在js文件中写检验规则。
-signupForm就是你要检验的表单，rules里面中是检验规则，而messages中是错误信息。
+form就是你要检验的表单，rules中是检验规则，而messages中是错误信息,rules和messages通过name属性来控制的,id和class不可用。
+
+*本章末有默认检验规则
 
 ##常见问题
 ###错误信息显示位置
 默认是显示在该元素后面,修改的话使用下边这种方法
-```html
+```javascript
 errorPlacement: function(error, element) {
     error.appendTo(element.parent());
     }
 ```
 ###更改错误信息的样式
 我们可以自定义错误信息的样式
-```html
+```javascript
 input.error { border: 1px solid red; }
 label.error {
   background:url("./demo/images/unchecked.gif") no-repeat 0px 0px;
@@ -61,10 +90,10 @@ label.checked {
 ```
 ###添加自定义验证规则
 写在additional-methods.js文件中(没有就自己创建并引用)或 jquery.validate.js文件中。
-```
+```javascript
 addMethod：name, method, message
 ```
-```html
+```javascript
 // 邮政编码验证
 jQuery.validator.addMethod("isZipCode", function(value, element) {
     var tel = /^[0-9]{6}$/;
