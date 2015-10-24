@@ -9,7 +9,7 @@
 + Long press(长按)
 + Accelerometer(加速器)
 
-##官方提供手势其实是一个官方的module。所以我们可以通过`Ti.Gesture`这个module来实现我们的需求。
+*官方提供手势其实是一个官方的module。所以我们可以通过`Ti.Gesture`这个module来实现我们的需求。*
 
 ###Shake（摇一摇）
 ```javascript

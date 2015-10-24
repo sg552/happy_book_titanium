@@ -1,4 +1,11 @@
+> TODO:  
+> 
+ - 例子不完整，没有写明怎么引用In-Place Editor插件
+ - `body`中怎么写，有一个gif图会更好看点。
+ - 参数 cancel_button ：不知道是不是引入一行代码
+
 #inplace editor
+
 inplace editor顾名思义就是原地编辑器。很多时候我们需要通过点击文本来对文本进行就地编辑。这样在用户体验上是种不错的选择，我们现在就来看看这个东西。
 
 我们这里用到的In-Place Editor是一个Jquery插件。
@@ -16,7 +23,7 @@ inplace editor顾名思义就是原地编辑器。很多时候我们需要通过
 
 要实现这个其实很简单，可以看下面这个例子，把in-place editor应用在一个class叫‘name’的元素上，下面展示了它所有的参数。
 
-```html
+```javascript
 $(".name").editInPlace({
   url: "http://com.examplesite.www/users",
   params: "name=david"
@@ -41,7 +48,7 @@ $(".name").editInPlace({
 + cancel_button(string):默认 <input type="”submit”" class="”inplace_cancel”" value="”Cancel”">
 </input>
 
-+ default_text (string):默认如果方法中这个不写的话，会显示 “(Click here to add text)”
++ default_text (string):默认如果方法中`string`为空时，会显示 “(Click here to add text)”
 
 
 ##具体例子可以参考下面：

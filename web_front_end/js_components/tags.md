@@ -28,9 +28,10 @@
       });
 </script>
 
-<ul id="tags">
-  <li>Tag1</li>
-  <li>Tag2</li>
+<h1><font color="#99d">Minimal</font></h1>
+<div style="width:300px;">
+  <ul id="tags"></ul>
+</div>
 </ul>
 ```
 
@@ -57,48 +58,101 @@ $(function() {
 </input>
 ```
 
-### removeConfirmation (boolean)
+### singleFieldTags
+
+- 使用ul标签实现：
 
 ```
-$('#removeConfirmationTags').tagit({
+<div style="width:300px; margin:0 auto;">
+  <h1><font color="#99d">singleFieldTags</font></h1>
+  <input name="tags" id="mySingleField" value="Apple, Orange" disabled="true">
+  <ul id="singleFieldTags"></ul>
+</div>
+$('#singleFieldTags').tagit({
   availableTags: availableTags,
-  removeConfirmation: true
-});
-
-```
-
-### read-only tag
-```
-$('#readOnlyTags').tagit({
-  readOnly: true
+  singleField: true,
+  singleFieldNode: $('#mySingleField')
 });
 ```
+![图1.0](http://image.happysoft.cc/image/209/1.0.png)
 
-### method-tag
+- 使用input标签实现：
 
 ```
-$('#methodTags').tagit({
+<div style="width:300px; margin:0 auto;">
+  <h1><font color="#99d">singleFieldTags2</font></h1>
+  <input name="tags" id="singleFieldTags2" value="Apple, Orange">
+</div>
+$('#singleFieldTags2').tagit({
   availableTags: availableTags
 });
 ```
+![图1.0](http://image.happysoft.cc/image/209/1.0.png)
 
-### event-tag
-
-```
-var eventTags = $('#eventTags');
-var addEvent = function(text) {
-  $('#events_container').append(text + '<br>');
-};
-```
-
-### allow spaces without quote
+### 使用回车实现分隔而不是空格：
 
 ```
+<div style="width:300px; margin:0 auto;">
+  <h1><font color="#99d">Spaces Allowed Without Quotes</font></h1>
+  <ul id="allowSpacesTags"></ul>
+</div>
 $('#allowSpacesTags').tagit({
   availableTags: availableTags,
   allowSpaces: true
 });
 ```
+![图1.0](http://image.happysoft.cc/image/209/1.0.png)
+
+### 带有默认值：
+
+```
+<div style="width:300px; margin:0 auto;">
+  <h1><font color="#99d">Preloading Data in Markup</font></h1>
+  <ul id="myTags">
+    <li>Tag1</li>
+    <li>Tag2</li>
+  </ul>
+</div>
+$('#myTags').tagit({
+  availableTags: availableTags,
+  itemName: 'item',
+  fieldName: 'tags'
+});
+```
+![图1.0](http://image.happysoft.cc/image/209/1.0.png)
+
+### 只读模式的：
+
+```
+<div style="width:300px; margin:0 auto;">
+  <h1><font color="#99d">read only</font></h1>
+  <ul id="readOnlyTags">
+    <li>Mark1</li>
+    <li>Mark2</li>
+  </ul>
+</div>
+$('#readOnlyTags').tagit({
+  readOnly: true
+});
+```
+![图1.0](http://image.happysoft.cc/image/209/1.0.png)
+
+### 移除标签：
+
+```
+<div style="width:300px; margin:0 auto;">
+  <h1><font color="#99d">Remove Confirmation</font></h1>
+  <ul id="removeTags">
+    <li>remove 1</li>
+    <li>remove 2</li>
+  </ul>
+</div>
+$('#removeTags').tagit({
+  availableTags: availableTags,
+  removeConfirmation: true
+});
+```
+![图1.0](http://image.happysoft.cc/image/209/1.0.png)
 
 更多示例请参考：http://aehlke.github.io/tag-it/examples.html
 
