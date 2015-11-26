@@ -143,18 +143,120 @@ PS：安装Chrome浏览器，并配置翻墙，这是首先要做的。
 
 
     或者通过命令行安装:
-
+(参考：https://web.appcelerator.com/product/cli）
 
 
       ①安装titanium
 
         npm install -g titanium
-
+sudo npm install appcelerator -g
+appc setup
 
      ②安装titanium sdk
 
 
        titanium sdk install 3.5.1.GA(如果需要较新的sdk,可以换成4.1.0.GA)
+
+new:
+$ appc setup
+Finding latest version ...5.1.0 ✓
+Validating security checksum ✓
+Installing ... ✓
+Compiling platform native modules ...
+└ extract-opts/typechecker ... ✓
+└ bunyan/dtrace-provider ...  ✓
+└ extract-opts/typechecker ...  ✓
+└ socket.io-client/ws ...  ✓
+└ appc-ldapjs/dtrace-provider ...  ✓
+└ bunyan/dtrace-provider ...  ✓
+└ appc-ldapjs/dtrace-provider ...  ✓
+└ ws/bufferutil ...  ✓
+└ ws/utf-8-validate ...  ✓
+└ chokidar/fsevents ...  ✓
+└ chokidar/fsevents ...  ✓
+
+Appcelerator Login required to continue ...
+
+? Appcelerator ID: shensiwei@sina.com
+? Password: ******
+
+期间会问你要用户名和密码。
+输入完后，还要求你输入一个authorize code. 这个时候必须要检查下邮箱。
+
+```
+$ appc login
+Appcelerator Command-Line Interface, version 5.1.0
+Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
+
+Appcelerator Login required to continue ...
+
+? Appcelerator ID: shensiwei@sina.com
+? Password: ******
+
+? Please enter the authorization code you received via your email at shensiwei@sina.com: 9907
+sina.com: 9907
+This computer is now authorized: Mac OSX Serial Number: C02Q4FH5FVH3
+You can deauthorize this computer by logging out with appc logout
+sina.com: 9
+Generating Developer Certificate and Private/Public Keys...
+shensiwei@sina.com logged into organization shensiwei@sina.com [100020049]
+```
+
+appc -h :
+```
+$ appc -h
+Appcelerator Command-Line Interface, version 5.1.0
+Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
+
+
+  Usage: appc cmd [options]
+
+
+  Commands:
+
+    access <get|set> [options]           get or set access in platform
+    config <get|set|list> [key] [value]  get, set, and list configuration settings
+    generate [options]                   create a component
+    help [cmd]                           display help for [cmd]
+    info                                 Display development environment information
+    install [options]                    install a component
+    login [options]                      login to platform
+    logout [options]                     logout of platform
+    new [options]                        create a new project
+    org <add|list|rm> <org>              add, list, and remove orgs for a component
+    owner <add|list|rm> <user>           add, list, and remove owners for a component
+    platform [options]                   runs a appcelerator platform API
+    publish [options]                    publish a project or component
+    run <app|server> [options]           run a project
+    search [options]                     search for components
+    setup [options]                      setup your environment
+    switch <org> [options]               switch logged in org
+    ti [cmd] [options]                   execute titanium commands
+    unpublish [options]                  unpublish a project or component
+    user <add|list|rm> <user>            add, list, and remove users for a component
+    whoami                               get the current platform user
+```
+有用的，是  login, new, ti, setup 和 info
+login: 登陆用户。
+new: 新建一个项目
+ti:  titanium子命令
+setup: 配置环境（包括下载最新ti sdk)
+info: 显示当前的配置信息
+
+
+appc info:
+如果没有TI SDK，就安装：
+```
+$ appc info
+Appcelerator Command-Line Interface, version 5.1.0
+Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
+
+No Mobile SDK found, downloading ...
+New version available! 5.1.0.GA
+
+Downloading http://builds.appcelerator.com/mobile-releases/5.1.0/mobilesdk-5.1.0.GA-osx.zip
+
+```
 
 
 
