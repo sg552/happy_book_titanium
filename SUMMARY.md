@@ -6,6 +6,7 @@
   * [搭建Titanium开发环境](part1_ti_premier/setup_titanium.md)
   * [搭建Titanium开发环境 on mac](part1_ti_premier/setup_titanium_on_mac.md)
   * [创建你的第一个App](part1_ti_premier/create_first_app.md)
+  * [大师的教程](part1_ti_premier/first_app_by_dashi.md)
   * [Titanium社区及学习资源](part1_ti_premier/study_resources.md)
   * [Javascript 入门](part1_ti_premier/javascript_premier.md)
     * [Object](part1_ti_premier/javascript_premier/js_object.md)
