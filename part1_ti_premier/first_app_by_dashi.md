@@ -258,7 +258,31 @@ Titanium SDK
 
 启动流程已经讲了。
 
+# appc 与 ti命令的关系
 
+在titanium 3.x和以前， 命令行只有一个命令： ti
+在titanium 4.0 以后， 由于appcelerator的关系，他们把ti的一部分命令 提取出来，
+外加一些新命令，放到了 appc 命令中。
+例如：
+
+原来：  $ ti build/new
+现在：  $ appc ti build/new
+
+# 需要到appc后台注册个你的应用
+
+如果发现这个消息：
+```
+[ERROR] Application not registered.
+```
+就需要你到后台，把这个app注册了。
+
+第一次进入后台，发现你是没有告诉appcelerator公司，你新建了任何的app。
+
+```(图片）
+You don't have any apps yet!
+
+Don't worry, it's easy to get started creating apps using the Platform. It should take you only a few minutes to create an app. Once you do, your dashboard will have data here. You can see a demo of the dashboard below.
+```
 
 # app开发与 web开发的主要区别
 
