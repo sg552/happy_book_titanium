@@ -28,6 +28,7 @@
     * [Bower](part1_ti_premier/javascript_advanced/js_framework_bower.md)
     * [Jasmine](part1_ti_premier/javascript_advanced/js_framework_jasmine.md)
   * [Node 入门](part1_ti_premier/node_premier.md)
+  * Titanium的API
   * [Titanium中的各种UI组件](part1_ti_premier/titanium_ui.md)
     * [2DMatrix](part1_ti_premier/titanium_ui/2DMatrix.md)
     * [3DMatrix](part1_ti_premier/titanium_ui/3DMatrix.md)
@@ -126,6 +127,13 @@
   * [特定于Android的UI](part2_ti_advanced/android_specific_ui.md)
   * [Debuging and Profiling](part2_ti_advanced/debuging_and_profiling.md)
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
+
+* [Titanium 终极开发： module]
+  * [push](ti_module/push.md)
+  * [聊天]
+  * 支付
+  * 分享, 第三方登陆
+  * 统计(flurry)
 * [自动化工具]
   * [Appium](automation_tools/appium.md)
   * [selenium](automation_tools/selenium.md)
