@@ -100,3 +100,29 @@ cubes = (function() {
 coffeescript文件的后缀是`.coffee`，使用`coffee -c` 命令来把coffee文件编译成同名的js文件。
 
 
+# coffee 语法入门
+
+## 跟ruby一样的地方：
+最外层的（） 可以省略
+if , unless 可以放在行末
+使用缩进。
+方法声明，用 ->
+for x in [a,b,c]  也可以放在末尾。
+
+## 高级用法
+可以声明class , 具备 相应地面向对象功能。 而原生的class就很脆弱，而且很多功能都不具备。
+可以 =>
+可以在其中 嵌套原生的js
+
+
+## 目的：
+简化编程  ( coffee代码，比原生js， 体积比例： 0.75~ 0.8）省下的，都是 ; , (), [], {}
+强化表述力（if, unless, when..then .. )
+增强js的能力（class， 继承... ）
+
+大名鼎鼎的nodejs ， 前期用raw js ， 后期就是全都用的coffee写的源代码。
+
+
+## 用coffee,  必须同时用grunt
+
+写的coffee,可以瞬间被监控到变化，瞬间被编译成 .js 文件。就好像我们写的就是raw js 一样。
