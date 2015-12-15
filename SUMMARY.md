@@ -130,10 +130,10 @@
 
 * [Titanium 终极开发： module]
   * [push](ti_module/push.md)
-  * [聊天]
-  * 支付
-  * 分享, 第三方登陆
-  * 统计(flurry)
+  * [聊天](ti_module/chat.md)
+  * [支付](ti_module/pingxx.md)
+  * [分享, 第三方登陆](ti_module/share_sdk.md)
+  * [统计(flurry)](ti_module/tongji.md)
 * [自动化工具]
   * [Appium](automation_tools/appium.md)
   * [selenium](automation_tools/selenium.md)

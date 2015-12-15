@@ -1,5 +1,6 @@
 ## 使用rpush的过程
 
+http://yanmin.in/blog/rpush.html
 
 这个东西，非常复杂，可以跟微信的支付、分享有的一拼。
 
