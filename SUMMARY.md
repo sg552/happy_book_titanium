@@ -134,8 +134,8 @@
     * [android下建立module](ti_modules/create_android.md)
   * [push](ti_modules/push.md)
   * [支付](ti_modules/pingxx.md)
-  * [分享, 第三方登录](ti_module/share_sdk.md)
-  * [统计(flurry)](ti_module/tongji.md)
+  * [分享, 第三方登录](ti_modules/share_sdk.md)
+  * [统计(flurry)](ti_modules/tongji.md)
   * [聊天](ti_modules/chat.md)
 * [自动化工具]
   * [Appium](automation_tools/appium.md)
