@@ -5,6 +5,15 @@ PS：安装Chrome浏览器，并配置翻墙，这是首先要做的。
 下载完成后，打开Chrome，点击Chrome最右侧的菜单栏，选择moretools中的extensions，将下载的脚本插件拖入到里面就行了。
 
 
+## 安装  titanium sdk, android sdk的快速方法
+
+## titanium sdk:
+
+cp 5.1.1.GA 到： /Users/你的用户名/Library/Application Support/Titanium/mobilesdk/osx
+
+## android sdk:
+
+cp android-23 到： $ANDROID_HOME/platforms 目录下
 
 1.看看你的mac是否自带Xcode，如果没有则需要去App Store下载
 
@@ -125,7 +134,6 @@ PS：安装Chrome浏览器，并配置翻墙，这是首先要做的。
 
 
     cd /Users/hufeipeng/Library/Application Support/Titanium
-
 
     mkdir mobilesdk
 
@@ -426,7 +434,6 @@ Downloading http://builds.appcelerator.com/mobile-releases/5.1.0/mobilesdk-5.1.0
 11.JDK: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
    JRE: https://www.java.com/en/download/mac_download.jsp
-
 
 
 12.android sdk文件依赖缺失
