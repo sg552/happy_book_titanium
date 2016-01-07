@@ -1,11 +1,33 @@
-Welcomet to Ti Module World!
+# 写module
 
-TODO: module
+module是titanium 的灵魂。如果没有module ,那么ti 就会死掉。
 
-写module的注意事项：
+调用native code是ti 最大的优势。
 
-## 如何动态的创建View组件
+下面是几个要点：
 
+## 你必须会写一个简单的android app
+
+我们入门rails的时候，要学会增删改查。
+
+这个app 也一样，要具备：
+
+1.  能编译通过，是个app
+2.  能显示个view
+3.  点击某个视图组件后，可以跳转
+
+基本上，按照安卓的官方教程来，就可以了。
+需要你具备的知识有：
+Activity 是啥。
+res/layout/xx.xml ， res/strings 等各种 xml的意义。
+基本的UI常识
+
+
+
+## 如何在Titanium中动态的native 创建View组件
+
+下面代码，取自于 高德地图 android ，可以看到，里面的VIEW组件是定义在XML中的
+( res/layout/somefile.xml 中： )
 ```xml
     <com.amap.api.maps.MapView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,8 +41,8 @@ TODO: module
   MapView map_view = (MapView) findViewById(R.id.map);
 ```
 
-
 我们则可以在 ViewProxy中(注意动态定义里面的 map_view)：
+可以看出， android中的activity, 就是titanium view proxy中的： proxy.getActivity()
 
 ```java
    public ExampleView(TiViewProxy proxy) {
@@ -33,18 +55,17 @@ TODO: module
       holder.setLayoutParams(lp);
 
       map_view = new MapView(proxy.getActivity());
-      text = new TextView(proxy.getActivity());
 
       holder.addView(map_view);
-      holder.addView(text);
 
       setNativeView(holder);
-
     }
 ```
 
 ## Android中的Bundle
 
+onCreate等方法存在于Activity中， 在Titanium, Activity 可以认为是一个module
+是由module创建的， 对应的方法在ViewProxy中：
 ```java
 // Activity 中：
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +78,9 @@ TODO: module
 ```
 
 那么，在android module中，则可以：
+// ExampleProxy中，定义这个方法, 注意其中的第二个参数，就是Bundle
 
 ```java
-// ExampleProxy中，定义这个方法, 注意其中的第二个参数，就是Bundle
   @Override
   public void onCreate(Activity activity, Bundle savedInstanceState) {
     map_view.onCreate(savedInstanceState);
@@ -68,8 +89,13 @@ TODO: module
 ```
 
 ## 生命周期
+
 Android Activity 中的 onCreate/Start/Resume... 都可以在 Titanium ViewProxy
 中找到对应的方法
 这些  onCreate 等方法，写在module中也行，写在proxy中也行
 
-##
+## android中，记得要 写日志
+例如：
+    Log.i(LCAT, "====== after map_view.onCreate");
+
+有时候，日志看不到，是因为 级别不够. Debug的看不到，就用info的。
