@@ -129,11 +129,14 @@
   * [编程最佳实践](part2_ti_advanced/titanium_best_practises.md)
 
 * [Titanium 终极开发： module]
-  * [push](ti_module/push.md)
-  * [聊天](ti_module/chat.md)
-  * [支付](ti_module/pingxx.md)
-  * [分享, 第三方登陆](ti_module/share_sdk.md)
-  * [统计(flurry)](ti_module/tongji.md)
+  * [建立module的方法](ti_modules/module.md)
+    * [ios下建立module](ti_modules/create_ios.md)
+    * [android下建立module](ti_modules/create_android.md)
+  * [push](ti_modules/push.md)
+  * [支付](ti_modules/pingxx.md)
+  * [分享, 第三方登录](ti_modules/share_sdk.md)
+  * [统计(flurry)](ti_modules/tongji.md)
+  * [聊天](ti_modules/chat.md)
 * [自动化工具]
   * [Appium](automation_tools/appium.md)
   * [selenium](automation_tools/selenium.md)
