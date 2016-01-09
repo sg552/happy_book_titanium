@@ -31,7 +31,30 @@ Activity 是啥。
 res/layout/xx.xml ， res/strings 等各种 xml的意义。
 基本的UI常识
 
+## 调试时，有些module需要真实环境
 
+比如，gaode 地图， weixin 分享，新浪等。在安卓上都需要你用真实的打包文件来测试。
+另外，很多都需要真机测试。
+
+## 记得每次要清理遗留的脏文件
+
+ti clean 可以删掉上次的脏文件
+module中，则需要手动删除：
+
+  - build
+  - dist
+  - libs/下面的 libcom.test.gaodemap.so 文件。 (lib + 你的module package 名)
+
+否则你想改个class的名字，都不行。
+
+## 注意：proxy 的名字不能与module名字相同。
+
+例如：
+src/com/yourtest:
+  - GaodemapModule
+  - GaodemapProxy （这样不行，因为  module.createGaodemap 与module同名）
+  应该改成：
+  - MapProxy （这个proxy就可以，因为它跟 module不同名 )
 
 ## 如何在Titanium中动态的native 创建View组件
 
@@ -108,3 +131,28 @@ Android Activity 中的 onCreate/Start/Resume... 都可以在 Titanium ViewProxy
     Log.i(LCAT, "====== after map_view.onCreate");
 
 有时候，日志看不到，是因为 级别不够. Debug的看不到，就用info的。
+
+# 测试module的方法
+
+写好module之后，测试不能立马看到，需要把对应的module打包( $ ant build )，
+然后在新建的ti app中测试。
+
+1. ant build
+2. cp .zip to app folder
+3. rm -rf modules
+
+这是个简单的调试脚本：
+
+
+```
+# 这个脚本中，  /workspace/test_map 是 ti app 的目录
+# 这个脚本存在于  <你的module文件夹>/android 目录下
+find libs -name libcom* -exec rm {} +
+rm -rf build/*
+rm -rf dist/*
+rm -rf /workspace/test_map/modules
+ant
+cp android/dist/*.zip /workspace/test_map
+```
+
+我们每次 `$ ./run ` 就可以了。
