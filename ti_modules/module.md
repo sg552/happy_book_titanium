@@ -134,6 +134,10 @@ Android Activity 中的 onCreate/Start/Resume... 都可以在 Titanium ViewProxy
 
 # 测试module的方法
 
+官方文档提供的方法是： $ titanium.py build  ,但是估计那个文档太久了。
+需要维护，这个方法不好使。
+
+下面是我和明星的方法：
 写好module之后，测试不能立马看到，需要把对应的module打包( $ ant build )，
 然后在新建的ti app中测试。
 
