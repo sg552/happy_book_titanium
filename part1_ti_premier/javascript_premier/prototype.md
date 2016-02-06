@@ -1,3 +1,0 @@
-Welcome to Javascript Prototype World!
-
-Javascript中的prototype是实现object-oriented的组件，在实际中也有很多应用，在Titanium 的Best Practise中可以看到使用prototype的相关例子。
