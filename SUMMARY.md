@@ -80,7 +80,7 @@
       * [View的结构组成](chapters_of_alloy/views_construction.md)
       * [View中的标签](chapters_of_alloy/xml_elements.md)
       * [titanium 样式](chapters_of_alloy/titanium_style_sheets.md)
-  * [使用jade, stss, coffee开发Alloy](chapters_of_alloy/jade_stss_coffee_in_alloy.md)
+  * [使用jade, stss, coffee开发Alloy](chapters_of_alloy/index.md)
     * [jade](chapters_of_alloy/jade.md)
     * [stss](chapters_of_alloy/stss.md)
     * [coffee](chapters_of_alloy/coffee.md)
