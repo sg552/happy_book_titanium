@@ -125,7 +125,7 @@
   * [Bower](chapters_of_javascript/js_framework_bower.md)
   * [Jasmine](chapters_of_javascript/js_framework_jasmine.md)
   * [Node 入门](chapters_of_javascript/node_premier.md)
-* [自动化工具]
-  * [Appium](automation_tools/appium.md)
-  * [Grunt](automation_tools/grunt.md)
-  * [npm](automation_tools/npm.md)
+* [自动化工具](chapters_of_tool/index.md)
+  * [Appium](chapters_of_tool/appium.md)
+  * [Grunt](chapters_of_tool/grunt.md)
+  * [npm](chapters_of_tool/npm.md)
