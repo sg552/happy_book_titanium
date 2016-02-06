@@ -120,12 +120,20 @@
   * [分享, 第三方登录](chapters_of_module/share_sdk.md)
   * [统计(flurry)](chapters_of_module/tongji.md)
   * [聊天](chapters_of_module/chat.md)
+
+* [明星框架](chapters_of_star_framework/index.md)
+  * [代码放到移动端]
+  * [??移动app开发之殇]
+  * [??可以随时升级]
+  * [??适配多种不同机型]
+  * [??善用TableView]
+
 * [Javascript 进阶](chapters_of_javascript/index.md)
-  * [underscore](chapters_of_javascript/js_framework_underscore.md)
-  * [export](chapters_of_javascript/js_framework_requirejs.md)
-  * [CommonJS](chapters_of_javascript/js_framework_commonjs.md)
-  * [Bower](chapters_of_javascript/js_framework_bower.md)
-  * [Jasmine](chapters_of_javascript/js_framework_jasmine.md)
+  * [underscore](chapters_of_javascript/underscore.md)
+  * [export](chapters_of_javascript/requirejs.md)
+  * [CommonJS](chapters_of_javascript/commonjs.md)
+  * [Bower](chapters_of_javascript/bower.md)
+  * [Jasmine](chapters_of_javascript/jasmine.md)
   * [Node 入门](chapters_of_javascript/node_premier.md)
 * [自动化工具](chapters_of_tool/index.md)
   * [Appium](chapters_of_tool/appium.md)
