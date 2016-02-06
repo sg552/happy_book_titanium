@@ -1,16 +1,36 @@
-# Summary
+* [前言](chapters_of_preface/index.md)
+  * [移动开发之殇](chapters_of_preface/mobile_development_disadvantages.md)
+  * [移动端的中间层nginx](chapters_of_preface/middleware.md)
+  * [理想中的开发方式](chapters_of_preface/ideal_development.md)
+  * [Titanium与Native, PhoneGap, Meteor, Xmarine的效率对比](chapters_of_preface/comparision.md)
 
-* [前言](preface.md)
 * [Titanium 入门](chapters_of_basic/index.md)
+  * [如何考察一门新技术](chapters_of_basic/how_to_choose.md)
   * [如何学习一门新技术](chapters_of_basic/how_to_learn.md)
   * [什么是Titanium](chapters_of_basic/what_is_titanium.md)
+  * [Titanium的优点和缺点](chapters_of_basic/pros_and_cons.md)
+  * [学习Titanium的前提](chapters_of_basic/precondition.md)
   * [搭建Titanium开发环境](chapters_of_basic/setup_titanium.md)
   * [搭建Titanium开发环境 on mac](chapters_of_basic/setup_titanium_on_mac.md)
   * [创建你的第一个App](chapters_of_basic/create_first_app.md)
   * [大师的教程](chapters_of_basic/first_app_by_dashi.md)
   * [Titanium社区及学习资源](chapters_of_basic/study_resources.md)
-  * Titanium的API(api/)
+  * [如何阅读API](chapters_of_basic/read_api.md)
+
+* [命令行的使用与调试](chapters_of_cli/index.md)
+  * [安装]
+  * [查看日志]
+  * [使用adb shell]
+  * [使用logcat]
+  * [Android下的开发准备]
+  * [ios下的开发准备]
+
+* [发布](chapters_of_release/index.md)
+  * [安卓版本的发布](chapters_of_senior/android_release.md)
+  * [iOS版本的发布](chapters_of_senior/iOS_release.md)
+
 * [Titanium中的各种UI组件](chapters_of_ui/index.md)
+  * [查看Demo: KitchenSink](chapters_of_ui/kitchensink.md)
   * [2DMatrix](chapters_of_ui/2DMatrix.md)
   * [3DMatrix](chapters_of_ui/3DMatrix.md)
   * [ActivityIndicator](chapters_of_ui/activity_indicator.md)
@@ -69,16 +89,16 @@
     * [TableView](chapters_of_ui/iphone/tableview.md)
 
 * [Alloy Framework](chapters_of_alloy/alloy_framework.md)
+  * [为什么要用Alloy? —— DSL 介绍](chapters_of_alloy/why_alloy.md)
   * [Alloy Controller](chapters_of_alloy/alloy_controller.md)
   * [Alloy Views](chapters_of_alloy/alloy_view_overview.md)
     * [View的结构组成](chapters_of_alloy/views_construction.md)
     * [View中的标签](chapters_of_alloy/xml_elements.md)
     * [titanium 样式](chapters_of_alloy/titanium_style_sheets.md)
-
-* [使用jade, stss, coffee开发Alloy](chapters_of_alloy/index.md)
-  * [jade](chapters_of_alloy/jade.md)
-  * [stss](chapters_of_alloy/stss.md)
-  * [coffee](chapters_of_alloy/coffee.md)
+  * [优雅的开发Alloy](chapters_of_alloy/elegant_alloy_development.md)
+    * [jade](chapters_of_alloy/jade.md)
+    * [stss](chapters_of_alloy/stss.md)
+    * [coffee](chapters_of_alloy/coffee.md)
 
 * [Titanium 进阶](chapters_of_senior/index.md)
   * [HTTP Client](chapters_of_senior/http_client.md)
@@ -101,8 +121,6 @@
   * [本地存储的几种策略](chapters_of_senior/Local_Storage.md)
   * [web_view的使用](chapters_of_senior/web_view.md)
   * [attributed string的使用](chapters_of_senior/attributed_string.md)
-  * [安卓版本的发布](chapters_of_senior/android_release.md)
-  * [iOS版本的发布](chapters_of_senior/iOS_release.md)
   * [事件处理](chapters_of_senior/event_handling.md)
   * [View的尺寸单位](chapters_of_senior/view_unit.md)
   * [accessibility](chapters_of_senior/accessibility.md)
@@ -112,6 +130,7 @@
   * [编程最佳实践](chapters_of_senior/titanium_best_practises.md)
 
 * [Titanium 终极开发： module](chapters_of_module/index.md)
+  * [不要重复造轮子: module市场](chapters_of_module/market.md)
   * [建立module的方法](chapters_of_module/module.md)
     * [ios下建立module](chapters_of_module/create_ios.md)
     * [android下建立module](chapters_of_module/create_android.md)
@@ -120,6 +139,7 @@
   * [分享, 第三方登录](chapters_of_module/share_sdk.md)
   * [统计(flurry)](chapters_of_module/tongji.md)
   * [聊天](chapters_of_module/chat.md)
+  * [地图](chapters_of_module/map.md)
 
 * [明星框架](chapters_of_star_framework/index.md)
   * [代码放到移动端]
@@ -135,7 +155,9 @@
   * [Bower](chapters_of_javascript/bower.md)
   * [Jasmine](chapters_of_javascript/jasmine.md)
   * [Node 入门](chapters_of_javascript/node_premier.md)
-* [自动化工具](chapters_of_tool/index.md)
+
+* [工具](chapters_of_tool/index.md)
   * [Appium](chapters_of_tool/appium.md)
   * [Grunt](chapters_of_tool/grunt.md)
   * [npm](chapters_of_tool/npm.md)
+  * [tishadow](chapters_of_tool/tishadow.md)
