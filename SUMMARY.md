@@ -18,7 +18,7 @@
   * [Titanium社区及学习资源](chapters_of_basic/study_resources.md)
   * [如何阅读API](chapters_of_basic/read_api.md)
 
-* [忘掉Studio,只用Vim + 命令行](chapters_of_cli/index.md)
+* [编辑器+ 命令行](chapters_of_cli/index.md)
   * [安装]
   * [查看日志]
   * [使用adb shell]
