@@ -5,7 +5,7 @@
 操作)。另外，需要注意的是Notification只适用于Android和Windows Phone，平台十分有限；除此之外Notification
 在这两个平台上显示的区域也不相同，Android上显示在靠近屏幕底部边缘位置，而在Windows Phone上Notification则
 在**消息通知栏**上显示。Notification的适用平台十分有限，但是个却是个很好用的UI组件，如果想改造它来适用于
-多个平台我们建议你使用Widget来实现，具体请参考第[3.16](part2_ti_advanced/alloy_widgets.md)章节。
+多个平台我们建议你使用Widget来实现，具体请参考第[3.16](chapters_of_alloy/alloy_widgets.md)章节。
 
 Notification支持静态定义(.xml)和动态定义(.js)，下面是演示案例参考代码(含效果图)：
 
