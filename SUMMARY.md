@@ -2,7 +2,8 @@
   * [移动开发之殇](chapters_of_preface/mobile_development_disadvantages.md)
   * [移动端的中间层nginx](chapters_of_preface/middleware.md)
   * [理想中的开发方式](chapters_of_preface/ideal_development.md)
-  * [Titanium与Native, PhoneGap, Meteor, Xmarine的效率对比](chapters_of_preface/comparision.md)
+  * [Titanium与Native, PhoneGap, Meteor, Xamarin的效率对比](chapters_of_preface/comparision.md)
+  * [合适的技术应该是？](chapters_of_preface/value.md)
 
 * [Titanium 入门](chapters_of_basic/index.md)
   * [如何考察一门新技术](chapters_of_basic/how_to_choose.md)
