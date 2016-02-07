@@ -19,8 +19,7 @@
   * [如何阅读API](chapters_of_basic/read_api.md)
 
 * [编辑器+ 命令行](chapters_of_cli/index.md)
-  * [安装]
-  * [查看日志]
+  * [基本用法](chapters_of_cli/basic.md)
   * [使用adb shell]
   * [使用logcat]
   * [Android下的开发准备]
