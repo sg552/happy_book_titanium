@@ -80,3 +80,37 @@ win1.addEventListener('click', function() {
 9. 使用 CommonJS 来 划分模块.
 
 Do not name custom events with spacesDefer script loadingTitanium-specific RecommendationsDon't Extend Titanium PrototypesCoding strategies for multiplatform appsDon't store sensitive data in non-JavaScript filesSet local variables to avoid calling native methodsApp Architecture RecommendationsModular components with CommonJS
+
+# 来自于实战的经验
+
+1. 先ios 再android
+ti 对ios的支持比android的要好一些。所以优先做ios开发。
+ios上弄好了之后，再做android开发
+
+2. 使用 console.info 时， 要小心 JSON.stringify() 这个方法很好用，可以打印
+出一个json的 所有细节，但是缺点是 当要打印的对象很大时，系统就崩溃了。
+
+3. object-c语言中的JS实现（javascriptCore）与Android中的JS实现（V8）机制
+是不同的，一般说来前者更加松散宽容一些。所以一些错误只有到了android中才会
+凸显出来。要加强平时的JS修炼
+
+4. 必须了解js中的 异步调用 操作. 这是很多新手犯下的毛病。明明逻辑是对的，
+为什么弄起来时好时坏？原因就在于没有用好 异步调用的callback
+
+这里要注意，务必使用 success 这样的事件，绝对不要使用 setTimeout() ，太不合逻辑了。
+
+5. 一些UI做调试时，务必使用好一些属性：borderColor , color 等等。这样的话
+可以解决一些莫名其妙的UI问题。
+
+比如，某个ti app中，低版本的android中, 默认字体颜色是白色；高版本的字体
+颜色则是黑色。 这时候就要强制加上 `color`属性了。
+
+6. 使用明星框架
+
+代码写在远程，直接导致代码极其容易调试: 不需要编译。 可以随时升级。
+
+7. 使用动态的计算长度标准 __l() 方法。 以往的项目中，我们在调整UI时吃了不少亏。
+不同的平台， 同一平台不同的版本，不同尺寸的屏幕，UI都看起来不一样。
+这个__l()方法可以永久解决问题。
+
+8. 使用coffeescript 代替 标准javascript.
