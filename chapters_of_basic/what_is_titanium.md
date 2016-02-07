@@ -72,10 +72,6 @@ upload image等功能。 4月，出现了Titanium 2.0 。
 Appcelerator 周边产品都不会被影响。我个人通过内部渠道，也得知Titanium
 讲继续向前发展。
 
-##
-
-那首先让我们先来了解一下 Titanium 整体的框架体系, 它包括 Titanium SDK tools, Titanium APIs, Appcelerator Studio, Modules.
-
 ## Titanium SDK
 
 Titanium SDK tools 包含一个基于Node.js的工具包和一个work with the native
@@ -118,18 +114,8 @@ Appcelerator Studio 是 Appcelerator 公司开发的一款基于Eclipse 的IDE
 
 ## Titanium 的运行机制(Titanium 的实质)
 
-上图来自于Appcelerator 官网，该图以iPhone和Android两个移动平台为例，描述了Titanium的总体框架结构。首先我们用Javascript调用Titanium APIs把我们想要做的事描述出来，Titanium SDK 会将我们调用Titanium APIs 与 native APIs进行绑定(native bindings)，然后Titanium SDK 内置的JS interpreter 会实时的解释，执行这些能够与 native APIs 进行关联的 Titanium APIs。最后Titanium会根据native OS 的不同，打包成不同的project 和 安装包。
+下图以iPhone和Android两个移动平台为例，描述了Titanium的总体框架结构。首先我们用Javascript调用Titanium APIs把我们想要做的事描述出来，Titanium SDK 会将我们调用Titanium APIs 与 native APIs进行绑定(native bindings)，然后Titanium SDK 内置的JS interpreter 会实时的解释，执行这些能够与 native APIs 进行关联的 Titanium APIs。最后Titanium会根据native OS 的不同，打包成不同的project 和 安装包。
 ![Titanium](/images/titanium_sdk_architecture.png)
-
-##
-ti -h 可以看到所有的ti 命令
-
-ti 是 titanium 的缩写。  也是命令行中的主要命令（跟rails 一样）
-ti 也是 appcelerator公司的主要产品。
-
-到了titanium SDK 5.0的阶段时， appcelerator 公司就把ti命令，变成了appc 命令。（
-回头大家再看一下）。 ti命令应该还能用。
-
 
 # app开发与 web开发的主要区别
 
