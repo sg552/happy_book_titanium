@@ -88,7 +88,7 @@
     * [SystemIcon](chapters_of_ui/iphone/system_icon.md)
     * [TableView](chapters_of_ui/iphone/tableview.md)
 
-* [Alloy Framework](chapters_of_alloy/alloy_framework.md)
+* [Alloy Framework](chapters_of_alloy/index.md)
   * [为什么要用Alloy? —— DSL 介绍](chapters_of_alloy/why_alloy.md)
   * [Alloy Controller](chapters_of_alloy/alloy_controller.md)
   * [Alloy Views](chapters_of_alloy/alloy_view_overview.md)
