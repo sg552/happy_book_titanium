@@ -95,7 +95,7 @@
     * [View的结构组成](chapters_of_alloy/views_construction.md)
     * [View中的标签](chapters_of_alloy/xml_elements.md)
     * [titanium 样式](chapters_of_alloy/titanium_style_sheets.md)
-  * [优雅的开发Alloy](chapters_of_alloy/elegant_alloy_development.md)
+  * [优雅的开发Alloy](chapters_of_alloy/make_it_simple.md)
     * [jade](chapters_of_alloy/jade.md)
     * [stss](chapters_of_alloy/stss.md)
     * [coffee](chapters_of_alloy/coffee.md)
