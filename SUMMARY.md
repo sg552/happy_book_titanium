@@ -25,9 +25,6 @@
   * [Android下的开发准备]
   * [ios下的开发准备]
 
-* [发布](chapters_of_release/index.md)
-  * [安卓版本的发布](chapters_of_senior/android_release.md)
-  * [iOS版本的发布](chapters_of_senior/iOS_release.md)
 
 * [Titanium中的各种UI组件](chapters_of_ui/index.md)
   * [查看Demo: KitchenSink](chapters_of_ui/kitchensink.md)
@@ -140,6 +137,10 @@
   * [统计(flurry)](chapters_of_module/tongji.md)
   * [聊天](chapters_of_module/chat.md)
   * [地图](chapters_of_module/map.md)
+
+* [发布](chapters_of_release/index.md)
+  * [安卓版本的发布](chapters_of_release/android.md)
+  * [iOS版本的发布](chapters_of_release/ios.md)
 
 * [明星框架](chapters_of_star_framework/index.md)
   * [代码放到移动端]
