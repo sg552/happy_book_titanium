@@ -17,6 +17,7 @@
   * [大师的教程](chapters_of_basic/first_app_by_dashi.md)
   * [Titanium社区及学习资源](chapters_of_basic/study_resources.md)
   * [如何阅读API](chapters_of_basic/read_api.md)
+  * [重要文件说明(tiapp.xml etc)](chapters_of_basic/important_files.md)
 
 * [编辑器+ 命令行](chapters_of_cli/index.md)
   * [基本用法](chapters_of_cli/basic.md)
@@ -28,6 +29,7 @@
 
 * [Titanium中的各种UI组件](chapters_of_ui/index.md)
   * [查看Demo: KitchenSink](chapters_of_ui/kitchensink.md)
+  * [各种View的样式](chapters_of_ui/api_and_styles.md)
   * [2DMatrix](chapters_of_ui/2DMatrix.md)
   * [3DMatrix](chapters_of_ui/3DMatrix.md)
   * [ActivityIndicator](chapters_of_ui/activity_indicator.md)
@@ -86,9 +88,9 @@
     * [TableView](chapters_of_ui/iphone/tableview.md)
 
 * [Alloy Framework](chapters_of_alloy/index.md)
-  * [为什么要用Alloy? —— DSL 介绍](chapters_of_alloy/why_alloy.md)
-  * [Alloy Controller](chapters_of_alloy/alloy_controller.md)
-  * [Alloy Views](chapters_of_alloy/alloy_view_overview.md)
+  * [Alloy 与 DSL](chapters_of_alloy/why_alloy.md)
+  * [Controller](chapters_of_alloy/alloy_controller.md)
+  * [Views](chapters_of_alloy/alloy_view_overview.md)
     * [View的结构组成](chapters_of_alloy/views_construction.md)
     * [View中的标签](chapters_of_alloy/xml_elements.md)
     * [titanium 样式](chapters_of_alloy/titanium_style_sheets.md)
@@ -96,6 +98,7 @@
     * [jade](chapters_of_alloy/jade.md)
     * [stss](chapters_of_alloy/stss.md)
     * [coffee](chapters_of_alloy/coffee.md)
+  * [进阶：Widgets](chapters_of_alloy/widget.md)
 
 * [Titanium 进阶](chapters_of_senior/index.md)
   * [HTTP Client](chapters_of_senior/http_client.md)
@@ -113,7 +116,6 @@
   * [Gestures 手势](chapters_of_senior/gestures.md)
   * [Scrolling View](chapters_of_senior/scrolling_view.md)
   * [适配不同机型](chapters_of_senior/device_adapter.md)
-  * [Ti Widgets](chapters_of_senior/alloy_widgets.md)
   * [Animation](chapters_of_senior/Titanium_Animation.md)
   * [本地存储的几种策略](chapters_of_senior/Local_Storage.md)
   * [web_view的使用](chapters_of_senior/web_view.md)

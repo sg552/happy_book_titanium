@@ -1,4 +1,4 @@
-#1.Alloy 概述
+# 概述
 
 **Alloy**是**Titanium**自带的一个Mobile App开发框架模型(template)，也是Titanium默认的一个开发框架模型。Alloy框架基于**[MVC(Model View Controller)](http://baike.baidu.com/link?url=VeL0t6kbMGxDJwLZtyUM0Z48SN29PR4-8WyYWso8jDfmsLcVBPufn1ldTGjxOmLTGKoa05FhIDB2tng4hiEMh6a6ISaoD_f5qGPcrtDHHizVQ4xFsrZJ4VFrYPCEzgmm)**开发模型，将App的“逻辑”、“数据”和“界面”三大模块分离开来各自编写、组织自己的代码，但同时三者又互相逻辑关联；这正是MVC开发框架最独特的特色和优势。MVC的
 开发框架很好的处理并划分了不同逻辑功能块处理各自的逻辑业务，使得开发任务的分配和管理更加明确，是一种很好的团队协作开发模式；Alloy开发框架则很好的继承了MVC这种优势。
