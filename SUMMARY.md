@@ -165,4 +165,3 @@
   * [Appium](chapters_of_tool/appium.md)
   * [Grunt](chapters_of_tool/grunt.md)
   * [npm](chapters_of_tool/npm.md)
-  * [tishadow](chapters_of_tool/tishadow.md)
