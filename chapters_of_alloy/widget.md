@@ -60,12 +60,6 @@ widget = Alloy.createWidget('com.example.widget');
 重新编译项目，这时候的widgets便被成功使用了。
 
 
-## 资源
-
-Titanium 官方提供一些 Widgets
-
-http://gitt.io 有许多不错的 Wigets 和 modules
-
 ## 如何创建一个widget
 
 Widgets 作为组件在程序启动时自动加载，内置 view , style , controller ,
@@ -157,3 +151,10 @@ widget.json: 按照下面的格式，输入必要的信息即可。这个文件�
 ```
 
 widget创建结束，这时候可以用前面提到的方法来使用该widget了。
+
+## 资源
+
+Titanium 官方提供一些 Widgets
+
+http://gitt.io 有许多不错的 Wigets 和 modules
+
