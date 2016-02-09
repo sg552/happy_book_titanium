@@ -1,25 +1,62 @@
 # 明星框架：
-TODO 代码有问题。 使用 uubpay_mobile
 
-## 把app代码写在远程服务器上。
+在[移动开发之殇](chapters_of_preface/mobile_development_disadvantages.md)中我详
+细的描述了当前移动开发的痛点:
 
-## [代码放到移动端]
+- 不敏捷
+- 更新迭代慢
+- 开发效率低
 
-## [移动app开发之殇]
+## 移动端的代码放到服务器端
 
-## [可以随时升级]
+大部分的代码，只要不是一开始app加载需要的，就可以放到移动端。
+比如所有的二级页面。
 
-## [适配多种不同机型]
+我们也在努力的完善这个问题，让除了module之外的代码都放到服务器端。
 
-## [善用TableView]
-
-## [清空缓存,更新最新代码]
-
+比如，下面是优优宝移动端的项目：
 
 
-原理：
+## 自动适配多种不同机型和屏幕
 
-把app的代码写到服务器端，然后在app端访问远程界面。 把代码缓存到本地。 使用  eval () 来调用。
+靠下面这段代码实现：
+
+```js
+function __l(x){
+  if (Ti.App.is_android){
+    if (Ti.App.platform_height/Ti.App.logicalDensityFactor > 800)
+      return x * Ti.App.logicalDensityFactor * 1.4;
+    else
+      return x * Ti.App.logicalDensityFactor;
+  }
+  if (!Ti.App.is_android && !Ti.App.is_ipad && Ti.App.platform_width > 320){
+    return parseInt(375.0*x/320);
+  }
+  return Ti.App.is_ipad ? 1.5*x : x;
+}
+```
+这个代码的作用不是简单的按百分比缩放，而是在某范围内的屏幕下有个特定的尺寸，
+在另一个范围内的屏幕尺寸下，再有个特定的尺寸。
+
+使用方式：
+
+```js
+Ti.UI.createLabel({
+  width: __l(50);
+});
+```
+
+## 清空缓存,更新最新代码
+
+清除本地数据库的代码即可。
+
+这样的话，用户再次打开app时，app 发现本地没有代码，就会向远程发起请求，
+获取新的代码，并把新代码保存到本地数据库中。
+
+## 代码写在远程的原理和实现
+
+把app的代码写到服务器端，然后在app端访问远程界面。 把代码缓存到本地。
+使用  eval () 来调用。
 
 这个框架能够实现，在技术上有几种依托：
 
@@ -33,15 +70,15 @@ TODO 代码有问题。 使用 uubpay_mobile
 
 2. 可以随时随地修改app上的代码。
 
-前景：
+### 前景：
 
-这个框架绝对是一种变革
+这个框架绝对是一种变革.
 
 我们把Titanium 看成是 nginx,  则android 就是linux.
 我们在linux上写html是不需要编译的， 同理，我写mobile app，
 骨架部分需要编译， 肌肉部分是不需要的。
 
-过程：
+### 过程：
 
 假设你的代码，在titanium上是静态代码:
 
@@ -60,12 +97,12 @@ window.open()
 
 1. 先把这个window 在app.js中 抽取出来，成为一个 js module:
 
-app目录下的 `/Resources/lib/nearby_houses.js`:
+app目录下的 `/Resources/lib/foo.js`:
 
 ```js
-Wrapper  = function(){
+Foo = function(){
     window = Ti.UI.createWindow({
-        title: '本地的工地'
+        title: '某个窗口'
     })
     label = Ti.UI.createLabel({
         text: '这里的内容是本地的，将来要放到远程上'
@@ -74,94 +111,99 @@ Wrapper  = function(){
     return window;
 }
 
-module.exports = Wrapper;
+module.exports = Foo;
 ```
 
 2. 在 `Resources/app.js` 中，使用 require 来调用这个module:
 
 ```js
-wrapper = require('lib/nearby_houses.js');
-wrapper.open()
+wrapper = require('lib/foo.js');
+wrapper.open();
 ```
 
 运行，没问题~
 
-3. 开始分解  `nearby_houses.js`， 把它的内容从远程调用：
+3. 开始分解  `foo.js`， 把它的内容改成如下：
 
-```coffee
-Wrapper = ->
-    Ti.include '/lib/public.js'
+```js
+function FooWindow(title) {
+	var win = Ti.UI.createWindow({
+		title: "某个窗体，现在要放到远程了。"
+	});
 
-    window = Ti.UI.createWindow
-        title: '附近的工地'
+	function make_foo_win(){
+		http_call({url: "http://myserver.com/code/foo.js",
+      cache: true,
+      success: function(e){
+        // 这里是关键：
+        var MakeUserWin = eval(e.responseText);
+        MakeUserWin(win);
+      }
+    });
+	}
 
-    setup_window = ->
+	make_foo_win();
+	return win;
+};
 
-        http_call
-            url: Ti.App.householder_code_url + "/householder_code/nearby_houses.js"
-            cache: true
-            success: (e) ->
-                console.info "== 成功获取到代码"
-                some_window = eval(e.responseText)
-                some_window(window)
-
-            // 下面部分的代码，是当网络不好时，生成一个消息提示，并且给个按钮，让用户重新下载代码。
-            error: () ->
-                window.add Ti.UI.createLabel
-                    top: __l(100)
-                    text: '哎呀，网络连接似乎有点问题！'
-                    textAlign: 'center'
-                    font: fontSize: __l(18)
-                    color: '#333'
-
-                button = Ti.UI.createButton
-                    title: "重试"
-                    top: __l(150)
-                    width: __l(80)
-                    font:
-                        fontSize: __l(18)
-                button.addEventListener "click", (e) ->
-                    setup_window()
-                window.add(button)
-
-    setup_window()
-    window
-
-module.exports = Wrapper
+module.exports = FooWindow;
 ```
 
 这个 `http_call` 的方法看起来这样：( 放到 `Resources/lib/public.js` 中）
 
-```coffee
-http_call = (options) ->
-    if options.cache
-        if Ti.App.deployType == "production"
-            record = require("/lib/db").db.select_with_check(options.url, 0)
-            unless record.blank
-                if options.success
-                    options.success({ responseText: record.json})
+```js
+function http_call(options){
+  // 如果
+	if (options.cache){
+		if (Ti.App.deployType == "production"){
+			var record = require('/lib/db').db.select_with_check(options.url, 0);
+      //没有命中
+			if (record.blank){
+				//啥也不干，等着后面处理
+			}
+      //命中了
+			else{
+				if (options.success)
+					options.success({responseText: record.json});
+				return;
+			}
+		}
+	}
+	var xhr = Ti.Network.createHTTPClient();
+	xhr.timeout = Ti.App.timeout;
+	xhr.cache = false;
+	xhr.onerror = function() {
+		if (options.error)
+			options.error(this);
+		else
+			show_timeout_dlg(xhr, options.url);
+	};
+	xhr.onload = function() {
+		if (options.success)
+			options.success(this);
 
-    xhr = Ti.Network.createHTTPClient()
-    xhr.timeout = Ti.App.timeout
-    xhr.onerror = ->
-        if options.error then options.error this else show_timeout_dlg xhr,url
-    xhr.onload = ->
-        options.success this if options.success
-    url = options.url
-    if options.url.indexOf(Ti.App.householder_host_url) == 0
-        append = "osname="+Ti.App.osname+"&osversion="+Ti.App.osversion+"&appversion="+Ti.App.version+"&manufacturer="+Ti.App.manufacturer+"&model="+Ti.App.model+"&memory="+Ti.Platform.availableMemory
-        url += if options.url.indexOf("?") > 0 then "&" + append else "?" + append
-    xhr.open options.method || 'GET', url
-    if options.args then xhr.send options.args else xhr.send()
+		if (options.cache)
+			require('/lib/db').db.insert_json(options.url, 0, this.responseText);
+	};
+	var url = options.url;
+
+	xhr.open(options.method || 'GET', url);
+	if (options.args){
+		xhr.send(options.args);
+	}
+	else{
+		xhr.send();
+	}
+}
 ```
 
-对于 `lib/db.coffee` :
+对于 `lib/db.js` 就是操作数据库的 :
 
 ```
-var Bizsim;
-Bizsim = Bizsim || {};
-Bizsim.db = {};
-Bizsim.db.insert_json = function(json_type, id, json) {
+var StarFramework;
+StarFramework = StarFramework || {};
+StarFramework.db = {};
+StarFramework.db.insert_json = function(json_type, id, json) {
   var mili_seconds, now;
   now = new Date;
   mili_seconds = now.getTime();
@@ -170,7 +212,7 @@ Bizsim.db.insert_json = function(json_type, id, json) {
   Ti.API.log('insert json ' + json_type + ' ' + id);
 };
 
-Bizsim.db.insert_json_if_not_exist = function(json_type, id, json) {
+StarFramework.db.insert_json_if_not_exist = function(json_type, id, json) {
   var mili_seconds, now, record;
   now = new Date;
   record = Ti.App.db.execute('SELECT * FROM jsons where json_type=? and id=?', json_type, id + '');
@@ -181,7 +223,7 @@ Bizsim.db.insert_json_if_not_exist = function(json_type, id, json) {
   }
 };
 
-Bizsim.db.select_one_json = function(json_type, id) {
+StarFramework.db.select_one_json = function(json_type, id) {
   var record, result;
   record = Ti.App.db.execute('SELECT * FROM jsons where json_type=? and id=?', json_type, id + '');
   Ti.API.log('select json ' + json_type + ' ' + id);
@@ -201,12 +243,12 @@ Bizsim.db.select_one_json = function(json_type, id) {
   return result;
 };
 
-Bizsim.db.select_with_check = function(json_type, id) {
+StarFramework.db.select_with_check = function(json_type, id) {
   var now, record;
-  record = Bizsim.db.select_one_json(json_type, id);
+  record = StarFramework.db.select_one_json(json_type, id);
   now = new Date;
   if (Titanium.Network.online && !record.blank && now.getTime() - record.created_at > 1000 * 3600 * 24 * 3) {
-    Bizsim.db.delete_one_json(json_type, id);
+    StarFramework.db.delete_one_json(json_type, id);
     return {
       blank: true
     };
@@ -214,17 +256,17 @@ Bizsim.db.select_with_check = function(json_type, id) {
   return record;
 };
 
-Bizsim.db.delete_one_json = function(json_type, id) {
+StarFramework.db.delete_one_json = function(json_type, id) {
   Ti.App.db.execute('delete from jsons where json_type=? and id=?', json_type, id);
 };
 
-module.exports = Bizsim;
+module.exports = StarFramework;
 ```
 
-同时，你要有个远程服务器，在远程服务器的 /code/nearby_houses.js 中，要返回这个内容：
+同时，你要有个远程服务器，在远程服务器的 /code/foo.js 中，要返回这个内容：
 
 ```js
-NearbyHousesWindow = function(window) {
+FooWindow = function(window) {
   Ti.include('/lib/public.js');
   label = Ti.UI.createLabel({
     text: '这个Label被放到了远程服务器上'
@@ -233,7 +275,7 @@ NearbyHousesWindow = function(window) {
   return window;
 };
 
-module.exports = NearbyHousesWindow;
+module.exports = FooWindow;
 ```
 
 现在，你要修改window的代码的话，完全不需要编译重启app,  直接在远程修改就完事儿了。
@@ -250,10 +292,10 @@ module.exports = NearbyHousesWindow;
 这个文件，系统是不会调用的。
 它存在的目的，是为了骗过编译器，(先调用一些API， createTextArea, createOptionDialog)
 让编译到实体机时，系统不会出错。
-Anon 的意思是 Anonymouse
-要有这个文件，`Resources/anon.js`:
+要有这个文件，`Resources/function_place_holder.js`:
+
 ```js
-function AnonWindow(title) {
+function FunctionPlaceHolderWindow(title) {
   var t = Ti.UI.createTextArea({
     hintText: "反馈内容"
   });
@@ -272,5 +314,16 @@ function AnonWindow(title) {
   Ti.Geolocation.preferredProvider = "gps";
 }
 
-module.exports = AnonWindow;
+module.exports = FunctionPlaceHolderWindow;
 ```
+## 善用TableView
+
+虽然ListView是Titanium 目前提倡的UI组件，执行效率比较高，但是也有很明显的缺点：
+
+- 难以动态的修改样式
+
+而TableView就没有这个问题。而且随着现在移动设备的性能越来越高，TableView也
+用起来很好用。
+
+在我看来，只有当某个列表超过了512行时，把TableView 换成 ListView.
+
