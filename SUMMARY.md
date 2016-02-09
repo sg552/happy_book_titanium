@@ -16,7 +16,7 @@
   * [创建你的第一个App](chapters_of_basic/create_first_app.md)
   * [大师的教程](chapters_of_basic/first_app_by_dashi.md)
   * [Titanium社区及学习资源](chapters_of_basic/study_resources.md)
-  * [如何阅读API](chapters_of_basic/read_api.md)
+  * [如何阅读API](chapters_of_basic/how_to_read_api.md)
   * [重要文件说明(tiapp.xml etc)](chapters_of_basic/important_files.md)
 
 * [编辑器+ 命令行](chapters_of_cli/index.md)
@@ -26,10 +26,9 @@
   * [Android下的开发准备]
   * [ios下的开发准备]
 
-
 * [Titanium中的各种UI组件](chapters_of_ui/index.md)
   * [查看Demo: KitchenSink](chapters_of_ui/kitchensink.md)
-  * [各种View的样式](chapters_of_ui/api_and_styles.md)
+  * [各种View的样式](chapters_of_ui/styles.md)
   * [2DMatrix](chapters_of_ui/2DMatrix.md)
   * [3DMatrix](chapters_of_ui/3DMatrix.md)
   * [ActivityIndicator](chapters_of_ui/activity_indicator.md)
@@ -118,6 +117,7 @@
   * [适配不同机型](chapters_of_senior/device_adapter.md)
   * [Animation](chapters_of_senior/Titanium_Animation.md)
   * [本地存储的几种策略](chapters_of_senior/Local_Storage.md)
+  * [读写数据库](chapters_of_senior/Local_Storage.md)
   * [web_view的使用](chapters_of_senior/web_view.md)
   * [attributed string的使用](chapters_of_senior/attributed_string.md)
   * [事件处理](chapters_of_senior/event_handling.md)
@@ -150,6 +150,7 @@
   * [??可以随时升级]
   * [??适配多种不同机型]
   * [??善用TableView]
+  * [清空缓存,更新最新代码]
 
 * [Javascript 进阶](chapters_of_javascript/index.md)
   * [underscore](chapters_of_javascript/underscore.md)
