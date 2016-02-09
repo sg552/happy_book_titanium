@@ -1,8 +1,21 @@
-# 【年度最干干货】： 明星框架：把app代码写在远程服务器上。
+# 明星框架：
+TODO 代码有问题。 使用 uubpay_mobile
 
-认识明星是我2015年做的最有价值的事，之一  ^_^    。
+## 把app代码写在远程服务器上。
 
-而明星框架，则是我2015年遇到的最牛逼框架，没有之一。
+## [代码放到移动端]
+
+## [移动app开发之殇]
+
+## [可以随时升级]
+
+## [适配多种不同机型]
+
+## [善用TableView]
+
+## [清空缓存,更新最新代码]
+
+
 
 原理：
 
@@ -24,15 +37,16 @@
 
 这个框架绝对是一种变革
 
-我们把Titanium 看成是 nginx,  则android 就是linux.   我们在linux上写html是不需要编译的， 同理，我写mobile app，骨架部分需要编译， 肌肉部分是不需要的。
+我们把Titanium 看成是 nginx,  则android 就是linux.
+我们在linux上写html是不需要编译的， 同理，我写mobile app，
+骨架部分需要编译， 肌肉部分是不需要的。
 
 过程：
 
 假设你的代码，在titanium上是静态代码:
 
 app.js:
-nearby_window = requeir('/lib/nearby_houses.js');
-
+```js
 window = Ti.UI.createWindow({
     title: '本地的工地'
 })
@@ -41,12 +55,14 @@ label = Ti.UI.createLabel({
 })
 window.add(label)
 window.open()
+```
 那么，我们要做的是：
 
 1. 先把这个window 在app.js中 抽取出来，成为一个 js module:
 
-app目录下的 /Resources/lib/nearby_houses.js:
+app目录下的 `/Resources/lib/nearby_houses.js`:
 
+```js
 Wrapper  = function(){
     window = Ti.UI.createWindow({
         title: '本地的工地'
@@ -59,14 +75,20 @@ Wrapper  = function(){
 }
 
 module.exports = Wrapper;
-2. 在 Resources/app.js 中，使用 require 来调用这个module:
+```
 
+2. 在 `Resources/app.js` 中，使用 require 来调用这个module:
+
+```js
 wrapper = require('lib/nearby_houses.js');
 wrapper.open()
+```
+
 运行，没问题~
 
-3. 开始分解  nearby_houses.js， 把它的内容从远程调用：
+3. 开始分解  `nearby_houses.js`， 把它的内容从远程调用：
 
+```coffee
 Wrapper = ->
     Ti.include '/lib/public.js'
 
@@ -79,7 +101,7 @@ Wrapper = ->
             url: Ti.App.householder_code_url + "/householder_code/nearby_houses.js"
             cache: true
             success: (e) ->
-                console.info "== got code successfully"
+                console.info "== 成功获取到代码"
                 some_window = eval(e.responseText)
                 some_window(window)
 
@@ -106,8 +128,11 @@ Wrapper = ->
     window
 
 module.exports = Wrapper
-这个 http_call 的方法看起来这样：( 放到 Resources/lib/public.js 中）
+```
 
+这个 `http_call` 的方法看起来这样：( 放到 `Resources/lib/public.js` 中）
+
+```coffee
 http_call = (options) ->
     if options.cache
         if Ti.App.deployType == "production"
@@ -128,26 +153,77 @@ http_call = (options) ->
         url += if options.url.indexOf("?") > 0 then "&" + append else "?" + append
     xhr.open options.method || 'GET', url
     if options.args then xhr.send options.args else xhr.send()
+```
 
-对于 lib/db.coffee :
+对于 `lib/db.coffee` :
 
-Bizsim = Bizsim or {}
-Bizsim.db = {}
+```
+var Bizsim;
+Bizsim = Bizsim || {};
+Bizsim.db = {};
+Bizsim.db.insert_json = function(json_type, id, json) {
+  var mili_seconds, now;
+  now = new Date;
+  mili_seconds = now.getTime();
+  Ti.App.db.execute('delete from jsons where json_type = ? and id = ?', json_type, id + '');
+  Ti.App.db.execute('INSERT INTO jsons (json_type, id, json, created_at) VALUES (?,?,?,?)', json_type, id + '', json, mili_seconds);
+  Ti.API.log('insert json ' + json_type + ' ' + id);
+};
 
-Bizsim.db.select_with_check = (json_type, id) ->
-  record = Bizsim.db.select_one_json(json_type, id)
-  now = new Date
-  #数据3天过期
-  if Titanium.Network.online and !record.blank and now.getTime() - (record.created_at) > 1000 * 3600 * 24 * 3
-    Bizsim.db.delete_one_json json_type, id
-    return { blank: true }
-  record
-Bizsim.db.delete_one_json = (json_type, id) ->
-  Ti.App.db.execute 'delete from jsons where json_type=? and id=?', json_type, id
-  return
-module.exports = Bizsim
+Bizsim.db.insert_json_if_not_exist = function(json_type, id, json) {
+  var mili_seconds, now, record;
+  now = new Date;
+  record = Ti.App.db.execute('SELECT * FROM jsons where json_type=? and id=?', json_type, id + '');
+  if (!record.isValidRow()) {
+    mili_seconds = now.getTime();
+    Ti.App.db.execute('INSERT INTO jsons (json_type, id, json, created_at) VALUES (?,?,?,?)', json_type, id + '', json, mili_seconds);
+    Ti.API.log('insert json ' + json_type + ' ' + id);
+  }
+};
+
+Bizsim.db.select_one_json = function(json_type, id) {
+  var record, result;
+  record = Ti.App.db.execute('SELECT * FROM jsons where json_type=? and id=?', json_type, id + '');
+  Ti.API.log('select json ' + json_type + ' ' + id);
+  result = null;
+  if (record.isValidRow()) {
+    result = {
+      json: record.fieldByName('json'),
+      created_at: record.fieldByName('created_at'),
+      blank: false
+    };
+  } else {
+    result = {
+      blank: true
+    };
+  }
+  record.close();
+  return result;
+};
+
+Bizsim.db.select_with_check = function(json_type, id) {
+  var now, record;
+  record = Bizsim.db.select_one_json(json_type, id);
+  now = new Date;
+  if (Titanium.Network.online && !record.blank && now.getTime() - record.created_at > 1000 * 3600 * 24 * 3) {
+    Bizsim.db.delete_one_json(json_type, id);
+    return {
+      blank: true
+    };
+  }
+  return record;
+};
+
+Bizsim.db.delete_one_json = function(json_type, id) {
+  Ti.App.db.execute('delete from jsons where json_type=? and id=?', json_type, id);
+};
+
+module.exports = Bizsim;
+```
+
 同时，你要有个远程服务器，在远程服务器的 /code/nearby_houses.js 中，要返回这个内容：
 
+```js
 NearbyHousesWindow = function(window) {
   Ti.include('/lib/public.js');
   label = Ti.UI.createLabel({
@@ -158,21 +234,25 @@ NearbyHousesWindow = function(window) {
 };
 
 module.exports = NearbyHousesWindow;
+```
+
 现在，你要修改window的代码的话，完全不需要编译重启app,  直接在远程修改就完事儿了。
 
-几点注意：
 
-1. 一些module ， 不但文件需要放到本地， 代码运行最好也在本地，否则会出现 有时加载不了的情况。 深层原因疑似 网络加载有延迟。 放到本地的话就没有了。
+## 注意：native module要提前放到app上。
 
-2. 一些方法，需要提前放到一个 匿名js中运行一下。 例如：
+一些module ， 不但文件需要放到本地， 代码运行最好也在本地，
+否则会出现 有时加载不了的情况。 深层原因疑似 网络加载有延迟。
+放到本地的话就没有了。
 
-$ cat Resources/anon.js
-/*
- * 这个文件，系统是不会调用的。
- * 它存在的目的，是为了骗过编译器，(先调用一些API， createTextArea, createOptionDialog)
- * 让编译到实体机时，系统不会出错。
- * Anon 的意思是 Anonymouse
- * */
+## 注意：一些方法，要提前让app加载并运行。
+
+这个文件，系统是不会调用的。
+它存在的目的，是为了骗过编译器，(先调用一些API， createTextArea, createOptionDialog)
+让编译到实体机时，系统不会出错。
+Anon 的意思是 Anonymouse
+要有这个文件，`Resources/anon.js`:
+```js
 function AnonWindow(title) {
   var t = Ti.UI.createTextArea({
     hintText: "反馈内容"
@@ -193,3 +273,4 @@ function AnonWindow(title) {
 }
 
 module.exports = AnonWindow;
+```

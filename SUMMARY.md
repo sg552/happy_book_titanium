@@ -9,6 +9,7 @@
   * [如何考察一门新技术](chapters_of_basic/how_to_choose.md)
   * [如何学习一门新技术](chapters_of_basic/how_to_learn.md)
   * [什么是Titanium](chapters_of_basic/what_is_titanium.md)
+  * [批判着使用Titanium](chapters_of_basic/which_to_use.md)
   * [Titanium的优点和缺点](chapters_of_basic/pros_and_cons.md)
   * [学习Titanium的前提](chapters_of_basic/precondition.md)
   * [搭建Titanium开发环境](chapters_of_basic/setup_titanium.md)
