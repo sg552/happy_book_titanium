@@ -3,7 +3,7 @@
   * [移动端的中间层nginx](chapters_of_preface/middleware.md)
   * [理想中的开发方式](chapters_of_preface/ideal_development.md)
   * [Titanium与Native, PhoneGap, Meteor 的效率对比](chapters_of_preface/comparison.md)
-  * [合适的技术应该是？](chapters_of_preface/value.md)
+  * [没有最好，只有最合适](chapters_of_preface/value.md)
 
 * [Titanium 入门](chapters_of_basic/index.md)
   * [如何考察一门新技术](chapters_of_basic/how_to_choose.md)
