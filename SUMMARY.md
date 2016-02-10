@@ -36,7 +36,7 @@
   * [AlertDialog(信息提示框)](chapters_of_ui/alert_dialog.md)
   * [AttributedString(与同一段落文字不同的文字样式)](chapters_of_ui/attributed_string.md)
   * [Button(按钮)](chapters_of_ui/button.md)
-  * [Clipboard](chapters_of_ui/clipboard.md)
+  * [Clipboard(剪切板)](chapters_of_ui/clipboard.md)
   * [Dashboard](chapters_of_ui/dashboard.md)
   * [EmailDialog](chapters_of_ui/email_dialog.md)
   * [ImageView](chapters_of_ui/image_view.md)
