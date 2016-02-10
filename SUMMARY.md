@@ -146,12 +146,10 @@
   * [iOS版本的发布](chapters_of_release/ios.md)
 
 * [明星框架](chapters_of_star_framework/index.md)
-  * [代码放到移动端]
-  * [??移动app开发之殇]
-  * [??可以随时升级]
-  * [??适配多种不同机型]
-  * [??善用TableView]
-  * [清空缓存,更新最新代码]
+  * [代码放到移动端](chapters_of_star_framework/client_code_on_server.md)
+  * [可以随时升级](chapters_of_star_framework/upgrade_at_will.md)
+  * [适配多种不同机型](chapters_of_star_framework/adapt_screens.md)
+  * [善用TableView](chapters_of_star_framework/table.md)
 
 * [Javascript 进阶](chapters_of_javascript/index.md)
   * [underscore](chapters_of_javascript/underscore.md)
