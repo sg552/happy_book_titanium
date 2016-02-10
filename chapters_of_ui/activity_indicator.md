@@ -1,18 +1,29 @@
-#ActivityIndicator
-用户在使用应用的时候，经常需要在数据请求，或者初始化的时候等待，如果这个时候，应用不提供一些UI效果让用户打发一下时间的话，仅仅是让客户看着空白的屏幕发呆，我想这样的用户体验是非常不好的。所以，Titanium也提供了这样的东西就叫ActivityIndicator。
+# ActivityIndicator
 
-ActivityIndicator是为了通过一个UI效果给用户告知当前程序正在执行一个不知道进度的行为操作着，如果想要知道当前的进度(例如请求远程数据，初始化数据)应该使用`Titanium.UI.ProgressBar`。
-##使用方法
-+ 1.在javascript代码中通过方法`Titanium.UI.createActivityIndicator`来实例化一个ActivityIndicator对象。
-+ 2.如果使用Alloy框架，也可以在xml文件中使用`<ActivityIndicator>`标签来创建一个ActivityIndicator对象。
+很多时候，App的操作是需要用户等待的：访问远程资源，某些耗时的操作等等。
+这时务必要告诉用户，否则用户会以为：是不是你的app出问题了？
 
-###注意
-+ 1.和别的view一样，ActivityIndicator在它显示之前也是需要被添加到一个window容器或者其他别的顶级容器中的。和其他view不一样的是：默认的情况下，它预先是被隐藏的，只用你调用它的`show()`方法的时候，它才会显示。
-+ 2.早于SDK 3.0之前，Android的ActivityIndicator是会生成一个对话框，里面有spinner或者进度条。而SDK 3.0 之后，原先Andorid的这种ActivityIndicator的效果被重新命名叫做`Titanium.UI.Andorid.ProgressIndicator`。
+ActivityIndicator 就是为了这个目的而产生的。
 
-##例子
-###完全在javascript文件中实现(参考来自官方文档中的例子)
-```javascript
+![android](/images/activityindicator_android.png) | ![ios](/images/activityindicator_ios.png) | ![Windows Phone](/images/activityindicator_windowsphone.png)
+:---:|:---:|:---:
+安卓 | ios | Windows Phone
+
+
+## 注意
+
+1. 和别的view一样，ActivityIndicator在它显示之前也是需要被添加到一个window
+容器或者其他别的顶级容器中的。和其他view不一样的是：默认的情况下，
+它预先是被隐藏的，只用你调用它的`show()`方法的时候，它才会显示。
+
+2. 早于SDK 3.0之前，Android的ActivityIndicator会生成一个对话框，
+里面有spinner或者进度条。而SDK 3.0 之后，原先Andorid的这种ActivityIndicator
+的效果被重新命名叫做`Titanium.UI.Andorid.ProgressIndicator`。
+
+
+## 例子
+
+```js
 Ti.UI.backgroundColor = 'white';
 
 //创建一个最底层的window，背景颜色为蓝色
@@ -39,7 +50,9 @@ else {
 //实例化一个对象，并且设定一些属性的值
 var activityIndicator = Ti.UI.createActivityIndicator({
   color: 'green',
-  font: {fontFamily:'Helvetica Neue', fontSize:26, fontWeight:'bold'},
+  font: {
+    fontFamily:'Helvetica Neue', fontSize:26, fontWeight:'bold'
+  },
   message: 'Loading...',
   style:style,
   top:10,
@@ -48,56 +61,20 @@ var activityIndicator = Ti.UI.createActivityIndicator({
   width:Ti.UI.SIZE
 });
 
-// activity indicatory一定要被加进某个window或者别的顶级view中来显示它
+// activity indicatory 一定要被加进某个window或者别的顶级view中来显示它
 win2.add(activityIndicator);
 
-//监听事件一定要在被触发之前被加载
-//`open()`方法一定要定义在被调用之前
 win2.addEventListener('open', function (e) {
-    activityIndicator.show();
-    // 这里你可以写上你的代码，下面是让它显示6秒之后就关闭`hide()`
-    setTimeout(function(){
-      e.source.close();
-      activityIndicator.hide();
-      }, 6000);
-    });
+  activityIndicator.show();
+
+  // 6 秒钟之后就关闭
+  setTimeout(function(){
+    e.source.close();
+    activityIndicator.hide();
+  }, 6000);
+});
 
 win1.open();
 win2.open();
 ```
 
-###在Alloy框架中实现以上相同效果
-win1.xml:
-```xml
-<Alloy>
-    <Window onOpen="openWin2" backgroundColor="blue" />
-</Alloy>
-```
-win1.js:
-```javascript
-function openWin2 () {
-    var win2 = Alloy.createController('win2').getView();
-    win2.open();
-}
-```
-win2.xml:
-```xml
-<Alloy>
-    <Window onOpen="showIndicator" fullscreen="true" backgroundColor="yellow">
-
-        <!-- 对应的样式设置写在 TSS 文件-->
-        <ActivityIndicator id="activityIndicator" message="Loading..."/>
-    </Window>
-</Alloy>
-```
-win2.js:
-```javascript
-function showIndicator(e){
-  $.activityIndicator.show();
-  // 这里你可以写上你的代码，下面是让它显示6秒之后就关闭`hide()`
-  setTimeout(function(){
-      e.source.close();
-      $.activityIndicator.hide();
-      }, 6000);
-}
-```
