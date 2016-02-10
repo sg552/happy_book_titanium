@@ -1,8 +1,12 @@
-#3DMatrix
-3D Matrix对象是用于盛放一个三维仿射变换矩阵的数值。一般用于实现一个三维空间对象的旋转，缩放，平移或者倾斜。
-##实例对象
+# 3D Matrix
+
+3D Matrix用于实现三维空间对象的旋转，缩放，平移或者倾斜。
+
 使用`Titanium.UI.create3DMatrix`方法来实例化对象
-区别于2DMatrix的是：这是三维矩阵，所以它的方法里的参数就会比二维的要多一个，比如`translate()`方法的参数就比二维的`translate()`方法多一个。毕竟多一维。
+
+区别于2D Matrix的是：这是三维矩阵，所以它的方法里的参数就会比二维的要多一个，
+比如`translate()`方法的参数就比二维的`translate()`方法多一个。
+
 下面来实现一个效果，让一个label从距离屏幕顶部100px的地方向下移动200px。
 ```javascript
 var win = Ti.UI.createWindow({
@@ -10,9 +14,11 @@ var win = Ti.UI.createWindow({
 });
 
 var label = Ti.UI.createLabel({
-  font:{fontSize:50},
-  text:'Titanium',
-  textAlign:'center',
+  font:{
+    fontSize:50
+  },
+  text: 'Titanium',
+  textAlign: 'center',
   top: 100
 });
 win.add(label);
@@ -20,7 +26,8 @@ win.add(label);
 var button = Ti.UI.createButton({
   title:'Animate',
   bottom:20,
-  width:200, height:40
+  width:200,
+  height:40
 });
 win.add(button);
 
