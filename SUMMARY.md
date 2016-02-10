@@ -32,7 +32,7 @@
   * [3D Matrix(3D动画矩阵)](chapters_of_ui/3d_matrix.md)
   * [ActivityIndicator(等待图标)](chapters_of_ui/activity_indicator.md)
   * [ActivityIndicatorStyle(等待图标的样式)](chapters_of_ui/activity_indicator_style.md)
-  * [AlertDialog](chapters_of_ui/alert_dialog.md)
+  * [AlertDialog(信息提示框)](chapters_of_ui/alert_dialog.md)
   * [Animation](chapters_of_ui/animation.md)
   * [AttributedString](chapters_of_ui/attributed_string.md)
   * [Button](chapters_of_ui/button.md)
