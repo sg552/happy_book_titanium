@@ -37,7 +37,7 @@
   * [AttributedString(与同一段落文字不同的文字样式)](chapters_of_ui/attributed_string.md)
   * [Button(按钮)](chapters_of_ui/button.md)
   * [Clipboard(剪切板)](chapters_of_ui/clipboard.md)
-  * [EmailDialog](chapters_of_ui/email_dialog.md)
+  * [EmailDialog(写邮件窗口)](chapters_of_ui/email_dialog.md)
   * [ImageView](chapters_of_ui/image_view.md)
   * [Label](chapters_of_ui/label.md)
   * [ListView](chapters_of_ui/listview.md)
