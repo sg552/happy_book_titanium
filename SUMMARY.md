@@ -20,7 +20,7 @@
   * [如何阅读API](chapters_of_basic/how_to_read_api.md)
   * [重要文件说明(tiapp.xml etc)](chapters_of_basic/important_files.md)
 
-* [编辑器+ 命令行](chapters_of_cli/index.md)
+* [文本编辑器与命令行](chapters_of_cli/index.md)
   * [基本用法](chapters_of_cli/basic.md)
   * [Android开发时的常用命令](chapters_of_cli/android_adb.md)
   * [ios 开发](chapters_of_cli/ios.md)
