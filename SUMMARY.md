@@ -22,10 +22,8 @@
 
 * [编辑器+ 命令行](chapters_of_cli/index.md)
   * [基本用法](chapters_of_cli/basic.md)
-  * [使用adb shell]
-  * [使用logcat]
-  * [Android下的开发准备]
-  * [ios下的开发准备]
+  * [Android开发时的常用命令](chapters_of_cli/android_adb.md)
+  * [ios 开发](chapters_of_cli/ios.md)
 
 * [Titanium中的各种UI组件](chapters_of_ui/index.md)
   * [查看Demo: KitchenSink](chapters_of_ui/kitchensink.md)
