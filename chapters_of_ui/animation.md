@@ -43,9 +43,12 @@ Android不支持像iOS一样的动画曲线或者舒缓功能，它的动画效�
 让view的背景颜色在规定的时间内进行变化
 
 ```js
+var window = Ti.UI.createWindow();
+
 var view = Titanium.UI.createView({
   backgroundColor:'red'
 });
+window.add(view)
 
 var animation = Titanium.UI.createAnimation();
 animation.backgroundColor = 'black';
@@ -56,13 +59,21 @@ var animationHandler = function() {
   view.animate(animation);
 };
 animation.addEventListener('complete',animationHandler);
+window.open();
 view.animate(animation);
 ```
 
+效果如下图：
+
+![animation](/images/ui_animation.gif)
+
 ### 简单的矩阵变幻效果
+
 点击红色方块，方块旋转，并放大，且重复三次。
 
 ```javascript
+var win = Ti.UI.createWindow();
+
 var box = Ti.UI.createView({
   backgroundColor : 'red',
   height : '100',
@@ -82,10 +93,12 @@ box.addEventListener('click', function() {
   });
   box.animate(a);
 });
+win.open();
 ```
 
 效果如图：
-TODO
+
+![animation2](/images/ui_animation2.gif)
 
 ### 锚点效果
 
@@ -156,5 +169,6 @@ button.addEventListener('click', function(){
 win.open();
 ```
 
-TODO
 效果如图所示：
+
+![锚点](/images/ui_animation_anchor.gif)
