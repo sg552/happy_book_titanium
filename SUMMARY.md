@@ -41,7 +41,7 @@
   * [Label(文本框)](chapters_of_ui/label.md)
   * [ListView(列表)](chapters_of_ui/listview.md)
   * [OptionDialog(对话框)](chapters_of_ui/option_dialog.md)
-  * [Picker](chapters_of_ui/picker.md)
+  * [Picker(选择框)](chapters_of_ui/picker.md)
   * [Popover](chapters_of_ui/popover.md)
   * [ProgressBar](chapters_of_ui/progress_bar.md)
   * [ScrollView](chapters_of_ui/scroll_view.md)
