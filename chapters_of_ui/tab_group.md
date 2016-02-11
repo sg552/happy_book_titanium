@@ -1,20 +1,14 @@
-# Titanium.UI.TabGroup
+# TabGroup
 
-TabGroup 是一个很重要的视图布局，大部分app开发的布局都会用到这种样式，下面是完成
-图片demo的一个实例
+TabGroup 是非常重要的视图布局，几乎所有app开发的布局都会用到它。
 
-> TabGroup图片和例子
+TabGroup由多个Tab组成。 每个Tab中包含一个Window.
 
-![ios](http://yuehouse.b0.upaiyun.com/gitbook/tap.png)|
+TabGroup 跟Windows 一样，是顶级View.
 
-ios |
+![tab group](/images/ui_tab_group.png)
 
-
-在controller中创建Button的例子:
-*app/alloy.js*
-
-
-```javascript
+```js
 
 Titanium.UI.setBackgroundColor('#000');
 
@@ -58,12 +52,9 @@ var label2 = Titanium.UI.createLabel({
 
 win2.add(label2);
 
-
 tabGroup.addTab(tab1);
 tabGroup.addTab(tab2);
 
 tabGroup.open();
 ```
-
-
 
