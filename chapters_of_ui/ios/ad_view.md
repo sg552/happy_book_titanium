@@ -6,7 +6,7 @@ AdView用于Apple iAds 。
 
 展示效果:
 
-![ad_view](http://image.happysoft.cc/image/45/titanium_ui_ios_ad_view.gif)
+![ad_view](http://image.tidev.in/image/45/titanium_ui_ios_ad_view.gif)
 
 代码部分:
 

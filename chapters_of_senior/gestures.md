@@ -20,10 +20,10 @@ Ti.Gesture.addEventListener('shake',function(e) {
 e.timestamp是事件的时间戳，我们可以利用这个时间戳的参数来判断手机被摇晃的时间。在iOS simulator 上测试的时候是在HardWare中点击Shake Gestures。Android中的虚拟机是不支持shake的，可以用真机设备测试。
 
 iOS的效果：
-![ios shake](http://image.happysoft.cc/image/66/屏幕快照 2015-09-08 下午3.04.06.png)
+![ios shake](http://image.tidev.in/image/66/屏幕快照 2015-09-08 下午3.04.06.png)
 
 Android的效果：
-![android shake](http://image.happysoft.cc/image/67/1.pic_hd.jpg)
+![android shake](http://image.tidev.in/image/67/1.pic_hd.jpg)
 
 ###Swipe（滑动）
 Swipe是指用手指左右拖拽滑动。
@@ -39,10 +39,10 @@ $.index.open();
 ```
 
 iOS效果如图：
-![](http://image.happysoft.cc/image/72/屏幕快照 2015-09-08 下午3.44.24.png)
+![](http://image.tidev.in/image/72/屏幕快照 2015-09-08 下午3.44.24.png)
 
 Android效果如图：
-![](http://image.happysoft.cc/image/73/3.pic_hd.jpg)
+![](http://image.tidev.in/image/73/3.pic_hd.jpg)
 
 ###Touch
 Touch不能单独来谈，要结合Titanium UI组件来用。Touch事件可以细分为四个事件。
@@ -63,7 +63,7 @@ $.index.addEventListener('pinch', function(e){
 $.index.open();
 ```
 iOS效果如图：
-![pinch ios](http://image.happysoft.cc/image/71/屏幕快照 2015-09-08 下午4.25.42.png)
+![pinch ios](http://image.tidev.in/image/71/屏幕快照 2015-09-08 下午4.25.42.png)
 
 ###Long press（长按）
 ```javascript
@@ -74,10 +74,10 @@ $.index.open();
 ```
 
 iOS效果如图：
-![](http://image.happysoft.cc/image/74/屏幕快照 2015-09-08 下午5.07.02.png)
+![](http://image.tidev.in/image/74/屏幕快照 2015-09-08 下午5.07.02.png)
 
 Android效果如图：
-![](http://image.happysoft.cc/image/75/屏幕快照 2015-09-08 下午5.12.08.png)
+![](http://image.tidev.in/image/75/屏幕快照 2015-09-08 下午5.12.08.png)
 
 ###Accelerometer
 Accelerometer是作为一个硬件单元集成在机设备中，当设备发生移动，是会返回一个新的三维空间中的位置。它只有一个事件，叫`update`。这个module暴露出这个接口来输出位置信息。
@@ -127,7 +127,7 @@ $.index.open();
 ```
 
 Android效果如图：
-![](http://image.happysoft.cc/image/76/屏幕快照 2015-09-09 上午10.05.11.png)
+![](http://image.tidev.in/image/76/屏幕快照 2015-09-09 上午10.05.11.png)
 
 ###事件管理与生命周期
 Android是一个多任务处理的环境，所以当app被挂起或者暂停时，移除一些全局事件就显得很重要了。如果你不这么做的话，硬件的所支持的那些全局事件就不会一直被触发，一直保持这个状态。移除事件监听会有利于限制电池电量被设备组件浪费。为了移除监听事件，你必须传递`addEventListener()`同样的`function signature`给`removeEventListener()`。例子同上！

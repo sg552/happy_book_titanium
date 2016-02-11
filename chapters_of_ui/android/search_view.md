@@ -47,13 +47,13 @@ win.add(tableview);
 win.open();
 ```
 
-![状态1](http://image.happysoft.cc/image/34/屏幕快照 2015-09-06 下午4.00.52.png)
+![状态1](http://image.tidev.in/image/34/屏幕快照 2015-09-06 下午4.00.52.png)
 初始状态
 
-![状态2](http://image.happysoft.cc/image/35/屏幕快照 2015-09-06 下午4.01.10.png)
+![状态2](http://image.tidev.in/image/35/屏幕快照 2015-09-06 下午4.01.10.png)
 输入一个字母
 
-![状态3](http://image.happysoft.cc/image/38/屏幕快照 2015-09-06 下午4.01.29.png)
+![状态3](http://image.tidev.in/image/38/屏幕快照 2015-09-06 下午4.01.29.png)
 精确输入字母
 
 ##Alloy中实现上面的效果

@@ -10,19 +10,19 @@ animation style为在不同窗口间转换时的过渡效果。主要有五中�
 
 CURL_DOWN:
 
-![CURL_DOWN](http://image.happysoft.cc/image/204/curl_down.gif)
+![CURL_DOWN](http://image.tidev.in/image/204/curl_down.gif)
 
 CURL_UP:
 
-![CURL_UP](http://image.happysoft.cc/image/205/curl_up.gif)
+![CURL_UP](http://image.tidev.in/image/205/curl_up.gif)
 
 FLIP_FROM_LEFT:
 
-![FLIP_FROM_LEFT](http://image.happysoft.cc/image/206/flip_from_left.gif)
+![FLIP_FROM_LEFT](http://image.tidev.in/image/206/flip_from_left.gif)
 
 FLIP_FROM_RIGHT:
 
-![FLIP_FROM_RIGHT](http://image.happysoft.cc/image/207/flip_from_right.gif)
+![FLIP_FROM_RIGHT](http://image.tidev.in/image/207/flip_from_right.gif)
 
 
 四种动画效果可以在很多的UI组件中使用，包括`view`,`window`

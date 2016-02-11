@@ -52,7 +52,7 @@ win.add(button);
 win.open();
 ```
 显示效果：
-![ProgressIndicator](http://image.happysoft.cc/image/31/屏幕快照 2015-09-06 下午3.26.37.png)
+![ProgressIndicator](http://image.tidev.in/image/31/屏幕快照 2015-09-06 下午3.26.37.png)
 
 ###在Alloy中实现如上效果
 

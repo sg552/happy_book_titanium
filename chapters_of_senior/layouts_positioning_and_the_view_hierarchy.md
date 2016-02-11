@@ -194,7 +194,7 @@ win.open();
 ```
 
 效果如图：
-![](http://image.happysoft.cc/image/166/vert_and_horiz.png)
+![](http://image.tidev.in/image/166/vert_and_horiz.png)
 
 ##Auto Size Behaviors
 

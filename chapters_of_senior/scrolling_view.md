@@ -5,7 +5,7 @@ TODO：图片不是自己的，属性介绍类同
 Titanium提供两种可以滑动的view，`ScrollView`和`ScrollableView`。虽然名字很像很接近，但是功能上确是有很多的不同。
 
 可以先看看下面两张图片大概区别下：
-![](http://image.happysoft.cc/image/168/Screen_shot_2011-12-08_at_11.42.09_AM.png)
+![](http://image.tidev.in/image/168/Screen_shot_2011-12-08_at_11.42.09_AM.png)
 
 从上面可以看出：
 

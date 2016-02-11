@@ -17,7 +17,7 @@ item自身或与边界的碰撞行为。
 
 效果如下图所示:
 
-![collision_behavior](http://image.happysoft.cc/image/59/titanium_ui_ios_ collision_behavior.gif)
+![collision_behavior](http://image.tidev.in/image/59/titanium_ui_ios_ collision_behavior.gif)
 
 代码如下:
 
@@ -46,7 +46,7 @@ var WIDTH = Ti.Platform.displayCaps.platformWidth;
 var HEIGHT = Ti.Platform.displayCaps.platformHeight;
 
 // Create a bunch of random blocks; add to the window and behaviors
-var blocks = [];   
+var blocks = [];
 for (var i = 0; i < 25; i++) {
     var r = Math.round(Math.random() * 255);
     var g = Math.round(Math.random() * 255);

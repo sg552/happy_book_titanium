@@ -6,7 +6,7 @@
 
 一个简单的碰撞例子(官方文档),两个不同秘密密度的block有不同抵抗力,给它两个相反的力量去碰撞产生的动画效果,`Ti.UI.iOS.createPushBehavior`是推力行为,后文有介绍。如下图所示:
 
-![dynamicItem_behavior](http://image.happysoft.cc/image/61/titanium_ui_ios_ dynamicItem_behavior.gif)
+![dynamicItem_behavior](http://image.tidev.in/image/61/titanium_ui_ios_ dynamicItem_behavior.gif)
 
 代码示例:
 

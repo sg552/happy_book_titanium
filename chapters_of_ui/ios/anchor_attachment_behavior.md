@@ -20,7 +20,7 @@ var anchor = Ti.UI.iOS.createAnchorAttachmentBehavior({
 
 示例动画:
 
-![AnchorAttachmentBehavior](http://image.happysoft.cc/image/58/titanium_ui_ios_ AnchorAttachmentBehavior.gif)
+![AnchorAttachmentBehavior](http://image.tidev.in/image/58/titanium_ui_ios_ AnchorAttachmentBehavior.gif)
 
 代码示例:
 

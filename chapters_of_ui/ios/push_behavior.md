@@ -59,4 +59,4 @@ win.open();
 ```
 
 效果如图：
-![](http://image.happysoft.cc/image/184/pushforce.gif)
+![](http://image.tidev.in/image/184/pushforce.gif)

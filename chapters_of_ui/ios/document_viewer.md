@@ -55,8 +55,8 @@ winButton.addEventListener('click', function(){docViewer.show()});
 navWin.open();
 ```
 
-![](http://image.happysoft.cc/image/171/iOS Simulator Screen Shot 2015年9月16日 下午3.19.09.png)
+![](http://image.tidev.in/image/171/iOS Simulator Screen Shot 2015年9月16日 下午3.19.09.png)
 
-![](http://image.happysoft.cc/image/172/iOS Simulator Screen Shot 2015年9月16日 下午3.21.29.png)
+![](http://image.tidev.in/image/172/iOS Simulator Screen Shot 2015年9月16日 下午3.21.29.png)
 
-![](http://image.happysoft.cc/image/173/iOS Simulator Screen Shot 2015年9月16日 下午3.21.42.png)
+![](http://image.tidev.in/image/173/iOS Simulator Screen Shot 2015年9月16日 下午3.21.42.png)

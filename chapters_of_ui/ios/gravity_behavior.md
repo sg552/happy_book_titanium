@@ -70,4 +70,4 @@ win.open();
 ```
 效果如图:
 
-![](http://image.happysoft.cc/image/176/gravity.gif)
+![](http://image.tidev.in/image/176/gravity.gif)

@@ -9,7 +9,7 @@
 
 在某些特定的地方，如TableViewRow中可以使用`Button.style`来创建某些iOS标准按钮：`CONTACT_ADD`,`DISCLOSURE`,`INFO_DARK`,`INFO_LIGHT`。
 
-![System Button](http://image.happysoft.cc/image/215/屏幕快照 2015-10-09 下午4.34.45.png)
+![System Button](http://image.tidev.in/image/215/屏幕快照 2015-10-09 下午4.34.45.png)
 
 * ACTION: action按钮，使用`Button.systemButton`来指定，只能被添加到`navigation bars`和`toolbars`中
 * ACTIVITY: activity指示器，使用`Button.systemButton`来指定，可以被添加到`navigation bars`和`toolbars`中,当可见时，activity indicator就开始了

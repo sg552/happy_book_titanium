@@ -13,7 +13,7 @@ Titanium上让你自己的应用使用自定义字体是很简单的。Titanium 
 
 在Alloy下使用字体的话，在`app/assets/android`或者`app/assets/iphone`下创建fonts文件夹。例如官方给出的例子：
 
-![](http://image.happysoft.cc/image/96/image2014-1-14_11_1_2.png)
+![](http://image.tidev.in/image/96/image2014-1-14_11_1_2.png)
 
 *app/views/index.xml*:
 

@@ -24,10 +24,10 @@ modalStyle:
 
 以下为从Titanium官方推出的展示所有组件效果的app(KitchenSink)中关于上面特效的一个效果展示图。
 
-![cover vertial fullscreen](http://image.happysoft.cc/image/33/cover_vertical_Fullscreen.gif)
-![flip horizontal fullscreen](http://image.happysoft.cc/image/39/flip_horizontal_fullscreen.gif)
-![cross dissolve fullscreen](http://image.happysoft.cc/image/41/cross_dissolve_fullscreen.gif)
-![partial curl fullscreen](http://image.happysoft.cc/image/42/partial_fullscreen.gif)
+![cover vertial fullscreen](http://image.tidev.in/image/33/cover_vertical_Fullscreen.gif)
+![flip horizontal fullscreen](http://image.tidev.in/image/39/flip_horizontal_fullscreen.gif)
+![cross dissolve fullscreen](http://image.tidev.in/image/41/cross_dissolve_fullscreen.gif)
+![partial curl fullscreen](http://image.tidev.in/image/42/partial_fullscreen.gif)
 
 在Ti.UI.iPhone下还有许多子类，他们都是以Ti.UI.iPhone为命名空间。
 * ActiveIndicatorStyle
