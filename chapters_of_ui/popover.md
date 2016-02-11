@@ -1,58 +1,42 @@
-# Titanium.UI.iPad.Popover
+# Popover
 
-一个iPad上面UI,展示一个暂时的消息。`<Popover></Popover>`标签可以作为最顶级的`View`。
+提示框。
 
-示例图片:
+合理的使用提示框，可以起到意想不到的好效果。
 
-![popover](http://image.happysoft.cc/image/40/titanium_ui_ipad_popover.gif)
+![popover](/images/ui_ipad_popover.gif)
 
-在controller中创建一个popover:
+# 例子
 
-```javascript
+```js
 var win = Ti.UI.createWindow({backgroundColor: 'white'});
 
-var button = Ti.UI.createButton({title: 'Open Popover!'});
+var button = Ti.UI.createButton({title: '我是触发popover的button, 离开我就没有popover!'});
 button.addEventListener('click', function(e){
     popover.show({ view: button });
 })
 win.add(button);
 
-var rightButton = Ti.UI.createButton({title: 'Robin'});
+var rightButton = Ti.UI.createButton({title: '其他信息'});
 rightButton.addEventListener('click', function(e){
-    alert("But green's the color of spring.");
+    alert("学完Titanium 务必要学习Ruby on Rails.");
 });
 
 var contentWindow = Ti.UI.createWindow({
-    backgroundColor: 'green',
     rightNavButton: rightButton,
-    title: 'Kermit',
+    title: '你好！我是contentView',
     width: 250,
     height: 100
 });
-contentWindow.add(Ti.UI.createLabel({text: "It's not easy being green."}));
+contentWindow.add(Ti.UI.createLabel({text: "我是contentView的正文"}));
 
 var popover = Ti.UI.iPad.createPopover({
     width: 250,
     height: 100,
+    backgroundColor: 'green',
     contentView: Ti.UI.iOS.createNavigationWindow({window: contentWindow})
 });
 
 win.open();
 ```
 
-在view中使用popover:
-
-```xml
-<Alloy>
-    <Popover height='100' width='250'>
-        <ContentView>
-            <NavigationWindow>
-                <Window title='Kermit' backgroundColor='green'>
-                    <RightNavButton onClick="showAlert" title="Robin" />
-                    <Label>It's not easy being green.</Label>
-                </Window>
-            </NavigationWindow>
-        </ContentView>
-    </Popover>
-</Alloy>
-```
