@@ -38,7 +38,7 @@
   * [AttributedString(与同一段落文字不同的文字样式)](chapters_of_ui/attributed_string.md)
   * [Button(按钮)](chapters_of_ui/button.md)
   * [ImageView(图片)](chapters_of_ui/image_view.md)
-  * [Label](chapters_of_ui/label.md)
+  * [Label(文本框)](chapters_of_ui/label.md)
   * [ListView](chapters_of_ui/listview.md)
   * [Notification](chapters_of_ui/notification.md)
   * [OptionDialog](chapters_of_ui/option_dialog.md)
