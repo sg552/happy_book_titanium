@@ -10,8 +10,7 @@ Notification是消息通知UI组件，十分类似于AlertDialog；
 Android上显示在靠近屏幕底部边缘位置，而在Windows Phone上Notification则
 在消息通知栏上显示。
 
-Notification的适用平台十分有限，但是却是个很好用的UI组件，如果想改造它来适用于
-多个平台我们建议你使用Widget来实现.
+Notification的适用平台十分有限，但是却是个很好用的UI组件.
 
 ![notification](/images/notification_display.gif)
 
