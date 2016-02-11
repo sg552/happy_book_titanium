@@ -57,6 +57,34 @@ $ti build --platform=ios --target=device
 ```
 简单吧？
 
+如何往指定设备上安装？例如，我想运行在 iPad 上:
+
+可以使用 `--device-id`参数：
+
+```
+$ ti build --platform=ios --device-id
+
+Which simulator do you want to launch your app in?
+9.0
+   1)  iPad 2          ACD3BE4B-C088-4684-A312-68AAA4DCCDFA
+   2)  iPad Retina     DDDB0D41-F801-4B27-8064-D767D6BADFA0
+   3)  iPad Air        623BB2FB-546C-48DF-8CD4-FFC20AA7C537
+   4)  iPad Air 2      B87C4BA7-8513-4B15-865D-46AABA3E2FF2
+   5)  iPhone 4s       D7FD69F1-D91A-440F-A4EC-7CE2DD67FE0C
+   6)  iPhone 5        5940887E-75C1-4A60-AE21-97661995EFAF
+   7)  iPhone 5s       8EBE7467-58AE-403F-B6C6-117B0EC7CE28
+   8)  iPhone 6 Plus   8EDD6548-5BA4-46D8-8A30-5F90EEA83647
+   9)  iPhone 6        2649B18C-C1C5-4217-9ADB-49D9398E30DF
+  10)  iPhone 6s       B01B4503-F245-4167-9877-20A7BFEFDC95
+  11)  iPhone 6s Plus  962AF433-1C00-4918-96C8-3612552FD5A1
+```
+
+如果你确定的话，就直接复制你想运行的设备的ID 到命令行中来：
+
+```
+$ ti build --platform=ios --device-id=623BB2FB-546C-48DF-8CD4-FFC20AA7C537
+```
+
 ## 清理
 
 当你发现自己的改动突然不生效了，出现了莫名其妙的错误，那么很可能是过时的文件
