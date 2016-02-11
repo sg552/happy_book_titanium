@@ -10,7 +10,8 @@ TableView的区别是: 使用它可以实现Scrollview内部的子控件横向�
 我们的解决方案是在最后面加上一个空的label, 来hack这个简单的bug。
 
 （注意下图中的图片在滚动过程中产生的 滚动条)
-![scrollview](/images/ui_ipad_scrollview.gif)
+
+![scrollview](/images/ui_scrollview.gif)
 
 ```js
 var scrollView = Ti.UI.createScrollView({
