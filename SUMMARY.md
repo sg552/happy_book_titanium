@@ -39,7 +39,7 @@
   * [Button(按钮)](chapters_of_ui/button.md)
   * [ImageView(图片)](chapters_of_ui/image_view.md)
   * [Label(文本框)](chapters_of_ui/label.md)
-  * [ListView](chapters_of_ui/listview.md)
+  * [ListView(列表)](chapters_of_ui/listview.md)
   * [Notification](chapters_of_ui/notification.md)
   * [OptionDialog](chapters_of_ui/option_dialog.md)
   * [Picker](chapters_of_ui/picker.md)
