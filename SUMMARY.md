@@ -43,7 +43,7 @@
   * [OptionDialog(对话框)](chapters_of_ui/option_dialog.md)
   * [Picker(选择框)](chapters_of_ui/picker.md)
   * [ProgressBar(进度条)](chapters_of_ui/progress_bar.md)
-  * [ScrollView](chapters_of_ui/scroll_view.md)
+  * [ScrollView(滚动图)](chapters_of_ui/scroll_view.md)
   * [SearchBar](chapters_of_ui/search_bar.md)
   * [TextArea](chapters_of_ui/text_area.md)
   * [TabGroup](chapters_of_ui/tab_group.md)
