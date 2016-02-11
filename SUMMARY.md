@@ -40,7 +40,7 @@
   * [ImageView(图片)](chapters_of_ui/image_view.md)
   * [Label(文本框)](chapters_of_ui/label.md)
   * [ListView(列表)](chapters_of_ui/listview.md)
-  * [OptionDialog](chapters_of_ui/option_dialog.md)
+  * [OptionDialog(对话框)](chapters_of_ui/option_dialog.md)
   * [Picker](chapters_of_ui/picker.md)
   * [Popover](chapters_of_ui/popover.md)
   * [ProgressBar](chapters_of_ui/progress_bar.md)
