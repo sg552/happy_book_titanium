@@ -2,7 +2,7 @@
 
 Button在UI布局中是一个重要的控件。
 
-![android](/images/ui_button_android.png) | ![ios](/images/ui_button_ios.png) | ![wp](/images/button_wp.png)
+![android](/images/ui_button_android.png) | ![ios](/images/ui_button_ios.png) | ![wp](/images/ui_button_wp.png)
 :---:|:---:|:---:|:---:
 android | ios | Windows phone
 

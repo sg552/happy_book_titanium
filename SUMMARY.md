@@ -45,7 +45,7 @@
   * [ProgressBar(进度条)](chapters_of_ui/progress_bar.md)
   * [ScrollView(滚动图)](chapters_of_ui/scroll_view.md)
   * [ScrollableView(轮播图)](chapters_of_ui/scrollable_view.md)
-  * [SearchBar](chapters_of_ui/search_bar.md)
+  * [SearchBar(搜索框)](chapters_of_ui/search_bar.md)
   * [TextArea](chapters_of_ui/text_area.md)
   * [TabGroup](chapters_of_ui/tab_group.md)
   * [TableView](chapters_of_ui/table_view.md)
