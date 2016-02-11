@@ -42,7 +42,7 @@
   * [ListView(列表)](chapters_of_ui/listview.md)
   * [OptionDialog(对话框)](chapters_of_ui/option_dialog.md)
   * [Picker(选择框)](chapters_of_ui/picker.md)
-  * [ProgressBar](chapters_of_ui/progress_bar.md)
+  * [ProgressBar(进度条)](chapters_of_ui/progress_bar.md)
   * [ScrollView](chapters_of_ui/scroll_view.md)
   * [SearchBar](chapters_of_ui/search_bar.md)
   * [TextArea](chapters_of_ui/text_area.md)
@@ -85,7 +85,7 @@
     * [SystemIcon](chapters_of_ui/iphone/system_icon.md)
     * [TableView](chapters_of_ui/iphone/tableview.md)
   * [iPad](chapters_of_ui/ipad.md)
-    * [Popover](chapters_of_ui/popover.md)
+    * [Popover(提示框)](chapters_of_ui/popover.md)
 
 * [Alloy Framework](chapters_of_alloy/index.md)
   * [Alloy 与 DSL](chapters_of_alloy/why_alloy.md)
