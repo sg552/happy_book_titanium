@@ -1,6 +1,6 @@
 # AdView
 
-用于Apple iAds.
+用于[Apple iAds](http://advertising.apple.com)，苹果的广告。
 
 注：官方文档无本节内容。
 
