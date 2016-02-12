@@ -3,11 +3,12 @@
 用来产生动画。本节只是大概做个介绍，如果您有意在动画方面发展的话，请深入阅读
 Titanium官方文档。（[这个项目也不错](https://github.com/animecyc/TitaniumAnimator) )
 
-> 仅支持IOS且版本大于等于7.0的设备。
+> iOS版本在7.0+
 
 behaviors(行为)定义运动轨迹或规则,item是产生动画的对象。
 
-创建动画,首先要创建animate的item(对象)
+下面是创建动画的文字说明， 完整例子见
+[iOS 钟摆行为](anchor_attachment_behavior.md)。
 
 1.创建animator:
 
@@ -36,6 +37,7 @@ Titanium.UI.iOS.ViewAttachmentBehavior
 4.通过`addBehavior method`为`animator`添加行为
 5.使用`startAnimator method`启动animator
 
+
 下面的WIDTH和HEIGHT为`referenceView `的width和height
 
 点位置:
@@ -59,3 +61,4 @@ Titanium.UI.iOS.ViewAttachmentBehavior
 - Down: pi / 2
 - Left: pi
 - Up: pi / 2 * 3
+

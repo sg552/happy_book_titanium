@@ -67,7 +67,7 @@
     * [AdView(苹果广告)](chapters_of_ui/ios/ad_view.md)
     * [ButtonBar(按钮组)](chapters_of_ui/button_bar.md)
     * [Animator(动画产生器)](chapters_of_ui/ios/animator.md)
-    * [AnchorAttachmentBehavior](chapters_of_ui/ios/anchor_attachment_behavior.md)
+    * [AnchorAttachmentBehavior(钟摆行为)](chapters_of_ui/ios/anchor_attachment_behavior.md)
     * [CollisionBehavior](chapters_of_ui/ios/collision_behavior.md)
     * [CoverFlowView](chapters_of_ui/ios/cover_flow_view.md)
     * [Dashboard(图标面板)](chapters_of_ui/dashboard.md)
