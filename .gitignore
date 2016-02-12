@@ -4,3 +4,4 @@ _book/
 .DS_Store
 *.md~
 *.log
+*.pdf
