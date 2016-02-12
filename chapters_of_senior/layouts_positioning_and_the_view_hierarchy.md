@@ -3,7 +3,7 @@
 这一章节，我们要学习如何使用Titanium提供的各种位置属性来给你的UI设置布局。
 以及各种Titanium里的坐标系统，视图层级，位置规则。
 
-我们来看看有哪些因素可以影响你的App里UI的布局元素：
+下面因素可以影响App的布局：
 
 - Units（单位）
 - The coordinates grid（坐标网格）
@@ -237,7 +237,7 @@ TableViewSection | |
 - 当所有的子view都有FILL行为时，scrollview的物理区域都会被充斥满。
 - 否则，内容显示区里的内容会按照向下和向右方向扩充。有时候，最底下的view于最右边的view可能就是同一个view。
 
-## zIndex & default stacking
+## zIndex 和默认的视图罗列顺序
 
 你可以通过`zIndex`来设置一个view在另一个view的上面。
 
