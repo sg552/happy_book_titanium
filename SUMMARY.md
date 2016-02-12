@@ -108,7 +108,7 @@
   * [进阶：Widgets](chapters_of_alloy/widget.md)
 
 * [Titanium 进阶](chapters_of_senior/index.md)
-  * [HTTP Client:发送HTTP请求](chapters_of_senior/http_client.md)
+  * [发送HTTP请求](chapters_of_senior/http_client.md)
   * [操作JSON](chapters_of_senior/working_with_json.md)
   * [布局，位置和视图层级](chapters_of_senior/layouts_positioning_and_the_view_hierarchy.md)
   * [图标和启动图](chapters_of_senior/icons_and_splash_screens.md)
