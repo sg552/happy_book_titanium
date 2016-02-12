@@ -1,17 +1,6 @@
-# HTTPClient
+# 发送HTTP请求
 
-在Titanium中发送http 请求特别方便。它实现了五个HTTP的方法，
-分别是GET, POST, PUT, DELETE, PATCH。
-
-常用的只有GET和POST。
-
-处理response的方式也有三种：
-
-- this.responseText, 把response当做纯文本(raw text)，最常用的是用来接收JSON字符串
-- this.responseXML, 把response当做xml对象处理
-- this.responseData, 把response当做Blob(Binary Large Object),二进制大对象
-
-下面是在手机端发送一个HTTP请求的具体实现代码：
+在Titanium中发送http 请求特别方便。如：
 
 ```js
 var url = "https://www.tidev.in";
