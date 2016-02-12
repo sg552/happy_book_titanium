@@ -3,7 +3,15 @@
 用来产生动画。本节只是大概做个介绍，如果您有意在动画方面发展的话，请深入阅读
 Titanium官方文档。（[这个项目也不错](https://github.com/animecyc/TitaniumAnimator) )
 
-> iOS版本在7.0+
+Animator要与以下效果一起配合使用：
+
+- AnchorAttachmentBehavior(动画:钟摆行为)
+- CollisionBehavior(动画:碰撞行为)
+- GravityBehavior(动画:重力行为)
+- DynamicItemBehavior(动画:动态物体行为)
+- PushBehavior(动画:推力行为)
+
+> iOS版本7.0+
 
 behaviors(行为)定义运动轨迹或规则,item是产生动画的对象。
 
