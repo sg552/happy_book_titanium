@@ -65,6 +65,8 @@
     * [SearchView(搜索框)](chapters_of_ui/android/search_view.md)
 
   * [iOS独有](chapters_of_ui/ios.md)
+    * [ListViewStyle(ListView样式)](chapters_of_ui/ios/listview_style.md)
+    * [TableViewStyle(TableView样式)](chapters_of_ui/ios/tableview_style.md)
     * [MaskedImage(可渲染的图片)](chapters_of_ui/masked_image.md)
     * [AdView(苹果广告)](chapters_of_ui/ios/ad_view.md)
     * [ButtonBar(按钮组)](chapters_of_ui/button_bar.md)
@@ -82,15 +84,13 @@
     * [PushBehavior(动画:推力行为)](chapters_of_ui/ios/push_behavior.md)
 
   * [iPhone独有](chapters_of_ui/titanium_ui_iphone.md)
-    * [ListView](chapters_of_ui/iphone/listview.md)
-    * [ProgressBarStyle](chapters_of_ui/iphone/progress_bar_style.md)
-    * [RowAnimationStyle](chapters_of_ui/iphone/row_animation_style.md)
-    * [ScrollIndicatorStyle](chapters_of_ui/iphone/scroll_indicator_style.md)
     * [StatusBar](chapters_of_ui/iphone/status_bar.md)
     * [SystemButton](chapters_of_ui/iphone/system_button.md)
     * [SystemButtonStyle](chapters_of_ui/iphone/system_button_style.md)
-    * [SystemIcon](chapters_of_ui/iphone/system_icon.md)
-    * [TableView](chapters_of_ui/iphone/tableview.md)
+    * [SystemIcon(系统图标)](chapters_of_ui/iphone/system_icon.md)
+    * [ProgressBarStyle(进度条样式)](chapters_of_ui/iphone/progress_bar_style.md)
+    * [RowAnimationStyle(行动画样式)](chapters_of_ui/iphone/row_animation_style.md)
+    * [ScrollIndicatorStyle(滚动条样式)](chapters_of_ui/iphone/scroll_indicator_style.md)
   * [iPad](chapters_of_ui/ipad.md)
     * [Popover(提示框)](chapters_of_ui/popover.md)
 
