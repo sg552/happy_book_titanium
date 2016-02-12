@@ -61,7 +61,7 @@
   * [Android](chapters_of_ui/android.md)
     * [Notification(弹出式通知)](chapters_of_ui/notification.md)
     * [ProgressIndicator(进度条)](chapters_of_ui/android/progress_indicator.md)
-    * [SearchView](chapters_of_ui/android/search_view.md)
+    * [SearchView(搜索框)](chapters_of_ui/android/search_view.md)
   * [IOS](chapters_of_ui/ios.md)
     * [MaskedImage(可渲染的图片)](chapters_of_ui/masked_image.md)
     * [AdView](chapters_of_ui/ios/ad_view.md)
