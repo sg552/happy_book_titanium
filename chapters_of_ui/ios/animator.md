@@ -1,7 +1,7 @@
 # Animator
 
 用来产生动画。本节只是大概做个介绍，如果您有意在动画方面发展的话，请深入阅读
-Titanium官方文档。
+Titanium官方文档。（[这个项目也不错](https://github.com/animecyc/TitaniumAnimator) )
 
 > 仅支持IOS且版本大于等于7.0的设备。
 
