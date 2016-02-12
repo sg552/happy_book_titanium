@@ -1,12 +1,12 @@
-# Titanium.UI.iOS.AdView
+# AdView
 
-AdView用于Apple iAds 。
+用于Apple iAds.
 
-> 官方文档内容无。
+注：官方文档无本节内容。
 
 展示效果:
 
-![ad_view](http://image.tidev.in/image/45/titanium_ui_ios_ad_view.gif)
+![ad_view](/images/ui_ios_ad_view.gif)
 
 代码部分:
 

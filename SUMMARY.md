@@ -58,11 +58,11 @@
   * [2D Matrix(2D动画矩阵)](chapters_of_ui/2d_matrix.md)
   * [3D Matrix(3D动画矩阵)](chapters_of_ui/3d_matrix.md)
 
-  * [Android](chapters_of_ui/android.md)
+  * [Android独有](chapters_of_ui/android.md)
     * [Notification(弹出式通知)](chapters_of_ui/notification.md)
     * [ProgressIndicator(进度条)](chapters_of_ui/android/progress_indicator.md)
     * [SearchView(搜索框)](chapters_of_ui/android/search_view.md)
-  * [IOS](chapters_of_ui/ios.md)
+  * [iOS独有](chapters_of_ui/ios.md)
     * [MaskedImage(可渲染的图片)](chapters_of_ui/masked_image.md)
     * [AdView](chapters_of_ui/ios/ad_view.md)
     * [ButtonBar(按钮组)](chapters_of_ui/button_bar.md)
