@@ -1,13 +1,12 @@
 # ProgressIndicator
 
-告诉用户当前这个进程运行的进度。
+用来显示进度。
 
-![ProgressIndicator](http://image.tidev.in/image/31/屏幕快照 2015-09-06 下午3.26.37.png)
-
+![ProgressIndicator](/images/ui_progress_indicator_static.png)
 
 ## 例子
 
-实现显示进度条，每300毫秒进度增加5，直到100.
+动态图：实现显示进度条，每300毫秒进度增加5，直到100.
 
 ![android](/images/ui_progress_indicator.gif)
 
