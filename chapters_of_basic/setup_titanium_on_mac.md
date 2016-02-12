@@ -1,6 +1,8 @@
+# 安装
+
 PS：安装Chrome浏览器，并配置翻墙，这是首先要做的。
 
-下载ssledge插件（王涛提供的脚本插件）：http://pan.baidu.com/s/1bn5CrBx
+下载ssledge插件：http://pan.baidu.com/s/1bn5CrBx
 
 下载完成后，打开Chrome，点击Chrome最右侧的菜单栏，选择moretools中的extensions，将下载的脚本插件拖入到里面就行了。
 
@@ -9,7 +11,12 @@ PS：安装Chrome浏览器，并配置翻墙，这是首先要做的。
 
 ## titanium sdk:
 
-cp 5.1.1.GA 到： /Users/你的用户名/Library/Application Support/Titanium/mobilesdk/osx
+$ cp 5.1.1.GA 到： /Users/你的用户名/Library/Application Support/Titanium
+$ 进入到该目录，运行unzip. 就会把两个关键性的目录：modules, mobilesdk 中的内容
+复制过去了。（需要覆盖的时候，就果断全部覆盖)
+
+Titanium SDK 的版本自从2014年下半年开始就迭代的非常快。我们务必跟上步伐。
+
 
 ## android sdk:
 
