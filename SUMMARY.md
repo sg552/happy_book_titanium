@@ -69,7 +69,7 @@
     * [CoverFlowView(多图片视图)](chapters_of_ui/ios/cover_flow_view.md)
     * [Dashboard(图标面板)](chapters_of_ui/dashboard.md)
     * [DocumentViewer(文档查看器)](chapters_of_ui/ios/document_viewer.md)
-    * [NavigationWindow](chapters_of_ui/ios/navigation_window.md)
+    * [NavigationWindow(导航窗口)](chapters_of_ui/ios/navigation_window.md)
     * [Animator(动画产生器)](chapters_of_ui/ios/animator.md)
     * [AnchorAttachmentBehavior(动画:钟摆行为)](chapters_of_ui/ios/anchor_attachment_behavior.md)
     * [CollisionBehavior(动画:碰撞行为)](chapters_of_ui/ios/collision_behavior.md)
