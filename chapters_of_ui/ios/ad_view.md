@@ -10,9 +10,10 @@
 
 代码部分:
 
-```javascript
-win = Titanium.UI.createWindow();
-ad_view = Titanium.UI.iOS.createAdView();
+```js
+var win = Titanium.UI.createWindow();
+var ad_view = Titanium.UI.iOS.createAdView();
+
 win.add(ad_view);
 win.open();
 ```

@@ -64,7 +64,7 @@
     * [SearchView(搜索框)](chapters_of_ui/android/search_view.md)
   * [iOS独有](chapters_of_ui/ios.md)
     * [MaskedImage(可渲染的图片)](chapters_of_ui/masked_image.md)
-    * [AdView](chapters_of_ui/ios/ad_view.md)
+    * [AdView(苹果广告)](chapters_of_ui/ios/ad_view.md)
     * [ButtonBar(按钮组)](chapters_of_ui/button_bar.md)
     * [Animator](chapters_of_ui/ios/animator.md)
     * [AnchorAttachmentBehavior](chapters_of_ui/ios/anchor_attachment_behavior.md)
