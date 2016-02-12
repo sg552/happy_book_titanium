@@ -91,11 +91,11 @@
 
   * [iPhone独有](chapters_of_ui/titanium_ui_iphone.md)
     * [SystemIcon(系统图标)](chapters_of_ui/iphone/system_icon.md)
-  * [iPad](chapters_of_ui/ipad.md)
+  * [iPad独有](chapters_of_ui/ipad.md)
     * [Popover(提示框)](chapters_of_ui/popover.md)
 
 * [Alloy Framework](chapters_of_alloy/index.md)
-  * [Alloy 与 DSL](chapters_of_alloy/why_alloy.md)
+  * [Alloy与DSL(领域特定语言)](chapters_of_alloy/why_alloy.md)
   * [Controller](chapters_of_alloy/alloy_controller.md)
   * [Views](chapters_of_alloy/alloy_view_overview.md)
     * [View的结构组成](chapters_of_alloy/views_construction.md)
