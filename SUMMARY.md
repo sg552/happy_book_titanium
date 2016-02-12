@@ -127,8 +127,6 @@
   * [WebView的使用](chapters_of_senior/web_view.md)
   * [Attributed String的使用](chapters_of_senior/attributed_string.md)
   * [尺寸单位](chapters_of_senior/view_unit.md)
-  * [特定于iOS的UI](chapters_of_senior/ios_specific_ui.md)
-  * [特定于Android的UI](chapters_of_senior/android_specific_ui.md)
   * [动画](chapters_of_senior/animation.md)
   * [Animation](chapters_of_senior/Titanium_Animation.md)
   * [调试和优化](chapters_of_senior/debuging_and_profiling.md)
