@@ -1,29 +1,29 @@
 # 相册和相机的使用
 
+Ti.Media 这个class 是关键。
+
 ## 相册
 
 下面的例子调用了本地的相册：
 
 ```javascript
-var openPhotoGallery = function() {
-  Ti.Media.openPhotoGallery({
-     success: function(event) {
-      var xhr = Ti.Network.createHTTPClient();
-      xhr.onload = function(e) {
-        var res = JSON.parse(this.responseText);
-        Ti.UI.createAlertDialog({
-          title: "操作成功",
-          message: "状态码：" + this.status
-        }).show();
-      };
+Ti.Media.openPhotoGallery({
+   success: function(event) {
+    var xhr = Ti.Network.createHTTPClient();
+    xhr.onload = function(e) {
+      var res = JSON.parse(this.responseText);
+      Ti.UI.createAlertDialog({
+        title: "操作成功",
+        message: "状态码：" + this.status
+      }).show();
+    };
 
-      xhr.open("POST", "http://www.uubpay.com/interface/update_avatar");
-      xhr.send({
-        file: event.media,
-      });
-    }
-  });
-};
+    xhr.open("POST", "http://www.uubpay.com/interface/update_avatar");
+    xhr.send({
+      file: event.media,
+    });
+  }
+});
 
 ```
 
