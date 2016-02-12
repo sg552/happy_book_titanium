@@ -79,7 +79,6 @@
     * [PushBehavior(动画:推力行为)](chapters_of_ui/ios/push_behavior.md)
 
   * [iPhone独有](chapters_of_ui/titanium_ui_iphone.md)
-    * [ActivityIndicator](chapters_of_ui/iphone/activity_indicator.md)
     * [AlertDialog](chapters_of_ui/iphone/alert_dialog.md)
     * [AnimationStyle](chapters_of_ui/iphone/animation_style.md)
     * [ListView](chapters_of_ui/iphone/listview.md)
