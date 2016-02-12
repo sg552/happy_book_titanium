@@ -1,26 +1,20 @@
-#GravityBehavior
-给item加上重力感应的效果。
+# GravityBehavior
 
-使用步骤：
-+ 使用`Titanium.UI.iOS.createGravityBehavior`方法来创建和定义这样的重力行为。
+动画效果：产生重力感应。
 
-+ 要定义一个重力矢量(gravity vector)的话，既可以给`angle`和`magnitude`属性设置值，也可以给`gravity
-Direction`属性来设置值。
+如图:
 
-+ 使用`addItem()`方法来把行为应用到item上。
+![gravity](/images/ui_ios_gravity_behavior.gif)
 
-+ 再把行为添加到animator对象上。
-
-```javascript
+```js
 var win = Ti.UI.createWindow({backgroundColor: 'white', fullscreen: true});
 
-// Create an Animator object using the window as the coordinate system
 var animator = Ti.UI.iOS.createAnimator({referenceView: win});
 
-// Create a default collision behavior, using the window edges as boundaries
+// 新建默认的碰撞行为
 var collision = Ti.UI.iOS.createCollisionBehavior();
 
-// Simulate Earth's gravity
+// 模拟重力行为
 var gravity = Ti.UI.iOS.createGravityBehavior({
     gravityDirection: {x: 0.0, y: 1.0}
 });
@@ -28,7 +22,7 @@ var gravity = Ti.UI.iOS.createGravityBehavior({
 var WIDTH = Ti.Platform.displayCaps.platformWidth;
 var HEIGHT = Ti.Platform.displayCaps.platformHeight;
 
-// Create a bunch of random blocks; add to the window and behaviors
+// 创建一堆小方框
 var blocks = [];
 for (var i = 0; i < 20; i++) {
     var r = Math.round(Math.random() * 255);
@@ -51,12 +45,12 @@ for (var i = 0; i < 20; i++) {
 animator.addBehavior(collision);
 animator.addBehavior(gravity);
 
-// Start the animation when the window opens
+// 启动动画
 win.addEventListener('open', function(e){
     animator.startAnimator();
 });
 
-// Change the gravity vector when the button is clicked
+// 修改重力方向
 var button = Ti.UI.createButton({title: 'Change'});
 button.addEventListener('click', function(e){
     gravity.gravityDirection = {
@@ -68,6 +62,8 @@ button.addEventListener('click', function(e){
 win.add(button);
 win.open();
 ```
-效果如图:
 
-![](http://image.tidev.in/image/176/gravity.gif)
+- 要定义一个重力矢量(gravity vector)的话，既可以给`angle`和`magnitude`属性设置值，也可以给`gravity
+Direction`属性来设置值。
+- 使用`addItem()`方法来把行为应用到item上。
+- 再把行为添加到animator对象上。
