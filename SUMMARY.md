@@ -112,7 +112,7 @@
   * [操作JSON](chapters_of_senior/working_with_json.md)
   * [布局，位置和视图层次](chapters_of_senior/layouts_positioning_and_the_view_hierarchy.md)
   * [图标和启动图](chapters_of_senior/icons_and_splash_screens.md)
-  * [旋转](chapters_of_senior/orientation.md)
+  * [屏幕的旋转](chapters_of_senior/orientation.md)
   * [相册和相机的使用](chapters_of_senior/photogaller_and_camera.md)
   * [事件](chapters_of_senior/events.md)
   * [事件处理](chapters_of_senior/event_handling.md)
