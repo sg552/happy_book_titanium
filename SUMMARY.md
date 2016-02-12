@@ -49,6 +49,7 @@
   * [Picker(选择框)](chapters_of_ui/picker.md)
   * [SearchBar(搜索框)](chapters_of_ui/search_bar.md)
   * [TableView(表格列表)](chapters_of_ui/table_view.md)
+  * [Switch(开关)](chapters_of_ui/switch.md)
   * [Web View(浏览器视图)](chapters_of_ui/web_view.md)
 
   * [Clipboard(剪切板)](chapters_of_ui/clipboard.md)
@@ -74,8 +75,9 @@
     * [AnchorAttachmentBehavior(动画:钟摆行为)](chapters_of_ui/ios/anchor_attachment_behavior.md)
     * [CollisionBehavior(动画:碰撞行为)](chapters_of_ui/ios/collision_behavior.md)
     * [GravityBehavior(动画:重力行为)](chapters_of_ui/ios/gravity_behavior.md)
-    * [DynamicItemBehavior(动画:动态物体行为](chapters_of_ui/ios/dynamic_item_behavior.md)
+    * [DynamicItemBehavior(动画:动态物体行为)](chapters_of_ui/ios/dynamic_item_behavior.md)
     * [PushBehavior(动画:推力行为)](chapters_of_ui/ios/push_behavior.md)
+
   * [iPhone](chapters_of_ui/titanium_ui_iphone.md)
     * [ActivityIndicator](chapters_of_ui/iphone/activity_indicator.md)
     * [AlertDialog](chapters_of_ui/iphone/alert_dialog.md)
