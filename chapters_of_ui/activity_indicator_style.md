@@ -1,17 +1,10 @@
 # ActivityIndicatorStyle
 
-这一节比较简单，讲述的就是ActivityIndicator的显示时风格，
-之所以被拿出来单讲是因为这个是有些平台特殊性。
+iPhone样式的ActivityIndicator主要有三种样式:big、dark、plain,默认为plain。
 
-## 默认几个属性
+其中big和plain的颜色默认为白色，indicator在创建的时候默认为隐藏。
 
-- Ti.UI.ActivityIndicatorStyle.BIG
-- Ti.UI.ActivityIndicatorStyle.DARK
-- Ti.UI.ActivityIndicatorStyle.BIG_DARK
-- Ti.UI.ActivityIndicatorStyle.PLAIN
+动画效果见下图：
 
-## iphone特有的几个属性
+![style](/images/ui_activity_indicator_style.gif)
 
-- Ti.UI.iPhone.ActivityIndicatorStyle.BIG
-- Ti.UI.iPhone.ActivityIndicatorStyle.DARK
-- Ti.UI.iPhone.ActivityIndicatorStyle.PLAIN
