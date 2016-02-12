@@ -78,7 +78,7 @@
     * [DynamicItemBehavior(动画:动态物体行为)](chapters_of_ui/ios/dynamic_item_behavior.md)
     * [PushBehavior(动画:推力行为)](chapters_of_ui/ios/push_behavior.md)
 
-  * [iPhone](chapters_of_ui/titanium_ui_iphone.md)
+  * [iPhone独有](chapters_of_ui/titanium_ui_iphone.md)
     * [ActivityIndicator](chapters_of_ui/iphone/activity_indicator.md)
     * [AlertDialog](chapters_of_ui/iphone/alert_dialog.md)
     * [AnimationStyle](chapters_of_ui/iphone/animation_style.md)
