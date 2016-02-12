@@ -71,7 +71,7 @@
     * [Dashboard(图标面板)](chapters_of_ui/dashboard.md)
     * [DocumentViewer(文档查看器)](chapters_of_ui/ios/document_viewer.md)
     * [NavigationWindow(导航窗口)](chapters_of_ui/ios/navigation_window.md)
-    * [AlertDialogStyle(提示框样式)](chapters_of_ui/iphone/alert_dialog.md)
+    * [AlertDialogStyle(提示框样式)](chapters_of_ui/ios/alert_dialog_style.md)
     * [Animator(动画产生器)](chapters_of_ui/ios/animator.md)
     * [AnchorAttachmentBehavior(动画:钟摆行为)](chapters_of_ui/ios/anchor_attachment_behavior.md)
     * [CollisionBehavior(动画:碰撞行为)](chapters_of_ui/ios/collision_behavior.md)
@@ -80,7 +80,6 @@
     * [PushBehavior(动画:推力行为)](chapters_of_ui/ios/push_behavior.md)
 
   * [iPhone独有](chapters_of_ui/titanium_ui_iphone.md)
-    * [AlertDialog](chapters_of_ui/iphone/alert_dialog.md)
     * [AnimationStyle](chapters_of_ui/iphone/animation_style.md)
     * [ListView](chapters_of_ui/iphone/listview.md)
     * [ProgressBarStyle](chapters_of_ui/iphone/progress_bar_style.md)
