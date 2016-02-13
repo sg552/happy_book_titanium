@@ -155,7 +155,6 @@
   * [CommonJS](chapters_of_javascript/commonjs.md)
   * [Bower](chapters_of_javascript/bower.md)
   * [Jasmine](chapters_of_javascript/jasmine.md)
-  * [Node 入门](chapters_of_javascript/node_premier.md)
 
 * [工具](chapters_of_tool/index.md)
   * [Appium](chapters_of_tool/appium.md)
