@@ -1,5 +1,14 @@
 # 在Linux上搭建Titanium开发环境
 
+主要步骤分成：
+
+- 安装Ant
+- 安装JDK
+- 安装NVM和Node
+- 安装Genymotion
+- 安装Titanium命令行
+- 安装Grunt
+
 ## 安装JDK
 
 - JDK 只能安装Oracle的，不是Oracle的不行。(Open JDK肯定不行)
