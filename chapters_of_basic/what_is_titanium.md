@@ -107,47 +107,21 @@ Appcelerator Studio 是 Appcelerator 公司开发的一款基于Eclipse 的IDE
 
 注意：我们也不用它。
 
-
 为什么不用 Arrow, Cloud service 和 Studio? 因为它们都需要连接到海外的服务
 器，会直接影响到网速和用户体验。我们做的任何应用，功能可以少，但是必须
 稳定。
 
 ## Titanium 的运行机制(Titanium 的实质)
 
-下图以iPhone和Android两个移动平台为例，描述了Titanium的总体框架结构。首先我们用Javascript调用Titanium APIs把我们想要做的事描述出来，Titanium SDK 会将我们调用Titanium APIs 与 native APIs进行绑定(native bindings)，然后Titanium SDK 内置的JS interpreter 会实时的解释，执行这些能够与 native APIs 进行关联的 Titanium APIs。最后Titanium会根据native OS 的不同，打包成不同的project 和 安装包。
+下图以iPhone和Android两个移动平台为例，描述了Titanium的总体框架结构。
+首先我们用Javascript调用Titanium APIs，Titanium SDK 会将我们调用Titanium APIs
+与 native APIs进行绑定(native bindings)。
+
+然后Titanium SDK 内置的JS
+interpreter 会实时的解释，执行这些能够与 native APIs 进行关联的 Titanium APIs。
+
+最后Titanium会根据native OS 的不同，打包成不同的project 和 安装包。
+
 ![Titanium](/images/titanium_sdk_architecture.png)
 
-# app开发与 web开发的主要区别
 
-我们现在的优势： （只有明星我们知道）
-
-(初期可以不考虑这条）
-
-1. 把代码放在远程服务器上。 这样，就做到了不需要每次都发布app。 修改bug，直接在服务器端修改。
-
-2. 改动瞬间生效。（ 有两个页面。一个页面是第二个页面的入口, （在1#页面点击按钮，进入到2#页面））
-我们每次修改2#页面后，退回到1#页面，再点击按钮，2#页面的改动马上就可以看到了！）
-
-3. 不需要做机型适配。 ( 小手机上看起来什么样，大手机就什么样。 16:9 的什么样。
-
-16：10的也按照原比例进行拉伸，所以，看起来是差不多的）
-
-4. 不需要做跨平台的适配（有个前提，大家在使用UI组件的时候，最好使用通用的组件。
-）
-
-可以节省我们大量的时间。 让我们的开发变得快乐。
-
-实际的情况：
-
-一天，最多改20次（实际上一天改一个UI 页面就差不多了） 甚至，改一个BUTTON
-的样式，都特别痛苦。 黄敏的生产率很高。 但是，他当时调一个页面，需要3天。
-
-开发门槛很高，需要大家具备的能力有：
-
-1. 熟悉所有的UI组件
-2. 知道 app 的内在架构（就是通过 event来驱动的，手点点点。。才能看到各种
-页面）
-3. 知道 如何调用 native的功能。 照相，调用相册，发push 等等。(module)
-4. 知道如何调试。 它的调试信息，不如rails可读性那么强。所以大家要具备经验。
-5. 每个人都要知道如何编译，打包啊。做到，每天下班前，都要给产品经理一个最新的版本。
-6. 使用到了很多js的功能（requirejs -- 拆分的, underscore, coffeescript ... )
