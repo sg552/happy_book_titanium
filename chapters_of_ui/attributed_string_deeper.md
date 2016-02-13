@@ -1,25 +1,23 @@
-# Creating an Attributed String (创建一个字符串属性)
-如果你使用attributedstring或attributedhinttext属性，不设置任何其他属性，修改文字的外观，如字体，颜色，等等，如果你使用一个属性字符串，只使用一个属性的字符串。
-Ti不支持使用属性字符串与其他文本修改属性。
+# Attributed String(段落内不同的文字样式)详解
 
 例子app.js:
 
-```javascript
+```js
 
 var win = Ti.UI.createWindow({
-     backgroundColor: '#ddd',
+  backgroundColor: '#ddd',
 });
 var text = "Have you tried hyperloop yet?";
 var attr = Ti.UI.createAttributedString({
-     text: text,
-     attributes: [{
-          type: Ti.UI.ATTRIBUTE_BACKGROUND_COLOR,
-          value: "yellow",
-          range: [text.indexOf('hyperloop'), ('hyperloop').length]
-          }]
+  text: text,
+  attributes: [{
+    type: Ti.UI.ATTRIBUTE_BACKGROUND_COLOR,
+    value: "yellow",
+    range: [text.indexOf('hyperloop'), ('hyperloop').length]
+  }]
 });
 var label = Ti.UI.createLabel({
-          attributedString: attr
+  attributedString: attr
 });
 
 win.add(label);
@@ -30,20 +28,17 @@ win.open();
 
 ![](http://docs.appcelerator.com/platform/latest/images/download/attachments/37538231/Font.png)
 
-
 ```javascript
 var text = "Have you tried hyperloop yet?";
 var attr = Ti.UI.createAttributedString({
-        text: text,
-        attributes: [{
-            type: Ti.UI.ATTRIBUTE_FONT,
-            value: { fontSize: 24, fontFamily: 'Didot' },
-            range: [text.indexOf('hyperloop'), ('hyperloop').length]
-           }]
+  text: text,
+  attributes: [{
+    type: Ti.UI.ATTRIBUTE_FONT,
+    value: { fontSize: 24, fontFamily: 'Didot' },
+    range: [text.indexOf('hyperloop'), ('hyperloop').length]
+  }]
 });
 ```
-
-
 ![](http://docs.appcelerator.com/platform/latest/images/download/attachments/37538231/ForegroundColor.png)
 
 ```javascript
