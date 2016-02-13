@@ -1,28 +1,23 @@
-# 搭建Titanium开发环境
+# 在Linux上搭建Titanium开发环境
 
-windows的朋友，放弃吧！　下面的安装仅限　linux , mac.
+## 安装JDK
 
-TODO 增加titanium 版本
+- JDK 只能安装Oracle的，不是Oracle的不行。(Open JDK肯定不行)
+- JDK 只能安装1.7， 其他的都不行.
 
-## 安装 jdk: (必须是oracle 1.7) : http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html 不好找链接的朋友,请看:
+请自行google搜索:  'oracle jdk 1.7', 最新版本就是。
+
+http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html 不好找链接的朋友,请看:
 
 ```bash
-$ wget http://download.oracle.com/otn-pub/java/jdk/7u75-b13/jdk-7u75-linux-x64.tar.gz
+$ wget TODO
 ```
 
-## 安装nvm / nodejs
+## 安装NVM 和Node
 
-node的安装不难，官方给的是直接下载安装包。
+node 必须安装 v0.10.37
 
-对于一些比较特殊的情况（比如说centos的某些server版本），需要编译源代码，兼容性才好。
-
-但是有些情况需要特定的node版本，比如 stss.  必须 v0.10.37才能装的好。 而 titanium似乎也对node 版本有要求。
-
-node 官方的最新版本是 0.12.2
-
-所以， 需要一个多版本的node管理工具就特别重要。
-
-NVM 就是我们的选择。 （跟当初的RVM  , rbenv 一样）
+可以使用NVM(Node Version Manager)来安装。
 
 ### 下载NVM
 
@@ -32,138 +27,144 @@ git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git check
 
 ### 启动时加载：
 
+把下面这行代码放到： `~/.bashrc` 或 `~/.bash_profile`,  `~/.zshrc` 中。
+
 ```bash
-# 把下面这行代码放到： ~/.bashrc  ~/.bash_profile ~/.zshrc 中。
 source ~/.nvm/nvm.sh
 ```
 
-### 运行：
-`$ nvm`
+### 运行NVM
+```
+$ nvm
+```
+后，能看到
+```
+Node Version Manager
 
-注意： 不能使用 `$ which nvm` 来验证安装是否成功。因为即使成功了也不会 有 `$ which nvm` 返回结果。
+Note: <version> refers to any version-like string nvm understands.
+.....
+```
+说明安装成功了。
 
-### 使用
+注意： 不能使用 `$ which nvm` 来验证安装是否成功。因为即使成功了也不会有
+`$ which nvm` 返回结果。
 
-1.列出所有可以安装的版本：
+### 使用nvm
+
+- 列出所有可以安装的版本：
 
 ```bash
 $ nvm list-remote
 ```
 
-2.列出本地安装好了的版本：
+- 列出本地安装好了的版本：
 
 ```bash
 $ nvm list
 ```
 
-3.安装：
+- 安装 0.10.37 版本
 
 ```bash
 $ nvm install v0.10.37
 ```
 
-4.使用：
+- 使用：
 
 ```bash
 # 把这句命令放到 ~/.bashrc 中。
-$ nvm alias default 0.10.32
+$ nvm alias default 0.10.37
 ```
 
-官方的例子：
+### 删除nvm
 
-```
-  nvm install v0.10.32                  Install a specific version number
-  nvm use 0.10                          Use the latest available 0.10.x release
-  nvm run 0.10.32 app.js                Run app.js using node v0.10.32
-  nvm exec 0.10.32 node app.js          Run `node app.js` with the PATH pointing to node v0.10.32
-  nvm alias default 0.10.32             Set default node version on a shell
-```
+直接手动删掉下面三个目录即可：
 
-### 删除
+- ~/.nvm
+- ~/.npm
+- ~/.bower
 
-直接手动删掉：~/.nvm,  ~/.npm ~/.bower 即可。
-
-再安装nodejs (nodejs 0.10.37， 在 必须是这个版本，否则会出现 stss （npm 插件） 不能正常工作, 安装完之后，npm就自动装好了））
-
-## 安装android SDK, NDK. 参考： http://siwei.me/blog/posts/0-android-titanium
-
-> 注意： 第一步一定要有个代理。
-
-然后记得 只能安装 `oracle JDK 1.7`.  1.8 的不行（虽然TI的官方说行）。
-不是ORACLE的也不行（比如open jdk)
+## 安装 Android SDK, NDK.
 
 ```bash
-$ install oracle JDK 1.7
+$ 下载并安装JDK
 $ install android sdk
 $ wget http://mirrors.hust.edu.cn/apache/ant/binaries/apache-ant-1.9.4-bin.zip ,
 $ unzip <apache.zip>
 ```
 
-安装JDK 非常简单， 只要设置好下面三个变量就可以了。 （具体的值需要自行修改）
+把JDK解压到： /workspace/jdk1.7.0_67之后:
+
+只要设置好下面三个变量就可以了。（具体的值需要自行修改）
 
 ```bash
- export JAVA_HOME="/workspace/jdk1.7.0_67"
- export CLASSPATH="$JAVA_HOME/lib:."
- export PATH="$PATH:$JAVA_HOME/bin"
+export JAVA_HOME="/workspace/jdk1.7.0_67"
+export CLASSPATH="$JAVA_HOME/lib:."
+export PATH="$PATH:$JAVA_HOME/bin"
 ```
 
 $ vim ~/.bashrc, 把下面的变量都加进去：
 
 ```bash
 ( 如果是从0 开始配置环境的话，ADT_PATH 先不要设置，因为这个时候还没下载好。  )
-ADT_PATH=/sg552/adt-bundle-linux-x86-20130522/
 JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
 ANT_HOME=/sg552/workspace/ant-1.9.4
-ANDROID_HOME=$ADT_PATH/sdk
-PATH=$PATH:$ANDROID_HOME/platform-tools
-PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools:$ANDROID_HOME/platform-tools
-PATH=$PATH:$ANDROID_HOME/build-tools/android-4.2.2/
+PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:
 ```
 
 ```bash
-   $ source ~/.bashrc
-   $ java -version  ( 就可以看到输出一堆信息）
-   $ android  （ 就可以看到打开一个android配置窗口）
+$ source ~/.bashrc
+$ java -version
+```
+能看到下面这些信息，就说明JDK已经安装好了。
+```bash
+ java version "1.7.0_79"
+ Java(TM) SE Runtime Environment (build 1.7.0_79-b15)
+ Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
 ```
 
+解压缩android SDK，设置ADT:
+
+```
+ADT_PATH=/sg552/adt-bundle-linux-x86-20130522/
+ANDROID_HOME=$ADT_PATH/sdk
+PATH=$PATH:$ANDROID_HOME/platform-tools
+PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools:$ANDROID_HOME/platform-tools
+
+```
+
+开始配置Android:
+```
+$ android (该命令来自于：$ANDROID_HOME/tools/android)
+```
 记得先配置好代理先。 （见  ssl-edge的用法）
 
-（如果你已经从其他同学那里copy 到了需要的android sdk, 那么可以跳过这一步）
-
-![Set Android Sdk Manager Proxy](http://siwei.me/system/images/W1siZiIsIjIwMTUvMDMvMjIvMDBfMDBfMzdfODE3X3NldF9hbmRyb2lkX3Nka19tYW5hZ2VyX3Byb3h5LnBuZyJdXQ/set%20android%20sdk%20manager%20proxy.png)
+![设置Android SDK 代理](/images/basic_setup_android_gui_proxy.jpg)
 
 基本上， tools 全选，
 
-android 4.3 以上的全选。
+android 4.4 以上的全选。
 
-![Screenshot From 2015 03 22 07:59:02](http://siwei.me/system/images/W1siZiIsIjIwMTUvMDMvMjIvMDBfMDFfMDVfMzU3X1NjcmVlbnNob3RfZnJvbV8yMDE1XzAzXzIyXzA3XzU5XzAyLnBuZyJdXQ/Screenshot%20from%202015-03-22%2007%3A59%3A02.png)
+![选择SDK 版本号](/images/basic_setup_android_sdk_gui.jpg)
 
 extras 全选
 
-![Screenshot From 2015 03 22 07:59:09](http://siwei.me/system/images/W1siZiIsIjIwMTUvMDMvMjIvMDBfMDFfMDVfNTMzX1NjcmVlbnNob3RfZnJvbV8yMDE1XzAzXzIyXzA3XzU5XzA5LnBuZyJdXQ/Screenshot%20from%202015-03-22%2007%3A59%3A09.png)
+![选择好extra](/images/basic_setup_android_extras.jpg)
 
 然后就是漫长的下载等待了。
 
-下载好了之后， 需要安装其他的。
+下载好了之后，需要安装其他的。
 
-$ nodejs:    下载源代码， 编译。 不要直接用编译好的。 有时候会出现莫名其妙的错误 https://nodejs.org/download/
+## 安装 Titanium Command Line
 
-```bash
-$ wget  http://nodejs.org/dist/v0.10.36/node-v0.10.36-linux-x64.tar.gz
-（最好用 0.10.32 左右   因为 0.12 太新了，安装不上 npm）
-$ tar zxvf ...
-$ ./configure && make && make install ...
-```
-
-## 安装 titanium command line:
-
-命令行是所有操作的基础. 很多 错误无法通过GUI页面显示出来, 而command line 就能很方便的debug .
+命令行是所有操作的基础. 很多错误无法通过GUI页面显示出来, 而command line
+就能让我们很方便的debug .
 
 eclipse 虽好，但是我只喜欢 命令行。 因为IDE 把太多的debug细节都隐藏了。与其让eclipse输出debug信息，不如直接让我自己动手。
 
 refer to:  http://docs.appcelerator.com/titanium/3.0/#!/guide/Setting_up_the_Titanium_CLI-section-37520113_SettinguptheTitaniumCLI-InstalltheCLI
 
-1.安装 node module: titanium
+### 安装 node module: titanium
 
 ```bash
 $ npm install -g titanium
@@ -298,6 +299,8 @@ $ titanium build
 
 ## 安装 NDK
 
+Android NDK 用来编译Titaium native module.
+
 refer to:  https://developer.android.com/tools/sdk/ndk/index.html
 
 ```bash
@@ -311,7 +314,7 @@ $ chmod a+ <ndk_file>
 $ ./<ndk_file>
 ```
 
-然后安装这个东东：
+然后安装gperf：
 
 ```bash
 $ sudo apt-get install gperf
@@ -352,9 +355,12 @@ refer to:  http://gruntjs.com/getting-started
 
 自动化永远是我们程序员所追求的方式.
 
-对于c 有 make ,对于 ruby 有 rake, 对于 java 有ant, maven, ivry, 对于js 则是 grunt.
+对于c 有 make ,对于 ruby 有 rake, 对于 java 有ant, maven, ivry,
+对于js 则是 grunt.
 
-Rails 或者 Titanium 自带的一些命令虽然好用, (` $ alloy compile`,  `$ ti build/clean`) 但是粒度略小. 比如我要用jade 编写xml, 用coffee编写js , 就需要在 运行 `$ alloy compile` 之前先运行 一个 脚本:
+Rails 或者 Titanium 自带的一些命令虽然好用, (` $ alloy compile`,
+`$ ti build/clean`) 但是粒度略小. 比如我要用jade 编写xml, 用coffee编写js ,
+就需要在 运行 `$ alloy compile` 之前先运行 一个 脚本:
 
 ```bash
 # file name:  compile_my_coffee_to_js:
@@ -368,7 +374,11 @@ cat home_market.coffee home_master.coffee home_me.coffee home_competition.coffee
 cd ../../../
 ```
 
-其实每次运行这个脚本就很烦. 而且可读性差. 而且跟grunt语言相比有很大的缺点( 最突出的就是不如grunt专业和全面), 将来维护的话必然是个大坑. ( 想起之前有运维同学专门手写了个 shell 部署脚本的程序, 花了好几天时间,结果写出来的东西 跟capistrano 相差甚远, 不但可读性差(shell v.s. ruby, 呵呵) 而且无法回滚.
+其实每次运行这个脚本就很烦. 而且可读性差. 而且跟grunt语言相比有很大的缺点(
+最突出的就是不如grunt专业和全面), 将来维护的话必然是个大坑. (
+想起之前有运维同学专门手写了个 shell 部署脚本的程序, 花了好几天时间,
+结果写出来的东西跟capistrano 相差甚远, 不但可读性差(shell v.s. ruby)
+而且无法回滚.
 
 所以 , 有好轮子就要用. 对自身也是个提高.
 
@@ -378,109 +388,19 @@ cd ../../../
 
 ```bash
 $ npm install -g grunt grunt-cli
+
+$ which grunt
+/Users/sg552/.nvm/v0.10.37/bin/grunt
 ```
 
-运行:
-
-需要本地目录有 `Gruntfile` ( 跟Makefile, Rakefile 极度类似) , `package.json` (跟 Gemfile 极度类似)
-
-Gruntfile.(js|cofee):  定义了要运行的各种方法 . 下面是个例子:
-
-```javascript
-module.exports = function(grunt) {
-
-  // Project configuration.
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
-      }
-    }
-  });
-
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  // Default task(s).
-  grunt.registerTask('default', ['uglify']);
-
-};
-```
-
-package.json: 跟Gemfile一样, 定义了各种依赖包. 通过 $ grunt-init 或者 $npm init  来生成.下面是个例子:
-
-```json
-{
-  "name": "my-project-name",
-  "version": "0.1.0",
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-uglify": "~0.5.0"
-  }
-}
-```
-
-在 Gruntfile 中,可以使用 <% %> 来引用配置文件的各种信息:
-
-```javascript
-grunt.initConfig({
-  pkg: grunt.file.readJSON('package.json'),
-  uglify: {
-    options: {
-      banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-    },
-    build: {
-      src: 'src/<%= pkg.name %>.js',
-      dest: 'build/<%= pkg.name %>.min.js'
-    }
-  }
-});
-```
-
-加载任务( load task) :
-
-```javascript
-grunt.loadNpmTasks('grunt-contrib-uglify');
-加载自定义任务，　并且默认运行：
-
-  // 默认提供了　plugin:
-  grunt.registerTask('default', ['uglify']);
-
-  // 如果没有提供plugin的话，就直接　写出来：
-  // A very basic default task.
-  grunt.registerTask('default', 'Log some stuff.', function() {
-    grunt.log.write('Logging some stuff...').ok();
-  });
-```
 
 ## 安装 genymotion:
 
 http://siwei.me/blog/posts/genymotion-mobile-app-using-genymotion
-
 
 注意事项：
 
 - 使用Genymotion时， 务必要先在GUI中登录，否则会出现adb 使用不了 设备的情况
 - 使用 adb 之前，务必要安装 i386的组件（对于ubuntu13+) ，否则会出现 adb 程序运行不了的情况（ 类似32位程序无法在64位机器上运行）
 - 安装 genymotion 需要的各种patch , see: http://forum.xda-developers.com/showthread.php?t=2528952
-
-
-## 安装 android sdk:
-
-$ wget https://dl.google.com/android/android-sdk
-
-
-## 对于mac, 按照上面的步骤配置完后，还要配置（ 申请账号，下载证书等等） mac开发对应的东东：
-
-http://siwei.me/blog/categories/–5?utf8=%E2%9C%93&title=%E5%8F%91%E5%B8%83%E5%BA%94%E7%94%A8&commit=%E6%90%9C%E7%B4%A2
-
-## 安装之后,使用 $ti setup , 即可知道自己差哪儿缺哪儿了.
-
 

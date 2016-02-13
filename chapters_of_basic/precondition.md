@@ -4,10 +4,15 @@
 
 内心要强大。遇到问题多google. 多混迹于 stackoverflow 等论坛。
 
-必须有翻墙工具( 先买云梯，或者 eurekavpt ):
+必须有翻墙工具(代理服务器，比如 云梯，或者 eurekavpt ):
 
 - 你遇到的任何问题，都不要百度。 google就对了。
 - 你需要安装的各种组件，服务器都在国外，没有代理是没法安装的。
 
 如果要新建或者修改ti module, 一定要具备一定的android/ios开发知识。
 
+使用Window的同学，请尽快转换环境到Mac 或者Linux.
+
+- Linux操作系统： 只能开发Android
+- Mac操作系统：又能开发iOS, 又能开发Android
+- Windows操作系统： 只能开发Windows Phone
