@@ -124,7 +124,6 @@
   * [操作数据库](chapters_of_senior/database.md)
   * [尺寸单位](chapters_of_senior/view_unit.md)
   * [动画](chapters_of_senior/animation.md)
-  * [Animation](chapters_of_senior/Titanium_Animation.md)
   * [调试和优化](chapters_of_senior/debuging_and_profiling.md)
   * [编程最佳实践](chapters_of_senior/titanium_best_practises.md)
 
