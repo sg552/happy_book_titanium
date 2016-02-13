@@ -117,7 +117,7 @@
   * [事件和处理](chapters_of_senior/events.md)
   * [自定义字体](chapters_of_senior/custom_font.md)
   * [手势](chapters_of_senior/gestures.md)
-  * [滚动图Scrolling View](chapters_of_senior/scrolling_view.md)
+  * [滚动图ScrollView与轮播图ScrollableView](chapters_of_senior/scrolling_view.md)
   * [适配不同机型](chapters_of_senior/device_adapter.md)
   * [本地存储的几种策略](chapters_of_senior/Local_Storage.md)
   * [读写数据库](chapters_of_senior/Local_Storage.md)
