@@ -19,65 +19,57 @@ Titanium SDK 的版本自从2014年下半年开始就迭代的非常快。我们
 
 cp android-23 到： $ANDROID_HOME/platforms 目录下
 
-1.看看你的mac是否自带Xcode，如果没有则需要去App Store下载
+## 安装Xcode
 
-  PS：由于Apple的最新升级，现在在AppStore下载的最新的Xcode7.0已经不在支持Titanium5.0.0.GA以下的SDK版本了；所以，如果你要使用最新的Xcode，那么必须的使用Titanium-sdk >= 5.0.0.GA的SDK，否则就下载7.0以下的Xcode；下载地址为Apple开发者官方网址，所以你需要注册Apple Developer账号。网址（注册登录后下载）：https://developer.apple.com/downloads/
+Xcode是Mac下的开发工具大杂烩，包括了：
 
-  如果选择在网页中搜索下载，那么需要对自己的mac进行第三方软件允许安装权限设置：
+- 可视化开发环境IDE
+- iOS 和OS的开发工具
+- git等常见的命令行工具
+- 常见的第三方工具
 
-```
-System Preferences -> General -> Allow apps downloaded from -> (选中)Anywhere
-```
+我们在Linux下面做开发时，总是需要安装这个lib, 安装那个lib。在Mac下，安装好一个
+Xcode就基本万事俱备了。
 
-  安装完Xcode后,我们需要安装Xcode-cli(xcode command),为了在cmd中执行ruby的命令:
+截止到 2016年2月14日，最新的版本是 2016年2月3日发布的Xcode 7.2.1
 
-```
-xcode-select --install
-```
+打开App store, 注册用户，登陆，然后搜索xcode，下载。
 
-2.安装完Xcode后,我们需要安装一个软件下载管理工具homebrew;
-以后如果要安装其他软件包直接使用[brew install 插件名]命令来执行就行
+![Xcode下载](/images/basic_setup_download_xcode)
 
-```
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+一般来说Xcode需要好几个G，下载的比较久。
 
-  安装完毕后,我们需要安装一个wget插件,使用http请求获取某个软件包的安装源(即识别url请求)
+安装完Xcode后,我们需要安装Xcode-cli(xcode command),为了在cmd中执行ruby的命令:
 
 ```
-  brew install wget
+$ xcode-select --install
 ```
 
-3.安装nvm[node version manage](需要通过nvm来安装node，指定我们需要的node
-版本安装，更方便有效；nvm会自带安装npm[node pakage manage])
+## 安装 homebrew
+
+跟Linux下的 `apt-get`, `yum` 一样，Mac下也有包管理工具：`homebrew`.
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+我们安装一款下载管理软件："wget"
+
+```
+$brew install wget
+```
+
+## 安装nvm
 
 具体过程请参考前面的Linux章节.
 
-4.安装完nvm，我们开始安装titanium
 
-  如果你已经下载sdk包,那么只要将你所下载的sdk包放到以下指定的文件路径里就可以了(
-  因为我们通过:titanium sdk config [任意sdk的路径:path]命令来指定sdk的路径失效了):
+## 安装appcelerator 和 titanium
 
-  ```
-  cd /Users/hufeipeng/Library/Application Support/Titanium
-  mkdir mobilesdk
-  cd mobilesdk
-  mkdir osx
-  ```
-
-  然后将你所下载的sdk包cp这个路径里就行了:
-  ```
-  /Users/hufeipeng/Library/Application Support/Titanium/mobilesdk/osx/3.5.1.GA
-  ```
-
-  或者通过命令行安装: (参考：https://web.appcelerator.com/product/cli）
-
-  - 安装appcelerator
-
-  ```
-  sudo npm install appcelerator -g
-  appc setup
-  ```
+```
+sudo npm install appcelerator -g
+appc setup
+```
 
   - 安装titanium sdk
 
@@ -132,40 +124,11 @@ Generating Developer Certificate and Private/Public Keys...
 shensiwei@sina.com logged into organization shensiwei@sina.com [100020049]
 ```
 
-appc -h :
+输入下面命令，可以查看appc的具体说明：
 ```
 $ appc -h
-Appcelerator Command-Line Interface, version 5.1.0
-Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
-
-
-  Usage: appc cmd [options]
-
-
-  Commands:
-
-    access <get|set> [options]           get or set access in platform
-    config <get|set|list> [key] [value]  get, set, and list configuration settings
-    generate [options]                   create a component
-    help [cmd]                           display help for [cmd]
-    info                                 Display development environment information
-    install [options]                    install a component
-    login [options]                      login to platform
-    logout [options]                     logout of platform
-    new [options]                        create a new project
-    org <add|list|rm> <org>              add, list, and remove orgs for a component
-    owner <add|list|rm> <user>           add, list, and remove owners for a component
-    platform [options]                   runs a appcelerator platform API
-    publish [options]                    publish a project or component
-    run <app|server> [options]           run a project
-    search [options]                     search for components
-    setup [options]                      setup your environment
-    switch <org> [options]               switch logged in org
-    ti [cmd] [options]                   execute titanium commands
-    unpublish [options]                  unpublish a project or component
-    user <add|list|rm> <user>            add, list, and remove users for a component
-    whoami                               get the current platform user
 ```
+
 有用的，是  login, new, ti, setup 和 info
 login: 登陆用户。
 new: 新建一个项目
@@ -174,8 +137,10 @@ setup: 配置环境（包括下载最新ti sdk)
 info: 显示当前的配置信息
 
 appc info:
+
 如果没有TI SDK，就安装：
-```
+
+```bash
 $ appc info
 Appcelerator Command-Line Interface, version 5.1.0
 Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
@@ -184,40 +149,59 @@ No Mobile SDK found, downloading ...
 New version available! 5.1.0.GA
 
 Downloading http://builds.appcelerator.com/mobile-releases/5.1.0/mobilesdk-5.1.0.GA-osx.zip
-
 ```
 
-    npm install -g grunt-cli
-    npm install -g grunt
+## 安装grunt
 
-  ③安装coffee
+```
+$ npm install -g grunt-cli
+$ npm install -g grunt
+```
+
+## 安装coffee
+
     npm install -g coffee-script
 
-11.JDK/JRE
 
-11.JDK: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+## JDK
 
-   JRE: https://www.java.com/en/download/mac_download.jsp
-
-12.android sdk文件依赖缺失
-
-   项目npm install之后，开始运行项目时出现的错误；貌似可能和android sdk安装的时候有关系，因为出现了某个library依赖文件的错误，可能需要更新或者是系统缺少了这个依赖文件．
+安装方式同前面
 
 
-   [ERROR] Failed to package application:
+## VirtualBox
 
-   [ERROR]
- /home/lglove/android-sdk-linux/build-tools/22.0.1/aapt: error while loading shared libraries: libstdc++.so: cannot open shared object file: No such file or directory
+下载地址：
 
-   sudo apt-get install lib32stdc++6 lib32z1 lib32z1-dev
-   sudo apt-get install libstdc++6:i386
+https://www.virtualbox.org/wiki/Downloads
 
+(先注册Genymotion，注册登录后，进入store栏下载)
 
-13.virtualBox下载：
-   https://www.virtualbox.org/wiki/Downloads
+下载：https://www.genymotion.com/#!/store
 
-   (先注册Genymotion，注册登录后，进入store栏下载)
+教程：https://www.genymotion.com/#!/developers/user-guide
 
-   下载：https://www.genymotion.com/#!/store
+## 单独快速安装某个Titanium SDK
 
-   教程：https://www.genymotion.com/#!/developers/user-guide
+如果你的机器上安装好了：
+
+- appc
+- nvm
+- node
+
+就希望仅仅安装Titanium的某个版本，那么可以通过下面的方法快速安装。
+
+1. 下载某个Ti SDK文件：http://builds.appcelerator.com
+2. 复制并解压缩即可：
+
+```
+$ cp <Titanium SDK.zip文件> ~/Library/Application\ Support/Titanium
+$ cd ~/Library/Application\ Support/Titanium
+$ unzip <Ti SDK.zip文件>
+```
+
+就会发现，该SDK.zip文件会释放出两个文件夹：
+
+- mobilesdk
+- modules
+
+该方式对Mac 有效。 对于Linux, 需要先定位到Titanium SDK的目录。其他过程一样。

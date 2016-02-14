@@ -9,6 +9,7 @@
 - 安装Titanium命令行
 - 安装Grunt
 
+
 ## 安装JDK
 
 - JDK 只能安装Oracle的，不是Oracle的不行。(Open JDK肯定不行)
@@ -20,6 +21,37 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.h
 
 ```bash
 $ wget TODO
+```
+
+
+把JDK解压到： /workspace/jdk1.7.0_67之后:
+
+只要设置好下面三个变量就可以了。（具体的值需要自行修改）
+
+```bash
+export JAVA_HOME="/workspace/jdk1.7.0_67"
+export CLASSPATH="$JAVA_HOME/lib:."
+export PATH="$PATH:$JAVA_HOME/bin"
+```
+
+$ vim ~/.bashrc, 把下面的变量都加进去：
+
+```bash
+( 如果是从0 开始配置环境的话，ADT_PATH 先不要设置，因为这个时候还没下载好。  )
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
+ANT_HOME=/sg552/workspace/ant-1.9.4
+PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:
+```
+
+```bash
+$ source ~/.bashrc
+$ java -version
+```
+能看到下面这些信息，就说明JDK已经安装好了。
+```bash
+ java version "1.7.0_79"
+ Java(TM) SE Runtime Environment (build 1.7.0_79-b15)
+ Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
 ```
 
 ## 安装NVM 和Node
@@ -95,41 +127,13 @@ $ nvm alias default 0.10.37
 
 ## 安装 Android SDK, NDK.
 
+必须在安装好JDK之后安装。
+
 ```bash
 $ 下载并安装JDK
 $ install android sdk
 $ wget http://mirrors.hust.edu.cn/apache/ant/binaries/apache-ant-1.9.4-bin.zip ,
 $ unzip <apache.zip>
-```
-
-把JDK解压到： /workspace/jdk1.7.0_67之后:
-
-只要设置好下面三个变量就可以了。（具体的值需要自行修改）
-
-```bash
-export JAVA_HOME="/workspace/jdk1.7.0_67"
-export CLASSPATH="$JAVA_HOME/lib:."
-export PATH="$PATH:$JAVA_HOME/bin"
-```
-
-$ vim ~/.bashrc, 把下面的变量都加进去：
-
-```bash
-( 如果是从0 开始配置环境的话，ADT_PATH 先不要设置，因为这个时候还没下载好。  )
-JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
-ANT_HOME=/sg552/workspace/ant-1.9.4
-PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:
-```
-
-```bash
-$ source ~/.bashrc
-$ java -version
-```
-能看到下面这些信息，就说明JDK已经安装好了。
-```bash
- java version "1.7.0_79"
- Java(TM) SE Runtime Environment (build 1.7.0_79-b15)
- Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
 ```
 
 解压缩android SDK，设置ADT:
@@ -163,6 +167,26 @@ extras 全选
 然后就是漫长的下载等待了。
 
 下载好了之后，需要安装其他的。
+
+### android sdk文件依赖缺失
+
+项目npm install之后，开始运行项目时出现的错误；貌似可能和android sdk
+安装的时候有关系，因为出现了某个library依赖文件的错误，
+可能需要更新或者是系统缺少了这个依赖文件．
+
+
+```
+   [ERROR] Failed to package application:
+
+   [ERROR]
+ /home/lglove/android-sdk-linux/build-tools/22.0.1/aapt: error while loading shared libraries: libstdc++.so: cannot open shared object file: No such file or directory
+```
+
+```
+$ sudo apt-get install lib32stdc++6 lib32z1 lib32z1-dev
+$ sudo apt-get install libstdc++6:i386
+```
+
 
 ## 安装 Titanium Command Line
 
