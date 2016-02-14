@@ -1,4 +1,4 @@
-# 创建第一个app
+# Hello world 跑起来
 
 我们可以使用 `appc create` 来创建一个app. 但是更多时候我们用ti 这个命令。
 
@@ -255,5 +255,4 @@ Titanium SDK
 ## titanium中的UI基础。
 
 启动流程已经讲了。
-
 

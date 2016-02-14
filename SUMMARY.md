@@ -14,6 +14,7 @@
   * [学习的前提](chapters_of_basic/precondition.md)
   * [搭建开发环境](chapters_of_basic/setup_titanium.md)
   * [第一个Titanium App](chapters_of_basic/first_app.md)
+  * [实战：开发Titanium中国社区的app](chapters_of_basic/tutorial.md)
   * [如何阅读API](chapters_of_basic/how_to_read_api.md)
   * [Titanium社区及学习资源](chapters_of_basic/study_resources.md)
 
