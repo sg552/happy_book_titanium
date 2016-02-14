@@ -13,8 +13,7 @@
   * [Titanium的优点和缺点](chapters_of_basic/pros_and_cons.md)
   * [学习的前提](chapters_of_basic/precondition.md)
   * [搭建开发环境](chapters_of_basic/setup_titanium.md)
-  * [创建你的第一个App](chapters_of_basic/create_first_app.md)
-  * [大师的教程](chapters_of_basic/first_app_by_dashi.md)
+  * [第一个Titanium App](chapters_of_basic/first_app.md)
   * [如何阅读API](chapters_of_basic/how_to_read_api.md)
   * [Titanium社区及学习资源](chapters_of_basic/study_resources.md)
 
