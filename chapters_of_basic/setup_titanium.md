@@ -76,6 +76,29 @@ $brew install wget
 
 ## 安装appcelerator 和 titanium
 
+你必须在appcelerator上注册：
+
+1. http://www.appcelerator.com/
+
+在 "start free with email" 中，输入你的邮箱即可：
+
+![注册](/images/basic_setup_register_input_email.png)
+
+我们就会看到页面有了反馈：
+
+![要求查看邮箱](/images/basic_setup_check_email.png)
+
+邮件内容如下：
+
+![邮件内容](/images/basic_setup_register_info_from_email.png)
+
+点击其中的链接，进入到完善账户信息页面：
+
+![完善账户信息](/images/basic_setup_appc_account.png)
+
+
+我们就进入到了平台：https://platform.appcelerator.com/
+
 先安装 appcelerator, 这个命令用于登陆等用户操作：
 
 ```bash
