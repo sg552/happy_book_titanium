@@ -96,7 +96,6 @@ $brew install wget
 
 ![完善账户信息](/images/basic_setup_appc_account.png)
 
-
 我们就进入到了平台：https://platform.appcelerator.com/
 
 先安装 appcelerator, 这个命令用于登陆等用户操作：
@@ -105,7 +104,6 @@ $brew install wget
 $ sudo npm install appcelerator -g
 $ appc setup
 ```
-
 
 配置 appc
 ```bash
