@@ -698,7 +698,7 @@ listItem中左边的商品的淘宝购买页面(右边的商品则判断bindId�
 
 我们先看看ListView默认数据模板的样式(这里引用API例子)：
 
-![imageview](http://docs.appcelerator.com/platform/latest/images/download/attachments/40928632/01_iphone_image.png)
+![imageview](/images/ui_listview_with_style.png)
 
 下面是样式的_.xml_/_.tss_参考代码：
 
