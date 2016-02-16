@@ -90,7 +90,6 @@ $.my_list_view.addEventListener('itemclick',function(e){
 不过，对于Android与IOS分别有不同的UI组件：
 
 - SearchBar，适用于IOS；
-
 - Ti.UI.Android.SearchView，适用于Android；
 
 如果你观察仔细的话，在浏览效果图时你应该会发现ListView中最后一条数据
@@ -109,6 +108,20 @@ data 20是展示不完全的，ListView滑到底部松开后data 20会被屏幕�
 ## 数据绑定
 
 说通俗一些，就是把数据放到ListView中去。
+
+### 注意
+
+ListView中的template中，只能出现下面的UI类型：
+
+- Titanium.UI.ActivityIndicator
+- Titanium.UI.Button
+- Titanium.UI.ImageView
+- Titanium.UI.Label
+- Titanium.UI.ProgressBar
+- Titanium.UI.Slider
+- Titanium.UI.Switch
+- Titanium.UI.TextArea
+- Titanium.UI.TextField
 
 ###1. ListSection
 
