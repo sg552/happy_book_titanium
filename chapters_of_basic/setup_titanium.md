@@ -69,215 +69,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 $brew install wget
 ```
 
-## 安装nvm
-
-具体过程请参考前面的Linux章节.
-
-
-## 安装appcelerator 和 titanium
-
-你必须在appcelerator上注册：
-
-1. http://www.appcelerator.com/
-
-在 "start free with email" 中，输入你的邮箱即可：
-
-![注册](/images/basic_setup_register_input_email.png)
-
-我们就会看到页面有了反馈：
-
-![要求查看邮箱](/images/basic_setup_check_email.png)
-
-邮件内容如下：
-
-![邮件内容](/images/basic_setup_register_info_from_email.png)
-
-点击其中的链接，进入到完善账户信息页面：
-
-![完善账户信息](/images/basic_setup_appc_account.png)
-
-我们就进入到了平台：https://platform.appcelerator.com/
-
-先安装 appcelerator, 这个命令用于登陆等用户操作：
-
-```bash
-$ sudo npm install appcelerator -g
-$ appc setup
-```
-
-配置 appc
-```bash
-$ appc setup
-
-Finding latest version ...5.1.0 ✓
-Validating security checksum ✓
-Installing ... ✓
-Compiling platform native modules ...
-└ ws/utf-8-validate ...  ✓
-└ chokidar/fsevents ...  ✓
-└ chokidar/fsevents ...  ✓
-...
-```
-
-过程中会要求你输入appcelerator的账号和密码：
-输入完后，还要求你输入一个authorize code. 这个时候必须要检查下邮箱。
-```bash
-Appcelerator Login required to continue ...
-
-? Appcelerator ID: shensiwei@sina.com
-? Password: ******
-```
-
-上面的登陆步骤也可以使用 `appc login` 这个命令单独做：
-```
-$ appc login
-Appcelerator Command-Line Interface, version 5.1.0
-Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
-
-Appcelerator Login required to continue ...
-
-? Appcelerator ID: shensiwei@sina.com
-? Password: ******
-
-? Please enter the authorization code you received via your email at shensiwei@sina.com: 9907
-sina.com: 9907
-This computer is now authorized: Mac OSX Serial Number: C02Q4FH5FVH3
-You can deauthorize this computer by logging out with appc logout
-sina.com: 9
-Generating Developer Certificate and Private/Public Keys...
-shensiwei@sina.com logged into organization shensiwei@sina.com [100020049]
-```
-
-输入下面命令，可以查看appc的具体说明：
-```
-$ appc -h
-```
-
-有用的，是  login, new, ti, setup 和 info
-login: 登陆用户。
-new: 新建一个项目
-ti:  titanium子命令
-setup: 配置环境（包括下载最新ti sdk)
-info: 显示当前的配置信息
-
-appc info:
-
-如果没有TI SDK，就安装：
-
-```bash
-$ appc info
-Appcelerator Command-Line Interface, version 5.1.0
-Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
-
-No Mobile SDK found, downloading ...
-New version available! 5.1.0.GA
-
-Downloading http://builds.appcelerator.com/mobile-releases/5.1.0/mobilesdk-5.1.0.GA-osx.zip
-```
-
-再安装titanium sdk，这是我们日常开发的核心：
-```bash
-$ ti sdk install 5.2.0.GA
-```
-
-## 安装grunt
-
-```bash
-$ npm install -g grunt-cli
-$ npm install -g grunt
-```
-
-## 安装coffee
-
-```bash
-$ npm install -g coffee-script
-```
-
-## VirtualBox
-
-下载地址：
-
-https://www.virtualbox.org/wiki/Downloads
-
-(先注册Genymotion，注册登录后，进入store栏下载)
-
-下载：https://www.genymotion.com/#!/store
-
-教程：https://www.genymotion.com/#!/developers/user-guide
-
-## 单独快速安装某个Titanium SDK
-
-如果你的机器上安装好了：
-
-- appc
-- nvm
-- node
-
-就希望仅仅安装Titanium的某个版本，那么可以通过下面的方法快速安装。
-
-1. 下载某个Ti SDK文件：http://builds.appcelerator.com
-2. 复制并解压缩即可：
-
-```
-$ cp <Titanium SDK.zip文件> ~/Library/Application\ Support/Titanium
-$ cd ~/Library/Application\ Support/Titanium
-$ unzip <Ti SDK.zip文件>
-```
-
-就会发现，该SDK.zip文件会释放出两个文件夹：
-
-- mobilesdk
-- modules
-
-该方式对Mac 有效。 对于Linux, 需要先定位到Titanium SDK的目录。其他过程一样。
-
-# 在Linux上搭建Titanium开发环境
-
-
-
-## 安装JDK
-
-- JDK 只能安装Oracle的，不是Oracle的不行。(Open JDK肯定不行)
-- JDK 只能安装1.7， 其他的都不行.
-
-请自行google搜索:  'oracle jdk 1.7', 最新版本就是。
-
-http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html 不好找链接的朋友,请看:
-
-```bash
-$ wget TODO
-```
-
-把JDK解压到： /workspace/jdk1.7.0_67之后:
-
-只要设置好下面三个变量就可以了。（具体的值需要自行修改）
-
-```bash
-export JAVA_HOME="/workspace/jdk1.7.0_67"
-export CLASSPATH="$JAVA_HOME/lib:."
-export PATH="$PATH:$JAVA_HOME/bin"
-```
-
-$ vim ~/.bashrc, 把下面的变量都加进去：
-
-```bash
-( 如果是从0 开始配置环境的话，ADT_PATH 先不要设置，因为这个时候还没下载好。  )
-JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
-ANT_HOME=/sg552/workspace/ant-1.9.4
-PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:
-```
-
-```bash
-$ source ~/.bashrc
-$ java -version
-```
-能看到下面这些信息，就说明JDK已经安装好了。
-```bash
- java version "1.7.0_79"
- Java(TM) SE Runtime Environment (build 1.7.0_79-b15)
- Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
-```
-
 ## 安装NVM 和Node
 
 node 必须安装 v0.10.37
@@ -341,13 +132,207 @@ $ nvm install v0.10.37
 $ nvm alias default 0.10.37
 ```
 
-### 删除nvm
 
-直接手动删掉下面三个目录即可：
+## 安装appcelerator 和 titanium
 
-- ~/.nvm
-- ~/.npm
-- ~/.bower
+你必须在appcelerator上注册：
+
+1. http://www.appcelerator.com/
+
+在 "start free with email" 中，输入你的邮箱即可：
+
+![注册](/images/basic_setup_register_input_email.png)
+
+我们就会看到页面有了反馈：
+
+![要求查看邮箱](/images/basic_setup_check_email.png)
+
+邮件内容如下：
+
+![邮件内容](/images/basic_setup_register_info_from_email.png)
+
+点击其中的链接，进入到完善账户信息页面：
+
+![完善账户信息](/images/basic_setup_appc_account.png)
+
+我们就进入到了平台：https://platform.appcelerator.com/
+
+先安装 appcelerator, 这个命令用于登陆等用户操作：
+
+```bash
+$ sudo npm install appcelerator -g
+```
+
+配置 appc
+```bash
+$ appc setup
+
+Finding latest version ...5.1.0 ✓
+Validating security checksum ✓
+Installing ... ✓
+Compiling platform native modules ...
+└ ws/utf-8-validate ...  ✓
+└ chokidar/fsevents ...  ✓
+└ chokidar/fsevents ...  ✓
+...
+```
+
+过程中会要求你输入appcelerator的账号和密码：
+输入完后，还要求你输入一个authorize code. 这个时候必须要检查下邮箱。
+```bash
+Appcelerator Login required to continue ...
+
+? Appcelerator ID: shensiwei@sina.com
+? Password: ******
+```
+
+上面的登陆步骤也可以使用 `appc login` 这个命令单独做：
+```
+$ appc login
+Appcelerator Command-Line Interface, version 5.1.0
+Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
+
+Appcelerator Login required to continue ...
+
+? Appcelerator ID: shensiwei@sina.com
+? Password: ******
+
+? Please enter the authorization code you received via your email at shensiwei@sina.com: 9907
+sina.com: 9907
+This computer is now authorized: Mac OSX Serial Number: C02Q4FH5FVH3
+You can deauthorize this computer by logging out with appc logout
+sina.com: 9
+Generating Developer Certificate and Private/Public Keys...
+shensiwei@sina.com logged into organization shensiwei@sina.com [100020049]
+```
+
+输入下面命令，可以查看appc的具体说明：
+```
+$ appc -h
+```
+
+有用的，是  login, new, ti, setup 和 info
+- login: 登陆用户。
+- new: 新建一个项目
+- ti:  titanium子命令
+- setup: 配置环境（包括下载最新ti sdk)
+- info: 显示当前的配置信息
+
+appc info:
+
+如果没有TI SDK，就安装：
+
+```bash
+$ appc info
+Appcelerator Command-Line Interface, version 5.1.0
+Copyright (c) 2014-2015, Appcelerator, Inc.  All Rights Reserved.
+
+No Mobile SDK found, downloading ...
+New version available! 5.1.0.GA
+
+Downloading http://builds.appcelerator.com/mobile-releases/5.1.0/mobilesdk-5.1.0.GA-osx.zip
+```
+
+再安装titanium sdk，这是我们日常开发的核心：
+```bash
+$ appc ti sdk install 5.2.0.GA
+```
+
+## 安装grunt
+
+```bash
+$ npm install -g grunt-cli
+$ npm install -g grunt
+```
+
+## 安装coffee
+
+```bash
+$ npm install -g coffee-script
+```
+
+## VirtualBox
+
+下载地址：
+
+https://www.virtualbox.org/wiki/Downloads
+
+(先注册Genymotion，注册登录后，进入store栏下载)
+
+下载：https://www.genymotion.com/#!/store
+
+教程：https://www.genymotion.com/#!/developers/user-guide
+
+## 单独快速安装某个Titanium SDK
+
+如果你的机器上安装好了：
+
+- appc
+- nvm
+- node
+
+就希望仅仅安装Titanium的某个版本，那么可以通过下面的方法快速安装。
+
+1. 下载某个Ti SDK文件：http://builds.appcelerator.com
+2. 复制并解压缩即可：
+
+```
+$ cp <Titanium SDK.zip文件> ~/Library/Application\ Support/Titanium
+$ cd ~/Library/Application\ Support/Titanium
+$ unzip <Ti SDK.zip文件>
+```
+
+就会发现，该SDK.zip文件会释放出两个文件夹：
+
+- mobilesdk
+- modules
+
+该方式对Mac 有效。 对于Linux, 需要先定位到Titanium SDK的目录。其他过程一样。
+
+# 在Linux上搭建Titanium开发环境
+
+## 安装JDK
+
+- JDK 只能安装Oracle的，不是Oracle的不行。(Open JDK肯定不行)
+- JDK 只能安装1.7， 其他的都不行.
+
+请自行google搜索:  'oracle jdk 1.7', 最新版本就是。
+
+http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html 不好找链接的朋友,请看:
+
+```bash
+$ wget TODO
+```
+
+把JDK解压到： /workspace/jdk1.7.0_67之后:
+
+只要设置好下面三个变量就可以了。（具体的值需要自行修改）
+
+```bash
+export JAVA_HOME="/workspace/jdk1.7.0_67"
+export CLASSPATH="$JAVA_HOME/lib:."
+export PATH="$PATH:$JAVA_HOME/bin"
+```
+
+$ vim ~/.bashrc, 把下面的变量都加进去：
+
+```bash
+( 如果是从0 开始配置环境的话，ADT_PATH 先不要设置，因为这个时候还没下载好。  )
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
+ANT_HOME=/sg552/workspace/ant-1.9.4
+PATH=$PATH:$JAVA_HOME/bin:$ANT_HOME/bin:
+```
+
+```bash
+$ source ~/.bashrc
+$ java -version
+```
+能看到下面这些信息，就说明JDK已经安装好了。
+```bash
+ java version "1.7.0_79"
+ Java(TM) SE Runtime Environment (build 1.7.0_79-b15)
+ Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
+```
 
 ## 安装 Android SDK, NDK.
 
@@ -421,33 +406,19 @@ refer to:  http://docs.appcelerator.com/titanium/3.0/#!/guide/Setting_up_the_Tit
 
 ### 安装 node module: titanium
 
+titanium 是个 node package:
+
 ```bash
 $ npm install -g titanium
 ```
 
-2.在命令行登陆titanium:
-
-```bash
-$ titanium login (记得先注册)
-
-sg552@siwei-linux-notebook:/workspace$ titanium login
-Titanium Command-Line Interface, CLI version 3.4.0, Titanium SDK version 3.4.0.GA
-Copyright (c) 2012-2014, Appcelerator, Inc.  All Rights Reserved.
-
-Please report bugs to http://jira.appcelerator.org/
-
-Username: shensiwei@sina.com
-Password: ******
-Logged in successfully
-```
-
-3.安装titanium SDK
+再安装titanium SDK:
 
 ```bash
 $ titanium sdk install
 ```
 
-4.配置titanium SDK
+配置titanium SDK
 
 ```bash
 $ titanium setup
@@ -487,17 +458,7 @@ Titanium CLI Dependencies
   ✓  colors             up-to-date (v0.6.2)
   ✓  fields             up-to-date (v0.1.17)
   ✓  humanize           up-to-date (v0.0.9)
-  ✓  jade               up-to-date (v0.35.0)
-  ✓  longjohn           up-to-date (v0.2.4)
-  ✓  moment             up-to-date (v2.4.0)
-  ✓  node-appc          up-to-date (v0.2.14)
-  ✓  optimist           up-to-date (v0.6.1)
-  ✓  request            up-to-date (v2.27.0)
-  ✓  semver             up-to-date (v2.2.1)
-  ✓  sprintf            up-to-date (v0.1.4)
-  ✓  temp               up-to-date (v0.6.0)
-  ✓  winston            up-to-date (v0.6.2)
-  ✓  wrench             up-to-date (v1.5.8)
+  ...
 
 Titanium SDK
   ★  latest sdk         new version v3.4.1.GA available! (currently v3.4.0.GA)
@@ -506,41 +467,11 @@ Titanium SDK
 Android Environment
   ✓  sdk                installed (/workspace/android-sdk-linux)
   ✓  tools              installed (v23.0.2)
-  ✓  platform tools     installed (v20)
-  ✓  build tools        installed (v20)
-  ✓  adb                installed /workspace/android-sdk-linux/platform-tools/adb
-  ✓  android            installed /workspace/android-sdk-linux/tools/android
-  ✓  emulator           installed /workspace/android-sdk-linux/tools/emulator
-  ✓  mksdcard           installed /workspace/android-sdk-linux/tools/mksdcard
-  ✓  zipalign           installed /workspace/android-sdk-linux/build-tools/20.0.0/zipalign
-  ✓  aapt               installed /workspace/android-sdk-linux/build-tools/20.0.0/aapt
-  ✓  aidl               installed /workspace/android-sdk-linux/build-tools/20.0.0/aidl
-  ✓  targets            installed (3 found)
-  ✓  avds               installed (1 found)
-  !  ndk                Android NDK not found
+  ...
 
 Java Development Kit
   ✓  jdk                installed (v1.7.0)
-  ✓  java               installed /workspace/coding_tools/jdk1.7.0_67/bin/java
-  ✓  javac              installed /workspace/coding_tools/jdk1.7.0_67/bin/javac
-  ✓  keytool            installed /workspace/coding_tools/jdk1.7.0_67/bin/keytool
-  ✓  jarsigner          installed /workspace/coding_tools/jdk1.7.0_67/bin/jarsigner
-
-Intel® Hardware Accelerated Execution Manager (HAXM)
-  ✓  compatible
-  !  installed          not found; install HAXM to use Android x86 emulator
-
-Network
-  ✓  online
-  ✓  proxy server enabled
-  ✓  http request test
-  ✓  https request test
-
-Directory Permissions
-  ✓  home directory
-  ✓  titanium config directory
-  ✓  titanium sdk install directory
-  ✓  temp directory
+  ...
 ```
 
 
