@@ -664,11 +664,17 @@ app的图标，有180x180, 150x150，也有更高的1024x1024. 我们随便做�
 
 ![ti china logo](/images/basic_tutorial_logo.png)
 
+对于ios 来说, 要修改 DefaultIcon.png 这个文件.
+
+这个文件名不需要在 tiapp.xml 中定义, ios会默认找到他.
+
+对于android来说, 需要定义在 tiapp.xml 中, 使用 icon 这个节点, 名字必须是小写 a-z0-9
+
 然后，修改`tiapp.xml`这个文件即可.
 
 ```xml
 <!-- 这里定义了使用哪个文件作为图标 -->
-<icon>DefaultIcon.png</icon>
+<icon>appicon.png</icon>
 ```
 
 我们把原来的两个文件替换掉：
@@ -678,8 +684,8 @@ app的图标，有180x180, 150x150，也有更高的1024x1024. 我们随便做�
 
 文件删掉，把新的Logo换上去即可。
 
-注意：这里最好使用原来的DefaultIcon.png 作为命名。否则的话，如果要改成 `my_icon.png`
-注意的名字，我们还需要手动增加以下名字：
+注意：这里最好使用原来的文件(根目录下的DefaultIcon.png 和 /Resources/android/appicon.png ) 作为命名。
+否则的话，如果要改成 `my_icon.png` 注意的名字，我们还需要手动增加以下名字：
 
 - my_icon-Small.png
 - my_icon-Small@2x.png
@@ -693,10 +699,31 @@ app的图标，有180x180, 150x150，也有更高的1024x1024. 我们随便做�
 
 ## 修改app的名字
 
-修改 `tiapp.xml` 即可.
+注意: 这里不能修改 `tiapp.xml` 中的<name> , 这个值很特殊, 它必须是英文,不能有空格. 例如:
+
+```xml
+<name>TiDevApp</name>
+```
+
+要想改名字的话,要使用 i18n 特性:
+
+建立下面的文件结构(i18n与Resources处于同级目录):
 
 ```
-<name>Ti中文社区</name>
+▾ i18n/
+  ▾ en/
+      app.xml
+  ▾ zh/
+      app.xml
+▸ Resources/
+```
+
+两个app.xml 的文件内容都是一样的(目的是,不管是英文的操作系统,还是中文的,都显示一个标题):
+
+```xml
+<resources>
+  <string name="appname">Ti中国社区</string>
+</resources>
 ```
 
 ## 修改启动图
@@ -704,8 +731,10 @@ app的图标，有180x180, 150x150，也有更高的1024x1024. 我们随便做�
 我们替换原来的图片：
 
 - /Resources/android/default.png
-- /Resources/android/images 子目录下的所有  default.png
 - /Resources/iphone 目录下的所有 Default*.png 文件
+
+可以把 /Resources/android/images 删掉.我们没必要对不同的屏幕尺寸增加不同的启动图.
+
 
 替换成新的文件即可：
 
