@@ -34,7 +34,6 @@
   * [ActivityIndicator(等待图标)](chapters_of_ui/activity_indicator.md)
   * [ActivityIndicatorStyle(等待图标的样式)](chapters_of_ui/activity_indicator_style.md)
   * [AttributedString(段落内不同的文字样式)](chapters_of_ui/attributed_string.md)
-  * [Attributed String(段落内不同的文字样式)的更多例子](chapters_of_ui/attributed_string_deeper.md)
   * [Button(按钮)](chapters_of_ui/button.md)
   * [ImageView(图片)](chapters_of_ui/image_view.md)
   * [Label(文本框)](chapters_of_ui/label.md)
