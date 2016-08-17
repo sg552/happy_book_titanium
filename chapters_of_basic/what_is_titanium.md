@@ -72,6 +72,8 @@ upload image等功能。 4月，出现了Titanium 2.0 。
 Appcelerator 周边产品都不会被影响。我个人通过内部渠道，也得知Titanium
 讲继续向前发展。
 
+2016年8月, Titanium SDK发布了版本: 5.4.0.GA
+
 ## Titanium SDK
 
 Titanium SDK tools 包含一个基于Node.js的工具包和一个work with the native
